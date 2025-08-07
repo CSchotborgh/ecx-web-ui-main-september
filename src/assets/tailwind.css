@@ -668,7 +668,7 @@ body {
 
 /* Custom Grid Layout - Main grid container */
 .custom-grid {
-  @apply m-auto grid grid-cols-1 gap-6 border-none rounded-lg p-6 min-w-full min-h-full text-center items-center content-center justify-center;
+  @apply m-auto grid grid-cols-1 gap-6 border-none rounded-sm p-6 min-w-full min-h-full text-center items-center content-center justify-center;
   background: var(--grid-bg);
   box-shadow: 0 4px 12px var(--shadow-color);
   backdrop-filter: blur(10px);
@@ -681,7 +681,7 @@ body {
 
 /* Dark square-full utility class - applies square corners in dark mode */
 .dark-square-full {
-  border-radius: 0.5rem; /* Default rounded-lg */
+  border-radius: 0.125rem; /* Default rounded-sm */
 }
 
 .dark .dark-square-full {
