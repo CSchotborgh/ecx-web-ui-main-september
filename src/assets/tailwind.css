@@ -726,18 +726,12 @@ body {
 
 /* Super Dark Theme Specific Rules */
 .theme-super-dark .custom-grid {
-  background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .grid-rows-1 {
   background: var(--panel-bg);
-}
-
-/* Override Tailwind dark mode classes in super dark theme */
-.theme-super-dark .custom-grid {
-  background: var(--panel-bg) !important;
-  border: 1px solid var(--panel-border) !important;
 }
 
 /* Dark Theme Specific Rules */
