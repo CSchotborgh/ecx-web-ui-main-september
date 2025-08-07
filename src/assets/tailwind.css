@@ -11,23 +11,23 @@
 
 /* Enhanced Theme Variables */
 :root {
-  --bg-gradient: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  --bg-gradient: linear-gradient(135deg, #1a1c25 0%, #1a1c25 50%, #0b0b0b 100%);
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
-  --card-bg: rgba(30, 41, 59, 0.8);
+  --card-bg: rgb(61, 66, 77, 0.8);
   --card-border: rgba(148, 163, 184, 0.3);
-  --nav-bg: rgba(15, 23, 42, 0.95);
+  --nav-bg: rgb(135, 170, 197, 0.95);
   --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --shadow-color: rgba(0, 0, 0, 0.5);
+  --accent-hover: #6693f5;
+  --shadow-color: rgb(136, 172, 200, 0.5);
 }
 
 .theme-light {
-  --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%);
+  --bg-gradient: linear-gradient(135deg, #88b3d2 0%, #8692a2 50%, #cbd5e1 100%);
   --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-secondary: #1a1c25;
   --card-bg: rgba(255, 255, 255, 0.9);
-  --card-border: rgba(148, 163, 184, 0.4);
+  --card-border: rgb(255, 255, 255, 0.4);
   --nav-bg: rgba(255, 255, 255, 0.95);
   --accent: #3b82f6;
   --accent-hover: #2563eb;
@@ -35,7 +35,7 @@
 }
 
 .theme-dark {
-  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1a1c25 100%);
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --card-bg: rgba(15, 23, 42, 0.9);
@@ -51,18 +51,19 @@
   --text-primary: #ffffff;
   --text-secondary: #b0b0b0;
   --card-bg: rgba(10, 10, 10, 0.95);
-  --card-border: rgba(0, 255, 136, 0.2);
+  --card-border: rgb(255, 255, 255, 0.2);
   --nav-bg: rgba(0, 0, 0, 0.98);
   --accent: #00ff88;
   --accent-hover: #00cc6a;
   --shadow-color: rgba(0, 0, 0, 0.9);
   --section-bg: rgba(5, 5, 5, 0.9);
   --section-border: rgba(0, 255, 136, 0.15);
-  --panel-bg: rgba(15, 15, 15, 0.95);
+  --panel-bg: rgb(11, 11, 12, 0.95);
   --panel-border: rgba(40, 40, 40, 0.6);
 }
 
-html, body {
+html,
+body {
   @apply font-sans min-h-screen;
   color: var(--text-primary);
   background: var(--bg-gradient);
