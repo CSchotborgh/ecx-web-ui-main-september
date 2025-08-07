@@ -343,9 +343,10 @@ body {
 
 /* Main Card Component - Primary containers for content */
 .card {
-  @apply border rounded-lg p-6 shadow-lg transition-all duration-300;
+  @apply border p-6 shadow-lg transition-all duration-300;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px var(--shadow-color);
 }
@@ -360,24 +361,27 @@ body {
 
 /* Secondary Card Variant - Less prominent containers */
 .card-secondary {
-  @apply border rounded-lg p-4 shadow-sm transition-all duration-300;
+  @apply border p-4 shadow-sm transition-all duration-300;
   background: var(--card-bg-secondary);
   border: 1px solid var(--card-border-subtle);
+  border-radius: 1.5rem;
   backdrop-filter: blur(8px);
 }
 
 /* Tertiary Card Variant - Minimal containers */
 .card-tertiary {
-  @apply border rounded-md p-3 transition-all duration-300;
+  @apply border p-3 transition-all duration-300;
   background: var(--card-bg-tertiary);
   border: 1px solid var(--card-border-subtle);
+  border-radius: 1.5rem;
 }
 
 /* Compact Card Variant - Space-efficient containers */
 .card-compact {
-  @apply border rounded-md p-2 shadow-sm transition-all duration-300;
+  @apply border p-2 shadow-sm transition-all duration-300;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
 }
 
 /* ==========================================================================
@@ -405,9 +409,10 @@ body {
 
 /* Navigation Links */
 .nav-link {
-  @apply px-4 py-2 rounded-lg transition-all duration-200 font-medium;
+  @apply px-4 py-2 transition-all duration-200 font-medium;
   color: var(--text-secondary);
   border: 1px solid transparent;
+  border-radius: 1.5rem;
 }
 
 .nav-link:hover {
@@ -427,9 +432,10 @@ body {
 
 /* Navigation Dropdown Menu */
 .nav-dropdown {
-  @apply absolute top-full left-0 mt-2 rounded-lg shadow-lg border;
+  @apply absolute top-full left-0 mt-2 shadow-lg border;
   background: var(--nav-bg);
   border: 1px solid var(--nav-border);
+  border-radius: 1.5rem;
   backdrop-filter: blur(15px);
   min-width: 200px;
 }
@@ -456,10 +462,11 @@ body {
 
 /* Primary Action Buttons - Main call-to-action elements */
 .btn-primary {
-  @apply px-6 py-3 rounded-md font-medium transition-all duration-200 shadow-sm;
+  @apply px-6 py-3 font-medium transition-all duration-200 shadow-sm;
   background: var(--button-primary-bg);
   color: var(--button-primary-text);
   border: none;
+  border-radius: 1.5rem;
   font-weight: 500;
 }
 
@@ -481,10 +488,11 @@ body {
 
 /* Secondary Buttons - Alternative actions */
 .btn-secondary {
-  @apply px-6 py-3 rounded-md font-medium transition-all duration-200 border;
+  @apply px-6 py-3 font-medium transition-all duration-200 border;
   background: var(--button-secondary-bg);
   color: var(--text-primary);
   border: 1px solid var(--button-secondary-border);
+  border-radius: 1.5rem;
   font-weight: 500;
 }
 
@@ -496,10 +504,11 @@ body {
 
 /* Tertiary Buttons - Minimal styling */
 .btn-tertiary {
-  @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+  @apply px-4 py-2 font-medium transition-all duration-200;
   background: transparent;
   color: var(--text-secondary);
   border: none;
+  border-radius: 1.5rem;
 }
 
 .btn-tertiary:hover {
@@ -509,10 +518,11 @@ body {
 
 /* Danger/Destructive Buttons - Warning actions */
 .btn-danger {
-  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  @apply px-6 py-3 font-semibold transition-all duration-200;
   background: var(--button-danger-bg);
   color: white;
   border: none;
+  border-radius: 1.5rem;
 }
 
 .btn-danger:hover {
@@ -533,9 +543,10 @@ body {
 
 /* Icon-only Buttons */
 .btn-icon {
-  @apply p-2 rounded-md transition-all duration-200;
+  @apply p-2 transition-all duration-200;
   background: transparent;
   border: 1px solid transparent;
+  border-radius: 1.5rem;
 }
 
 .btn-icon:hover {
@@ -549,9 +560,10 @@ body {
 
 /* Text Input Fields */
 .form-input {
-  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full;
+  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
+  border-radius: 1.5rem;
   color: var(--text-primary);
 }
 
@@ -607,9 +619,10 @@ body {
 
 /* Textarea Elements */
 .form-textarea {
-  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full resize-y;
+  @apply border px-4 py-3 transition-all duration-200 text-base w-full resize-y;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
+  border-radius: 1.5rem;
   color: var(--text-primary);
   min-height: 100px;
 }
@@ -623,9 +636,10 @@ body {
 
 /* Select Dropdown Elements */
 .form-select {
-  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full;
+  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
+  border-radius: 1.5rem;
   color: var(--text-primary);
 }
 
@@ -683,9 +697,10 @@ body {
 
 /* Data Table Container */
 .data-table {
-  @apply w-full border-collapse rounded-lg overflow-hidden;
+  @apply w-full border-collapse overflow-hidden;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
   box-shadow: 0 4px 12px var(--shadow-color);
 }
 
@@ -1076,10 +1091,11 @@ body {
 
 /* Theme Toggle Button - Theme switching control */
 .theme-toggle-btn {
-  @apply flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200;
+  @apply flex items-center space-x-2 px-3 py-2 transition-all duration-200;
   background: transparent;
   color: var(--text-secondary);
   border: 1px solid transparent;
+  border-radius: 1.5rem;
 }
 
 .theme-toggle-btn:hover {
@@ -1090,9 +1106,10 @@ body {
 
 /* Dropdown Menu */
 .dropdown-menu {
-  @apply absolute top-full right-0 mt-2 rounded-lg shadow-lg border min-w-max;
+  @apply absolute top-full right-0 mt-2 shadow-lg border min-w-max;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
   backdrop-filter: blur(10px);
   z-index: 50;
 }
@@ -1115,10 +1132,11 @@ body {
 
 /* Tooltip Elements */
 .tooltip {
-  @apply absolute z-10 px-2 py-1 text-xs rounded shadow-lg;
+  @apply absolute z-10 px-2 py-1 text-xs shadow-lg;
   background: var(--card-bg-secondary);
   color: var(--text-primary);
   border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
   backdrop-filter: blur(5px);
 }
 
@@ -1131,9 +1149,16 @@ body {
 
 /* Progress Bar */
 .progress-bar {
-  @apply w-full rounded-full overflow-hidden;
+  @apply w-full overflow-hidden;
   background: var(--card-bg-secondary);
   border: 1px solid var(--card-border-subtle);
+  border-radius: 1.5rem;
+}
+
+.progress-fill {
+  @apply h-2 transition-all duration-300;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 1.5rem;
 }
 
 .progress-fill {
@@ -1154,9 +1179,10 @@ body {
 
 /* Modal Content Container */
 .modal-content {
-  @apply rounded-xl shadow-xl max-w-lg w-full mx-4;
+  @apply shadow-xl max-w-lg w-full mx-4;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
   backdrop-filter: blur(15px);
   box-shadow: 0 25px 50px var(--shadow-color);
 }
@@ -1180,7 +1206,8 @@ body {
 
 /* Alert/Notification Containers */
 .alert {
-  @apply px-4 py-3 rounded-lg border flex items-center space-x-3;
+  @apply px-4 py-3 border flex items-center space-x-3;
+  border-radius: 1.5rem;
   backdrop-filter: blur(5px);
 }
 
@@ -1251,18 +1278,20 @@ body {
 
 /* Glass Effect - Frosted glass appearance */
 .glass-effect {
-  @apply border rounded-xl;
+  @apply border;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  border-radius: 1.5rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px var(--shadow-color);
 }
 
 /* Enhanced Glass Effect */
 .glass-effect-strong {
-  @apply border rounded-xl;
+  @apply border;
   background: var(--card-bg-secondary);
   border: 1px solid var(--card-border-hover);
+  border-radius: 1.5rem;
   backdrop-filter: blur(15px);
   box-shadow: 0 15px 35px var(--shadow-color);
 }
@@ -1343,33 +1372,37 @@ body {
 
 /* Panel Component - Content panels */
 .panel {
-  @apply rounded-lg p-8;
+  @apply p-8;
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
+  border-radius: 1.5rem;
   box-shadow: 0 8px 20px var(--shadow-color);
   backdrop-filter: blur(12px);
 }
 
 /* Compact Panel Variant */
 .panel-compact {
-  @apply rounded-lg p-4;
+  @apply p-4;
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
+  border-radius: 1.5rem;
   box-shadow: 0 4px 12px var(--shadow-color);
 }
 
 /* Header Panel - Top-level headers */
 .panel-header {
-  @apply rounded-t-lg p-6 border-b;
+  @apply p-6 border-b;
   background: var(--card-bg-secondary);
   border-bottom: 1px solid var(--card-border);
+  border-radius: 1.5rem 1.5rem 0 0;
 }
 
 /* Footer Panel - Bottom-level footers */
 .panel-footer {
-  @apply rounded-b-lg p-6 border-t;
+  @apply p-6 border-t;
   background: var(--card-bg-secondary);
   border-top: 1px solid var(--card-border);
+  border-radius: 0 0 1.5rem 1.5rem;
 }
 
 /* ==========================================================================
