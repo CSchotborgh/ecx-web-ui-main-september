@@ -42,6 +42,9 @@
                 <fwb-navbar-link v-show="loggedIn">
                     <fwb-button gradient="blue" size="xs" pill @click.prevent="showLogoutModal">Log Out</fwb-button>
                 </fwb-navbar-link>
+                <fwb-navbar-link>
+                    <ThemeToggle />
+                </fwb-navbar-link>
 
             </fwb-navbar-collapse>
         </template>
