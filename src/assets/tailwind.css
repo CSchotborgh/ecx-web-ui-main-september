@@ -212,7 +212,7 @@ body {
 /* Override dark mode gray-600 background for super dark theme */
 .theme-super-dark .custom-grid.dark\:bg-gray-600 {
   background: var(--panel-bg) !important;
-  border: 3px solid rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Typography */
