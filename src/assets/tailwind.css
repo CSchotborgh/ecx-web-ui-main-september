@@ -672,7 +672,7 @@ body {
   background: var(--grid-bg);
   box-shadow: 0 4px 12px var(--shadow-color);
   backdrop-filter: blur(10px);
-  border-radius: 0.25rem;
+  border-radius: 1.5rem;
 }
 
 /* Grid Item Hover Effects */
@@ -748,7 +748,7 @@ body {
 
 /* Dark theme overrides for custom-grid */
 .dark .custom-grid {
-  border-radius: 0.25rem;
+  border-radius: 1.5rem;
   background: rgb(75 85 99);
 }
 
