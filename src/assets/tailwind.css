@@ -896,19 +896,39 @@ body {
 }
 
 /* Super Dark Theme Collapse/Expand Elements */
-.theme-super-dark .collapse-toggle {
+.theme-super-dark .collapse-toggle,
+.theme-super-dark [data-collapse-toggle],
+.theme-super-dark .collapse-button,
+.theme-super-dark .expand-button,
+.theme-super-dark button[aria-expanded] {
   background: #060511 !important;
   border: 1px solid #060511 !important;
 }
 
 .theme-super-dark .expand-all,
-.theme-super-dark .collapse-all {
+.theme-super-dark .collapse-all,
+.theme-super-dark .collapse-controls button,
+.theme-super-dark .toggle-button {
   background: #060511 !important;
   border: 1px solid #060511 !important;
 }
 
 .theme-super-dark .expand-all:hover,
-.theme-super-dark .collapse-all:hover {
+.theme-super-dark .collapse-all:hover,
+.theme-super-dark .collapse-controls button:hover,
+.theme-super-dark .toggle-button:hover,
+.theme-super-dark [data-collapse-toggle]:hover,
+.theme-super-dark .collapse-button:hover,
+.theme-super-dark .expand-button:hover,
+.theme-super-dark button[aria-expanded]:hover {
+  background: #060511 !important;
+  border: 1px solid #060511 !important;
+}
+
+/* Super Dark Theme - Target any button within flowbite components */
+.theme-super-dark .fwb-button,
+.theme-super-dark [data-flowbite] button,
+.theme-super-dark .flowbite-component button {
   background: #060511 !important;
   border: 1px solid #060511 !important;
 }
