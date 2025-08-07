@@ -13,124 +13,124 @@
    THEME VARIABLE DEFINITIONS
    ========================================================================== */
 
-/* Default/Super Dark Theme Variables */
+/* Default/Super Dark Theme Variables - EdgeRack Inspired */
 :root {
-  /* Background Gradients - Main page backgrounds */
-  --bg-gradient: linear-gradient(135deg, #060511 0%, #060511 25%, #060511 50%, #0c0825 100%);
-  --bg-secondary: linear-gradient(135deg, #060511 0%, #060511 50%, #060511 100%);
-  --bg-tertiary: rgb(6, 5, 17, 0.95);
+  /* Background Gradients - Main page backgrounds with deep navy/black theme */
+  --bg-gradient: linear-gradient(135deg, #0a0e1a 0%, #0f1419 25%, #1a1f2e 50%, #0a0e1a 100%);
+  --bg-secondary: linear-gradient(135deg, #0a0e1a 0%, #0f1419 50%, #1a1f2e 100%);
+  --bg-tertiary: rgba(10, 14, 26, 0.95);
 
-  /* Text Colors - All text elements */
+  /* Text Colors - All text elements with high contrast white */
   --text-primary: #ffffff;
-  /* Main headings, important text */
-  --text-secondary: #b0b0b0;
-  /* Secondary text, descriptions */
-  --text-tertiary: #808080;
-  /* Muted text, placeholders */
-  --text-disabled: #4a4a4a;
-  /* Disabled text */
+  /* Main headings, important text - pure white for maximum contrast */
+  --text-secondary: #e5e7eb;
+  /* Secondary text, descriptions - slightly off-white */
+  --text-tertiary: #9ca3af;
+  /* Muted text, placeholders - light gray */
+  --text-disabled: #6b7280;
+  /* Disabled text - medium gray */
   --text-inverse: #000000;
   /* Text on light backgrounds */
-  --text-link: #268328;
-  /* Links and clickable text */
-  --text-link-hover: #2a7a2b;
-  /* Hovered links */
+  --text-link: #60a5fa;
+  /* Links and clickable text - blue accent */
+  --text-link-hover: #3b82f6;
+  /* Hovered links - darker blue */
 
-  /* Card and Panel Backgrounds */
-  --card-bg: rgb(6, 5, 17, 0.95);
-  /* Main cards and containers */
-  --card-bg-secondary: rgb(6, 5, 17, 0.9);
-  /* Secondary cards */
-  --card-bg-tertiary: rgb(6, 5, 17, 0.85);
-  /* Tertiary cards */
-  --card-bg-hover: rgb(214, 214, 214, 0.95);
-  /* Hovered cards */
+  /* Card and Panel Backgrounds - Dark navy containers */
+  --card-bg: rgba(15, 20, 25, 0.9);
+  /* Main cards and containers - dark navy */
+  --card-bg-secondary: rgba(26, 31, 46, 0.8);
+  /* Secondary cards - slightly lighter */
+  --card-bg-tertiary: rgba(31, 41, 55, 0.7);
+  /* Tertiary cards - even lighter */
+  --card-bg-hover: rgba(55, 65, 81, 0.8);
+  /* Hovered cards - lighter on hover */
 
-  /* Border Colors */
-  --card-border: rgba(255, 255, 255, 0.2);
-  /* Main borders */
-  --card-border-hover: rgba(255, 255, 255, 0.4);
-  /* Hovered borders */
-  --card-border-focus: rgb(255, 255, 255, 0.6);
-  /* Focused borders */
-  --card-border-subtle: rgba(255, 255, 255, 0.1);
-  /* Subtle borders */
+  /* Border Colors - Subtle rounded borders like EdgeRack */
+  --card-border: rgba(75, 85, 99, 0.4);
+  /* Main borders - subtle gray */
+  --card-border-hover: rgba(156, 163, 175, 0.6);
+  /* Hovered borders - more visible */
+  --card-border-focus: rgba(96, 165, 250, 0.8);
+  /* Focused borders - blue accent */
+  --card-border-subtle: rgba(55, 65, 81, 0.3);
+  /* Subtle borders - very light */
 
-  /* Navigation Elements */
-  --nav-bg: rgb(26, 28, 37, 0.98);
-  /* Navigation background */
-  --nav-border: rgb(26, 28, 37, 0.6);
+  /* Navigation Elements - Match header styling */
+  --nav-bg: rgba(10, 14, 26, 0.95);
+  /* Navigation background - same as main bg */
+  --nav-border: rgba(75, 85, 99, 0.3);
   /* Navigation borders */
   --nav-text: #ffffff;
-  /* Navigation text */
-  --nav-text-hover: #268327;
-  /* Hovered navigation text */
-  --nav-link-active: rgb(38, 131, 39, 0.15);
+  /* Navigation text - white */
+  --nav-text-hover: #60a5fa;
+  /* Hovered navigation text - blue */
+  --nav-link-active: rgba(96, 165, 250, 0.2);
   /* Active navigation background */
 
-  /* Accent Colors */
-  --accent: #192b35;
-  /* Primary accent color */
-  --accent-hover: #f2e088;
-  /* Hovered accent color */
-  --accent-muted: rgb(50, 130, 146, 0.3);
-  /* Muted accent */
-  --accent-background: rgb(160, 141, 255, 0.1);
-  /* Accent backgrounds */
+  /* Accent Colors - Blue theme like EdgeRack interface */
+  --accent: #3b82f6;
+  /* Primary accent color - blue */
+  --accent-hover: #2563eb;
+  /* Hovered accent color - darker blue */
+  --accent-muted: rgba(59, 130, 246, 0.3);
+  /* Muted accent - translucent blue */
+  --accent-background: rgba(59, 130, 246, 0.1);
+  /* Accent backgrounds - very light blue */
 
-  /* Status Colors */
-  --status-success: #00ff88;
-  /* Success states */
-  --status-error: #ff4444;
-  /* Error states */
-  --status-warning: #ffaa00;
-  /* Warning states */
-  --status-info: #0088ff;
-  /* Info states */
-  --status-neutral: #888888;
-  /* Neutral states */
+  /* Status Colors - Match interface indicators */
+  --status-success: #22c55e;
+  /* Success states - green like Power button */
+  --status-error: #ef4444;
+  /* Error states - red */
+  --status-warning: #f59e0b;
+  /* Warning states - amber */
+  --status-info: #3b82f6;
+  /* Info states - blue */
+  --status-neutral: #9ca3af;
+  /* Neutral states - gray */
 
-  /* Interactive Elements */
-  --button-primary-bg: var(--accent);
-  --button-primary-hover: var(--accent-hover);
-  --button-primary-text: #000000;
+  /* Interactive Elements - Modern button styling */
+  --button-primary-bg: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --button-primary-text: #ffffff;
   --button-secondary-bg: transparent;
-  --button-secondary-border: var(--card-border);
-  --button-secondary-hover: rgba(64, 64, 64, 0.3);
-  --button-danger-bg: #ff4444;
-  --button-danger-hover: #dd2222;
+  --button-secondary-border: rgba(75, 85, 99, 0.4);
+  --button-secondary-hover: rgba(55, 65, 81, 0.5);
+  --button-danger-bg: #ef4444;
+  --button-danger-hover: #dc2626;
 
-  /* Form Elements */
-  --input-bg: rgba(26, 26, 26, 0.8);
-  --input-border: var(--card-border);
-  --input-focus-bg: rgb(6, 5, 17, 0.9);
-  --input-focus-border: var(--accent);
-  --input-placeholder: rgba(176, 176, 176, 0.6);
+  /* Form Elements - Dark input fields */
+  --input-bg: rgba(31, 41, 55, 0.8);
+  --input-border: rgba(75, 85, 99, 0.4);
+  --input-focus-bg: rgba(15, 20, 25, 0.9);
+  --input-focus-border: #3b82f6;
+  --input-placeholder: rgba(156, 163, 175, 0.6);
 
-  /* Shadow Colors */
-  --shadow-color: rgb(6, 5, 17, 0.9);
-  --shadow-subtle: rgb(6, 5, 17, 0.5);
-  --shadow-accent: rgba(0, 255, 136, 0.3);
+  /* Shadow Colors - Deep shadows for depth */
+  --shadow-color: rgba(0, 0, 0, 0.8);
+  --shadow-subtle: rgba(0, 0, 0, 0.4);
+  --shadow-accent: rgba(59, 130, 246, 0.3);
 
-  /* Panel Specific */
-  --section-bg: rgb(10, 10, 12, 0.9);
-  --section-border: rgba(0, 255, 136, 0.15);
-  --panel-bg: rgba(11, 11, 12, 0.95);
-  --panel-border: rgb(6, 5, 17, 0.6);
+  /* Panel Specific - Card-like containers */
+  --section-bg: rgba(15, 20, 25, 0.9);
+  --section-border: rgba(75, 85, 99, 0.3);
+  --panel-bg: rgba(10, 14, 26, 0.95);
+  --panel-border: rgba(75, 85, 99, 0.4);
 
-  /* Grid and Table Elements */
-  --grid-bg: var(--card-bg);
-  --grid-border: var(--card-border);
-  --grid-hover: var(--card-bg-hover);
-  --table-header-bg: rgb(6, 5, 17, 0.9);
-  --table-row-even: rgb(15, 12, 36, 0.5);
+  /* Grid and Table Elements - Data display styling */
+  --grid-bg: rgba(15, 20, 25, 0.9);
+  --grid-border: rgba(75, 85, 99, 0.4);
+  --grid-hover: rgba(55, 65, 81, 0.8);
+  --table-header-bg: rgba(31, 41, 55, 0.9);
+  --table-row-even: rgba(55, 65, 81, 0.3);
   --table-row-odd: transparent;
-  --table-row-hover: rgb(14, 10, 44, 0.7);
+  --table-row-hover: rgba(75, 85, 99, 0.5);
 
-  /* Scrollbar Colors */
+  /* Scrollbar Colors - Subtle scrollbars */
   --scrollbar-track: transparent;
-  --scrollbar-thumb: var(--card-border);
-  --scrollbar-thumb-hover: var(--accent);
+  --scrollbar-thumb: rgba(75, 85, 99, 0.5);
+  --scrollbar-thumb-hover: #3b82f6;
 }
 
 /* Light Theme Variables */
