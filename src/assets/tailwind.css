@@ -668,10 +668,11 @@ body {
 
 /* Custom Grid Layout - Main grid container */
 .custom-grid {
-  @apply m-auto grid grid-cols-1 gap-6 border-none rounded-lg p-6 min-w-full min-h-full text-center items-center content-center justify-center dark:rounded-full dark:bg-gray-600;
+  @apply m-auto grid grid-cols-1 gap-6 border-none p-6 min-w-full min-h-full text-center items-center content-center justify-center;
   background: var(--grid-bg);
   box-shadow: 0 4px 12px var(--shadow-color);
   backdrop-filter: blur(10px);
+  border-radius: 0;
 }
 
 /* Grid Item Hover Effects */
@@ -739,16 +740,16 @@ body {
   border: 1px solid var(--panel-border) !important;
 }
 
-/* Super Dark Theme Status Indicators */
-.theme-super-dark .status-indicator {
-  border: 2px solid var(--accent);
-  background: var(--panel-bg);
-}
-
 /* Dark Theme Specific Rules */
 .theme-dark .nav-container {
   background: var(--nav-bg);
   box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+/* Dark theme overrides for custom-grid */
+.dark .custom-grid {
+  border-radius: 0;
+  background: rgb(75 85 99);
 }
 
 /* Light Theme Specific Rules */
