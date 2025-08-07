@@ -668,11 +668,21 @@ body {
 
 /* Custom Grid Layout - Main grid container */
 .custom-grid {
-  @apply m-auto grid grid-cols-1 gap-6 border rounded-lg p-6 min-w-full min-h-full text-center items-center content-center justify-center;
+  @apply m-auto grid grid-cols-1 gap-6 border-none rounded-lg p-6 min-w-full min-h-full text-center items-center content-center justify-center;
   background: var(--grid-bg);
-  border: 1px solid var(--grid-border);
   box-shadow: 0 4px 12px var(--shadow-color);
   backdrop-filter: blur(10px);
+}
+
+/* Square-full utility class */
+.square-full {
+  border-radius: 0;
+}
+
+/* Dark theme overrides for custom-grid */
+.dark .custom-grid {
+  border-radius: 9999px;
+  background: rgb(75 85 99);
 }
 
 /* Grid Item Hover Effects */
@@ -735,7 +745,7 @@ body {
 }
 
 /* Override Tailwind dark mode classes in super dark theme */
-.theme-super-dark .custom-grid.dark\:bg-gray-600 {
+.theme-super-dark .custom-grid {
   background: var(--panel-bg) !important;
   border: 2px solid rgba(245, 245, 245, 0.9) !important;
 }
