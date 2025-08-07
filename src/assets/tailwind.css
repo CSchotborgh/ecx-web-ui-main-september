@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,51 +16,80 @@
 /* Default/Super Dark Theme Variables */
 :root {
   /* Background Gradients - Main page backgrounds */
-  --bg-gradient: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #111111 50%, #1a1a1a 100%);
-  --bg-secondary: linear-gradient(135deg, #050505 0%, #0f0f0f 50%, #1a1a1a 100%);
-  --bg-tertiary: rgba(5, 5, 5, 0.95);
-  
+  --bg-gradient: linear-gradient(135deg, #060511 0%, #060511 25%, #060511 50%, #0c0825 100%);
+  --bg-secondary: linear-gradient(135deg, #060511 0%, #060511 50%, #060511 100%);
+  --bg-tertiary: rgb(6, 5, 17, 0.95);
+
   /* Text Colors - All text elements */
-  --text-primary: #ffffff;           /* Main headings, important text */
-  --text-secondary: #b0b0b0;         /* Secondary text, descriptions */
-  --text-tertiary: #808080;          /* Muted text, placeholders */
-  --text-disabled: #4a4a4a;          /* Disabled text */
-  --text-inverse: #000000;           /* Text on light backgrounds */
-  --text-link: #00ff88;              /* Links and clickable text */
-  --text-link-hover: #00cc6a;        /* Hovered links */
-  
+  --text-primary: #ffffff;
+  /* Main headings, important text */
+  --text-secondary: #b0b0b0;
+  /* Secondary text, descriptions */
+  --text-tertiary: #808080;
+  /* Muted text, placeholders */
+  --text-disabled: #4a4a4a;
+  /* Disabled text */
+  --text-inverse: #000000;
+  /* Text on light backgrounds */
+  --text-link: #268328;
+  /* Links and clickable text */
+  --text-link-hover: #2a7a2b;
+  /* Hovered links */
+
   /* Card and Panel Backgrounds */
-  --card-bg: rgba(10, 10, 10, 0.95); /* Main cards and containers */
-  --card-bg-secondary: rgba(15, 15, 15, 0.9); /* Secondary cards */
-  --card-bg-tertiary: rgba(20, 20, 20, 0.85); /* Tertiary cards */
-  --card-bg-hover: rgba(25, 25, 25, 0.95); /* Hovered cards */
-  
+  --card-bg: rgb(6, 5, 17, 0.95);
+  /* Main cards and containers */
+  --card-bg-secondary: rgb(6, 5, 17, 0.9);
+  /* Secondary cards */
+  --card-bg-tertiary: rgb(6, 5, 17, 0.85);
+  /* Tertiary cards */
+  --card-bg-hover: rgb(214, 214, 214, 0.95);
+  /* Hovered cards */
+
   /* Border Colors */
-  --card-border: rgba(255, 255, 255, 0.2); /* Main borders */
-  --card-border-hover: rgba(255, 255, 255, 0.4); /* Hovered borders */
-  --card-border-focus: rgba(0, 255, 136, 0.6); /* Focused borders */
-  --card-border-subtle: rgba(255, 255, 255, 0.1); /* Subtle borders */
-  
+  --card-border: rgba(255, 255, 255, 0.2);
+  /* Main borders */
+  --card-border-hover: rgba(255, 255, 255, 0.4);
+  /* Hovered borders */
+  --card-border-focus: rgb(255, 255, 255, 0.6);
+  /* Focused borders */
+  --card-border-subtle: rgba(255, 255, 255, 0.1);
+  /* Subtle borders */
+
   /* Navigation Elements */
-  --nav-bg: rgba(0, 0, 0, 0.98);     /* Navigation background */
-  --nav-border: rgba(40, 40, 40, 0.6); /* Navigation borders */
-  --nav-text: #ffffff;               /* Navigation text */
-  --nav-text-hover: #00ff88;         /* Hovered navigation text */
-  --nav-link-active: rgba(0, 255, 136, 0.15); /* Active navigation background */
-  
+  --nav-bg: rgb(26, 28, 37, 0.98);
+  /* Navigation background */
+  --nav-border: rgb(26, 28, 37, 0.6);
+  /* Navigation borders */
+  --nav-text: #ffffff;
+  /* Navigation text */
+  --nav-text-hover: #268327;
+  /* Hovered navigation text */
+  --nav-link-active: rgb(38, 131, 39, 0.15);
+  /* Active navigation background */
+
   /* Accent Colors */
-  --accent: #00ff88;                 /* Primary accent color */
-  --accent-hover: #00cc6a;           /* Hovered accent color */
-  --accent-muted: rgba(0, 255, 136, 0.3); /* Muted accent */
-  --accent-background: rgba(0, 255, 136, 0.1); /* Accent backgrounds */
-  
+  --accent: #192b35;
+  /* Primary accent color */
+  --accent-hover: #f2e088;
+  /* Hovered accent color */
+  --accent-muted: rgb(50, 130, 146, 0.3);
+  /* Muted accent */
+  --accent-background: rgb(160, 141, 255, 0.1);
+  /* Accent backgrounds */
+
   /* Status Colors */
-  --status-success: #00ff88;         /* Success states */
-  --status-error: #ff4444;           /* Error states */
-  --status-warning: #ffaa00;         /* Warning states */
-  --status-info: #0088ff;            /* Info states */
-  --status-neutral: #888888;         /* Neutral states */
-  
+  --status-success: #00ff88;
+  /* Success states */
+  --status-error: #ff4444;
+  /* Error states */
+  --status-warning: #ffaa00;
+  /* Warning states */
+  --status-info: #0088ff;
+  /* Info states */
+  --status-neutral: #888888;
+  /* Neutral states */
+
   /* Interactive Elements */
   --button-primary-bg: var(--accent);
   --button-primary-hover: var(--accent-hover);
@@ -71,34 +99,34 @@
   --button-secondary-hover: rgba(64, 64, 64, 0.3);
   --button-danger-bg: #ff4444;
   --button-danger-hover: #dd2222;
-  
+
   /* Form Elements */
   --input-bg: rgba(26, 26, 26, 0.8);
   --input-border: var(--card-border);
-  --input-focus-bg: rgba(17, 17, 17, 0.9);
+  --input-focus-bg: rgb(6, 5, 17, 0.9);
   --input-focus-border: var(--accent);
   --input-placeholder: rgba(176, 176, 176, 0.6);
-  
+
   /* Shadow Colors */
-  --shadow-color: rgba(0, 0, 0, 0.9);
-  --shadow-subtle: rgba(0, 0, 0, 0.5);
+  --shadow-color: rgb(6, 5, 17, 0.9);
+  --shadow-subtle: rgb(6, 5, 17, 0.5);
   --shadow-accent: rgba(0, 255, 136, 0.3);
-  
+
   /* Panel Specific */
-  --section-bg: rgba(5, 5, 5, 0.9);
+  --section-bg: rgb(10, 10, 12, 0.9);
   --section-border: rgba(0, 255, 136, 0.15);
   --panel-bg: rgba(11, 11, 12, 0.95);
-  --panel-border: rgba(40, 40, 40, 0.6);
-  
+  --panel-border: rgb(6, 5, 17, 0.6);
+
   /* Grid and Table Elements */
   --grid-bg: var(--card-bg);
   --grid-border: var(--card-border);
   --grid-hover: var(--card-bg-hover);
-  --table-header-bg: rgba(20, 20, 20, 0.9);
-  --table-row-even: rgba(15, 15, 15, 0.5);
+  --table-header-bg: rgb(6, 5, 17, 0.9);
+  --table-row-even: rgb(15, 12, 36, 0.5);
   --table-row-odd: transparent;
-  --table-row-hover: rgba(25, 25, 25, 0.7);
-  
+  --table-row-hover: rgb(14, 10, 44, 0.7);
+
   /* Scrollbar Colors */
   --scrollbar-track: transparent;
   --scrollbar-thumb: var(--card-border);
@@ -108,51 +136,51 @@
 /* Light Theme Variables */
 .theme-light {
   /* Background Gradients */
-  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-  --bg-secondary: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
-  --bg-tertiary: rgba(255, 255, 255, 0.95);
-  
+  --bg-gradient: linear-gradient(135deg, #c2c5c7 0%, #e2e8f0 50%, #c2c5c7 100%);
+  --bg-secondary: linear-gradient(135deg, #c2c5c7 0%, #f1f5f9 50%, #c2c5c7 100%);
+  --bg-tertiary: rgb(194, 197, 199, 0.95);
+
   /* Text Colors */
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-primary: #1a1c25;
+  --text-secondary: #1a1c25;
   --text-tertiary: #64748b;
   --text-disabled: #94a3b8;
-  --text-inverse: #ffffff;
+  --text-inverse: #1a1c25;
   --text-link: #3b82f6;
   --text-link-hover: #2563eb;
-  
+
   /* Card and Panel Backgrounds */
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --card-bg-secondary: rgba(248, 250, 252, 0.95);
+  --card-bg: rgb(194, 197, 199, 0.9);
+  --card-bg-secondary: rgb(194, 197, 199, 0.95);
   --card-bg-tertiary: rgba(241, 245, 249, 0.9);
   --card-bg-hover: rgba(255, 255, 255, 0.95);
-  
+
   /* Border Colors */
   --card-border: rgba(226, 232, 240, 0.8);
   --card-border-hover: rgba(148, 163, 184, 0.6);
   --card-border-focus: rgba(59, 130, 246, 0.6);
   --card-border-subtle: rgba(241, 245, 249, 0.5);
-  
+
   /* Navigation Elements */
   --nav-bg: rgba(255, 255, 255, 0.95);
   --nav-border: rgba(226, 232, 240, 0.6);
   --nav-text: #0f172a;
   --nav-text-hover: #3b82f6;
   --nav-link-active: rgba(59, 130, 246, 0.1);
-  
+
   /* Accent Colors */
   --accent: #3b82f6;
   --accent-hover: #2563eb;
   --accent-muted: rgba(59, 130, 246, 0.3);
   --accent-background: rgba(59, 130, 246, 0.1);
-  
+
   /* Status Colors */
-  --status-success: #10b981;
+  --status-success: #c0e17f;
   --status-error: #ef4444;
   --status-warning: #f59e0b;
   --status-info: #06b6d4;
   --status-neutral: #6b7280;
-  
+
   /* Interactive Elements */
   --button-primary-bg: var(--accent);
   --button-primary-hover: var(--accent-hover);
@@ -162,25 +190,25 @@
   --button-secondary-hover: rgba(241, 245, 249, 0.7);
   --button-danger-bg: #ef4444;
   --button-danger-hover: #dc2626;
-  
+
   /* Form Elements */
   --input-bg: rgba(255, 255, 255, 0.9);
   --input-border: rgba(226, 232, 240, 0.8);
   --input-focus-bg: rgba(255, 255, 255, 1);
   --input-focus-border: var(--accent);
   --input-placeholder: rgba(100, 116, 139, 0.6);
-  
+
   /* Shadow Colors */
-  --shadow-color: rgba(0, 0, 0, 0.1);
-  --shadow-subtle: rgba(0, 0, 0, 0.05);
-  --shadow-accent: rgba(59, 130, 246, 0.2);
-  
+  --shadow-color: rgb(72, 136, 202, 0.1);
+  --shadow-subtle: rgb(74, 139, 206, 0.05);
+  --shadow-accent: rgb(62, 113, 165, 0.2);
+
   /* Panel Specific */
   --section-bg: rgba(248, 250, 252, 0.9);
   --section-border: rgba(226, 232, 240, 0.5);
   --panel-bg: rgba(255, 255, 255, 0.95);
   --panel-border: rgba(226, 232, 240, 0.6);
-  
+
   /* Grid and Table Elements */
   --grid-bg: var(--card-bg);
   --grid-border: var(--card-border);
@@ -189,7 +217,7 @@
   --table-row-even: rgba(248, 250, 252, 0.5);
   --table-row-odd: transparent;
   --table-row-hover: rgba(241, 245, 249, 0.7);
-  
+
   /* Scrollbar Colors */
   --scrollbar-track: rgba(241, 245, 249, 0.5);
   --scrollbar-thumb: rgba(148, 163, 184, 0.5);
@@ -202,7 +230,7 @@
   --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   --bg-secondary: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
   --bg-tertiary: rgba(15, 23, 42, 0.95);
-  
+
   /* Text Colors */
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
@@ -211,39 +239,39 @@
   --text-inverse: #0f172a;
   --text-link: #60a5fa;
   --text-link-hover: #3b82f6;
-  
+
   /* Card and Panel Backgrounds */
   --card-bg: rgba(15, 23, 42, 0.9);
   --card-bg-secondary: rgba(30, 41, 59, 0.85);
   --card-bg-tertiary: rgba(51, 65, 85, 0.8);
   --card-bg-hover: rgba(30, 41, 59, 0.95);
-  
+
   /* Border Colors */
   --card-border: rgba(148, 163, 184, 0.2);
   --card-border-hover: rgba(148, 163, 184, 0.4);
   --card-border-focus: rgba(96, 165, 250, 0.6);
   --card-border-subtle: rgba(148, 163, 184, 0.1);
-  
+
   /* Navigation Elements */
-  --nav-bg: rgba(2, 6, 23, 0.95);
+  --nav-bg: rgb(6, 5, 17, 0.95);
   --nav-border: rgba(148, 163, 184, 0.2);
   --nav-text: #f8fafc;
   --nav-text-hover: #60a5fa;
   --nav-link-active: rgba(96, 165, 250, 0.15);
-  
+
   /* Accent Colors */
   --accent: #60a5fa;
   --accent-hover: #3b82f6;
   --accent-muted: rgba(96, 165, 250, 0.3);
   --accent-background: rgba(96, 165, 250, 0.1);
-  
+
   /* Status Colors */
   --status-success: #34d399;
   --status-error: #f87171;
   --status-warning: #fbbf24;
   --status-info: #38bdf8;
   --status-neutral: #9ca3af;
-  
+
   /* Interactive Elements */
   --button-primary-bg: var(--accent);
   --button-primary-hover: var(--accent-hover);
@@ -253,25 +281,25 @@
   --button-secondary-hover: rgba(51, 65, 85, 0.5);
   --button-danger-bg: #f87171;
   --button-danger-hover: #ef4444;
-  
+
   /* Form Elements */
   --input-bg: rgba(30, 41, 59, 0.8);
   --input-border: var(--card-border);
   --input-focus-bg: rgba(15, 23, 42, 0.9);
   --input-focus-border: var(--accent);
   --input-placeholder: rgba(203, 213, 225, 0.6);
-  
+
   /* Shadow Colors */
   --shadow-color: rgba(0, 0, 0, 0.7);
   --shadow-subtle: rgba(0, 0, 0, 0.4);
   --shadow-accent: rgba(96, 165, 250, 0.3);
-  
+
   /* Panel Specific */
   --section-bg: rgba(30, 41, 59, 0.9);
   --section-border: rgba(148, 163, 184, 0.15);
   --panel-bg: rgba(15, 23, 42, 0.95);
   --panel-border: rgba(148, 163, 184, 0.3);
-  
+
   /* Grid and Table Elements */
   --grid-bg: var(--card-bg);
   --grid-border: var(--card-border);
@@ -280,7 +308,7 @@
   --table-row-even: rgba(30, 41, 59, 0.5);
   --table-row-odd: transparent;
   --table-row-hover: rgba(51, 65, 85, 0.7);
-  
+
   /* Scrollbar Colors */
   --scrollbar-track: rgba(30, 41, 59, 0.3);
   --scrollbar-thumb: var(--card-border);
@@ -1195,8 +1223,13 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Slide Up Animation */
@@ -1205,20 +1238,26 @@ body {
 }
 
 @keyframes slideUp {
-  from { 
-    transform: translateY(10px); 
-    opacity: 0; 
+  from {
+    transform: translateY(10px);
+    opacity: 0;
   }
-  to { 
-    transform: translateY(0); 
-    opacity: 1; 
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
 /* Rotate Animation */
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Pulse Animation */
