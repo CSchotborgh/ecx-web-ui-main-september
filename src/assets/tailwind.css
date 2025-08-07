@@ -462,7 +462,7 @@ body {
 
 /* Primary Action Buttons - Main call-to-action elements */
 .btn-primary {
-  @apply px-6 py-3 font-medium transition-all duration-200 shadow-sm;
+  @apply px-4 py-2 font-medium transition-all duration-200 shadow-sm;
   background: var(--button-primary-bg);
   color: var(--button-primary-text);
   border: none;
@@ -488,7 +488,7 @@ body {
 
 /* Secondary Buttons - Alternative actions */
 .btn-secondary {
-  @apply px-6 py-3 font-medium transition-all duration-200 border;
+  @apply px-4 py-2 font-medium transition-all duration-200 border;
   background: var(--button-secondary-bg);
   color: var(--text-primary);
   border: 1px solid var(--button-secondary-border);
@@ -504,7 +504,7 @@ body {
 
 /* Tertiary Buttons - Minimal styling */
 .btn-tertiary {
-  @apply px-4 py-2 font-medium transition-all duration-200;
+  @apply px-3 py-1.5 font-medium transition-all duration-200;
   background: transparent;
   color: var(--text-secondary);
   border: none;
@@ -518,7 +518,7 @@ body {
 
 /* Danger/Destructive Buttons - Warning actions */
 .btn-danger {
-  @apply px-6 py-3 font-semibold transition-all duration-200;
+  @apply px-4 py-2 font-semibold transition-all duration-200;
   background: var(--button-danger-bg);
   color: white;
   border: none;
