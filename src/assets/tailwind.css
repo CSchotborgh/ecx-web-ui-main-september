@@ -579,7 +579,7 @@ body {
 
 /* Textarea Elements */
 .form-textarea {
-  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full resize-vertical;
+  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full resize-y;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
   color: var(--text-primary);
