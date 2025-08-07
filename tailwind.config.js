@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans:['Lato'],
+        sans: ['Lato'],
       },
     },
     container: {
