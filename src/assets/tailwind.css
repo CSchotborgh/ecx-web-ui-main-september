@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,59 +10,288 @@
   font-style: normal;
 }
 
-/* Enhanced Theme Variables */
+/* ==========================================================================
+   THEME VARIABLE DEFINITIONS
+   ========================================================================== */
+
+/* Default/Super Dark Theme Variables */
 :root {
-  --bg-gradient: linear-gradient(135deg, #1a1c25 0%, #1a1c25 50%, #0b0b0b 100%);
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --card-bg: rgb(61, 66, 77, 0.8);
-  --card-border: rgba(148, 163, 184, 0.3);
-  --nav-bg: rgb(135, 170, 197, 0.95);
-  --accent: #3b82f6;
-  --accent-hover: #6693f5;
-  --shadow-color: rgb(136, 172, 200, 0.5);
-}
-
-.theme-light {
-  --bg-gradient: linear-gradient(135deg, #88b3d2 0%, #8692a2 50%, #cbd5e1 100%);
-  --text-primary: #0f172a;
-  --text-secondary: #1a1c25;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --card-border: rgb(255, 255, 255, 0.4);
-  --nav-bg: rgba(255, 255, 255, 0.95);
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-.theme-dark {
-  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1a1c25 100%);
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --card-bg: rgba(15, 23, 42, 0.9);
-  --card-border: rgba(148, 163, 184, 0.2);
-  --nav-bg: rgba(2, 6, 23, 0.95);
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --shadow-color: rgba(0, 0, 0, 0.7);
-}
-
-.theme-super-dark {
+  /* Background Gradients - Main page backgrounds */
   --bg-gradient: linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #111111 50%, #1a1a1a 100%);
-  --text-primary: #ffffff;
-  --text-secondary: #b0b0b0;
-  --card-bg: rgba(10, 10, 10, 0.95);
-  --card-border: rgb(255, 255, 255, 0.2);
-  --nav-bg: rgba(0, 0, 0, 0.98);
-  --accent: #00ff88;
-  --accent-hover: #00cc6a;
+  --bg-secondary: linear-gradient(135deg, #050505 0%, #0f0f0f 50%, #1a1a1a 100%);
+  --bg-tertiary: rgba(5, 5, 5, 0.95);
+  
+  /* Text Colors - All text elements */
+  --text-primary: #ffffff;           /* Main headings, important text */
+  --text-secondary: #b0b0b0;         /* Secondary text, descriptions */
+  --text-tertiary: #808080;          /* Muted text, placeholders */
+  --text-disabled: #4a4a4a;          /* Disabled text */
+  --text-inverse: #000000;           /* Text on light backgrounds */
+  --text-link: #00ff88;              /* Links and clickable text */
+  --text-link-hover: #00cc6a;        /* Hovered links */
+  
+  /* Card and Panel Backgrounds */
+  --card-bg: rgba(10, 10, 10, 0.95); /* Main cards and containers */
+  --card-bg-secondary: rgba(15, 15, 15, 0.9); /* Secondary cards */
+  --card-bg-tertiary: rgba(20, 20, 20, 0.85); /* Tertiary cards */
+  --card-bg-hover: rgba(25, 25, 25, 0.95); /* Hovered cards */
+  
+  /* Border Colors */
+  --card-border: rgba(255, 255, 255, 0.2); /* Main borders */
+  --card-border-hover: rgba(255, 255, 255, 0.4); /* Hovered borders */
+  --card-border-focus: rgba(0, 255, 136, 0.6); /* Focused borders */
+  --card-border-subtle: rgba(255, 255, 255, 0.1); /* Subtle borders */
+  
+  /* Navigation Elements */
+  --nav-bg: rgba(0, 0, 0, 0.98);     /* Navigation background */
+  --nav-border: rgba(40, 40, 40, 0.6); /* Navigation borders */
+  --nav-text: #ffffff;               /* Navigation text */
+  --nav-text-hover: #00ff88;         /* Hovered navigation text */
+  --nav-link-active: rgba(0, 255, 136, 0.15); /* Active navigation background */
+  
+  /* Accent Colors */
+  --accent: #00ff88;                 /* Primary accent color */
+  --accent-hover: #00cc6a;           /* Hovered accent color */
+  --accent-muted: rgba(0, 255, 136, 0.3); /* Muted accent */
+  --accent-background: rgba(0, 255, 136, 0.1); /* Accent backgrounds */
+  
+  /* Status Colors */
+  --status-success: #00ff88;         /* Success states */
+  --status-error: #ff4444;           /* Error states */
+  --status-warning: #ffaa00;         /* Warning states */
+  --status-info: #0088ff;            /* Info states */
+  --status-neutral: #888888;         /* Neutral states */
+  
+  /* Interactive Elements */
+  --button-primary-bg: var(--accent);
+  --button-primary-hover: var(--accent-hover);
+  --button-primary-text: #000000;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--card-border);
+  --button-secondary-hover: rgba(64, 64, 64, 0.3);
+  --button-danger-bg: #ff4444;
+  --button-danger-hover: #dd2222;
+  
+  /* Form Elements */
+  --input-bg: rgba(26, 26, 26, 0.8);
+  --input-border: var(--card-border);
+  --input-focus-bg: rgba(17, 17, 17, 0.9);
+  --input-focus-border: var(--accent);
+  --input-placeholder: rgba(176, 176, 176, 0.6);
+  
+  /* Shadow Colors */
   --shadow-color: rgba(0, 0, 0, 0.9);
+  --shadow-subtle: rgba(0, 0, 0, 0.5);
+  --shadow-accent: rgba(0, 255, 136, 0.3);
+  
+  /* Panel Specific */
   --section-bg: rgba(5, 5, 5, 0.9);
   --section-border: rgba(0, 255, 136, 0.15);
-  --panel-bg: rgb(11, 11, 12, 0.95);
+  --panel-bg: rgba(11, 11, 12, 0.95);
   --panel-border: rgba(40, 40, 40, 0.6);
+  
+  /* Grid and Table Elements */
+  --grid-bg: var(--card-bg);
+  --grid-border: var(--card-border);
+  --grid-hover: var(--card-bg-hover);
+  --table-header-bg: rgba(20, 20, 20, 0.9);
+  --table-row-even: rgba(15, 15, 15, 0.5);
+  --table-row-odd: transparent;
+  --table-row-hover: rgba(25, 25, 25, 0.7);
+  
+  /* Scrollbar Colors */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: var(--card-border);
+  --scrollbar-thumb-hover: var(--accent);
 }
 
+/* Light Theme Variables */
+.theme-light {
+  /* Background Gradients */
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  --bg-secondary: linear-gradient(135deg, #ffffff 0%, #f1f5f9 50%, #e2e8f0 100%);
+  --bg-tertiary: rgba(255, 255, 255, 0.95);
+  
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --text-disabled: #94a3b8;
+  --text-inverse: #ffffff;
+  --text-link: #3b82f6;
+  --text-link-hover: #2563eb;
+  
+  /* Card and Panel Backgrounds */
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-bg-secondary: rgba(248, 250, 252, 0.95);
+  --card-bg-tertiary: rgba(241, 245, 249, 0.9);
+  --card-bg-hover: rgba(255, 255, 255, 0.95);
+  
+  /* Border Colors */
+  --card-border: rgba(226, 232, 240, 0.8);
+  --card-border-hover: rgba(148, 163, 184, 0.6);
+  --card-border-focus: rgba(59, 130, 246, 0.6);
+  --card-border-subtle: rgba(241, 245, 249, 0.5);
+  
+  /* Navigation Elements */
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-border: rgba(226, 232, 240, 0.6);
+  --nav-text: #0f172a;
+  --nav-text-hover: #3b82f6;
+  --nav-link-active: rgba(59, 130, 246, 0.1);
+  
+  /* Accent Colors */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-muted: rgba(59, 130, 246, 0.3);
+  --accent-background: rgba(59, 130, 246, 0.1);
+  
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-error: #ef4444;
+  --status-warning: #f59e0b;
+  --status-info: #06b6d4;
+  --status-neutral: #6b7280;
+  
+  /* Interactive Elements */
+  --button-primary-bg: var(--accent);
+  --button-primary-hover: var(--accent-hover);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--card-border);
+  --button-secondary-hover: rgba(241, 245, 249, 0.7);
+  --button-danger-bg: #ef4444;
+  --button-danger-hover: #dc2626;
+  
+  /* Form Elements */
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --input-border: rgba(226, 232, 240, 0.8);
+  --input-focus-bg: rgba(255, 255, 255, 1);
+  --input-focus-border: var(--accent);
+  --input-placeholder: rgba(100, 116, 139, 0.6);
+  
+  /* Shadow Colors */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-subtle: rgba(0, 0, 0, 0.05);
+  --shadow-accent: rgba(59, 130, 246, 0.2);
+  
+  /* Panel Specific */
+  --section-bg: rgba(248, 250, 252, 0.9);
+  --section-border: rgba(226, 232, 240, 0.5);
+  --panel-bg: rgba(255, 255, 255, 0.95);
+  --panel-border: rgba(226, 232, 240, 0.6);
+  
+  /* Grid and Table Elements */
+  --grid-bg: var(--card-bg);
+  --grid-border: var(--card-border);
+  --grid-hover: var(--card-bg-hover);
+  --table-header-bg: rgba(241, 245, 249, 0.9);
+  --table-row-even: rgba(248, 250, 252, 0.5);
+  --table-row-odd: transparent;
+  --table-row-hover: rgba(241, 245, 249, 0.7);
+  
+  /* Scrollbar Colors */
+  --scrollbar-track: rgba(241, 245, 249, 0.5);
+  --scrollbar-thumb: rgba(148, 163, 184, 0.5);
+  --scrollbar-thumb-hover: var(--accent);
+}
+
+/* Dark Theme Variables */
+.theme-dark {
+  /* Background Gradients */
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --bg-secondary: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  --bg-tertiary: rgba(15, 23, 42, 0.95);
+  
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-disabled: #64748b;
+  --text-inverse: #0f172a;
+  --text-link: #60a5fa;
+  --text-link-hover: #3b82f6;
+  
+  /* Card and Panel Backgrounds */
+  --card-bg: rgba(15, 23, 42, 0.9);
+  --card-bg-secondary: rgba(30, 41, 59, 0.85);
+  --card-bg-tertiary: rgba(51, 65, 85, 0.8);
+  --card-bg-hover: rgba(30, 41, 59, 0.95);
+  
+  /* Border Colors */
+  --card-border: rgba(148, 163, 184, 0.2);
+  --card-border-hover: rgba(148, 163, 184, 0.4);
+  --card-border-focus: rgba(96, 165, 250, 0.6);
+  --card-border-subtle: rgba(148, 163, 184, 0.1);
+  
+  /* Navigation Elements */
+  --nav-bg: rgba(2, 6, 23, 0.95);
+  --nav-border: rgba(148, 163, 184, 0.2);
+  --nav-text: #f8fafc;
+  --nav-text-hover: #60a5fa;
+  --nav-link-active: rgba(96, 165, 250, 0.15);
+  
+  /* Accent Colors */
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --accent-muted: rgba(96, 165, 250, 0.3);
+  --accent-background: rgba(96, 165, 250, 0.1);
+  
+  /* Status Colors */
+  --status-success: #34d399;
+  --status-error: #f87171;
+  --status-warning: #fbbf24;
+  --status-info: #38bdf8;
+  --status-neutral: #9ca3af;
+  
+  /* Interactive Elements */
+  --button-primary-bg: var(--accent);
+  --button-primary-hover: var(--accent-hover);
+  --button-primary-text: #0f172a;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--card-border);
+  --button-secondary-hover: rgba(51, 65, 85, 0.5);
+  --button-danger-bg: #f87171;
+  --button-danger-hover: #ef4444;
+  
+  /* Form Elements */
+  --input-bg: rgba(30, 41, 59, 0.8);
+  --input-border: var(--card-border);
+  --input-focus-bg: rgba(15, 23, 42, 0.9);
+  --input-focus-border: var(--accent);
+  --input-placeholder: rgba(203, 213, 225, 0.6);
+  
+  /* Shadow Colors */
+  --shadow-color: rgba(0, 0, 0, 0.7);
+  --shadow-subtle: rgba(0, 0, 0, 0.4);
+  --shadow-accent: rgba(96, 165, 250, 0.3);
+  
+  /* Panel Specific */
+  --section-bg: rgba(30, 41, 59, 0.9);
+  --section-border: rgba(148, 163, 184, 0.15);
+  --panel-bg: rgba(15, 23, 42, 0.95);
+  --panel-border: rgba(148, 163, 184, 0.3);
+  
+  /* Grid and Table Elements */
+  --grid-bg: var(--card-bg);
+  --grid-border: var(--card-border);
+  --grid-hover: var(--card-bg-hover);
+  --table-header-bg: rgba(51, 65, 85, 0.9);
+  --table-row-even: rgba(30, 41, 59, 0.5);
+  --table-row-odd: transparent;
+  --table-row-hover: rgba(51, 65, 85, 0.7);
+  
+  /* Scrollbar Colors */
+  --scrollbar-track: rgba(30, 41, 59, 0.3);
+  --scrollbar-thumb: var(--card-border);
+  --scrollbar-thumb-hover: var(--accent);
+}
+
+/* ==========================================================================
+   BASE HTML ELEMENTS
+   ========================================================================== */
+
+/* Root HTML and Body Elements */
 html,
 body {
   @apply font-sans min-h-screen;
@@ -74,11 +304,16 @@ body {
   padding: 0;
 }
 
+/* Font Family Override for Flowbite Components */
 .fwb-component {
   font-family: 'Lato', sans-serif !important;
 }
 
-/* Modern Clean Cards */
+/* ==========================================================================
+   CARD AND CONTAINER ELEMENTS
+   ========================================================================== */
+
+/* Main Card Component - Primary containers for content */
 .card {
   @apply border rounded-lg p-6 shadow-lg transition-all duration-300;
   background: var(--card-bg);
@@ -87,19 +322,57 @@ body {
   box-shadow: 0 4px 12px var(--shadow-color);
 }
 
+/* Card Hover State - Interactive feedback */
 .card:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px var(--shadow-color);
-  border: 1px solid rgba(128, 128, 128, 0.4);
+  border: 1px solid var(--card-border-hover);
+  background: var(--card-bg-hover);
 }
 
-/* Clean Navigation */
+/* Secondary Card Variant - Less prominent containers */
+.card-secondary {
+  @apply border rounded-lg p-4 shadow-sm transition-all duration-300;
+  background: var(--card-bg-secondary);
+  border: 1px solid var(--card-border-subtle);
+  backdrop-filter: blur(8px);
+}
+
+/* Tertiary Card Variant - Minimal containers */
+.card-tertiary {
+  @apply border rounded-md p-3 transition-all duration-300;
+  background: var(--card-bg-tertiary);
+  border: 1px solid var(--card-border-subtle);
+}
+
+/* Compact Card Variant - Space-efficient containers */
+.card-compact {
+  @apply border rounded-md p-2 shadow-sm transition-all duration-300;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* ==========================================================================
+   NAVIGATION ELEMENTS
+   ========================================================================== */
+
+/* Main Navigation Container */
 .nav-container {
   @apply border-b transition-all duration-300;
   background: var(--nav-bg);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--nav-border);
   backdrop-filter: blur(15px);
   box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Navigation Brand/Logo */
+.nav-brand {
+  @apply font-bold text-lg transition-colors duration-200;
+  color: var(--nav-text);
+}
+
+.nav-brand:hover {
+  color: var(--nav-text-hover);
 }
 
 /* Navigation Links */
@@ -110,96 +383,320 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: var(--nav-text-hover);
+  background: var(--accent-background);
+  border: 1px solid var(--accent-muted);
 }
 
+/* Active Navigation Link */
 .nav-link.active,
 .router-link-exact-active {
-  color: var(--text-primary);
-  background: rgba(59, 130, 246, 0.15);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--nav-text);
+  background: var(--nav-link-active);
+  border: 1px solid var(--accent-muted);
   font-weight: 600;
 }
 
-/* Clean Button Styles */
+/* Navigation Dropdown Menu */
+.nav-dropdown {
+  @apply absolute top-full left-0 mt-2 rounded-lg shadow-lg border;
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-border);
+  backdrop-filter: blur(15px);
+  min-width: 200px;
+}
+
+/* Navigation Dropdown Items */
+.nav-dropdown-item {
+  @apply px-4 py-2 transition-colors duration-200 cursor-pointer;
+  color: var(--nav-text);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-dropdown-item:hover {
+  background: var(--accent-background);
+  color: var(--nav-text-hover);
+}
+
+.nav-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   BUTTON ELEMENTS
+   ========================================================================== */
+
+/* Primary Action Buttons - Main call-to-action elements */
 .btn-primary {
   @apply px-6 py-3 rounded-md font-medium transition-all duration-200 shadow-sm;
-  background: var(--accent);
-  color: #000000;
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
   border: none;
   font-weight: 500;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
+  background: var(--button-primary-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+  box-shadow: 0 4px 12px var(--shadow-accent);
 }
 
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary Buttons - Alternative actions */
 .btn-secondary {
   @apply px-6 py-3 rounded-md font-medium transition-all duration-200 border;
-  background: transparent;
+  background: var(--button-secondary-bg);
   color: var(--text-primary);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--button-secondary-border);
   font-weight: 500;
 }
 
 .btn-secondary:hover {
-  background: rgba(64, 64, 64, 0.2);
+  background: var(--button-secondary-hover);
   border: 1px solid var(--accent);
   color: var(--accent);
 }
 
+/* Tertiary Buttons - Minimal styling */
+.btn-tertiary {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+}
+
+.btn-tertiary:hover {
+  background: var(--accent-background);
+  color: var(--accent);
+}
+
+/* Danger/Destructive Buttons - Warning actions */
 .btn-danger {
   @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200;
-  background: #ef4444;
+  background: var(--button-danger-bg);
   color: white;
   border: none;
 }
 
 .btn-danger:hover {
-  background: #dc2626;
+  background: var(--button-danger-hover);
   transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
 }
 
-/* Clean Form Elements */
+/* Small Button Variant */
+.btn-sm {
+  @apply px-3 py-1.5 text-sm;
+}
+
+/* Large Button Variant */
+.btn-lg {
+  @apply px-8 py-4 text-lg;
+}
+
+/* Icon-only Buttons */
+.btn-icon {
+  @apply p-2 rounded-md transition-all duration-200;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.btn-icon:hover {
+  background: var(--accent-background);
+  border: 1px solid var(--accent-muted);
+}
+
+/* ==========================================================================
+   FORM ELEMENTS
+   ========================================================================== */
+
+/* Text Input Fields */
 .form-input {
-  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base;
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid var(--card-border);
+  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
   color: var(--text-primary);
 }
 
+/* Input Placeholder Styling */
 .form-input::placeholder {
-  color: var(--text-secondary);
-  opacity: 0.6;
+  color: var(--input-placeholder);
+  opacity: 1;
 }
 
+/* Input Focus State */
 .form-input:focus {
   outline: none;
-  border: 1px solid var(--accent);
-  box-shadow: 0 0 0 2px rgba(0, 255, 136, 0.1);
-  background: rgba(17, 17, 17, 0.9);
+  border: 1px solid var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--accent-background);
+  background: var(--input-focus-bg);
 }
 
+/* Input Error State */
+.form-input.error {
+  border: 1px solid var(--status-error);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+}
+
+/* Input Success State */
+.form-input.success {
+  border: 1px solid var(--status-success);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+}
+
+/* Form Labels */
 .form-label {
   @apply block text-sm font-semibold mb-2;
   color: var(--text-primary);
 }
 
-/* Grid Layout */
+/* Required Field Indicator */
+.form-label.required::after {
+  content: ' *';
+  color: var(--status-error);
+}
+
+/* Form Help Text */
+.form-help {
+  @apply text-xs mt-1;
+  color: var(--text-tertiary);
+}
+
+/* Form Error Text */
+.form-error {
+  @apply text-xs mt-1;
+  color: var(--status-error);
+}
+
+/* Textarea Elements */
+.form-textarea {
+  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full resize-vertical;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+  min-height: 100px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border: 1px solid var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--accent-background);
+  background: var(--input-focus-bg);
+}
+
+/* Select Dropdown Elements */
+.form-select {
+  @apply border rounded-md px-4 py-3 transition-all duration-200 text-base w-full;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+}
+
+.form-select:focus {
+  outline: none;
+  border: 1px solid var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--accent-background);
+  background: var(--input-focus-bg);
+}
+
+/* Checkbox Elements */
+.form-checkbox {
+  @apply w-4 h-4 rounded border-2 transition-colors duration-200;
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  accent-color: var(--accent);
+}
+
+.form-checkbox:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Radio Button Elements */
+.form-radio {
+  @apply w-4 h-4 border-2 transition-colors duration-200;
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  accent-color: var(--accent);
+}
+
+.form-radio:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   GRID AND TABLE ELEMENTS
+   ========================================================================== */
+
+/* Custom Grid Layout - Main grid container */
 .custom-grid {
   @apply m-auto grid grid-cols-1 gap-6 border rounded-lg p-6 min-w-full min-h-full text-center items-center content-center justify-center;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  background: var(--grid-bg);
+  border: 1px solid var(--grid-border);
   box-shadow: 0 4px 12px var(--shadow-color);
   backdrop-filter: blur(10px);
 }
 
-/* Grid rows specific styling for super dark theme */
+/* Grid Item Hover Effects */
+.custom-grid:hover {
+  background: var(--grid-hover);
+  border-color: var(--card-border-hover);
+}
+
+/* Data Table Container */
+.data-table {
+  @apply w-full border-collapse rounded-lg overflow-hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Table Header */
+.data-table thead {
+  background: var(--table-header-bg);
+}
+
+.data-table th {
+  @apply px-4 py-3 text-left font-semibold;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--card-border);
+}
+
+/* Table Body Rows */
+.data-table tbody tr:nth-child(even) {
+  background: var(--table-row-even);
+}
+
+.data-table tbody tr:nth-child(odd) {
+  background: var(--table-row-odd);
+}
+
+.data-table tbody tr:hover {
+  background: var(--table-row-hover);
+}
+
+/* Table Data Cells */
+.data-table td {
+  @apply px-4 py-3;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border-subtle);
+}
+
+/* ==========================================================================
+   THEME-SPECIFIC OVERRIDES
+   ========================================================================== */
+
+/* Super Dark Theme Specific Rules */
 .theme-super-dark .custom-grid {
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
@@ -209,43 +706,176 @@ body {
   background: var(--panel-bg);
 }
 
-/* Override dark mode gray-600 background for super dark theme */
+/* Override Tailwind dark mode classes in super dark theme */
 .theme-super-dark .custom-grid.dark\:bg-gray-600 {
   background: var(--panel-bg) !important;
   border: 2px solid rgba(245, 245, 245, 0.9) !important;
 }
 
-/* Typography */
+/* Super Dark Theme Status Indicators */
+.theme-super-dark .status-indicator {
+  border: 2px solid var(--accent);
+  background: var(--panel-bg);
+}
+
+/* Dark Theme Specific Rules */
+.theme-dark .nav-container {
+  background: var(--nav-bg);
+  box-shadow: 0 2px 12px var(--shadow-color);
+}
+
+/* Light Theme Specific Rules */
+.theme-light .card {
+  box-shadow: 0 2px 8px var(--shadow-subtle);
+}
+
+.theme-light .nav-container {
+  box-shadow: 0 1px 6px var(--shadow-subtle);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY ELEMENTS
+   ========================================================================== */
+
+/* Card Headers - Section titles within cards */
 .card-header {
   @apply text-xl font-bold mb-4 pb-3 border-b;
   color: var(--text-primary);
   border-bottom: 1px solid var(--card-border);
 }
 
+/* Primary Headings */
+.heading-primary {
+  @apply text-3xl font-bold mb-6;
+  color: var(--text-primary);
+}
+
+/* Secondary Headings */
+.heading-secondary {
+  @apply text-2xl font-semibold mb-4;
+  color: var(--text-primary);
+}
+
+/* Tertiary Headings */
+.heading-tertiary {
+  @apply text-xl font-medium mb-3;
+  color: var(--text-primary);
+}
+
+/* Table Values - Important numerical data */
 .table-value {
   @apply text-xl font-bold;
   color: var(--text-primary);
 }
 
+/* Table Labels - Descriptive text for data */
 .table-label {
   @apply text-sm font-medium;
   color: var(--text-secondary);
 }
 
-/* Status Indicators */
+/* Small Text */
+.text-small {
+  @apply text-sm;
+  color: var(--text-secondary);
+}
+
+/* Muted Text */
+.text-muted {
+  color: var(--text-tertiary);
+}
+
+/* Link Text */
+.text-link {
+  @apply transition-colors duration-200 cursor-pointer;
+  color: var(--text-link);
+}
+
+.text-link:hover {
+  color: var(--text-link-hover);
+  text-decoration: underline;
+}
+
+/* Code Text */
+.text-code {
+  @apply font-mono text-sm px-2 py-1 rounded;
+  background: var(--card-bg-secondary);
+  color: var(--accent);
+  border: 1px solid var(--card-border-subtle);
+}
+
+/* ==========================================================================
+   STATUS AND INDICATOR ELEMENTS
+   ========================================================================== */
+
+/* Online Status Indicator */
 .status-online {
-  @apply text-emerald-500 font-semibold;
+  @apply font-semibold;
+  color: var(--status-success);
 }
 
+/* Offline Status Indicator */
 .status-offline {
-  @apply text-red-500 font-semibold;
+  @apply font-semibold;
+  color: var(--status-error);
 }
 
+/* Warning Status Indicator */
 .status-warning {
-  @apply text-yellow-500 font-semibold;
+  @apply font-semibold;
+  color: var(--status-warning);
 }
 
-/* Theme Toggle */
+/* Info Status Indicator */
+.status-info {
+  @apply font-semibold;
+  color: var(--status-info);
+}
+
+/* Neutral Status Indicator */
+.status-neutral {
+  @apply font-semibold;
+  color: var(--status-neutral);
+}
+
+/* Status Badge Base */
+.status-badge {
+  @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+/* Success Badge */
+.badge-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--status-success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Error Badge */
+.badge-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--status-error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Warning Badge */
+.badge-warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--status-warning);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Info Badge */
+.badge-info {
+  background: rgba(6, 182, 212, 0.1);
+  color: var(--status-info);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+/* ==========================================================================
+   INTERACTIVE ELEMENTS
+   ========================================================================== */
+
+/* Theme Toggle Button - Theme switching control */
 .theme-toggle-btn {
   @apply flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-200;
   background: transparent;
@@ -254,45 +884,173 @@ body {
 }
 
 .theme-toggle-btn:hover {
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--accent-background);
   color: var(--text-primary);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid var(--accent-muted);
 }
 
-/* Modal Styles */
+/* Dropdown Menu */
+.dropdown-menu {
+  @apply absolute top-full right-0 mt-2 rounded-lg shadow-lg border min-w-max;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+}
+
+/* Dropdown Menu Items */
+.dropdown-item {
+  @apply px-4 py-2 transition-colors duration-200 cursor-pointer;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border-subtle);
+}
+
+.dropdown-item:hover {
+  background: var(--accent-background);
+  color: var(--accent);
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* Tooltip Elements */
+.tooltip {
+  @apply absolute z-10 px-2 py-1 text-xs rounded shadow-lg;
+  background: var(--card-bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(5px);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  @apply animate-spin rounded-full border-2 border-transparent;
+  border-top-color: var(--accent);
+  border-right-color: var(--accent);
+}
+
+/* Progress Bar */
+.progress-bar {
+  @apply w-full rounded-full overflow-hidden;
+  background: var(--card-bg-secondary);
+  border: 1px solid var(--card-border-subtle);
+}
+
+.progress-fill {
+  @apply h-2 rounded-full transition-all duration-300;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+}
+
+/* ==========================================================================
+   MODAL AND OVERLAY ELEMENTS
+   ========================================================================== */
+
+/* Modal Overlay - Background overlay for modals */
 .modal-overlay {
   @apply fixed inset-0 z-50;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(5px);
 }
 
+/* Modal Content Container */
 .modal-content {
-  @apply rounded-xl shadow-xl;
+  @apply rounded-xl shadow-xl max-w-lg w-full mx-4;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   backdrop-filter: blur(15px);
   box-shadow: 0 25px 50px var(--shadow-color);
 }
 
-/* Scrollbar */
+/* Modal Header */
+.modal-header {
+  @apply px-6 py-4 border-b;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Modal Body */
+.modal-body {
+  @apply px-6 py-4;
+}
+
+/* Modal Footer */
+.modal-footer {
+  @apply px-6 py-4 border-t flex justify-end space-x-3;
+  border-top: 1px solid var(--card-border);
+}
+
+/* Alert/Notification Containers */
+.alert {
+  @apply px-4 py-3 rounded-lg border flex items-center space-x-3;
+  backdrop-filter: blur(5px);
+}
+
+/* Success Alert */
+.alert-success {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--status-success);
+}
+
+/* Error Alert */
+.alert-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: var(--status-error);
+}
+
+/* Warning Alert */
+.alert-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--status-warning);
+}
+
+/* Info Alert */
+.alert-info {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: var(--status-info);
+}
+
+/* ==========================================================================
+   SCROLLBAR CUSTOMIZATION
+   ========================================================================== */
+
+/* Webkit Scrollbar - Main scrollbar track */
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 
+/* Scrollbar Track - Background area */
 ::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--card-border);
+  background: var(--scrollbar-track);
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+/* Scrollbar Thumb - Draggable element */
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
-/* Utility Classes */
+/* Scrollbar Thumb Hover State */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Scrollbar Corner */
+::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
+}
+
+/* ==========================================================================
+   UTILITY CLASSES
+   ========================================================================== */
+
+/* Glass Effect - Frosted glass appearance */
 .glass-effect {
   @apply border rounded-xl;
   background: var(--card-bg);
@@ -301,6 +1059,16 @@ body {
   box-shadow: 0 10px 25px var(--shadow-color);
 }
 
+/* Enhanced Glass Effect */
+.glass-effect-strong {
+  @apply border rounded-xl;
+  background: var(--card-bg-secondary);
+  border: 1px solid var(--card-border-hover);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+/* Gradient Text - Colorful text gradients */
 .gradient-text {
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
@@ -308,7 +1076,108 @@ body {
   background-clip: text;
 }
 
-/* Transitions */
+/* Accent Gradient Text */
+.gradient-text-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover Lift Effect - Subtle elevation on hover */
+.hover-lift {
+  @apply transition-transform duration-200;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Focus Ring - Consistent focus indicators */
+.focus-ring {
+  @apply transition-all duration-200;
+}
+
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-background), 0 0 0 4px var(--accent-muted);
+}
+
+/* Animated Border - Moving border effect */
+.animated-border {
+  position: relative;
+  border: 1px solid var(--card-border);
+}
+
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(45deg, var(--accent), transparent, var(--accent));
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotate 2s linear infinite;
+}
+
+/* ==========================================================================
+   SECTION AND LAYOUT CONTAINERS
+   ========================================================================== */
+
+/* Main Container - Page-level container */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Section Container - Major page sections */
+.section-container {
+  @apply py-16;
+  background: var(--section-bg);
+  border-bottom: 1px solid var(--section-border);
+}
+
+/* Section Content - Content within sections */
+.section-content {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Panel Component - Content panels */
+.panel {
+  @apply rounded-lg p-8;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 8px 20px var(--shadow-color);
+  backdrop-filter: blur(12px);
+}
+
+/* Compact Panel Variant */
+.panel-compact {
+  @apply rounded-lg p-4;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Header Panel - Top-level headers */
+.panel-header {
+  @apply rounded-t-lg p-6 border-b;
+  background: var(--card-bg-secondary);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* Footer Panel - Bottom-level footers */
+.panel-footer {
+  @apply rounded-b-lg p-6 border-t;
+  background: var(--card-bg-secondary);
+  border-top: 1px solid var(--card-border);
+}
+
+/* ==========================================================================
+   ANIMATION AND TRANSITION CLASSES
+   ========================================================================== */
+
+/* Vue Transition Classes */
 .v-enter-active,
 .v-leave-active {
   transition: all 0.3s ease;
@@ -320,15 +1189,56 @@ body {
   transform: translateY(-10px);
 }
 
-/* Flowbite Component Overrides */
+/* Fade In Animation */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide Up Animation */
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(10px); 
+    opacity: 0; 
+  }
+  to { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Pulse Animation */
+.pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ==========================================================================
+   FLOWBITE COMPONENT OVERRIDES
+   ========================================================================== */
+
+/* Flowbite Navbar Overrides */
 .fwb-navbar {
   background: var(--nav-bg) !important;
-  border-bottom: 1px solid var(--card-border) !important;
+  border-bottom: 1px solid var(--nav-border) !important;
   backdrop-filter: blur(15px) !important;
 }
 
 .fwb-navbar-brand {
-  color: var(--text-primary) !important;
+  color: var(--nav-text) !important;
   font-weight: 700 !important;
 }
 
@@ -338,46 +1248,36 @@ body {
 }
 
 .fwb-navbar-link:hover {
-  color: var(--text-primary) !important;
+  color: var(--nav-text-hover) !important;
 }
 
+/* Flowbite Button Overrides */
 .fwb-button {
   transition: all 0.2s ease !important;
 }
 
-/* Clean container styles */
-.container {
-  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+/* Flowbite Modal Overrides */
+.fwb-modal {
+  background: var(--modal-overlay) !important;
 }
 
-/* Section Styles */
-.section-container {
-  @apply py-16;
-  background: var(--section-bg);
-  border-bottom: 1px solid var(--section-border);
+.fwb-modal-content {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
 }
 
-.section-content {
-  @apply container mx-auto px-4 sm:px-6 lg:px-8;
-}
+/* ==========================================================================
+   RESPONSIVE DESIGN ADJUSTMENTS
+   ========================================================================== */
 
-/* Panel Styles */
-.panel {
-  @apply rounded-lg p-8;
-  background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
-  box-shadow: 0 8px 20px var(--shadow-color);
-  backdrop-filter: blur(12px);
-}
-
-/* Responsive adjustments */
+/* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   .card {
     @apply p-4;
   }
 
   .custom-grid {
-    @apply p-4;
+    @apply p-4 gap-4;
   }
 
   .btn-primary,
@@ -392,5 +1292,63 @@ body {
 
   .panel {
     @apply p-6;
+  }
+
+  .modal-content {
+    @apply mx-2;
+  }
+
+  .nav-link {
+    @apply px-3 py-2 text-sm;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    @apply text-sm;
+  }
+}
+
+/* Tablet Responsive Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    @apply px-6;
+  }
+
+  .section-container {
+    @apply py-14;
+  }
+}
+
+/* Desktop Responsive Adjustments */
+@media (min-width: 1025px) {
+  .card:hover {
+    transform: translateY(-3px);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+
+@media print {
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .nav-container {
+    display: none;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    border: 1px solid #000;
+    background: white;
+    color: black;
   }
 }
