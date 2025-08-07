@@ -371,38 +371,38 @@
                 <Transition>
                     <div v-show="showSystemGrid" class="text-lg">
                         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 mt-6">
-                            <div class="grid grid-cols-1 m-1 text-center border rounded align-middle sm:grid-cols-2">
+                            <div class="system-grid-item">
                                 <div class="m-4">CPU Usage:</div>
                                 <div class="m-4 flex flex-row mx-auto">
                                     <div class="flex-2">{{ cpu_usage }}%</div>
                                     <div class="flex-1"><img :src="led_cpu_usage" alt="CPU Usage" class="ml-2 w-6 h-6" /></div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-1 m-1 text-center border rounded align-middle sm:grid-cols-2">
+                            <div class="system-grid-item">
                                 <div class="m-4">Load Averages:</div>
                                 <div class="m-4">{{ load_avg }}</div>
                             </div>
                         </div>
                         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2">
-                            <div class="grid grid-cols-1 m-1 text-center border rounded align-middle sm:grid-cols-2">
+                            <div class="system-grid-item">
                                 <div class="m-4">Memory Usage:</div>
                                 <div class="m-4">{{ memory_used }}MB / {{ memory_total }}MB</div>
                             </div>
-                            <div class="grid grid-cols-1 m-1 text-center border rounded align-middle sm:grid-cols-2">
+                            <div class="system-grid-item">
                                 <div class="m-4">Storage Usage:</div>
                                 <div class="m-4">{{ storage_used }}MB / {{ storage_total }}MB</div>
                             </div>
                         </div>
 
                         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2">
-                            <div class="grid grid-cols-1 m-1 text-center border rounded align-middle sm:grid-cols-2">
+                            <div class="system-grid-item">
                                 <div class="m-4">Flash Wear Level:</div>
                                 <div class="m-4 flex flex-row mx-auto">
                                     <div class="flex-2">{{ flash_wear }}</div>
                                     <div class="flex-1"><img :src="led_flash_wear" alt="Wear Level" class="ml-2 w-6 h-6" /></div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-1 m-1 text-center border rounded align-middle sm:grid-cols-2">
+                            <div class="system-grid-item">
                                 <div class="m-4">Wear Level Description:</div>
                                 <div class="m-4">{{ flash_wear_text }}</div>
                             </div>
