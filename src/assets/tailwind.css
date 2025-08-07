@@ -412,7 +412,7 @@ body {
   @apply px-4 py-2 transition-all duration-200 font-medium;
   color: var(--text-secondary);
   border: 1px solid transparent;
-  border-radius: 1.5rem;
+  border-radius: 0;
 }
 
 .nav-link:hover {
@@ -435,7 +435,7 @@ body {
   @apply absolute top-full left-0 mt-2 shadow-lg border;
   background: var(--nav-bg);
   border: 1px solid var(--nav-border);
-  border-radius: 1.5rem;
+  border-radius: 0;
   backdrop-filter: blur(15px);
   min-width: 200px;
 }
@@ -466,7 +466,7 @@ body {
   background: var(--button-primary-bg);
   color: var(--button-primary-text);
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 0;
   font-weight: 500;
 }
 
@@ -492,7 +492,7 @@ body {
   background: var(--button-secondary-bg);
   color: var(--text-primary);
   border: 1px solid var(--button-secondary-border);
-  border-radius: 1.5rem;
+  border-radius: 0;
   font-weight: 500;
 }
 
@@ -508,7 +508,7 @@ body {
   background: transparent;
   color: var(--text-secondary);
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 0;
 }
 
 .btn-tertiary:hover {
@@ -522,7 +522,7 @@ body {
   background: var(--button-danger-bg);
   color: white;
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 0;
 }
 
 .btn-danger:hover {
@@ -546,7 +546,7 @@ body {
   @apply p-2 transition-all duration-200;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 1.5rem;
+  border-radius: 0;
 }
 
 .btn-icon:hover {
@@ -1095,7 +1095,7 @@ body {
   background: transparent;
   color: var(--text-secondary);
   border: 1px solid transparent;
-  border-radius: 1.5rem;
+  border-radius: 0;
 }
 
 .theme-toggle-btn:hover {
@@ -1109,7 +1109,7 @@ body {
   @apply absolute top-full right-0 mt-2 shadow-lg border min-w-max;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
+  border-radius: 0;
   backdrop-filter: blur(10px);
   z-index: 50;
 }
