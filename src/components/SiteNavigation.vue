@@ -1,64 +1,103 @@
 <template>
-    <RouterLink :to="{ name: 'home' }">
-    </RouterLink>
-    <fwb-navbar>
-        <template #logo>
-            <fwb-navbar-logo alt="ECX Logo" image-url="images/ecx_logo.png" link="#">
-                EDGERACK
-            </fwb-navbar-logo>
-        </template>
-        <template #default="{isShowMenu}">
-            <fwb-navbar-collapse :is-show-menu="isShowMenu">
-                <fwb-navbar-link v-show="greeting" class="align-center mt-1 font-bold">
-                    <RouterLink :to="{ name: 'user' }">
-                    <span class="text-blue-500">{{ greeting }}</span>
-                    </RouterLink>
-                </fwb-navbar-link>
-                <!-- Home Link -->
-                <fwb-navbar-link class="align-center mt-1">
-                    <RouterLink :to="{ name: 'home' }">
-                    Home
-                    </RouterLink>
-                </fwb-navbar-link>
-                <!-- Grid Link -->
-                <fwb-navbar-link class="align-center mt-1">
-                    <RouterLink :to="{ name: 'cooling' }">
-                    Cooling Unit
-                    </RouterLink>
-                </fwb-navbar-link>
-                <fwb-navbar-link class="align-center mt-1" v-show="loggedIn">
-                    <RouterLink :to="{ name: 'config' }">
-                    Config
-                    </RouterLink>
-                </fwb-navbar-link>
-                <fwb-navbar-link class="align-center mt-1" v-show="loggedIn">
-                    <RouterLink :to="{ name: 'upgrade' }">
-                    Upgrade
-                    </RouterLink>
-                </fwb-navbar-link>
-                <fwb-navbar-link v-show="!loggedIn">
-                    <fwb-button gradient="blue" size="xs" pill @click.prevent="showLoginModal">Log In</fwb-button>
-                </fwb-navbar-link>
-                <fwb-navbar-link v-show="loggedIn">
-                    <fwb-button gradient="blue" size="xs" pill @click.prevent="showLogoutModal">Log Out</fwb-button>
-                </fwb-navbar-link>
-                <fwb-navbar-link>
-                    <ThemeToggle />
-                </fwb-navbar-link>
+    <nav class="nav-container sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="/images/ecx_logo.png" alt="ECX Logo" class="h-8 w-8">
+                    <span class="text-xl font-bold text-white">EDGERACK</span>
+                </div>
 
-            </fwb-navbar-collapse>
-        </template>
-    </fwb-navbar>
-  </template>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <!-- User Greeting -->
+                    <RouterLink v-show="greeting" :to="{ name: 'user' }" class="nav-link">
+                        <span class="text-blue-400 font-semibold">{{ greeting }}</span>
+                    </RouterLink>
+                    
+                    <!-- Navigation Links -->
+                    <RouterLink :to="{ name: 'home' }" class="nav-link">
+                        Home
+                    </RouterLink>
+                    
+                    <RouterLink :to="{ name: 'cooling' }" class="nav-link">
+                        Cooling Unit
+                    </RouterLink>
+                    
+                    <RouterLink v-show="loggedIn" :to="{ name: 'config' }" class="nav-link">
+                        Config
+                    </RouterLink>
+                    
+                    <RouterLink v-show="loggedIn" :to="{ name: 'upgrade' }" class="nav-link">
+                        Upgrade
+                    </RouterLink>
+                    
+                    <!-- Auth Buttons -->
+                    <button v-show="!loggedIn" @click.prevent="showLoginModal" class="btn-primary ml-4">
+                        Log In
+                    </button>
+                    
+                    <button v-show="loggedIn" @click.prevent="showLogoutModal" class="btn-secondary ml-4">
+                        Log Out
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <div class="ml-4">
+                        <ThemeToggle />
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="nav-link">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div v-show="mobileMenuOpen" class="md:hidden py-4 border-t border-gray-700">
+                <div class="flex flex-col space-y-2">
+                    <RouterLink v-show="greeting" :to="{ name: 'user' }" class="nav-link block">
+                        <span class="text-blue-400 font-semibold">{{ greeting }}</span>
+                    </RouterLink>
+                    
+                    <RouterLink :to="{ name: 'home' }" class="nav-link block">
+                        Home
+                    </RouterLink>
+                    
+                    <RouterLink :to="{ name: 'cooling' }" class="nav-link block">
+                        Cooling Unit
+                    </RouterLink>
+                    
+                    <RouterLink v-show="loggedIn" :to="{ name: 'config' }" class="nav-link block">
+                        Config
+                    </RouterLink>
+                    
+                    <RouterLink v-show="loggedIn" :to="{ name: 'upgrade' }" class="nav-link block">
+                        Upgrade
+                    </RouterLink>
+                    
+                    <div class="pt-4 border-t border-gray-700 mt-4">
+                        <button v-show="!loggedIn" @click.prevent="showLoginModal" class="btn-primary w-full mb-2">
+                            Log In
+                        </button>
+                        
+                        <button v-show="loggedIn" @click.prevent="showLogoutModal" class="btn-secondary w-full mb-2">
+                            Log Out
+                        </button>
+                        
+                        <ThemeToggle />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</template>
 
 <script setup>
-  import {
-    FwbNavbar,
-    FwbNavbarCollapse,
-    FwbNavbarLink,
-    FwbNavbarLogo,
-    FwbButton
-  } from 'flowbite-vue';
 import { ref, watch, onMounted } from 'vue';
 import { useUserStore } from '@/stores/user.js'
 import { useThemeStore } from '@/stores/theme.js'
@@ -69,6 +108,7 @@ const userStore = useUserStore();
 
 let greeting = ref(userStore.greeting);
 let loggedIn = ref(userStore.isLoggedIn);
+let mobileMenuOpen = ref(false);
 
 
 
