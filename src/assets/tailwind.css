@@ -697,6 +697,13 @@ body {
   border-color: var(--card-border-hover);
 }
 
+/* System Grid Item - For system section grid elements */
+.system-grid-item {
+  @apply grid grid-cols-1 m-1 text-center border align-middle sm:grid-cols-2;
+  background: #060511 !important;
+  border-radius: 0.8rem;
+}
+
 /* Data Table Container */
 .data-table {
   @apply w-full border-collapse overflow-hidden;
