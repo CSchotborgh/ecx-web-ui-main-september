@@ -910,7 +910,7 @@ body {
 .theme-super-dark .expand-all:hover,
 .theme-super-dark .collapse-all:hover {
   background: #060511 !important;
-  border: 1px solid var(--accent-muted) !important;
+  border: 1px solid #060511 !important;
 }
 
 /* Super Dark Theme Modal Elements */
