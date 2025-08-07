@@ -981,6 +981,90 @@ body {
   background: #060511 !important;
 }
 
+/* Dark Theme Tailwind Classes Override */
+.theme-dark .bg-slate-800 {
+  background: var(--card-bg) !important;
+}
+
+/* Dark Theme Collapse/Expand Elements */
+.theme-dark .collapse-toggle,
+.theme-dark [data-collapse-toggle],
+.theme-dark .collapse-button,
+.theme-dark .expand-button,
+.theme-dark button[aria-expanded] {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+.theme-dark .expand-all,
+.theme-dark .collapse-all,
+.theme-dark .collapse-controls button,
+.theme-dark .toggle-button {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+.theme-dark .expand-all:hover,
+.theme-dark .collapse-all:hover,
+.theme-dark .collapse-controls button:hover,
+.theme-dark .toggle-button:hover,
+.theme-dark [data-collapse-toggle]:hover,
+.theme-dark .collapse-button:hover,
+.theme-dark .expand-button:hover,
+.theme-dark button[aria-expanded]:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1px solid var(--card-border-hover) !important;
+}
+
+.theme-dark .fwb-button,
+.theme-dark [data-flowbite] button,
+.theme-dark .flowbite-component button {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+/* Light Theme Tailwind Classes Override */
+.theme-light .bg-slate-800 {
+  background: var(--card-bg) !important;
+}
+
+/* Light Theme Collapse/Expand Elements */
+.theme-light .collapse-toggle,
+.theme-light [data-collapse-toggle],
+.theme-light .collapse-button,
+.theme-light .expand-button,
+.theme-light button[aria-expanded] {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+.theme-light .expand-all,
+.theme-light .collapse-all,
+.theme-light .collapse-controls button,
+.theme-light .toggle-button {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
+.theme-light .expand-all:hover,
+.theme-light .collapse-all:hover,
+.theme-light .collapse-controls button:hover,
+.theme-light .toggle-button:hover,
+.theme-light [data-collapse-toggle]:hover,
+.theme-light .collapse-button:hover,
+.theme-light .expand-button:hover,
+.theme-light button[aria-expanded]:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1px solid var(--card-border-hover) !important;
+}
+
+.theme-light .fwb-button,
+.theme-light [data-flowbite] button,
+.theme-light .flowbite-component button {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+}
+
 /* Super Dark Theme Section Elements */
 .theme-super-dark .section-container {
   background: #060511 !important;
