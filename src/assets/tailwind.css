@@ -199,6 +199,16 @@ body {
   backdrop-filter: blur(10px);
 }
 
+/* Grid rows specific styling for super dark theme */
+.theme-super-dark .custom-grid {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+}
+
+.theme-super-dark .grid-rows-1 {
+  background: var(--panel-bg);
+}
+
 /* Typography */
 .card-header {
   @apply text-xl font-bold mb-4 pb-3 border-b;
