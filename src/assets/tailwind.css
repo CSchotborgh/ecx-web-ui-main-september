@@ -209,6 +209,12 @@ body {
   background: var(--panel-bg);
 }
 
+/* Override dark mode gray-600 background for super dark theme */
+.theme-super-dark .custom-grid.dark\:bg-gray-600 {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border) !important;
+}
+
 /* Typography */
 .card-header {
   @apply text-xl font-bold mb-4 pb-3 border-b;
