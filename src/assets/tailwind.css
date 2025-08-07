@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  @apply font-sans;
+}
+
+.fwb-component {
+  font-family: 'Lato', sans-serif !important;
+}
+
+.overlay-grid {
+
+}
+.custom-grid {
+    @apply   m-auto grid grid-cols-1 gap-2 border rounded-3xl p-2 min-w-full min-h-full bg-gray-800 text-center items-center content-center justify-center;
+}
+
+.table-value { /* based off of "text-2xl" */
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.table-label {
+    text-transform: uppercase;
+}
+
+.router-link-exact-active {
+    font-weight: 1000;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    color: #5060f0;
+    /* color: #2f6b51; */
+    /* color: #753ee9; */
+    text-underline-offset: 4px;
+}
+
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+/* allowing toasts to fade out */
+.toast-enter-active, .toast-leave-active {
+  transition: opacity 0.5s;
+}
+.toast-enter, .toast-leave-to /* .toast-leave-active in <2.1.8 */ {
+  opacity: 0;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
