@@ -956,6 +956,11 @@ body {
   background: #060511 !important;
 }
 
+/* Super Dark Theme Tailwind Classes Override */
+.theme-super-dark .bg-slate-800 {
+  background: #060511 !important;
+}
+
 /* Super Dark Theme Section Elements */
 .theme-super-dark .section-container {
   background: #060511 !important;
