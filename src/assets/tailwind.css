@@ -419,6 +419,7 @@ body {
   color: var(--nav-text-hover);
   background: var(--accent-background);
   border: 1px solid var(--accent-muted);
+  border-radius: 0.4rem;
 }
 
 /* Active Navigation Link */
@@ -427,6 +428,7 @@ body {
   color: var(--nav-text);
   background: var(--nav-link-active);
   border: 1px solid var(--accent-muted);
+  border-radius: 0.4rem;
   font-weight: 600;
 }
 
