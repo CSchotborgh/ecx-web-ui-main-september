@@ -679,6 +679,15 @@ body {
   border-radius: 0;
 }
 
+/* Dark square-full utility class - applies square corners in dark mode */
+.dark-square-full {
+  border-radius: 0.5rem; /* Default rounded-lg */
+}
+
+.dark .dark-square-full {
+  border-radius: 0; /* Square corners in dark mode */
+}
+
 /* Dark theme overrides for custom-grid */
 .dark .custom-grid {
   border-radius: 9999px;
