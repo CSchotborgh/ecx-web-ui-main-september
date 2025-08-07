@@ -9,10 +9,40 @@
   font-style: normal;
 }
 
+/* Theme Variables */
+:root {
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --card-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 50%, rgba(226, 232, 240, 0.6) 100%);
+  --card-border: rgba(203, 213, 225, 0.3);
+  --nav-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 50%, rgba(226, 232, 240, 0.8) 100%);
+}
+
+.theme-dark {
+  --bg-gradient: linear-gradient(135deg, #1e293b 0%, #334155 25%, #475569 50%, #64748b 75%, #374151 100%);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --card-bg: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.8) 50%, rgba(71, 85, 105, 0.6) 100%);
+  --card-border: rgba(100, 116, 139, 0.3);
+  --nav-bg: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.9) 50%, rgba(71, 85, 105, 0.8) 100%);
+}
+
+.theme-super-dark {
+  --bg-gradient: linear-gradient(135deg, #020617 0%, #0f172a 25%, #1e1b4b 50%, #312e81 75%, #1e293b 100%);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --card-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(49, 46, 129, 0.6) 100%);
+  --card-border: rgba(139, 92, 246, 0.2);
+  --nav-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(49, 46, 129, 0.8) 100%);
+}
+
 html, body {
-  @apply font-sans text-white min-h-screen;
-  background: linear-gradient(135deg, #020617 0%, #0f172a 25%, #1e1b4b 50%, #312e81 75%, #1e293b 100%);
+  @apply font-sans min-h-screen;
+  color: var(--text-primary);
+  background: var(--bg-gradient);
   background-attachment: fixed;
+  transition: all 0.3s ease;
 }
 
 .fwb-component {
@@ -26,9 +56,20 @@ html, body {
 
 /* Card components */
 .card {
-  @apply backdrop-blur-md border rounded-xl p-6 shadow-2xl;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 50%, rgba(49, 46, 129, 0.6) 100%);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  @apply backdrop-blur-md border rounded-xl p-6 shadow-2xl transition-all duration-300;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.theme-light .card {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(203, 213, 225, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.theme-dark .card {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(100, 116, 139, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.theme-super-dark .card {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(139, 92, 246, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -43,9 +84,20 @@ html, body {
 
 /* Navigation styling */
 .nav-container {
-  @apply backdrop-blur-lg border-b;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 50%, rgba(49, 46, 129, 0.8) 100%);
-  border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+  @apply backdrop-blur-lg border-b transition-all duration-300;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.theme-light .nav-container {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .nav-container {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.theme-super-dark .nav-container {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
@@ -109,9 +161,24 @@ html, body {
 
 /* Form elements */
 .form-input {
-  @apply border rounded-lg px-4 py-3 text-white placeholder-gray-400 transition-all duration-300;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
-  border: 1px solid rgba(71, 85, 105, 0.3);
+  @apply border rounded-lg px-4 py-3 placeholder-gray-400 transition-all duration-300;
+  color: var(--text-primary);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+.theme-light .form-input {
+  @apply placeholder-gray-500;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.theme-dark .form-input {
+  @apply placeholder-gray-400;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-super-dark .form-input {
+  @apply placeholder-gray-400;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 

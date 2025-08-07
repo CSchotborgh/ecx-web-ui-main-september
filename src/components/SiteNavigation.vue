@@ -47,7 +47,7 @@
         </template>
     </fwb-navbar>
   </template>
-  
+
 <script setup>
   import {
     FwbNavbar,
@@ -57,8 +57,10 @@
     FwbButton
   } from 'flowbite-vue';
 import { ref, watch, onMounted } from 'vue';
-import { useUserStore } from '../stores/user.js'
-import bus from '../bus.js'
+import { useUserStore } from '@/stores/user.js'
+import { useThemeStore } from '@/stores/theme.js'
+import ThemeToggle from './ThemeToggle.vue'
+import bus from '@/bus.js'
 
 const userStore = useUserStore();
 
