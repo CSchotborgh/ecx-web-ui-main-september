@@ -346,7 +346,7 @@ body {
   @apply border p-6 shadow-lg transition-all duration-300;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px var(--shadow-color);
 }
@@ -364,7 +364,7 @@ body {
   @apply border p-4 shadow-sm transition-all duration-300;
   background: var(--card-bg-secondary);
   border: 1px solid var(--card-border-subtle);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   backdrop-filter: blur(8px);
 }
 
@@ -373,7 +373,7 @@ body {
   @apply border p-3 transition-all duration-300;
   background: var(--card-bg-tertiary);
   border: 1px solid var(--card-border-subtle);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
 }
 
 /* Compact Card Variant - Space-efficient containers */
@@ -381,7 +381,7 @@ body {
   @apply border p-2 shadow-sm transition-all duration-300;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
 }
 
 /* ==========================================================================
@@ -563,7 +563,7 @@ body {
   @apply border px-4 py-3 transition-all duration-200 text-base w-full;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   color: var(--text-primary);
 }
 
@@ -622,7 +622,7 @@ body {
   @apply border px-4 py-3 transition-all duration-200 text-base w-full resize-y;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   color: var(--text-primary);
   min-height: 100px;
 }
@@ -639,7 +639,7 @@ body {
   @apply border px-4 py-3 transition-all duration-200 text-base w-full;
   background: var(--input-bg);
   border: 1px solid var(--input-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   color: var(--text-primary);
 }
 
@@ -700,7 +700,7 @@ body {
   @apply w-full border-collapse overflow-hidden;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   box-shadow: 0 4px 12px var(--shadow-color);
 }
 
@@ -1136,7 +1136,7 @@ body {
   background: var(--card-bg-secondary);
   color: var(--text-primary);
   border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   backdrop-filter: blur(5px);
 }
 
@@ -1152,18 +1152,13 @@ body {
   @apply w-full overflow-hidden;
   background: var(--card-bg-secondary);
   border: 1px solid var(--card-border-subtle);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
 }
 
 .progress-fill {
   @apply h-2 transition-all duration-300;
   background: linear-gradient(90deg, var(--accent), var(--accent-hover));
-  border-radius: 1.5rem;
-}
-
-.progress-fill {
-  @apply h-2 rounded-full transition-all duration-300;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 0.8rem;
 }
 
 /* ==========================================================================
@@ -1182,7 +1177,7 @@ body {
   @apply shadow-xl max-w-lg w-full mx-4;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   backdrop-filter: blur(15px);
   box-shadow: 0 25px 50px var(--shadow-color);
 }
@@ -1207,7 +1202,7 @@ body {
 /* Alert/Notification Containers */
 .alert {
   @apply px-4 py-3 border flex items-center space-x-3;
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   backdrop-filter: blur(5px);
 }
 
@@ -1281,7 +1276,7 @@ body {
   @apply border;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 10px 25px var(--shadow-color);
 }
@@ -1291,7 +1286,7 @@ body {
   @apply border;
   background: var(--card-bg-secondary);
   border: 1px solid var(--card-border-hover);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   backdrop-filter: blur(15px);
   box-shadow: 0 15px 35px var(--shadow-color);
 }
@@ -1375,7 +1370,7 @@ body {
   @apply p-8;
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   box-shadow: 0 8px 20px var(--shadow-color);
   backdrop-filter: blur(12px);
 }
@@ -1385,7 +1380,7 @@ body {
   @apply p-4;
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   box-shadow: 0 4px 12px var(--shadow-color);
 }
 
@@ -1394,7 +1389,7 @@ body {
   @apply p-6 border-b;
   background: var(--card-bg-secondary);
   border-bottom: 1px solid var(--card-border);
-  border-radius: 1.5rem 1.5rem 0 0;
+  border-radius: 0.8rem 0.8rem 0 0;
 }
 
 /* Footer Panel - Bottom-level footers */
@@ -1402,7 +1397,7 @@ body {
   @apply p-6 border-t;
   background: var(--card-bg-secondary);
   border-top: 1px solid var(--card-border);
-  border-radius: 0 0 1.5rem 1.5rem;
+  border-radius: 0 0 0.8rem 0.8rem;
 }
 
 /* ==========================================================================
