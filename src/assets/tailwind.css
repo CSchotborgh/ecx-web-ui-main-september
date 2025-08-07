@@ -668,8 +668,9 @@ body {
 
 /* Custom Grid Layout - Main grid container */
 .custom-grid {
-  @apply m-auto grid grid-cols-1 gap-6 border-none rounded-lg p-6 min-w-full min-h-full text-center items-center content-center justify-center dark:rounded-full dark:bg-gray-600;
+  @apply m-auto grid grid-cols-1 gap-6 border rounded-lg p-6 min-w-full min-h-full text-center items-center content-center justify-center;
   background: var(--grid-bg);
+  border: 1px solid var(--grid-border);
   box-shadow: 0 4px 12px var(--shadow-color);
   backdrop-filter: blur(10px);
 }
