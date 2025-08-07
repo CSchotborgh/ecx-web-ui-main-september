@@ -731,7 +731,184 @@ body {
 }
 
 .theme-super-dark .grid-rows-1 {
-  background: var(--panel-bg);
+  background: var(--bg-gradient);
+}
+
+/* Super Dark Theme Grid and Table Elements */
+.theme-super-dark .data-table {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .data-table thead {
+  background: var(--bg-secondary) !important;
+}
+
+/* Super Dark Theme Card Elements */
+.theme-super-dark .card {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .card-secondary {
+  background: var(--bg-secondary) !important;
+}
+
+.theme-super-dark .card-tertiary {
+  background: var(--bg-tertiary) !important;
+}
+
+.theme-super-dark .card-compact {
+  background: var(--bg-gradient) !important;
+}
+
+/* Super Dark Theme Button Elements */
+.theme-super-dark .btn-secondary {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .btn-tertiary:hover {
+  background: var(--bg-secondary) !important;
+}
+
+.theme-super-dark .btn-icon:hover {
+  background: var(--bg-secondary) !important;
+}
+
+/* Super Dark Theme Form Elements */
+.theme-super-dark .form-input {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .form-textarea {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .form-select {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .form-checkbox {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .form-radio {
+  background: var(--bg-gradient) !important;
+}
+
+/* Super Dark Theme Panel Elements */
+.theme-super-dark .panel {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .panel-compact {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .panel-header {
+  background: var(--bg-secondary) !important;
+}
+
+.theme-super-dark .panel-footer {
+  background: var(--bg-secondary) !important;
+}
+
+/* Super Dark Theme Status Indicators */
+.theme-super-dark .status-badge {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--panel-border) !important;
+}
+
+.theme-super-dark .badge-success {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-success) !important;
+}
+
+.theme-super-dark .badge-error {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-error) !important;
+}
+
+.theme-super-dark .badge-warning {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-warning) !important;
+}
+
+.theme-super-dark .badge-info {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-info) !important;
+}
+
+/* Super Dark Theme Navigation Elements */
+.theme-super-dark .nav-dropdown {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .nav-dropdown-item:hover {
+  background: var(--bg-secondary) !important;
+}
+
+/* Super Dark Theme Interactive Elements */
+.theme-super-dark .dropdown-menu {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .dropdown-item:hover {
+  background: var(--bg-secondary) !important;
+}
+
+.theme-super-dark .tooltip {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .progress-bar {
+  background: var(--bg-gradient) !important;
+}
+
+/* Super Dark Theme Modal Elements */
+.theme-super-dark .modal-content {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .modal-header {
+  background: var(--bg-secondary) !important;
+}
+
+.theme-super-dark .modal-footer {
+  background: var(--bg-secondary) !important;
+}
+
+/* Super Dark Theme Alert Elements */
+.theme-super-dark .alert-success {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-success) !important;
+}
+
+.theme-super-dark .alert-error {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-error) !important;
+}
+
+.theme-super-dark .alert-warning {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-warning) !important;
+}
+
+.theme-super-dark .alert-info {
+  background: var(--bg-gradient) !important;
+  border: 1px solid var(--status-info) !important;
+}
+
+/* Super Dark Theme Glass Effects */
+.theme-super-dark .glass-effect {
+  background: var(--bg-gradient) !important;
+}
+
+.theme-super-dark .glass-effect-strong {
+  background: var(--bg-secondary) !important;
+}
+
+/* Super Dark Theme Section Elements */
+.theme-super-dark .section-container {
+  background: var(--bg-gradient) !important;
 }
 
 /* Dark Theme Specific Rules */
