@@ -16,9 +16,9 @@
 /* Default/Super Dark Theme Variables - EdgeRack Inspired */
 :root {
   /* Background Gradients - Main page backgrounds with deep navy/black theme */
-  --bg-gradient: linear-gradient(135deg, #0a0e1a 0%, #0f1419 25%, #1a1f2e 50%, #0a0e1a 100%);
-  --bg-secondary: linear-gradient(135deg, #0a0e1a 0%, #0f1419 50%, #1a1f2e 100%);
-  --bg-tertiary: rgba(10, 14, 26, 0.95);
+  --bg-gradient: linear-gradient(135deg, #060511 0%, #060511 25%, #060511 50%, #0c0826 100%);
+  --bg-secondary: linear-gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%);
+  --bg-tertiary: rgb(6, 5, 17, 0.95);
 
   /* Text Colors - All text elements with high contrast white */
   --text-primary: #ffffff;
@@ -37,7 +37,7 @@
   /* Hovered links - darker blue */
 
   /* Card and Panel Backgrounds - Dark navy containers */
-  --card-bg: rgba(15, 20, 25, 0.9);
+  --card-bg: rgb(6, 5, 17, 0.9);
   /* Main cards and containers - dark navy */
   --card-bg-secondary: rgba(26, 31, 46, 0.8);
   /* Secondary cards - slightly lighter */
