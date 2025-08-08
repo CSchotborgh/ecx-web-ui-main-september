@@ -1296,6 +1296,11 @@ body {
   color: var(--text-primary) !important;
 }
 
+/* Light Theme Logo Color Inversion */
+.theme-light img[alt="ECX Logo"] {
+  filter: invert(1) brightness(0.8) !important;
+}
+
 /* Light Theme Specific Rules */
 .theme-light .card {
   box-shadow: 0 2px 8px var(--shadow-subtle);
