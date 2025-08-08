@@ -1406,26 +1406,19 @@ body {
 }
 
 /* ==========================================================================
-   THEME-SPECIFIC DATA-V-B4E148CA CLASS OVERRIDES
+   THEME-SPECIFIC VUE COMPONENT OVERRIDES
    ========================================================================== */
 
-/* Super Dark Theme data-v-b4e148ca Overrides */
+/* Super Dark Theme Vue Component Overrides */
 .theme-super-dark [data-v-b4e148ca] {
   background: #060511 !important;
-  color: var(--text-primary) !important;
-  border-color: var(--panel-border) !important;
+  color: #ffffff !important;
 }
 
-.theme-super-dark [data-v-b4e148ca] .bg-slate-800 {
+.theme-super-dark [data-v-b4e148ca] * {
   background: #060511 !important;
-}
-
-.theme-super-dark [data-v-b4e148ca] .text-gray-500 {
-  color: var(--text-primary) !important;
-}
-
-.theme-super-dark [data-v-b4e148ca] .border {
-  border-color: var(--panel-border) !important;
+  color: #ffffff !important;
+  border-color: rgba(75, 85, 99, 0.4) !important;
 }
 
 .theme-super-dark [data-v-b4e148ca] .rounded-3xl,
@@ -1434,22 +1427,15 @@ body {
   border-radius: 0.8rem !important;
 }
 
-/* Dark Theme data-v-b4e148ca Overrides */
+/* Dark Theme Vue Component Overrides */
 .theme-dark [data-v-b4e148ca] {
   background: var(--card-bg) !important;
   color: var(--text-primary) !important;
-  border-color: var(--card-border) !important;
 }
 
-.theme-dark [data-v-b4e148ca] .bg-slate-800 {
+.theme-dark [data-v-b4e148ca] * {
   background: var(--card-bg) !important;
-}
-
-.theme-dark [data-v-b4e148ca] .text-gray-500 {
-  color: var(--text-secondary) !important;
-}
-
-.theme-dark [data-v-b4e148ca] .border {
+  color: var(--text-primary) !important;
   border-color: var(--card-border) !important;
 }
 
@@ -1459,22 +1445,15 @@ body {
   border-radius: 0.8rem !important;
 }
 
-/* Light Theme data-v-b4e148ca Overrides */
+/* Light Theme Vue Component Overrides */
 .theme-light [data-v-b4e148ca] {
   background: var(--card-bg) !important;
   color: var(--text-primary) !important;
-  border-color: var(--card-border) !important;
 }
 
-.theme-light [data-v-b4e148ca] .bg-slate-800 {
-  background: rgba(128, 128, 128, 0.08) !important;
-}
-
-.theme-light [data-v-b4e148ca] .text-gray-500 {
+.theme-light [data-v-b4e148ca] * {
+  background: rgba(255, 255, 255, 0.95) !important;
   color: var(--text-primary) !important;
-}
-
-.theme-light [data-v-b4e148ca] .border {
   border-color: var(--card-border) !important;
 }
 
@@ -1485,76 +1464,34 @@ body {
 }
 
 /* ==========================================================================
-   ENHANCED THEME COLOR RULES
+   ENHANCED THEME COMPONENT STYLING
    ========================================================================== */
 
-/* Super Dark Theme Enhanced Color Rules */
+/* Super Dark Component Variables */
 .theme-super-dark {
-  /* Custom Component Colors */
-  --component-primary: #060511;
-  --component-secondary: rgba(6, 5, 17, 0.8);
-  --component-accent: #3b82f6;
+  --component-bg: #060511;
   --component-text: #ffffff;
-  --component-text-muted: #9ca3af;
   --component-border: rgba(75, 85, 99, 0.4);
-  --component-shadow: rgba(0, 0, 0, 0.8);
-  
-  /* Interactive States */
   --component-hover: rgba(75, 85, 99, 0.2);
-  --component-active: rgba(75, 85, 99, 0.4);
-  --component-focus: rgba(59, 130, 246, 0.3);
-  
-  /* Status Colors Enhanced */
-  --component-success: #22c55e;
-  --component-error: #ef4444;
-  --component-warning: #f59e0b;
-  --component-info: #60a5fa;
+  --component-shadow: rgba(0, 0, 0, 0.8);
 }
 
-/* Dark Theme Enhanced Color Rules */
+/* Dark Component Variables */
 .theme-dark {
-  /* Custom Component Colors */
-  --component-primary: var(--card-bg);
-  --component-secondary: var(--card-bg-secondary);
-  --component-accent: var(--accent);
+  --component-bg: var(--card-bg);
   --component-text: var(--text-primary);
-  --component-text-muted: var(--text-secondary);
   --component-border: var(--card-border);
-  --component-shadow: var(--shadow-color);
-  
-  /* Interactive States */
   --component-hover: var(--card-bg-hover);
-  --component-active: rgba(96, 165, 250, 0.2);
-  --component-focus: var(--accent-background);
-  
-  /* Status Colors Enhanced */
-  --component-success: var(--status-success);
-  --component-error: var(--status-error);
-  --component-warning: var(--status-warning);
-  --component-info: var(--status-info);
+  --component-shadow: var(--shadow-color);
 }
 
-/* Light Theme Enhanced Color Rules */
+/* Light Component Variables */
 .theme-light {
-  /* Custom Component Colors */
-  --component-primary: var(--card-bg);
-  --component-secondary: var(--card-bg-secondary);
-  --component-accent: var(--accent);
+  --component-bg: var(--card-bg);
   --component-text: var(--text-primary);
-  --component-text-muted: var(--text-secondary);
   --component-border: var(--card-border);
-  --component-shadow: var(--shadow-color);
-  
-  /* Interactive States */
   --component-hover: var(--card-bg-hover);
-  --component-active: rgba(59, 130, 246, 0.1);
-  --component-focus: var(--accent-background);
-  
-  /* Status Colors Enhanced */
-  --component-success: var(--status-success);
-  --component-error: var(--status-error);
-  --component-warning: var(--status-warning);
-  --component-info: var(--status-info);
+  --component-shadow: var(--shadow-color);
 }
 
 /* Light Theme Specific Rules */
