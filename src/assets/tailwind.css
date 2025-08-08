@@ -1296,6 +1296,25 @@ body {
   color: var(--text-primary) !important;
 }
 
+/* Light Theme Label Text Color Override */
+.theme-light label,
+.theme-light .form-label,
+.theme-light .text-label,
+.theme-light [class*="label"],
+.theme-light .font-medium,
+.theme-light .font-semibold {
+  color: var(--text-primary) !important;
+}
+
+/* Light Theme Input Labels and Form Elements */
+.theme-light .block.text-sm.font-medium,
+.theme-light .text-sm.font-medium,
+.theme-light .text-xs.font-medium,
+.theme-light .font-bold,
+.theme-light .font-semibold {
+  color: var(--text-primary) !important;
+}
+
 /* Light Theme Logo Color Inversion */
 .theme-light img[alt="ECX Logo"] {
   filter: invert(1) brightness(0.8) !important;
