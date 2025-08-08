@@ -1364,6 +1364,34 @@ body {
   color: var(--text-primary) !important;
 }
 
+/* Light Theme Header Text Overrides */
+.theme-light header,
+.theme-light .header,
+.theme-light nav,
+.theme-light .navigation,
+.theme-light .nav-container,
+.theme-light .navbar {
+  color: var(--text-primary) !important;
+}
+
+/* Light Theme Header Links and Navigation Items */
+.theme-light header a,
+.theme-light .header a,
+.theme-light nav a,
+.theme-light .nav-link,
+.theme-light .navbar a,
+.theme-light .navigation a {
+  color: var(--text-primary) !important;
+}
+
+/* Light Theme Header Titles and Brand */
+.theme-light .nav-brand,
+.theme-light .navbar-brand,
+.theme-light .header-title,
+.theme-light .brand-text {
+  color: var(--text-primary) !important;
+}
+
 /* Light Theme Logo Color Inversion */
 .theme-light img[alt="ECX Logo"] {
   filter: invert(1) brightness(0.8) !important;
