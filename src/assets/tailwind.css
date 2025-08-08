@@ -1272,7 +1272,7 @@ body {
 
 /* Dark theme border radius override for specific Vue components */
 .dark [data-v-b5236db2] {
-  border-radius: 0.08rem !important;
+  border-radius: 0.5rem !important;
 }
 
 /* Light Theme Specific Rules */
