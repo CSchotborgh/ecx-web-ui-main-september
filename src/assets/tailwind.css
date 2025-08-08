@@ -16,12 +16,12 @@
 /* Default/Super Dark Theme Variables - EdgeRack Inspired */
 :root {
   /* Background Gradients - Main page backgrounds with deep navy/black theme */
-  --bg-gradient: linear-gradient(135deg, #060511 0%, #060511 25%, #060511 50%, #0c0826 100%);
+  --bg-gradient: linear-gradient(45deg, #0c0826 100%, #060511 25%, #060511 50%, #141028 100%);
   --bg-secondary: linear-gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%);
-  --bg-tertiary: rgb(6, 5, 17, 0.95);
+  --bg-tertiary: rgb(15, 13, 24, 0.95);
 
   /* Text Colors - All text elements with high contrast white */
-  --text-primary: #ffffff;
+  --text-primary: #dfe2e5;
   /* Main headings, important text - pure white for maximum contrast */
   --text-secondary: #e5e7eb;
   /* Secondary text, descriptions - slightly off-white */
@@ -33,11 +33,11 @@
   /* Text on light backgrounds */
   --text-link: #60a5fa;
   /* Links and clickable text - blue accent */
-  --text-link-hover: #3b82f6;
+  --text-link-hover: #498c63;
   /* Hovered links - darker blue */
 
   /* Card and Panel Backgrounds - Dark navy containers */
-  --card-bg: rgb(6, 5, 17, 0.9);
+  --card-bg: rgb(15, 13, 24, 0.9);
   /* Main cards and containers - dark navy */
   --card-bg-secondary: rgba(26, 31, 46, 0.8);
   /* Secondary cards - slightly lighter */
@@ -47,7 +47,7 @@
   /* Hovered cards - lighter on hover */
 
   /* Border Colors - Subtle rounded borders like EdgeRack */
-  --card-border: rgba(75, 85, 99, 0.4);
+  --card-border: rgba(75, 85, 99, 0.8);
   /* Main borders - subtle gray with 40% opacity for .card, .form-input, .data-table selectors */
   --card-border-hover: rgba(156, 163, 175, 0.6);
   /* Hovered borders - more visible gray with 60% opacity for :hover states on interactive elements */
@@ -63,7 +63,7 @@
   /* Navigation borders - subtle gray with 30% opacity for .nav-container border-bottom and .nav-dropdown borders */
   --nav-text: #ffffff;
   /* Navigation text - white */
-  --nav-text-hover: #60a5fa;
+  --nav-text-hover: #238623;
   /* Hovered navigation text - blue */
   --nav-link-active: rgba(96, 165, 250, 0.2);
   /* Active navigation background */
@@ -340,6 +340,7 @@ body {
 .fwb-component {
   font-family: 'Lato', sans-serif !important;
 }
+
 /* ==========================================================================
    CARD AND CONTAINER ELEMENTS
    ========================================================================== */
@@ -1796,608 +1797,732 @@ body {
 
 /* Universal Element Overrides for All Themes */
 @layer utilities {
-  
+
   /* ==========================================================================
      BACKGROUND COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Background Colors - Main container backgrounds */
   .bg-primary {
-    background-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    background-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .bg-secondary {
-    background-color: var(--card-bg) !important; /* Super Dark Theme: #060511, Dark Theme: rgba(30, 37, 51, 0.9), Light Theme: rgba(255, 255, 255, 0.95) */
+    background-color: var(--card-bg) !important;
+    /* Super Dark Theme: #060511, Dark Theme: rgba(30, 37, 51, 0.9), Light Theme: rgba(255, 255, 255, 0.95) */
   }
 
   .bg-surface {
-    background-color: var(--card-bg-secondary) !important; /* Super Dark Theme: rgba(26, 31, 46, 0.8), Dark Theme: rgba(30, 41, 59, 0.85), Light Theme: rgba(248, 250, 252, 0.9) */
+    background-color: var(--card-bg-secondary) !important;
+    /* Super Dark Theme: rgba(26, 31, 46, 0.8), Dark Theme: rgba(30, 41, 59, 0.85), Light Theme: rgba(248, 250, 252, 0.9) */
   }
 
   .bg-tertiary {
-    background-color: var(--card-bg-tertiary) !important; /* Super Dark Theme: rgba(31, 41, 55, 0.7), Dark Theme: rgba(51, 65, 85, 0.8), Light Theme: rgba(241, 245, 249, 0.8) */
+    background-color: var(--card-bg-tertiary) !important;
+    /* Super Dark Theme: rgba(31, 41, 55, 0.7), Dark Theme: rgba(51, 65, 85, 0.8), Light Theme: rgba(241, 245, 249, 0.8) */
   }
 
   /* Status Background Colors - Success, error, warning, info states */
   .bg-success {
-    background-color: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    background-color: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .bg-error {
-    background-color: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    background-color: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .bg-warning {
-    background-color: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    background-color: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   .bg-info {
-    background-color: var(--status-info) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
+    background-color: var(--status-info) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
   }
 
   .bg-neutral {
-    background-color: var(--status-neutral) !important; /* Super Dark Theme: #9ca3af, Dark Theme: #9ca3af, Light Theme: #64748b */
+    background-color: var(--status-neutral) !important;
+    /* Super Dark Theme: #9ca3af, Dark Theme: #9ca3af, Light Theme: #64748b */
   }
 
   /* Gradient Background Colors - Special gradient backgrounds */
   .bg-gradient {
-    background: var(--bg-gradient) !important; /* Super Dark Theme: Deep navy gradient, Dark Theme: Slate gradient, Light Theme: Gray-white gradient */
+    background: var(--bg-gradient) !important;
+    /* Super Dark Theme: Deep navy gradient, Dark Theme: Slate gradient, Light Theme: Gray-white gradient */
   }
 
   .bg-gradient-secondary {
-    background: var(--bg-secondary) !important; /* Super Dark Theme: Secondary navy gradient, Dark Theme: Secondary slate gradient, Light Theme: Secondary gray gradient */
+    background: var(--bg-secondary) !important;
+    /* Super Dark Theme: Secondary navy gradient, Dark Theme: Secondary slate gradient, Light Theme: Secondary gray gradient */
   }
 
   /* Navigation Background Colors - Header and navigation specific */
   .bg-nav {
-    background: var(--nav-bg) !important; /* Super Dark Theme: rgba(10, 14, 26, 0.95), Dark Theme: rgb(6, 5, 17, 0.95), Light Theme: rgba(255, 255, 255, 0.98) */
+    background: var(--nav-bg) !important;
+    /* Super Dark Theme: rgba(10, 14, 26, 0.95), Dark Theme: rgb(6, 5, 17, 0.95), Light Theme: rgba(255, 255, 255, 0.98) */
   }
 
   /* Panel Background Colors - Content panel specific */
   .bg-panel {
-    background: var(--panel-bg) !important; /* Super Dark Theme: rgba(10, 14, 26, 0.95), Dark Theme: rgba(15, 23, 42, 0.95), Light Theme: rgba(255, 255, 255, 0.98) */
+    background: var(--panel-bg) !important;
+    /* Super Dark Theme: rgba(10, 14, 26, 0.95), Dark Theme: rgba(15, 23, 42, 0.95), Light Theme: rgba(255, 255, 255, 0.98) */
   }
 
   .bg-section {
-    background: var(--section-bg) !important; /* Super Dark Theme: rgba(15, 20, 25, 0.9), Dark Theme: rgba(30, 41, 59, 0.9), Light Theme: rgba(248, 250, 252, 0.8) */
+    background: var(--section-bg) !important;
+    /* Super Dark Theme: rgba(15, 20, 25, 0.9), Dark Theme: rgba(30, 41, 59, 0.9), Light Theme: rgba(248, 250, 252, 0.8) */
   }
 
   /* Input Background Colors - Form element specific */
   .bg-input {
-    background: var(--input-bg) !important; /* Super Dark Theme: rgba(31, 41, 55, 0.8), Dark Theme: rgba(30, 41, 59, 0.8), Light Theme: rgba(255, 255, 255, 1) */
+    background: var(--input-bg) !important;
+    /* Super Dark Theme: rgba(31, 41, 55, 0.8), Dark Theme: rgba(30, 41, 59, 0.8), Light Theme: rgba(255, 255, 255, 1) */
   }
 
   .bg-input-focus {
-    background: var(--input-focus-bg) !important; /* Super Dark Theme: rgba(15, 20, 25, 0.9), Dark Theme: rgba(15, 23, 42, 0.9), Light Theme: rgba(255, 255, 255, 1) */
+    background: var(--input-focus-bg) !important;
+    /* Super Dark Theme: rgba(15, 20, 25, 0.9), Dark Theme: rgba(15, 23, 42, 0.9), Light Theme: rgba(255, 255, 255, 1) */
   }
 
   /* Button Background Colors - Interactive element specific */
   .bg-button-primary {
-    background: var(--button-primary-bg) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    background: var(--button-primary-bg) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .bg-button-secondary {
-    background: var(--button-secondary-bg) !important; /* Super Dark Theme: transparent, Dark Theme: transparent, Light Theme: transparent */
+    background: var(--button-secondary-bg) !important;
+    /* Super Dark Theme: transparent, Dark Theme: transparent, Light Theme: transparent */
   }
 
   .bg-button-danger {
-    background: var(--button-danger-bg) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    background: var(--button-danger-bg) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   /* Grid and Table Background Colors - Data display specific */
   .bg-grid {
-    background: var(--grid-bg) !important; /* Super Dark Theme: rgba(15, 20, 25, 0.9), Dark Theme: var(--card-bg), Light Theme: rgba(255, 255, 255, 0.95) */
+    background: var(--grid-bg) !important;
+    /* Super Dark Theme: rgba(15, 20, 25, 0.9), Dark Theme: var(--card-bg), Light Theme: rgba(255, 255, 255, 0.95) */
   }
 
   .bg-table-header {
-    background: var(--table-header-bg) !important; /* Super Dark Theme: rgba(31, 41, 55, 0.9), Dark Theme: rgba(51, 65, 85, 0.9), Light Theme: rgba(248, 250, 252, 0.95) */
+    background: var(--table-header-bg) !important;
+    /* Super Dark Theme: rgba(31, 41, 55, 0.9), Dark Theme: rgba(51, 65, 85, 0.9), Light Theme: rgba(248, 250, 252, 0.95) */
   }
 
   .bg-table-row-even {
-    background: var(--table-row-even) !important; /* Super Dark Theme: rgba(55, 65, 81, 0.3), Dark Theme: rgba(30, 41, 59, 0.5), Light Theme: rgba(248, 250, 252, 0.3) */
+    background: var(--table-row-even) !important;
+    /* Super Dark Theme: rgba(55, 65, 81, 0.3), Dark Theme: rgba(30, 41, 59, 0.5), Light Theme: rgba(248, 250, 252, 0.3) */
   }
 
   .bg-table-row-odd {
-    background: var(--table-row-odd) !important; /* Super Dark Theme: transparent, Dark Theme: transparent, Light Theme: transparent */
+    background: var(--table-row-odd) !important;
+    /* Super Dark Theme: transparent, Dark Theme: transparent, Light Theme: transparent */
   }
 
   /* ==========================================================================
      TEXT COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Text Colors - Main content text */
   .text-primary {
-    color: var(--text-primary) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    color: var(--text-primary) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .text-secondary {
-    color: var(--text-secondary) !important; /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
+    color: var(--text-secondary) !important;
+    /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
   }
 
   .text-tertiary {
-    color: var(--text-tertiary) !important; /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
+    color: var(--text-tertiary) !important;
+    /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
   }
 
   .text-disabled {
-    color: var(--text-disabled) !important; /* Super Dark Theme: #6b7280, Dark Theme: #64748b, Light Theme: #94a3b8 */
+    color: var(--text-disabled) !important;
+    /* Super Dark Theme: #6b7280, Dark Theme: #64748b, Light Theme: #94a3b8 */
   }
 
   .text-inverse {
-    color: var(--text-inverse) !important; /* Super Dark Theme: #060511, Dark Theme: #0f172a, Light Theme: #ffffff */
+    color: var(--text-inverse) !important;
+    /* Super Dark Theme: #060511, Dark Theme: #0f172a, Light Theme: #ffffff */
   }
 
   /* Link Text Colors - Clickable text elements */
   .text-link {
-    color: var(--text-link) !important; /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    color: var(--text-link) !important;
+    /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .text-link-hover {
-    color: var(--text-link-hover) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #3b82f6, Light Theme: #2563eb */
+    color: var(--text-link-hover) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #3b82f6, Light Theme: #2563eb */
   }
 
   /* Status Text Colors - Success, error, warning, info states */
   .text-success {
-    color: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    color: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .text-error {
-    color: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    color: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .text-warning {
-    color: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    color: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   .text-info {
-    color: var(--status-info) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
+    color: var(--status-info) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
   }
 
   .text-neutral {
-    color: var(--status-neutral) !important; /* Super Dark Theme: #9ca3af, Dark Theme: #9ca3af, Light Theme: #64748b */
+    color: var(--status-neutral) !important;
+    /* Super Dark Theme: #9ca3af, Dark Theme: #9ca3af, Light Theme: #64748b */
   }
 
   /* Accent Text Colors - Brand and highlight colors */
   .text-accent {
-    color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .text-accent-hover {
-    color: var(--accent-hover) !important; /* Super Dark Theme: #2563eb, Dark Theme: #3b82f6, Light Theme: #2563eb */
+    color: var(--accent-hover) !important;
+    /* Super Dark Theme: #2563eb, Dark Theme: #3b82f6, Light Theme: #2563eb */
   }
 
   .text-accent-muted {
-    color: var(--accent-muted) !important; /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
+    color: var(--accent-muted) !important;
+    /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
   }
 
   /* Navigation Text Colors - Header and menu specific */
   .text-nav {
-    color: var(--nav-text) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    color: var(--nav-text) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .text-nav-hover {
-    color: var(--nav-text-hover) !important; /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    color: var(--nav-text-hover) !important;
+    /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   /* Button Text Colors - Interactive element specific */
   .text-button-primary {
-    color: var(--button-primary-text) !important; /* Super Dark Theme: #ffffff, Dark Theme: #0f172a, Light Theme: #ffffff */
+    color: var(--button-primary-text) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #0f172a, Light Theme: #ffffff */
   }
 
   /* ==========================================================================
      BORDER COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Border Colors - Main container borders */
   .border-primary {
-    border-color: var(--card-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
+    border-color: var(--card-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
   }
 
   .border-secondary {
-    border-color: var(--card-border-subtle) !important; /* Super Dark Theme: rgba(55, 65, 81, 0.3), Dark Theme: rgba(148, 163, 184, 0.1), Light Theme: rgba(241, 245, 249, 0.4) */
+    border-color: var(--card-border-subtle) !important;
+    /* Super Dark Theme: rgba(55, 65, 81, 0.3), Dark Theme: rgba(148, 163, 184, 0.1), Light Theme: rgba(241, 245, 249, 0.4) */
   }
 
   .border-hover {
-    border-color: var(--card-border-hover) !important; /* Super Dark Theme: rgba(156, 163, 175, 0.6), Dark Theme: rgba(148, 163, 184, 0.4), Light Theme: rgba(148, 163, 184, 0.4) */
+    border-color: var(--card-border-hover) !important;
+    /* Super Dark Theme: rgba(156, 163, 175, 0.6), Dark Theme: rgba(148, 163, 184, 0.4), Light Theme: rgba(148, 163, 184, 0.4) */
   }
 
   .border-focus {
-    border-color: var(--card-border-focus) !important; /* Super Dark Theme: rgba(96, 165, 250, 0.8), Dark Theme: rgba(96, 165, 250, 0.6), Light Theme: rgba(59, 130, 246, 0.6) */
+    border-color: var(--card-border-focus) !important;
+    /* Super Dark Theme: rgba(96, 165, 250, 0.8), Dark Theme: rgba(96, 165, 250, 0.6), Light Theme: rgba(59, 130, 246, 0.6) */
   }
 
   /* Accent Border Colors - Brand and highlight borders */
   .border-accent {
-    border-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    border-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .border-accent-muted {
-    border-color: var(--accent-muted) !important; /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
+    border-color: var(--accent-muted) !important;
+    /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
   }
 
   /* Status Border Colors - Success, error, warning, info states */
   .border-success {
-    border-color: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    border-color: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .border-error {
-    border-color: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    border-color: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .border-warning {
-    border-color: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    border-color: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   .border-info {
-    border-color: var(--status-info) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
+    border-color: var(--status-info) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
   }
 
   /* Navigation Border Colors - Header and menu specific */
   .border-nav {
-    border-color: var(--nav-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.3), Dark Theme: rgba(148, 163, 184, 0.2), Light Theme: rgba(226, 232, 240, 0.5) */
+    border-color: var(--nav-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.3), Dark Theme: rgba(148, 163, 184, 0.2), Light Theme: rgba(226, 232, 240, 0.5) */
   }
 
   /* Panel Border Colors - Content panel specific */
   .border-panel {
-    border-color: var(--panel-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgba(148, 163, 184, 0.3), Light Theme: rgba(226, 232, 240, 0.5) */
+    border-color: var(--panel-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgba(148, 163, 184, 0.3), Light Theme: rgba(226, 232, 240, 0.5) */
   }
 
   .border-section {
-    border-color: var(--section-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.3), Dark Theme: rgb(2, 102, 242, 0.15), Light Theme: rgba(226, 232, 240, 0.4) */
+    border-color: var(--section-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.3), Dark Theme: rgb(2, 102, 242, 0.15), Light Theme: rgba(226, 232, 240, 0.4) */
   }
 
   /* Input Border Colors - Form element specific */
   .border-input {
-    border-color: var(--input-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.7) */
+    border-color: var(--input-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.7) */
   }
 
   .border-input-focus {
-    border-color: var(--input-focus-border) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    border-color: var(--input-focus-border) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   /* Button Border Colors - Interactive element specific */
   .border-button-secondary {
-    border-color: var(--button-secondary-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
+    border-color: var(--button-secondary-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
   }
 
   /* Grid and Table Border Colors - Data display specific */
   .border-grid {
-    border-color: var(--grid-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
+    border-color: var(--grid-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
   }
 
   /* ==========================================================================
      RING COLOR OVERRIDES FOR FOCUS STATES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Ring Colors - Main focus indicators */
   .ring-primary {
-    --tw-ring-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    --tw-ring-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .ring-secondary {
-    --tw-ring-color: var(--card-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
+    --tw-ring-color: var(--card-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
   }
 
   /* Status Ring Colors - Success, error, warning states */
   .ring-success {
-    --tw-ring-color: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    --tw-ring-color: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .ring-error {
-    --tw-ring-color: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    --tw-ring-color: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .ring-warning {
-    --tw-ring-color: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    --tw-ring-color: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   .ring-info {
-    --tw-ring-color: var(--status-info) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
+    --tw-ring-color: var(--status-info) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
   }
 
   /* Accent Ring Colors - Brand highlight focus */
   .ring-accent {
-    --tw-ring-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    --tw-ring-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .ring-accent-muted {
-    --tw-ring-color: var(--accent-muted) !important; /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
+    --tw-ring-color: var(--accent-muted) !important;
+    /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
   }
 
   /* ==========================================================================
      FILL COLOR OVERRIDES FOR SVG ICONS - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Fill Colors - Main icon fills */
   .fill-primary {
-    fill: var(--text-primary) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    fill: var(--text-primary) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .fill-secondary {
-    fill: var(--text-secondary) !important; /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
+    fill: var(--text-secondary) !important;
+    /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
   }
 
   .fill-tertiary {
-    fill: var(--text-tertiary) !important; /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
+    fill: var(--text-tertiary) !important;
+    /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
   }
 
   /* Accent Fill Colors - Brand icon fills */
   .fill-accent {
-    fill: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    fill: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .fill-accent-hover {
-    fill: var(--accent-hover) !important; /* Super Dark Theme: #2563eb, Dark Theme: #3b82f6, Light Theme: #2563eb */
+    fill: var(--accent-hover) !important;
+    /* Super Dark Theme: #2563eb, Dark Theme: #3b82f6, Light Theme: #2563eb */
   }
 
   /* Status Fill Colors - Success, error, warning icon fills */
   .fill-success {
-    fill: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    fill: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .fill-error {
-    fill: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    fill: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .fill-warning {
-    fill: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    fill: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   .fill-info {
-    fill: var(--status-info) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
+    fill: var(--status-info) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
   }
 
   /* Navigation Fill Colors - Header icon fills */
   .fill-nav {
-    fill: var(--nav-text) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    fill: var(--nav-text) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .fill-nav-hover {
-    fill: var(--nav-text-hover) !important; /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    fill: var(--nav-text-hover) !important;
+    /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   /* ==========================================================================
      STROKE COLOR OVERRIDES FOR SVG ICONS - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Stroke Colors - Main icon strokes */
   .stroke-primary {
-    stroke: var(--text-primary) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    stroke: var(--text-primary) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .stroke-secondary {
-    stroke: var(--text-secondary) !important; /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
+    stroke: var(--text-secondary) !important;
+    /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
   }
 
   .stroke-tertiary {
-    stroke: var(--text-tertiary) !important; /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
+    stroke: var(--text-tertiary) !important;
+    /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
   }
 
   /* Accent Stroke Colors - Brand icon strokes */
   .stroke-accent {
-    stroke: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    stroke: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .stroke-accent-hover {
-    stroke: var(--accent-hover) !important; /* Super Dark Theme: #2563eb, Dark Theme: #3b82f6, Light Theme: #2563eb */
+    stroke: var(--accent-hover) !important;
+    /* Super Dark Theme: #2563eb, Dark Theme: #3b82f6, Light Theme: #2563eb */
   }
 
   /* Status Stroke Colors - Success, error, warning icon strokes */
   .stroke-success {
-    stroke: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    stroke: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .stroke-error {
-    stroke: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    stroke: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .stroke-warning {
-    stroke: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    stroke: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   .stroke-info {
-    stroke: var(--status-info) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
+    stroke: var(--status-info) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #38bdf8, Light Theme: #0ea5e9 */
   }
 
   /* Navigation Stroke Colors - Header icon strokes */
   .stroke-nav {
-    stroke: var(--nav-text) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    stroke: var(--nav-text) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .stroke-nav-hover {
-    stroke: var(--nav-text-hover) !important; /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    stroke: var(--nav-text-hover) !important;
+    /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   /* ==========================================================================
      PLACEHOLDER COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Placeholder Colors - Form input placeholders */
   .placeholder-primary::placeholder {
-    color: var(--input-placeholder) !important; /* Super Dark Theme: rgba(156, 163, 175, 0.6), Dark Theme: rgba(203, 213, 225, 0.6), Light Theme: rgba(100, 116, 139, 0.5) */
+    color: var(--input-placeholder) !important;
+    /* Super Dark Theme: rgba(156, 163, 175, 0.6), Dark Theme: rgba(203, 213, 225, 0.6), Light Theme: rgba(100, 116, 139, 0.5) */
   }
 
   .placeholder-secondary::placeholder {
-    color: var(--text-tertiary) !important; /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
+    color: var(--text-tertiary) !important;
+    /* Super Dark Theme: #9ca3af, Dark Theme: #94a3b8, Light Theme: #64748b */
   }
 
   .placeholder-muted::placeholder {
-    color: var(--text-disabled) !important; /* Super Dark Theme: #6b7280, Dark Theme: #64748b, Light Theme: #94a3b8 */
+    color: var(--text-disabled) !important;
+    /* Super Dark Theme: #6b7280, Dark Theme: #64748b, Light Theme: #94a3b8 */
   }
 
   /* ==========================================================================
      ACCENT COLOR OVERRIDES FOR FORM ELEMENTS - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Accent Colors - Checkbox, radio, range elements */
   .accent-primary {
-    accent-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    accent-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .accent-success {
-    accent-color: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    accent-color: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .accent-error {
-    accent-color: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    accent-color: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .accent-warning {
-    accent-color: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    accent-color: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   /* ==========================================================================
      DIVIDE COLOR OVERRIDES FOR TABLES AND LISTS - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Divide Colors - List and table dividers */
   .divide-primary> :not([hidden])~ :not([hidden]) {
-    border-color: var(--card-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
+    border-color: var(--card-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
   }
 
   .divide-secondary> :not([hidden])~ :not([hidden]) {
-    border-color: var(--card-border-subtle) !important; /* Super Dark Theme: rgba(55, 65, 81, 0.3), Dark Theme: rgba(148, 163, 184, 0.1), Light Theme: rgba(241, 245, 249, 0.4) */
+    border-color: var(--card-border-subtle) !important;
+    /* Super Dark Theme: rgba(55, 65, 81, 0.3), Dark Theme: rgba(148, 163, 184, 0.1), Light Theme: rgba(241, 245, 249, 0.4) */
   }
 
   .divide-accent> :not([hidden])~ :not([hidden]) {
-    border-color: var(--accent-muted) !important; /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
+    border-color: var(--accent-muted) !important;
+    /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
   }
 
   /* ==========================================================================
      SHADOW COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Shadow Colors - Main element shadows */
   .shadow-primary {
-    --tw-shadow-color: var(--shadow-color) !important; /* Super Dark Theme: rgba(0, 0, 0, 0.8), Dark Theme: rgba(0, 0, 0, 0.7), Light Theme: rgba(15, 23, 42, 0.08) */
+    --tw-shadow-color: var(--shadow-color) !important;
+    /* Super Dark Theme: rgba(0, 0, 0, 0.8), Dark Theme: rgba(0, 0, 0, 0.7), Light Theme: rgba(15, 23, 42, 0.08) */
     --tw-shadow: var(--tw-shadow-colored) !important;
   }
 
   .shadow-secondary {
-    --tw-shadow-color: var(--shadow-subtle) !important; /* Super Dark Theme: rgba(0, 0, 0, 0.4), Dark Theme: rgba(0, 0, 0, 0.4), Light Theme: rgba(15, 23, 42, 0.04) */
+    --tw-shadow-color: var(--shadow-subtle) !important;
+    /* Super Dark Theme: rgba(0, 0, 0, 0.4), Dark Theme: rgba(0, 0, 0, 0.4), Light Theme: rgba(15, 23, 42, 0.04) */
     --tw-shadow: var(--tw-shadow-colored) !important;
   }
 
   /* Accent Shadow Colors - Brand element shadows */
   .shadow-accent {
-    --tw-shadow-color: var(--shadow-accent) !important; /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(59, 130, 246, 0.15) */
+    --tw-shadow-color: var(--shadow-accent) !important;
+    /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(59, 130, 246, 0.15) */
     --tw-shadow: var(--tw-shadow-colored) !important;
   }
 
   /* Status Shadow Colors - Success, error, warning shadows */
   .shadow-success {
-    --tw-shadow-color: rgba(16, 185, 129, 0.3) !important; /* Success shadow for all themes */
+    --tw-shadow-color: rgba(16, 185, 129, 0.3) !important;
+    /* Success shadow for all themes */
     --tw-shadow: var(--tw-shadow-colored) !important;
   }
 
   .shadow-error {
-    --tw-shadow-color: rgba(239, 68, 68, 0.3) !important; /* Error shadow for all themes */
+    --tw-shadow-color: rgba(239, 68, 68, 0.3) !important;
+    /* Error shadow for all themes */
     --tw-shadow: var(--tw-shadow-colored) !important;
   }
 
   .shadow-warning {
-    --tw-shadow-color: rgba(245, 158, 11, 0.3) !important; /* Warning shadow for all themes */
+    --tw-shadow-color: rgba(245, 158, 11, 0.3) !important;
+    /* Warning shadow for all themes */
     --tw-shadow: var(--tw-shadow-colored) !important;
   }
 
   /* ==========================================================================
      SCROLLBAR COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Scrollbar Track Colors - Background of scrollbar */
   .scrollbar-track-primary {
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) !important; /* Super Dark Theme: Track transparent, Dark Theme: rgba(30, 41, 59, 0.3), Light Theme: rgba(241, 245, 249, 0.4) */
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track) !important;
+    /* Super Dark Theme: Track transparent, Dark Theme: rgba(30, 41, 59, 0.3), Light Theme: rgba(241, 245, 249, 0.4) */
   }
 
   /* Scrollbar Thumb Colors - Draggable part of scrollbar */
   .scrollbar-thumb-primary {
-    scrollbar-color: var(--scrollbar-thumb-hover) var(--scrollbar-track) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    scrollbar-color: var(--scrollbar-thumb-hover) var(--scrollbar-track) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   /* ==========================================================================
      CARET COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Caret Colors - Text input cursors */
   .caret-primary {
-    caret-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    caret-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .caret-secondary {
-    caret-color: var(--text-primary) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    caret-color: var(--text-primary) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   /* ==========================================================================
      SELECTION COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Text Selection Colors - Highlighted text */
   .selection-primary::selection {
-    background-color: var(--accent-muted) !important; /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
-    color: var(--text-primary) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    background-color: var(--accent-muted) !important;
+    /* Super Dark Theme: rgba(59, 130, 246, 0.3), Dark Theme: rgba(96, 165, 250, 0.3), Light Theme: rgba(59, 130, 246, 0.2) */
+    color: var(--text-primary) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .selection-accent::selection {
-    background-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
-    color: var(--text-inverse) !important; /* Super Dark Theme: #060511, Dark Theme: #0f172a, Light Theme: #ffffff */
+    background-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    color: var(--text-inverse) !important;
+    /* Super Dark Theme: #060511, Dark Theme: #0f172a, Light Theme: #ffffff */
   }
 
   /* ==========================================================================
      OUTLINE COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Primary Outline Colors - Focus outlines */
   .outline-primary {
-    outline-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    outline-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .outline-secondary {
-    outline-color: var(--card-border) !important; /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
+    outline-color: var(--card-border) !important;
+    /* Super Dark Theme: rgba(75, 85, 99, 0.4), Dark Theme: rgb(255, 255, 255, 0.1), Light Theme: rgba(226, 232, 240, 0.6) */
   }
 
   /* Status Outline Colors - Success, error, warning outlines */
   .outline-success {
-    outline-color: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    outline-color: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .outline-error {
-    outline-color: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    outline-color: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .outline-warning {
-    outline-color: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    outline-color: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 
   /* ==========================================================================
      DECORATION COLOR OVERRIDES - ALL THEMES
      ========================================================================== */
-  
+
   /* Text Decoration Colors - Underlines, overlines, line-through */
   .decoration-primary {
-    text-decoration-color: var(--text-primary) !important; /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
+    text-decoration-color: var(--text-primary) !important;
+    /* Super Dark Theme: #ffffff, Dark Theme: #f8fafc, Light Theme: #0f172a */
   }
 
   .decoration-secondary {
-    text-decoration-color: var(--text-secondary) !important; /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
+    text-decoration-color: var(--text-secondary) !important;
+    /* Super Dark Theme: #e5e7eb, Dark Theme: #cbd5e1, Light Theme: #334155 */
   }
 
   .decoration-accent {
-    text-decoration-color: var(--accent) !important; /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    text-decoration-color: var(--accent) !important;
+    /* Super Dark Theme: #3b82f6, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   .decoration-link {
-    text-decoration-color: var(--text-link) !important; /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
+    text-decoration-color: var(--text-link) !important;
+    /* Super Dark Theme: #60a5fa, Dark Theme: #60a5fa, Light Theme: #3b82f6 */
   }
 
   /* Status Decoration Colors - Success, error, warning decorations */
   .decoration-success {
-    text-decoration-color: var(--status-success) !important; /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
+    text-decoration-color: var(--status-success) !important;
+    /* Super Dark Theme: #22c55e, Dark Theme: #34d399, Light Theme: #16a34a */
   }
 
   .decoration-error {
-    text-decoration-color: var(--status-error) !important; /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
+    text-decoration-color: var(--status-error) !important;
+    /* Super Dark Theme: #ef4444, Dark Theme: #f87171, Light Theme: #dc2626 */
   }
 
   .decoration-warning {
-    text-decoration-color: var(--status-warning) !important; /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
+    text-decoration-color: var(--status-warning) !important;
+    /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
   }
 }
 
@@ -2671,62 +2796,77 @@ body {
 
 /* Super Dark Theme Div Elements */
 .theme-super-dark div {
-  color: var(--text-primary) !important; /* White text for maximum contrast in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for maximum contrast in super dark theme */
 }
 
 .theme-super-dark div.container,
 .theme-super-dark div.wrapper,
 .theme-super-dark div.main,
 .theme-super-dark div.content {
-  background: var(--bg-tertiary) !important; /* Deep navy background for main containers in super dark theme */
-  border-color: var(--card-border) !important; /* Subtle gray borders for main containers in super dark theme */
+  background: var(--bg-tertiary) !important;
+  /* Deep navy background for main containers in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Subtle gray borders for main containers in super dark theme */
 }
 
 .theme-super-dark div.sidebar,
 .theme-super-dark div.aside,
 .theme-super-dark div.panel {
-  background: #060511 !important; /* Solid background for sidebar elements in super dark theme */
-  border: 1px solid var(--panel-border) !important; /* Panel borders for sidebar elements in super dark theme */
+  background: #060511 !important;
+  /* Solid background for sidebar elements in super dark theme */
+  border: 1px solid var(--panel-border) !important;
+  /* Panel borders for sidebar elements in super dark theme */
 }
 
 /* Dark Theme Div Elements */
 .theme-dark div {
-  color: var(--text-primary) !important; /* Light text for contrast in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for contrast in dark theme */
 }
 
 .theme-dark div.container,
 .theme-dark div.wrapper,
 .theme-dark div.main,
 .theme-dark div.content {
-  background: var(--card-bg) !important; /* Dark slate background for main containers in dark theme */
-  border-color: var(--card-border) !important; /* Translucent borders for main containers in dark theme */
+  background: var(--card-bg) !important;
+  /* Dark slate background for main containers in dark theme */
+  border-color: var(--card-border) !important;
+  /* Translucent borders for main containers in dark theme */
 }
 
 .theme-dark div.sidebar,
 .theme-dark div.aside,
 .theme-dark div.panel {
-  background: var(--panel-bg) !important; /* Panel background for sidebar elements in dark theme */
-  border: 1px solid var(--panel-border) !important; /* Panel borders for sidebar elements in dark theme */
+  background: var(--panel-bg) !important;
+  /* Panel background for sidebar elements in dark theme */
+  border: 1px solid var(--panel-border) !important;
+  /* Panel borders for sidebar elements in dark theme */
 }
 
 /* Light Theme Div Elements */
 .theme-light div {
-  color: var(--text-primary) !important; /* Dark text for contrast in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for contrast in light theme */
 }
 
 .theme-light div.container,
 .theme-light div.wrapper,
 .theme-light div.main,
 .theme-light div.content {
-  background: var(--card-bg) !important; /* White background for main containers in light theme */
-  border-color: var(--card-border) !important; /* Light gray borders for main containers in light theme */
+  background: var(--card-bg) !important;
+  /* White background for main containers in light theme */
+  border-color: var(--card-border) !important;
+  /* Light gray borders for main containers in light theme */
 }
 
 .theme-light div.sidebar,
 .theme-light div.aside,
 .theme-light div.panel {
-  background: var(--panel-bg) !important; /* Panel background for sidebar elements in light theme */
-  border: 1px solid var(--panel-border) !important; /* Panel borders for sidebar elements in light theme */
+  background: var(--panel-bg) !important;
+  /* Panel background for sidebar elements in light theme */
+  border: 1px solid var(--panel-border) !important;
+  /* Panel borders for sidebar elements in light theme */
 }
 
 /* ==========================================================================
@@ -2735,80 +2875,119 @@ body {
 
 /* Super Dark Theme Button Elements */
 .theme-super-dark button {
-  background: #060511 !important; /* Solid background for all buttons in super dark theme */
-  color: var(--text-primary) !important; /* White text for all buttons in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Subtle borders for all buttons in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all buttons in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all buttons in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all buttons in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Subtle borders for all buttons in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all buttons in super dark theme */
 }
 
 .theme-super-dark button:hover {
-  background: var(--card-bg-hover) !important; /* Hover background for all buttons in super dark theme */
-  border-color: var(--accent) !important; /* Accent border on hover for all buttons in super dark theme */
-  color: var(--accent) !important; /* Accent text on hover for all buttons in super dark theme */
+  background: var(--card-bg-hover) !important;
+  /* Hover background for all buttons in super dark theme */
+  border-color: var(--accent) !important;
+  /* Accent border on hover for all buttons in super dark theme */
+  color: var(--accent) !important;
+  /* Accent text on hover for all buttons in super dark theme */
 }
 
 .theme-super-dark button:focus {
-  outline: 2px solid var(--accent) !important; /* Accent outline on focus for all buttons in super dark theme */
-  outline-offset: 2px !important; /* Outline offset for all buttons in super dark theme */
+  outline: 2px solid var(--accent) !important;
+  /* Accent outline on focus for all buttons in super dark theme */
+  outline-offset: 2px !important;
+  /* Outline offset for all buttons in super dark theme */
 }
 
 .theme-super-dark button:disabled {
-  background: var(--card-bg-secondary) !important; /* Disabled background for all buttons in super dark theme */
-  color: var(--text-disabled) !important; /* Disabled text for all buttons in super dark theme */
-  border-color: var(--card-border-subtle) !important; /* Disabled border for all buttons in super dark theme */
-  cursor: not-allowed !important; /* Disabled cursor for all buttons in super dark theme */
+  background: var(--card-bg-secondary) !important;
+  /* Disabled background for all buttons in super dark theme */
+  color: var(--text-disabled) !important;
+  /* Disabled text for all buttons in super dark theme */
+  border-color: var(--card-border-subtle) !important;
+  /* Disabled border for all buttons in super dark theme */
+  cursor: not-allowed !important;
+  /* Disabled cursor for all buttons in super dark theme */
 }
 
 /* Dark Theme Button Elements */
 .theme-dark button {
-  background: var(--card-bg) !important; /* Card background for all buttons in dark theme */
-  color: var(--text-primary) !important; /* Light text for all buttons in dark theme */
-  border: 1px solid var(--card-border) !important; /* Translucent borders for all buttons in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all buttons in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all buttons in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all buttons in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Translucent borders for all buttons in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all buttons in dark theme */
 }
 
 .theme-dark button:hover {
-  background: var(--card-bg-hover) !important; /* Hover background for all buttons in dark theme */
-  border-color: var(--accent) !important; /* Accent border on hover for all buttons in dark theme */
-  color: var(--accent) !important; /* Accent text on hover for all buttons in dark theme */
+  background: var(--card-bg-hover) !important;
+  /* Hover background for all buttons in dark theme */
+  border-color: var(--accent) !important;
+  /* Accent border on hover for all buttons in dark theme */
+  color: var(--accent) !important;
+  /* Accent text on hover for all buttons in dark theme */
 }
 
 .theme-dark button:focus {
-  outline: 2px solid var(--accent) !important; /* Accent outline on focus for all buttons in dark theme */
-  outline-offset: 2px !important; /* Outline offset for all buttons in dark theme */
+  outline: 2px solid var(--accent) !important;
+  /* Accent outline on focus for all buttons in dark theme */
+  outline-offset: 2px !important;
+  /* Outline offset for all buttons in dark theme */
 }
 
 .theme-dark button:disabled {
-  background: var(--card-bg-secondary) !important; /* Disabled background for all buttons in dark theme */
-  color: var(--text-disabled) !important; /* Disabled text for all buttons in dark theme */
-  border-color: var(--card-border-subtle) !important; /* Disabled border for all buttons in dark theme */
-  cursor: not-allowed !important; /* Disabled cursor for all buttons in dark theme */
+  background: var(--card-bg-secondary) !important;
+  /* Disabled background for all buttons in dark theme */
+  color: var(--text-disabled) !important;
+  /* Disabled text for all buttons in dark theme */
+  border-color: var(--card-border-subtle) !important;
+  /* Disabled border for all buttons in dark theme */
+  cursor: not-allowed !important;
+  /* Disabled cursor for all buttons in dark theme */
 }
 
 /* Light Theme Button Elements */
 .theme-light button {
-  background: var(--card-bg) !important; /* White background for all buttons in light theme */
-  color: var(--text-primary) !important; /* Dark text for all buttons in light theme */
-  border: 1px solid var(--card-border) !important; /* Light gray borders for all buttons in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all buttons in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all buttons in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all buttons in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Light gray borders for all buttons in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all buttons in light theme */
 }
 
 .theme-light button:hover {
-  background: var(--card-bg-hover) !important; /* Hover background for all buttons in light theme */
-  border-color: var(--accent) !important; /* Accent border on hover for all buttons in light theme */
-  color: var(--accent) !important; /* Accent text on hover for all buttons in light theme */
+  background: var(--card-bg-hover) !important;
+  /* Hover background for all buttons in light theme */
+  border-color: var(--accent) !important;
+  /* Accent border on hover for all buttons in light theme */
+  color: var(--accent) !important;
+  /* Accent text on hover for all buttons in light theme */
 }
 
 .theme-light button:focus {
-  outline: 2px solid var(--accent) !important; /* Accent outline on focus for all buttons in light theme */
-  outline-offset: 2px !important; /* Outline offset for all buttons in light theme */
+  outline: 2px solid var(--accent) !important;
+  /* Accent outline on focus for all buttons in light theme */
+  outline-offset: 2px !important;
+  /* Outline offset for all buttons in light theme */
 }
 
 .theme-light button:disabled {
-  background: var(--card-bg-secondary) !important; /* Disabled background for all buttons in light theme */
-  color: var(--text-disabled) !important; /* Disabled text for all buttons in light theme */
-  border-color: var(--card-border-subtle) !important; /* Disabled border for all buttons in light theme */
-  cursor: not-allowed !important; /* Disabled cursor for all buttons in light theme */
+  background: var(--card-bg-secondary) !important;
+  /* Disabled background for all buttons in light theme */
+  color: var(--text-disabled) !important;
+  /* Disabled text for all buttons in light theme */
+  border-color: var(--card-border-subtle) !important;
+  /* Disabled border for all buttons in light theme */
+  cursor: not-allowed !important;
+  /* Disabled cursor for all buttons in light theme */
 }
 
 /* ==========================================================================
@@ -2819,99 +2998,138 @@ body {
 .theme-super-dark input,
 .theme-super-dark textarea,
 .theme-super-dark select {
-  background: #060511 !important; /* Solid background for all inputs in super dark theme */
-  color: var(--text-primary) !important; /* White text for all inputs in super dark theme */
-  border: 1px solid var(--input-border) !important; /* Input borders for all inputs in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all inputs in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all inputs in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all inputs in super dark theme */
+  border: 1px solid var(--input-border) !important;
+  /* Input borders for all inputs in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all inputs in super dark theme */
 }
 
 .theme-super-dark input:focus,
 .theme-super-dark textarea:focus,
 .theme-super-dark select:focus {
-  background: var(--input-focus-bg) !important; /* Focus background for all inputs in super dark theme */
-  border-color: var(--input-focus-border) !important; /* Focus border for all inputs in super dark theme */
-  outline: none !important; /* Remove default outline for all inputs in super dark theme */
-  box-shadow: 0 0 0 2px var(--accent-background) !important; /* Focus shadow for all inputs in super dark theme */
+  background: var(--input-focus-bg) !important;
+  /* Focus background for all inputs in super dark theme */
+  border-color: var(--input-focus-border) !important;
+  /* Focus border for all inputs in super dark theme */
+  outline: none !important;
+  /* Remove default outline for all inputs in super dark theme */
+  box-shadow: 0 0 0 2px var(--accent-background) !important;
+  /* Focus shadow for all inputs in super dark theme */
 }
 
 .theme-super-dark input::placeholder,
 .theme-super-dark textarea::placeholder {
-  color: var(--input-placeholder) !important; /* Placeholder text for all inputs in super dark theme */
+  color: var(--input-placeholder) !important;
+  /* Placeholder text for all inputs in super dark theme */
 }
 
 .theme-super-dark input:disabled,
 .theme-super-dark textarea:disabled,
 .theme-super-dark select:disabled {
-  background: var(--card-bg-secondary) !important; /* Disabled background for all inputs in super dark theme */
-  color: var(--text-disabled) !important; /* Disabled text for all inputs in super dark theme */
-  border-color: var(--card-border-subtle) !important; /* Disabled border for all inputs in super dark theme */
-  cursor: not-allowed !important; /* Disabled cursor for all inputs in super dark theme */
+  background: var(--card-bg-secondary) !important;
+  /* Disabled background for all inputs in super dark theme */
+  color: var(--text-disabled) !important;
+  /* Disabled text for all inputs in super dark theme */
+  border-color: var(--card-border-subtle) !important;
+  /* Disabled border for all inputs in super dark theme */
+  cursor: not-allowed !important;
+  /* Disabled cursor for all inputs in super dark theme */
 }
 
 /* Dark Theme Input Elements */
 .theme-dark input,
 .theme-dark textarea,
 .theme-dark select {
-  background: var(--input-bg) !important; /* Input background for all inputs in dark theme */
-  color: var(--text-primary) !important; /* Light text for all inputs in dark theme */
-  border: 1px solid var(--input-border) !important; /* Input borders for all inputs in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all inputs in dark theme */
+  background: var(--input-bg) !important;
+  /* Input background for all inputs in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all inputs in dark theme */
+  border: 1px solid var(--input-border) !important;
+  /* Input borders for all inputs in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all inputs in dark theme */
 }
 
 .theme-dark input:focus,
 .theme-dark textarea:focus,
 .theme-dark select:focus {
-  background: var(--input-focus-bg) !important; /* Focus background for all inputs in dark theme */
-  border-color: var(--input-focus-border) !important; /* Focus border for all inputs in dark theme */
-  outline: none !important; /* Remove default outline for all inputs in dark theme */
-  box-shadow: 0 0 0 2px var(--accent-background) !important; /* Focus shadow for all inputs in dark theme */
+  background: var(--input-focus-bg) !important;
+  /* Focus background for all inputs in dark theme */
+  border-color: var(--input-focus-border) !important;
+  /* Focus border for all inputs in dark theme */
+  outline: none !important;
+  /* Remove default outline for all inputs in dark theme */
+  box-shadow: 0 0 0 2px var(--accent-background) !important;
+  /* Focus shadow for all inputs in dark theme */
 }
 
 .theme-dark input::placeholder,
 .theme-dark textarea::placeholder {
-  color: var(--input-placeholder) !important; /* Placeholder text for all inputs in dark theme */
+  color: var(--input-placeholder) !important;
+  /* Placeholder text for all inputs in dark theme */
 }
 
 .theme-dark input:disabled,
 .theme-dark textarea:disabled,
 .theme-dark select:disabled {
-  background: var(--card-bg-secondary) !important; /* Disabled background for all inputs in dark theme */
-  color: var(--text-disabled) !important; /* Disabled text for all inputs in dark theme */
-  border-color: var(--card-border-subtle) !important; /* Disabled border for all inputs in dark theme */
-  cursor: not-allowed !important; /* Disabled cursor for all inputs in dark theme */
+  background: var(--card-bg-secondary) !important;
+  /* Disabled background for all inputs in dark theme */
+  color: var(--text-disabled) !important;
+  /* Disabled text for all inputs in dark theme */
+  border-color: var(--card-border-subtle) !important;
+  /* Disabled border for all inputs in dark theme */
+  cursor: not-allowed !important;
+  /* Disabled cursor for all inputs in dark theme */
 }
 
 /* Light Theme Input Elements */
 .theme-light input,
 .theme-light textarea,
 .theme-light select {
-  background: var(--input-bg) !important; /* White background for all inputs in light theme */
-  color: var(--text-primary) !important; /* Dark text for all inputs in light theme */
-  border: 1px solid var(--input-border) !important; /* Light gray borders for all inputs in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all inputs in light theme */
+  background: var(--input-bg) !important;
+  /* White background for all inputs in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all inputs in light theme */
+  border: 1px solid var(--input-border) !important;
+  /* Light gray borders for all inputs in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all inputs in light theme */
 }
 
 .theme-light input:focus,
 .theme-light textarea:focus,
 .theme-light select:focus {
-  background: var(--input-focus-bg) !important; /* Focus background for all inputs in light theme */
-  border-color: var(--input-focus-border) !important; /* Focus border for all inputs in light theme */
-  outline: none !important; /* Remove default outline for all inputs in light theme */
-  box-shadow: 0 0 0 2px var(--accent-background) !important; /* Focus shadow for all inputs in light theme */
+  background: var(--input-focus-bg) !important;
+  /* Focus background for all inputs in light theme */
+  border-color: var(--input-focus-border) !important;
+  /* Focus border for all inputs in light theme */
+  outline: none !important;
+  /* Remove default outline for all inputs in light theme */
+  box-shadow: 0 0 0 2px var(--accent-background) !important;
+  /* Focus shadow for all inputs in light theme */
 }
 
 .theme-light input::placeholder,
 .theme-light textarea::placeholder {
-  color: var(--input-placeholder) !important; /* Placeholder text for all inputs in light theme */
+  color: var(--input-placeholder) !important;
+  /* Placeholder text for all inputs in light theme */
 }
 
 .theme-light input:disabled,
 .theme-light textarea:disabled,
 .theme-light select:disabled {
-  background: var(--card-bg-secondary) !important; /* Disabled background for all inputs in light theme */
-  color: var(--text-disabled) !important; /* Disabled text for all inputs in light theme */
-  border-color: var(--card-border-subtle) !important; /* Disabled border for all inputs in light theme */
-  cursor: not-allowed !important; /* Disabled cursor for all inputs in light theme */
+  background: var(--card-bg-secondary) !important;
+  /* Disabled background for all inputs in light theme */
+  color: var(--text-disabled) !important;
+  /* Disabled text for all inputs in light theme */
+  border-color: var(--card-border-subtle) !important;
+  /* Disabled border for all inputs in light theme */
+  cursor: not-allowed !important;
+  /* Disabled cursor for all inputs in light theme */
 }
 
 /* ==========================================================================
@@ -2925,8 +3143,10 @@ body {
 .theme-super-dark h4,
 .theme-super-dark h5,
 .theme-super-dark h6 {
-  color: var(--text-primary) !important; /* White headings for maximum contrast in super dark theme */
-  font-weight: 600 !important; /* Semi-bold weight for all headings in super dark theme */
+  color: var(--text-primary) !important;
+  /* White headings for maximum contrast in super dark theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all headings in super dark theme */
 }
 
 .theme-super-dark p,
@@ -2934,33 +3154,45 @@ body {
 .theme-super-dark div,
 .theme-super-dark section,
 .theme-super-dark article {
-  color: var(--text-primary) !important; /* White text for all content in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all content in super dark theme */
 }
 
 .theme-super-dark strong,
 .theme-super-dark b {
-  color: var(--text-primary) !important; /* White bold text in super dark theme */
-  font-weight: 700 !important; /* Bold weight for strong elements in super dark theme */
+  color: var(--text-primary) !important;
+  /* White bold text in super dark theme */
+  font-weight: 700 !important;
+  /* Bold weight for strong elements in super dark theme */
 }
 
 .theme-super-dark em,
 .theme-super-dark i {
-  color: var(--text-secondary) !important; /* Secondary color for italic text in super dark theme */
-  font-style: italic !important; /* Italic style for emphasis elements in super dark theme */
+  color: var(--text-secondary) !important;
+  /* Secondary color for italic text in super dark theme */
+  font-style: italic !important;
+  /* Italic style for emphasis elements in super dark theme */
 }
 
 .theme-super-dark small {
-  color: var(--text-tertiary) !important; /* Tertiary color for small text in super dark theme */
-  font-size: 0.875rem !important; /* Smaller font size for small elements in super dark theme */
+  color: var(--text-tertiary) !important;
+  /* Tertiary color for small text in super dark theme */
+  font-size: 0.875rem !important;
+  /* Smaller font size for small elements in super dark theme */
 }
 
 .theme-super-dark code,
 .theme-super-dark pre {
-  background: var(--card-bg-secondary) !important; /* Secondary background for code in super dark theme */
-  color: var(--accent) !important; /* Accent color for code text in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for code blocks in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for code blocks in super dark theme */
-  padding: 0.25rem 0.5rem !important; /* Padding for code elements in super dark theme */
+  background: var(--card-bg-secondary) !important;
+  /* Secondary background for code in super dark theme */
+  color: var(--accent) !important;
+  /* Accent color for code text in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for code blocks in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for code blocks in super dark theme */
+  padding: 0.25rem 0.5rem !important;
+  /* Padding for code elements in super dark theme */
 }
 
 /* Dark Theme Typography Elements */
@@ -2970,8 +3202,10 @@ body {
 .theme-dark h4,
 .theme-dark h5,
 .theme-dark h6 {
-  color: var(--text-primary) !important; /* Light headings for contrast in dark theme */
-  font-weight: 600 !important; /* Semi-bold weight for all headings in dark theme */
+  color: var(--text-primary) !important;
+  /* Light headings for contrast in dark theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all headings in dark theme */
 }
 
 .theme-dark p,
@@ -2979,33 +3213,45 @@ body {
 .theme-dark div,
 .theme-dark section,
 .theme-dark article {
-  color: var(--text-primary) !important; /* Light text for all content in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all content in dark theme */
 }
 
 .theme-dark strong,
 .theme-dark b {
-  color: var(--text-primary) !important; /* Light bold text in dark theme */
-  font-weight: 700 !important; /* Bold weight for strong elements in dark theme */
+  color: var(--text-primary) !important;
+  /* Light bold text in dark theme */
+  font-weight: 700 !important;
+  /* Bold weight for strong elements in dark theme */
 }
 
 .theme-dark em,
 .theme-dark i {
-  color: var(--text-secondary) !important; /* Secondary color for italic text in dark theme */
-  font-style: italic !important; /* Italic style for emphasis elements in dark theme */
+  color: var(--text-secondary) !important;
+  /* Secondary color for italic text in dark theme */
+  font-style: italic !important;
+  /* Italic style for emphasis elements in dark theme */
 }
 
 .theme-dark small {
-  color: var(--text-tertiary) !important; /* Tertiary color for small text in dark theme */
-  font-size: 0.875rem !important; /* Smaller font size for small elements in dark theme */
+  color: var(--text-tertiary) !important;
+  /* Tertiary color for small text in dark theme */
+  font-size: 0.875rem !important;
+  /* Smaller font size for small elements in dark theme */
 }
 
 .theme-dark code,
 .theme-dark pre {
-  background: var(--card-bg-secondary) !important; /* Secondary background for code in dark theme */
-  color: var(--accent) !important; /* Accent color for code text in dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for code blocks in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for code blocks in dark theme */
-  padding: 0.25rem 0.5rem !important; /* Padding for code elements in dark theme */
+  background: var(--card-bg-secondary) !important;
+  /* Secondary background for code in dark theme */
+  color: var(--accent) !important;
+  /* Accent color for code text in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for code blocks in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for code blocks in dark theme */
+  padding: 0.25rem 0.5rem !important;
+  /* Padding for code elements in dark theme */
 }
 
 /* Light Theme Typography Elements */
@@ -3015,8 +3261,10 @@ body {
 .theme-light h4,
 .theme-light h5,
 .theme-light h6 {
-  color: var(--text-primary) !important; /* Dark headings for contrast in light theme */
-  font-weight: 600 !important; /* Semi-bold weight for all headings in light theme */
+  color: var(--text-primary) !important;
+  /* Dark headings for contrast in light theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all headings in light theme */
 }
 
 .theme-light p,
@@ -3024,33 +3272,45 @@ body {
 .theme-light div,
 .theme-light section,
 .theme-light article {
-  color: var(--text-primary) !important; /* Dark text for all content in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all content in light theme */
 }
 
 .theme-light strong,
 .theme-light b {
-  color: var(--text-primary) !important; /* Dark bold text in light theme */
-  font-weight: 700 !important; /* Bold weight for strong elements in light theme */
+  color: var(--text-primary) !important;
+  /* Dark bold text in light theme */
+  font-weight: 700 !important;
+  /* Bold weight for strong elements in light theme */
 }
 
 .theme-light em,
 .theme-light i {
-  color: var(--text-secondary) !important; /* Secondary color for italic text in light theme */
-  font-style: italic !important; /* Italic style for emphasis elements in light theme */
+  color: var(--text-secondary) !important;
+  /* Secondary color for italic text in light theme */
+  font-style: italic !important;
+  /* Italic style for emphasis elements in light theme */
 }
 
 .theme-light small {
-  color: var(--text-tertiary) !important; /* Tertiary color for small text in light theme */
-  font-size: 0.875rem !important; /* Smaller font size for small elements in light theme */
+  color: var(--text-tertiary) !important;
+  /* Tertiary color for small text in light theme */
+  font-size: 0.875rem !important;
+  /* Smaller font size for small elements in light theme */
 }
 
 .theme-light code,
 .theme-light pre {
-  background: var(--card-bg-secondary) !important; /* Secondary background for code in light theme */
-  color: var(--accent) !important; /* Accent color for code text in light theme */
-  border: 1px solid var(--card-border) !important; /* Border for code blocks in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for code blocks in light theme */
-  padding: 0.25rem 0.5rem !important; /* Padding for code elements in light theme */
+  background: var(--card-bg-secondary) !important;
+  /* Secondary background for code in light theme */
+  color: var(--accent) !important;
+  /* Accent color for code text in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for code blocks in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for code blocks in light theme */
+  padding: 0.25rem 0.5rem !important;
+  /* Padding for code elements in light theme */
 }
 
 /* ==========================================================================
@@ -3059,65 +3319,89 @@ body {
 
 /* Super Dark Theme Link Elements */
 .theme-super-dark a {
-  color: var(--text-link) !important; /* Link color for all anchors in super dark theme */
-  text-decoration: none !important; /* No underline by default for all links in super dark theme */
-  transition: all 0.2s ease !important; /* Smooth transition for all links in super dark theme */
+  color: var(--text-link) !important;
+  /* Link color for all anchors in super dark theme */
+  text-decoration: none !important;
+  /* No underline by default for all links in super dark theme */
+  transition: all 0.2s ease !important;
+  /* Smooth transition for all links in super dark theme */
 }
 
 .theme-super-dark a:hover {
-  color: var(--text-link-hover) !important; /* Hover color for all links in super dark theme */
-  text-decoration: underline !important; /* Underline on hover for all links in super dark theme */
+  color: var(--text-link-hover) !important;
+  /* Hover color for all links in super dark theme */
+  text-decoration: underline !important;
+  /* Underline on hover for all links in super dark theme */
 }
 
 .theme-super-dark a:focus {
-  outline: 2px solid var(--accent) !important; /* Focus outline for all links in super dark theme */
-  outline-offset: 2px !important; /* Outline offset for all links in super dark theme */
+  outline: 2px solid var(--accent) !important;
+  /* Focus outline for all links in super dark theme */
+  outline-offset: 2px !important;
+  /* Outline offset for all links in super dark theme */
 }
 
 .theme-super-dark a:visited {
-  color: var(--text-link) !important; /* Visited color for all links in super dark theme */
+  color: var(--text-link) !important;
+  /* Visited color for all links in super dark theme */
 }
 
 /* Dark Theme Link Elements */
 .theme-dark a {
-  color: var(--text-link) !important; /* Link color for all anchors in dark theme */
-  text-decoration: none !important; /* No underline by default for all links in dark theme */
-  transition: all 0.2s ease !important; /* Smooth transition for all links in dark theme */
+  color: var(--text-link) !important;
+  /* Link color for all anchors in dark theme */
+  text-decoration: none !important;
+  /* No underline by default for all links in dark theme */
+  transition: all 0.2s ease !important;
+  /* Smooth transition for all links in dark theme */
 }
 
 .theme-dark a:hover {
-  color: var(--text-link-hover) !important; /* Hover color for all links in dark theme */
-  text-decoration: underline !important; /* Underline on hover for all links in dark theme */
+  color: var(--text-link-hover) !important;
+  /* Hover color for all links in dark theme */
+  text-decoration: underline !important;
+  /* Underline on hover for all links in dark theme */
 }
 
 .theme-dark a:focus {
-  outline: 2px solid var(--accent) !important; /* Focus outline for all links in dark theme */
-  outline-offset: 2px !important; /* Outline offset for all links in dark theme */
+  outline: 2px solid var(--accent) !important;
+  /* Focus outline for all links in dark theme */
+  outline-offset: 2px !important;
+  /* Outline offset for all links in dark theme */
 }
 
 .theme-dark a:visited {
-  color: var(--text-link) !important; /* Visited color for all links in dark theme */
+  color: var(--text-link) !important;
+  /* Visited color for all links in dark theme */
 }
 
 /* Light Theme Link Elements */
 .theme-light a {
-  color: var(--text-link) !important; /* Link color for all anchors in light theme */
-  text-decoration: none !important; /* No underline by default for all links in light theme */
-  transition: all 0.2s ease !important; /* Smooth transition for all links in light theme */
+  color: var(--text-link) !important;
+  /* Link color for all anchors in light theme */
+  text-decoration: none !important;
+  /* No underline by default for all links in light theme */
+  transition: all 0.2s ease !important;
+  /* Smooth transition for all links in light theme */
 }
 
 .theme-light a:hover {
-  color: var(--text-link-hover) !important; /* Hover color for all links in light theme */
-  text-decoration: underline !important; /* Underline on hover for all links in light theme */
+  color: var(--text-link-hover) !important;
+  /* Hover color for all links in light theme */
+  text-decoration: underline !important;
+  /* Underline on hover for all links in light theme */
 }
 
 .theme-light a:focus {
-  outline: 2px solid var(--accent) !important; /* Focus outline for all links in light theme */
-  outline-offset: 2px !important; /* Outline offset for all links in light theme */
+  outline: 2px solid var(--accent) !important;
+  /* Focus outline for all links in light theme */
+  outline-offset: 2px !important;
+  /* Outline offset for all links in light theme */
 }
 
 .theme-light a:visited {
-  color: var(--text-link) !important; /* Visited color for all links in light theme */
+  color: var(--text-link) !important;
+  /* Visited color for all links in light theme */
 }
 
 /* ==========================================================================
@@ -3126,104 +3410,158 @@ body {
 
 /* Super Dark Theme Table Elements */
 .theme-super-dark table {
-  background: #060511 !important; /* Solid background for all tables in super dark theme */
-  border: 1px solid var(--grid-border) !important; /* Border for all tables in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all tables in super dark theme */
-  width: 100% !important; /* Full width for all tables in super dark theme */
-  border-collapse: separate !important; /* Separate borders for all tables in super dark theme */
-  border-spacing: 0 !important; /* No border spacing for all tables in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all tables in super dark theme */
+  border: 1px solid var(--grid-border) !important;
+  /* Border for all tables in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all tables in super dark theme */
+  width: 100% !important;
+  /* Full width for all tables in super dark theme */
+  border-collapse: separate !important;
+  /* Separate borders for all tables in super dark theme */
+  border-spacing: 0 !important;
+  /* No border spacing for all tables in super dark theme */
 }
 
 .theme-super-dark th {
-  background: #060511 !important; /* Header background for all table headers in super dark theme */
-  color: var(--text-primary) !important; /* White text for all table headers in super dark theme */
-  border-bottom: 2px solid var(--grid-border) !important; /* Bottom border for all table headers in super dark theme */
-  padding: 0.75rem 1rem !important; /* Padding for all table headers in super dark theme */
-  font-weight: 600 !important; /* Semi-bold weight for all table headers in super dark theme */
-  text-align: left !important; /* Left alignment for all table headers in super dark theme */
+  background: #060511 !important;
+  /* Header background for all table headers in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all table headers in super dark theme */
+  border-bottom: 2px solid var(--grid-border) !important;
+  /* Bottom border for all table headers in super dark theme */
+  padding: 0.75rem 1rem !important;
+  /* Padding for all table headers in super dark theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all table headers in super dark theme */
+  text-align: left !important;
+  /* Left alignment for all table headers in super dark theme */
 }
 
 .theme-super-dark td {
-  background: #060511 !important; /* Cell background for all table cells in super dark theme */
-  color: var(--text-primary) !important; /* White text for all table cells in super dark theme */
-  border-bottom: 1px solid var(--card-border-subtle) !important; /* Bottom border for all table cells in super dark theme */
-  padding: 0.75rem 1rem !important; /* Padding for all table cells in super dark theme */
+  background: #060511 !important;
+  /* Cell background for all table cells in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all table cells in super dark theme */
+  border-bottom: 1px solid var(--card-border-subtle) !important;
+  /* Bottom border for all table cells in super dark theme */
+  padding: 0.75rem 1rem !important;
+  /* Padding for all table cells in super dark theme */
 }
 
 .theme-super-dark tr:hover {
-  background: var(--table-row-hover) !important; /* Hover background for all table rows in super dark theme */
+  background: var(--table-row-hover) !important;
+  /* Hover background for all table rows in super dark theme */
 }
 
 .theme-super-dark tr:nth-child(even) {
-  background: var(--table-row-even) !important; /* Even row background for all table rows in super dark theme */
+  background: var(--table-row-even) !important;
+  /* Even row background for all table rows in super dark theme */
 }
 
 /* Dark Theme Table Elements */
 .theme-dark table {
-  background: var(--grid-bg) !important; /* Grid background for all tables in dark theme */
-  border: 1px solid var(--grid-border) !important; /* Border for all tables in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all tables in dark theme */
-  width: 100% !important; /* Full width for all tables in dark theme */
-  border-collapse: separate !important; /* Separate borders for all tables in dark theme */
-  border-spacing: 0 !important; /* No border spacing for all tables in dark theme */
+  background: var(--grid-bg) !important;
+  /* Grid background for all tables in dark theme */
+  border: 1px solid var(--grid-border) !important;
+  /* Border for all tables in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all tables in dark theme */
+  width: 100% !important;
+  /* Full width for all tables in dark theme */
+  border-collapse: separate !important;
+  /* Separate borders for all tables in dark theme */
+  border-spacing: 0 !important;
+  /* No border spacing for all tables in dark theme */
 }
 
 .theme-dark th {
-  background: var(--table-header-bg) !important; /* Header background for all table headers in dark theme */
-  color: var(--text-primary) !important; /* Light text for all table headers in dark theme */
-  border-bottom: 2px solid var(--grid-border) !important; /* Bottom border for all table headers in dark theme */
-  padding: 0.75rem 1rem !important; /* Padding for all table headers in dark theme */
-  font-weight: 600 !important; /* Semi-bold weight for all table headers in dark theme */
-  text-align: left !important; /* Left alignment for all table headers in dark theme */
+  background: var(--table-header-bg) !important;
+  /* Header background for all table headers in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all table headers in dark theme */
+  border-bottom: 2px solid var(--grid-border) !important;
+  /* Bottom border for all table headers in dark theme */
+  padding: 0.75rem 1rem !important;
+  /* Padding for all table headers in dark theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all table headers in dark theme */
+  text-align: left !important;
+  /* Left alignment for all table headers in dark theme */
 }
 
 .theme-dark td {
-  background: var(--grid-bg) !important; /* Cell background for all table cells in dark theme */
-  color: var(--text-primary) !important; /* Light text for all table cells in dark theme */
-  border-bottom: 1px solid var(--card-border-subtle) !important; /* Bottom border for all table cells in dark theme */
-  padding: 0.75rem 1rem !important; /* Padding for all table cells in dark theme */
+  background: var(--grid-bg) !important;
+  /* Cell background for all table cells in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all table cells in dark theme */
+  border-bottom: 1px solid var(--card-border-subtle) !important;
+  /* Bottom border for all table cells in dark theme */
+  padding: 0.75rem 1rem !important;
+  /* Padding for all table cells in dark theme */
 }
 
 .theme-dark tr:hover {
-  background: var(--table-row-hover) !important; /* Hover background for all table rows in dark theme */
+  background: var(--table-row-hover) !important;
+  /* Hover background for all table rows in dark theme */
 }
 
 .theme-dark tr:nth-child(even) {
-  background: var(--table-row-even) !important; /* Even row background for all table rows in dark theme */
+  background: var(--table-row-even) !important;
+  /* Even row background for all table rows in dark theme */
 }
 
 /* Light Theme Table Elements */
 .theme-light table {
-  background: var(--grid-bg) !important; /* White background for all tables in light theme */
-  border: 1px solid var(--grid-border) !important; /* Light gray border for all tables in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all tables in light theme */
-  width: 100% !important; /* Full width for all tables in light theme */
-  border-collapse: separate !important; /* Separate borders for all tables in light theme */
-  border-spacing: 0 !important; /* No border spacing for all tables in light theme */
+  background: var(--grid-bg) !important;
+  /* White background for all tables in light theme */
+  border: 1px solid var(--grid-border) !important;
+  /* Light gray border for all tables in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all tables in light theme */
+  width: 100% !important;
+  /* Full width for all tables in light theme */
+  border-collapse: separate !important;
+  /* Separate borders for all tables in light theme */
+  border-spacing: 0 !important;
+  /* No border spacing for all tables in light theme */
 }
 
 .theme-light th {
-  background: var(--table-header-bg) !important; /* Header background for all table headers in light theme */
-  color: var(--text-primary) !important; /* Dark text for all table headers in light theme */
-  border-bottom: 2px solid var(--grid-border) !important; /* Bottom border for all table headers in light theme */
-  padding: 0.75rem 1rem !important; /* Padding for all table headers in light theme */
-  font-weight: 600 !important; /* Semi-bold weight for all table headers in light theme */
-  text-align: left !important; /* Left alignment for all table headers in light theme */
+  background: var(--table-header-bg) !important;
+  /* Header background for all table headers in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all table headers in light theme */
+  border-bottom: 2px solid var(--grid-border) !important;
+  /* Bottom border for all table headers in light theme */
+  padding: 0.75rem 1rem !important;
+  /* Padding for all table headers in light theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all table headers in light theme */
+  text-align: left !important;
+  /* Left alignment for all table headers in light theme */
 }
 
 .theme-light td {
-  background: var(--grid-bg) !important; /* Cell background for all table cells in light theme */
-  color: var(--text-primary) !important; /* Dark text for all table cells in light theme */
-  border-bottom: 1px solid var(--card-border-subtle) !important; /* Bottom border for all table cells in light theme */
-  padding: 0.75rem 1rem !important; /* Padding for all table cells in light theme */
+  background: var(--grid-bg) !important;
+  /* Cell background for all table cells in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all table cells in light theme */
+  border-bottom: 1px solid var(--card-border-subtle) !important;
+  /* Bottom border for all table cells in light theme */
+  padding: 0.75rem 1rem !important;
+  /* Padding for all table cells in light theme */
 }
 
 .theme-light tr:hover {
-  background: var(--table-row-hover) !important; /* Hover background for all table rows in light theme */
+  background: var(--table-row-hover) !important;
+  /* Hover background for all table rows in light theme */
 }
 
 .theme-light tr:nth-child(even) {
-  background: var(--table-row-even) !important; /* Even row background for all table rows in light theme */
+  background: var(--table-row-even) !important;
+  /* Even row background for all table rows in light theme */
 }
 
 /* ==========================================================================
@@ -3233,61 +3571,79 @@ body {
 /* Super Dark Theme List Elements */
 .theme-super-dark ul,
 .theme-super-dark ol {
-  color: var(--text-primary) !important; /* White text for all lists in super dark theme */
-  padding-left: 1.5rem !important; /* Left padding for all lists in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all lists in super dark theme */
+  padding-left: 1.5rem !important;
+  /* Left padding for all lists in super dark theme */
 }
 
 .theme-super-dark li {
-  color: var(--text-primary) !important; /* White text for all list items in super dark theme */
-  margin-bottom: 0.5rem !important; /* Bottom margin for all list items in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all list items in super dark theme */
+  margin-bottom: 0.5rem !important;
+  /* Bottom margin for all list items in super dark theme */
 }
 
 .theme-super-dark ul li::marker {
-  color: var(--accent) !important; /* Accent color for unordered list markers in super dark theme */
+  color: var(--accent) !important;
+  /* Accent color for unordered list markers in super dark theme */
 }
 
 .theme-super-dark ol li::marker {
-  color: var(--accent) !important; /* Accent color for ordered list markers in super dark theme */
+  color: var(--accent) !important;
+  /* Accent color for ordered list markers in super dark theme */
 }
 
 /* Dark Theme List Elements */
 .theme-dark ul,
 .theme-dark ol {
-  color: var(--text-primary) !important; /* Light text for all lists in dark theme */
-  padding-left: 1.5rem !important; /* Left padding for all lists in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all lists in dark theme */
+  padding-left: 1.5rem !important;
+  /* Left padding for all lists in dark theme */
 }
 
 .theme-dark li {
-  color: var(--text-primary) !important; /* Light text for all list items in dark theme */
-  margin-bottom: 0.5rem !important; /* Bottom margin for all list items in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all list items in dark theme */
+  margin-bottom: 0.5rem !important;
+  /* Bottom margin for all list items in dark theme */
 }
 
 .theme-dark ul li::marker {
-  color: var(--accent) !important; /* Accent color for unordered list markers in dark theme */
+  color: var(--accent) !important;
+  /* Accent color for unordered list markers in dark theme */
 }
 
 .theme-dark ol li::marker {
-  color: var(--accent) !important; /* Accent color for ordered list markers in dark theme */
+  color: var(--accent) !important;
+  /* Accent color for ordered list markers in dark theme */
 }
 
 /* Light Theme List Elements */
 .theme-light ul,
 .theme-light ol {
-  color: var(--text-primary) !important; /* Dark text for all lists in light theme */
-  padding-left: 1.5rem !important; /* Left padding for all lists in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all lists in light theme */
+  padding-left: 1.5rem !important;
+  /* Left padding for all lists in light theme */
 }
 
 .theme-light li {
-  color: var(--text-primary) !important; /* Dark text for all list items in light theme */
-  margin-bottom: 0.5rem !important; /* Bottom margin for all list items in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all list items in light theme */
+  margin-bottom: 0.5rem !important;
+  /* Bottom margin for all list items in light theme */
 }
 
 .theme-light ul li::marker {
-  color: var(--accent) !important; /* Accent color for unordered list markers in light theme */
+  color: var(--accent) !important;
+  /* Accent color for unordered list markers in light theme */
 }
 
 .theme-light ol li::marker {
-  color: var(--accent) !important; /* Accent color for ordered list markers in light theme */
+  color: var(--accent) !important;
+  /* Accent color for ordered list markers in light theme */
 }
 
 /* ==========================================================================
@@ -3296,77 +3652,113 @@ body {
 
 /* Super Dark Theme Form Elements */
 .theme-super-dark form {
-  background: transparent !important; /* Transparent background for all forms in super dark theme */
+  background: transparent !important;
+  /* Transparent background for all forms in super dark theme */
 }
 
 .theme-super-dark fieldset {
-  background: #060511 !important; /* Solid background for all fieldsets in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all fieldsets in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all fieldsets in super dark theme */
-  padding: 1rem !important; /* Padding for all fieldsets in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all fieldsets in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all fieldsets in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all fieldsets in super dark theme */
+  padding: 1rem !important;
+  /* Padding for all fieldsets in super dark theme */
 }
 
 .theme-super-dark legend {
-  color: var(--text-primary) !important; /* White text for all legends in super dark theme */
-  font-weight: 600 !important; /* Semi-bold weight for all legends in super dark theme */
-  padding: 0 0.5rem !important; /* Horizontal padding for all legends in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all legends in super dark theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all legends in super dark theme */
+  padding: 0 0.5rem !important;
+  /* Horizontal padding for all legends in super dark theme */
 }
 
 .theme-super-dark label {
-  color: var(--text-primary) !important; /* White text for all labels in super dark theme */
-  font-weight: 500 !important; /* Medium weight for all labels in super dark theme */
-  margin-bottom: 0.5rem !important; /* Bottom margin for all labels in super dark theme */
-  display: block !important; /* Block display for all labels in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all labels in super dark theme */
+  font-weight: 500 !important;
+  /* Medium weight for all labels in super dark theme */
+  margin-bottom: 0.5rem !important;
+  /* Bottom margin for all labels in super dark theme */
+  display: block !important;
+  /* Block display for all labels in super dark theme */
 }
 
 /* Dark Theme Form Elements */
 .theme-dark form {
-  background: transparent !important; /* Transparent background for all forms in dark theme */
+  background: transparent !important;
+  /* Transparent background for all forms in dark theme */
 }
 
 .theme-dark fieldset {
-  background: var(--card-bg) !important; /* Card background for all fieldsets in dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all fieldsets in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all fieldsets in dark theme */
-  padding: 1rem !important; /* Padding for all fieldsets in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all fieldsets in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all fieldsets in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all fieldsets in dark theme */
+  padding: 1rem !important;
+  /* Padding for all fieldsets in dark theme */
 }
 
 .theme-dark legend {
-  color: var(--text-primary) !important; /* Light text for all legends in dark theme */
-  font-weight: 600 !important; /* Semi-bold weight for all legends in dark theme */
-  padding: 0 0.5rem !important; /* Horizontal padding for all legends in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all legends in dark theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all legends in dark theme */
+  padding: 0 0.5rem !important;
+  /* Horizontal padding for all legends in dark theme */
 }
 
 .theme-dark label {
-  color: var(--text-primary) !important; /* Light text for all labels in dark theme */
-  font-weight: 500 !important; /* Medium weight for all labels in dark theme */
-  margin-bottom: 0.5rem !important; /* Bottom margin for all labels in dark theme */
-  display: block !important; /* Block display for all labels in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all labels in dark theme */
+  font-weight: 500 !important;
+  /* Medium weight for all labels in dark theme */
+  margin-bottom: 0.5rem !important;
+  /* Bottom margin for all labels in dark theme */
+  display: block !important;
+  /* Block display for all labels in dark theme */
 }
 
 /* Light Theme Form Elements */
 .theme-light form {
-  background: transparent !important; /* Transparent background for all forms in light theme */
+  background: transparent !important;
+  /* Transparent background for all forms in light theme */
 }
 
 .theme-light fieldset {
-  background: var(--card-bg) !important; /* White background for all fieldsets in light theme */
-  border: 1px solid var(--card-border) !important; /* Light gray border for all fieldsets in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all fieldsets in light theme */
-  padding: 1rem !important; /* Padding for all fieldsets in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all fieldsets in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Light gray border for all fieldsets in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all fieldsets in light theme */
+  padding: 1rem !important;
+  /* Padding for all fieldsets in light theme */
 }
 
 .theme-light legend {
-  color: var(--text-primary) !important; /* Dark text for all legends in light theme */
-  font-weight: 600 !important; /* Semi-bold weight for all legends in light theme */
-  padding: 0 0.5rem !important; /* Horizontal padding for all legends in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all legends in light theme */
+  font-weight: 600 !important;
+  /* Semi-bold weight for all legends in light theme */
+  padding: 0 0.5rem !important;
+  /* Horizontal padding for all legends in light theme */
 }
 
 .theme-light label {
-  color: var(--text-primary) !important; /* Dark text for all labels in light theme */
-  font-weight: 500 !important; /* Medium weight for all labels in light theme */
-  margin-bottom: 0.5rem !important; /* Bottom margin for all labels in light theme */
-  display: block !important; /* Block display for all labels in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all labels in light theme */
+  font-weight: 500 !important;
+  /* Medium weight for all labels in light theme */
+  margin-bottom: 0.5rem !important;
+  /* Bottom margin for all labels in light theme */
+  display: block !important;
+  /* Block display for all labels in light theme */
 }
 
 /* ==========================================================================
@@ -3375,53 +3767,74 @@ body {
 
 /* Super Dark Theme Media Elements */
 .theme-super-dark img {
-  border-radius: 0.8rem !important; /* Rounded corners for all images in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all images in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all images in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all images in super dark theme */
 }
 
 .theme-super-dark video {
-  border-radius: 0.8rem !important; /* Rounded corners for all videos in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all videos in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all videos in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all videos in super dark theme */
 }
 
 .theme-super-dark audio {
-  background: #060511 !important; /* Solid background for all audio elements in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all audio elements in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all audio elements in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all audio elements in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all audio elements in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all audio elements in super dark theme */
 }
 
 /* Dark Theme Media Elements */
 .theme-dark img {
-  border-radius: 0.8rem !important; /* Rounded corners for all images in dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all images in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all images in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all images in dark theme */
 }
 
 .theme-dark video {
-  border-radius: 0.8rem !important; /* Rounded corners for all videos in dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all videos in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all videos in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all videos in dark theme */
 }
 
 .theme-dark audio {
-  background: var(--card-bg) !important; /* Card background for all audio elements in dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all audio elements in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all audio elements in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all audio elements in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all audio elements in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all audio elements in dark theme */
 }
 
 /* Light Theme Media Elements */
 .theme-light img {
-  border-radius: 0.8rem !important; /* Rounded corners for all images in light theme */
-  border: 1px solid var(--card-border) !important; /* Light gray border for all images in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all images in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Light gray border for all images in light theme */
 }
 
 .theme-light video {
-  border-radius: 0.8rem !important; /* Rounded corners for all videos in light theme */
-  border: 1px solid var(--card-border) !important; /* Light gray border for all videos in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all videos in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Light gray border for all videos in light theme */
 }
 
 .theme-light audio {
-  background: var(--card-bg) !important; /* White background for all audio elements in light theme */
-  border: 1px solid var(--card-border) !important; /* Light gray border for all audio elements in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all audio elements in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all audio elements in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Light gray border for all audio elements in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all audio elements in light theme */
 }
 
 /* ==========================================================================
@@ -3442,10 +3855,14 @@ body {
 .theme-super-dark .router-link,
 .theme-super-dark .router-link-active,
 .theme-super-dark .router-link-exact-active {
-  background: #060511 !important; /* Solid background for all Vue components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all Vue components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all Vue components in super dark theme */
-  transition: all 0.3s ease !important; /* Smooth transitions for all Vue components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all Vue components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all Vue components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all Vue components in super dark theme */
+  transition: all 0.3s ease !important;
+  /* Smooth transitions for all Vue components in super dark theme */
 }
 
 /* Dark Theme Vue Components */
@@ -3458,10 +3875,14 @@ body {
 .theme-dark .router-link,
 .theme-dark .router-link-active,
 .theme-dark .router-link-exact-active {
-  background: var(--card-bg) !important; /* Card background for all Vue components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all Vue components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all Vue components in dark theme */
-  transition: all 0.3s ease !important; /* Smooth transitions for all Vue components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all Vue components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all Vue components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all Vue components in dark theme */
+  transition: all 0.3s ease !important;
+  /* Smooth transitions for all Vue components in dark theme */
 }
 
 /* Light Theme Vue Components */
@@ -3474,10 +3895,14 @@ body {
 .theme-light .router-link,
 .theme-light .router-link-active,
 .theme-light .router-link-exact-active {
-  background: var(--card-bg) !important; /* White background for all Vue components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all Vue components in light theme */
-  border-color: var(--card-border) !important; /* Border for all Vue components in light theme */
-  transition: all 0.3s ease !important; /* Smooth transitions for all Vue components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all Vue components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all Vue components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all Vue components in light theme */
+  transition: all 0.3s ease !important;
+  /* Smooth transitions for all Vue components in light theme */
 }
 
 /* ==========================================================================
@@ -3511,10 +3936,14 @@ body {
 .theme-super-dark .fwb-table,
 .theme-super-dark .fwb-toast,
 .theme-super-dark .fwb-tooltip {
-  background: #060511 !important; /* Solid background for all Flowbite components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all Flowbite components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all Flowbite components in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all Flowbite components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all Flowbite components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all Flowbite components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all Flowbite components in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all Flowbite components in super dark theme */
 }
 
 /* Dark Theme Flowbite Components */
@@ -3544,10 +3973,14 @@ body {
 .theme-dark .fwb-table,
 .theme-dark .fwb-toast,
 .theme-dark .fwb-tooltip {
-  background: var(--card-bg) !important; /* Card background for all Flowbite components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all Flowbite components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all Flowbite components in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all Flowbite components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all Flowbite components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all Flowbite components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all Flowbite components in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all Flowbite components in dark theme */
 }
 
 /* Light Theme Flowbite Components */
@@ -3577,10 +4010,14 @@ body {
 .theme-light .fwb-table,
 .theme-light .fwb-toast,
 .theme-light .fwb-tooltip {
-  background: var(--card-bg) !important; /* White background for all Flowbite components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all Flowbite components in light theme */
-  border-color: var(--card-border) !important; /* Border for all Flowbite components in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all Flowbite components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all Flowbite components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all Flowbite components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all Flowbite components in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all Flowbite components in light theme */
 }
 
 /* ==========================================================================
@@ -3595,9 +4032,12 @@ body {
 .theme-super-dark ::part(*),
 .theme-super-dark slot,
 .theme-super-dark template {
-  background: #060511 !important; /* Solid background for all web components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all web components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all web components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all web components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all web components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all web components in super dark theme */
 }
 
 /* Dark Theme Web Components */
@@ -3608,9 +4048,12 @@ body {
 .theme-dark ::part(*),
 .theme-dark slot,
 .theme-dark template {
-  background: var(--card-bg) !important; /* Card background for all web components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all web components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all web components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all web components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all web components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all web components in dark theme */
 }
 
 /* Light Theme Web Components */
@@ -3621,9 +4064,12 @@ body {
 .theme-light ::part(*),
 .theme-light slot,
 .theme-light template {
-  background: var(--card-bg) !important; /* White background for all web components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all web components in light theme */
-  border-color: var(--card-border) !important; /* Border for all web components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all web components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all web components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all web components in light theme */
 }
 
 /* ==========================================================================
@@ -3647,9 +4093,12 @@ body {
 .theme-super-dark address,
 .theme-super-dark blockquote,
 .theme-super-dark cite {
-  background: #060511 !important; /* Solid background for all HTML5 semantic elements in super dark theme */
-  color: var(--text-primary) !important; /* White text for all HTML5 semantic elements in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all HTML5 semantic elements in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all HTML5 semantic elements in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all HTML5 semantic elements in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all HTML5 semantic elements in super dark theme */
 }
 
 /* Dark Theme HTML5 Semantic Elements */
@@ -3669,9 +4118,12 @@ body {
 .theme-dark address,
 .theme-dark blockquote,
 .theme-dark cite {
-  background: var(--card-bg) !important; /* Card background for all HTML5 semantic elements in dark theme */
-  color: var(--text-primary) !important; /* Light text for all HTML5 semantic elements in dark theme */
-  border-color: var(--card-border) !important; /* Border for all HTML5 semantic elements in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all HTML5 semantic elements in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all HTML5 semantic elements in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all HTML5 semantic elements in dark theme */
 }
 
 /* Light Theme HTML5 Semantic Elements */
@@ -3691,9 +4143,12 @@ body {
 .theme-light address,
 .theme-light blockquote,
 .theme-light cite {
-  background: var(--card-bg) !important; /* White background for all HTML5 semantic elements in light theme */
-  color: var(--text-primary) !important; /* Dark text for all HTML5 semantic elements in light theme */
-  border-color: var(--card-border) !important; /* Border for all HTML5 semantic elements in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all HTML5 semantic elements in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all HTML5 semantic elements in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all HTML5 semantic elements in light theme */
 }
 
 /* ==========================================================================
@@ -3711,9 +4166,12 @@ body {
 .theme-super-dark .bottom-navigation,
 .theme-super-dark .fab,
 .theme-super-dark .snackbar {
-  background: #060511 !important; /* Solid background for all PWA components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all PWA components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all PWA components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all PWA components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all PWA components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all PWA components in super dark theme */
 }
 
 /* Dark Theme PWA Components */
@@ -3727,9 +4185,12 @@ body {
 .theme-dark .bottom-navigation,
 .theme-dark .fab,
 .theme-dark .snackbar {
-  background: var(--card-bg) !important; /* Card background for all PWA components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all PWA components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all PWA components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all PWA components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all PWA components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all PWA components in dark theme */
 }
 
 /* Light Theme PWA Components */
@@ -3743,9 +4204,12 @@ body {
 .theme-light .bottom-navigation,
 .theme-light .fab,
 .theme-light .snackbar {
-  background: var(--card-bg) !important; /* White background for all PWA components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all PWA components in light theme */
-  border-color: var(--card-border) !important; /* Border for all PWA components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all PWA components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all PWA components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all PWA components in light theme */
 }
 
 /* ==========================================================================
@@ -3771,9 +4235,12 @@ body {
 .theme-super-dark [class*="q-"],
 .theme-super-dark [class*="chakra-"],
 .theme-super-dark [class*="mantine-"] {
-  background: #060511 !important; /* Solid background for all third-party components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all third-party components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all third-party components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all third-party components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all third-party components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all third-party components in super dark theme */
 }
 
 /* Dark Theme Third-Party Components */
@@ -3795,9 +4262,12 @@ body {
 .theme-dark [class*="q-"],
 .theme-dark [class*="chakra-"],
 .theme-dark [class*="mantine-"] {
-  background: var(--card-bg) !important; /* Card background for all third-party components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all third-party components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all third-party components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all third-party components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all third-party components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all third-party components in dark theme */
 }
 
 /* Light Theme Third-Party Components */
@@ -3819,9 +4289,12 @@ body {
 .theme-light [class*="q-"],
 .theme-light [class*="chakra-"],
 .theme-light [class*="mantine-"] {
-  background: var(--card-bg) !important; /* White background for all third-party components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all third-party components in light theme */
-  border-color: var(--card-border) !important; /* Border for all third-party components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all third-party components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all third-party components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all third-party components in light theme */
 }
 
 /* ==========================================================================
@@ -3843,9 +4316,12 @@ body {
 .theme-super-dark .rotate-leave-active,
 .theme-super-dark .scale-enter-active,
 .theme-super-dark .scale-leave-active {
-  background: #060511 !important; /* Solid background for all animation components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all animation components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all animation components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all animation components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all animation components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all animation components in super dark theme */
 }
 
 /* Dark Theme Animation Components */
@@ -3863,9 +4339,12 @@ body {
 .theme-dark .rotate-leave-active,
 .theme-dark .scale-enter-active,
 .theme-dark .scale-leave-active {
-  background: var(--card-bg) !important; /* Card background for all animation components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all animation components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all animation components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all animation components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all animation components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all animation components in dark theme */
 }
 
 /* Light Theme Animation Components */
@@ -3883,9 +4362,12 @@ body {
 .theme-light .rotate-leave-active,
 .theme-light .scale-enter-active,
 .theme-light .scale-leave-active {
-  background: var(--card-bg) !important; /* White background for all animation components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all animation components in light theme */
-  border-color: var(--card-border) !important; /* Border for all animation components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all animation components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all animation components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all animation components in light theme */
 }
 
 /* ==========================================================================
@@ -3905,9 +4387,12 @@ body {
 .theme-super-dark .skip-link,
 .theme-super-dark .focus-trap,
 .theme-super-dark .landmark {
-  background: #060511 !important; /* Solid background for all accessibility components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all accessibility components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all accessibility components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all accessibility components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all accessibility components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all accessibility components in super dark theme */
 }
 
 /* Dark Theme Accessibility Components */
@@ -3923,9 +4408,12 @@ body {
 .theme-dark .skip-link,
 .theme-dark .focus-trap,
 .theme-dark .landmark {
-  background: var(--card-bg) !important; /* Card background for all accessibility components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all accessibility components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all accessibility components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all accessibility components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all accessibility components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all accessibility components in dark theme */
 }
 
 /* Light Theme Accessibility Components */
@@ -3941,9 +4429,12 @@ body {
 .theme-light .skip-link,
 .theme-light .focus-trap,
 .theme-light .landmark {
-  background: var(--card-bg) !important; /* White background for all accessibility components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all accessibility components in light theme */
-  border-color: var(--card-border) !important; /* Border for all accessibility components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all accessibility components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all accessibility components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all accessibility components in light theme */
 }
 
 /* ==========================================================================
@@ -3965,10 +4456,14 @@ body {
 .theme-super-dark .social-widget,
 .theme-super-dark .news-widget,
 .theme-super-dark .feed-widget {
-  background: #060511 !important; /* Solid background for all interactive widget components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all interactive widget components in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all interactive widget components in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all interactive widget components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all interactive widget components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all interactive widget components in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all interactive widget components in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all interactive widget components in super dark theme */
 }
 
 /* Dark Theme Interactive Widget Components */
@@ -3986,10 +4481,14 @@ body {
 .theme-dark .social-widget,
 .theme-dark .news-widget,
 .theme-dark .feed-widget {
-  background: var(--card-bg) !important; /* Card background for all interactive widget components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all interactive widget components in dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all interactive widget components in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all interactive widget components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all interactive widget components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all interactive widget components in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all interactive widget components in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all interactive widget components in dark theme */
 }
 
 /* Light Theme Interactive Widget Components */
@@ -4007,10 +4506,14 @@ body {
 .theme-light .social-widget,
 .theme-light .news-widget,
 .theme-light .feed-widget {
-  background: var(--card-bg) !important; /* White background for all interactive widget components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all interactive widget components in light theme */
-  border: 1px solid var(--card-border) !important; /* Border for all interactive widget components in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all interactive widget components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all interactive widget components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all interactive widget components in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all interactive widget components in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all interactive widget components in light theme */
 }
 
 /* ==========================================================================
@@ -4032,9 +4535,12 @@ body {
 .theme-super-dark .responsive-container,
 .theme-super-dark .sticky-container,
 .theme-super-dark .fixed-container {
-  background: #060511 !important; /* Solid background for all layout components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all layout components in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all layout components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all layout components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all layout components in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all layout components in super dark theme */
 }
 
 /* Dark Theme Layout Components */
@@ -4052,9 +4558,12 @@ body {
 .theme-dark .responsive-container,
 .theme-dark .sticky-container,
 .theme-dark .fixed-container {
-  background: var(--card-bg) !important; /* Card background for all layout components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all layout components in dark theme */
-  border-color: var(--card-border) !important; /* Border for all layout components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all layout components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all layout components in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all layout components in dark theme */
 }
 
 /* Light Theme Layout Components */
@@ -4072,9 +4581,12 @@ body {
 .theme-light .responsive-container,
 .theme-light .sticky-container,
 .theme-light .fixed-container {
-  background: var(--card-bg) !important; /* White background for all layout components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all layout components in light theme */
-  border-color: var(--card-border) !important; /* Border for all layout components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all layout components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all layout components in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all layout components in light theme */
 }
 
 /* ==========================================================================
@@ -4098,10 +4610,14 @@ body {
 .theme-super-dark .sunburst-chart,
 .theme-super-dark .candlestick-chart,
 .theme-super-dark .radar-chart {
-  background: #060511 !important; /* Solid background for all data visualization components in super dark theme */
-  color: var(--text-primary) !important; /* White text for all data visualization components in super dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all data visualization components in super dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all data visualization components in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all data visualization components in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all data visualization components in super dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all data visualization components in super dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all data visualization components in super dark theme */
 }
 
 /* Dark Theme Data Visualization Components */
@@ -4121,10 +4637,14 @@ body {
 .theme-dark .sunburst-chart,
 .theme-dark .candlestick-chart,
 .theme-dark .radar-chart {
-  background: var(--card-bg) !important; /* Card background for all data visualization components in dark theme */
-  color: var(--text-primary) !important; /* Light text for all data visualization components in dark theme */
-  border: 1px solid var(--card-border) !important; /* Border for all data visualization components in dark theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all data visualization components in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all data visualization components in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all data visualization components in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all data visualization components in dark theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all data visualization components in dark theme */
 }
 
 /* Light Theme Data Visualization Components */
@@ -4144,10 +4664,14 @@ body {
 .theme-light .sunburst-chart,
 .theme-light .candlestick-chart,
 .theme-light .radar-chart {
-  background: var(--card-bg) !important; /* White background for all data visualization components in light theme */
-  color: var(--text-primary) !important; /* Dark text for all data visualization components in light theme */
-  border: 1px solid var(--card-border) !important; /* Border for all data visualization components in light theme */
-  border-radius: 0.8rem !important; /* Rounded corners for all data visualization components in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all data visualization components in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all data visualization components in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all data visualization components in light theme */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all data visualization components in light theme */
 }
 
 /* ==========================================================================
@@ -4171,9 +4695,12 @@ body {
 .theme-super-dark [id*="widget"],
 .theme-super-dark [id*="module"],
 .theme-super-dark [id*="element"] {
-  background: #060511 !important; /* Solid background for all generic component classes in super dark theme */
-  color: var(--text-primary) !important; /* White text for all generic component classes in super dark theme */
-  border-color: var(--card-border) !important; /* Border for all generic component classes in super dark theme */
+  background: #060511 !important;
+  /* Solid background for all generic component classes in super dark theme */
+  color: var(--text-primary) !important;
+  /* White text for all generic component classes in super dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all generic component classes in super dark theme */
 }
 
 /* Dark Theme Generic Component Classes */
@@ -4193,9 +4720,12 @@ body {
 .theme-dark [id*="widget"],
 .theme-dark [id*="module"],
 .theme-dark [id*="element"] {
-  background: var(--card-bg) !important; /* Card background for all generic component classes in dark theme */
-  color: var(--text-primary) !important; /* Light text for all generic component classes in dark theme */
-  border-color: var(--card-border) !important; /* Border for all generic component classes in dark theme */
+  background: var(--card-bg) !important;
+  /* Card background for all generic component classes in dark theme */
+  color: var(--text-primary) !important;
+  /* Light text for all generic component classes in dark theme */
+  border-color: var(--card-border) !important;
+  /* Border for all generic component classes in dark theme */
 }
 
 /* Light Theme Generic Component Classes */
@@ -4215,9 +4745,12 @@ body {
 .theme-light [id*="widget"],
 .theme-light [id*="module"],
 .theme-light [id*="element"] {
-  background: var(--card-bg) !important; /* White background for all generic component classes in light theme */
-  color: var(--text-primary) !important; /* Dark text for all generic component classes in light theme */
-  border-color: var(--card-border) !important; /* Border for all generic component classes in light theme */
+  background: var(--card-bg) !important;
+  /* White background for all generic component classes in light theme */
+  color: var(--text-primary) !important;
+  /* Dark text for all generic component classes in light theme */
+  border-color: var(--card-border) !important;
+  /* Border for all generic component classes in light theme */
 }
 
 /* ==========================================================================
