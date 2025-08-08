@@ -64,10 +64,10 @@
             <div v-else class="text-red-500">MODBUS Error: {{ modbus_error }}</div>
         </div>
 
-        <!-- Full Width Layout -->
-        <div class="space-y-6 mt-6">
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
             
-            <!-- Cooling Unit Readings - Full Width -->
+            <!-- Left Column: Cooling Unit -->
             <div class="space-y-6">
                 <h2 class="text-xl font-semibold mb-4">Cooling Unit Readings</h2>   
 
@@ -139,12 +139,6 @@
             </div>
         </div>
 
-        </div>
-
-            <!-- Control Section - Full Width -->
-            <div class="space-y-6">
-                <h2 class="text-xl font-semibold mb-4">Control</h2>
-                
         <!-- Control Grid -->
         <div class="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
             <div class="my-6 mx-2">
@@ -400,12 +394,9 @@
         </div>
             </div>
 
-            <!-- Two Column Layout for Cabinet and Additional Sections -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-                
-                <!-- Left Column: Cabinet -->
-                <div class="space-y-6">
-                    <h2 class="text-xl font-semibold mb-4">Cabinet Information</h2>
+            <!-- Right Column: Cabinet -->
+            <div class="space-y-6">
+                <h2 class="text-xl font-semibold mb-4">Cabinet Information</h2>
                 
                 <!-- Cabinet Status Grid -->
                 <div class="max-h-fit grid grid-rows-1 border rounded-3xl bg-slate-800">
@@ -496,11 +487,6 @@
                             </div>
                         </Transition>
                     </div>
-                </div>
-                
-                <!-- Right Column: Future sections can go here -->
-                <div class="space-y-6">
-                    <!-- Additional sections can be added here -->
                 </div>
             </div>
 
