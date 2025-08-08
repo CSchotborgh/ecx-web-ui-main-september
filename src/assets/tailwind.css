@@ -870,22 +870,22 @@ body {
 /* Super Dark Theme Panel Elements */
 .theme-super-dark .panel {
   background: #060511 !important;
-  border: 1px solid var(--panel-border) !important;
+  border: 2px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .panel-compact {
   background: #060511 !important;
-  border: 1px solid var(--panel-border) !important;
+  border: 2px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .panel-header {
   background: #060511 !important;
-  border-bottom: 1px solid var(--card-border) !important;
+  border-bottom: 2px solid var(--card-border) !important;
 }
 
 .theme-super-dark .panel-footer {
   background: #060511 !important;
-  border-top: 1px solid var(--card-border) !important;
+  border-top: 2px solid var(--card-border) !important;
 }
 
 /* Super Dark Theme Status Indicators */
@@ -2671,7 +2671,7 @@ body {
 .panel {
   @apply p-8;
   background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
+  border: 2px solid var(--panel-border);
   border-radius: 0.8rem;
   box-shadow: 0 8px 20px var(--shadow-color);
   backdrop-filter: blur(12px);
@@ -2681,7 +2681,7 @@ body {
 .panel-compact {
   @apply p-4;
   background: var(--panel-bg);
-  border: 1px solid var(--panel-border);
+  border: 2px solid var(--panel-border);
   border-radius: 0.8rem;
   box-shadow: 0 4px 12px var(--shadow-color);
 }
@@ -2690,7 +2690,7 @@ body {
 .panel-header {
   @apply p-6 border-b;
   background: #060511 !important;
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 2px solid var(--card-border);
   border-radius: 0.8rem 0.8rem 0 0;
 }
 
@@ -2698,7 +2698,7 @@ body {
 .panel-footer {
   @apply p-6 border-t;
   background: #060511 !important;
-  border-top: 1px solid var(--card-border);
+  border-top: 2px solid var(--card-border);
   border-radius: 0 0 0.8rem 0.8rem;
 }
 
