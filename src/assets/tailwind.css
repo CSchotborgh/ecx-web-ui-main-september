@@ -5019,7 +5019,7 @@ body {
 .theme-light mark,
 .theme-light time,
 .theme-light address,
-.theme-light blockquote,
+.theme-dark blockquote,
 .theme-light cite {
   background: var(--card-bg) !important;
   /* White background for all HTML5 semantic elements in light theme */
