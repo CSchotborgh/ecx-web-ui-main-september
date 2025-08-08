@@ -1315,6 +1315,55 @@ body {
   color: var(--text-primary) !important;
 }
 
+/* Light Theme Font Styling Overrides */
+.theme-light .font-sans,
+.theme-light .text-lg,
+.theme-light .text-xl,
+.theme-light .text-2xl,
+.theme-light .text-3xl,
+.theme-light .text-4xl,
+.theme-light .text-5xl,
+.theme-light .text-6xl,
+.theme-light h1,
+.theme-light h2,
+.theme-light h3,
+.theme-light h4,
+.theme-light h5,
+.theme-light h6,
+.theme-light p,
+.theme-light span,
+.theme-light div {
+  color: var(--text-primary) !important;
+}
+
+/* Light Theme Specific Font Weights */
+.theme-light .font-thin,
+.theme-light .font-extralight,
+.theme-light .font-light,
+.theme-light .font-normal,
+.theme-light .font-medium,
+.theme-light .font-semibold,
+.theme-light .font-bold,
+.theme-light .font-extrabold,
+.theme-light .font-black {
+  color: var(--text-primary) !important;
+}
+
+/* Light Theme Button Text */
+.theme-light button,
+.theme-light .btn,
+.theme-light .button {
+  color: var(--text-primary) !important;
+}
+
+/* Light Theme Card Text */
+.theme-light .card *,
+.theme-light .card-header *,
+.theme-light .card-body *,
+.theme-light .card-footer * {
+  color: var(--text-primary) !important;
+}
+
 /* Light Theme Logo Color Inversion */
 .theme-light img[alt="ECX Logo"] {
   filter: invert(1) brightness(0.8) !important;
