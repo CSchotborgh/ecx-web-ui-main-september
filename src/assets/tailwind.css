@@ -29,7 +29,7 @@
   /* Muted text, placeholders - light gray */
   --text-disabled: #6b7280;
   /* Disabled text - medium gray */
-  --text-inverse: #000000;
+  --text-inverse: #060511;
   /* Text on light backgrounds */
   --text-link: #60a5fa;
   /* Links and clickable text - blue accent */
@@ -735,6 +735,7 @@ body {
 /* Table Header */
 .data-table thead {
   background: var(--table-header-bg);
+
 }
 
 .data-table th {
@@ -770,11 +771,12 @@ body {
 /* Super Dark Theme Specific Rules - Use solid #060511 instead of gradients */
 .theme-super-dark .custom-grid {
   background: #060511 !important;
-  border: 1px solid var(--panel-border) !important;
+  border: .5px solid #eaeaec !important;
 }
 
 .theme-super-dark .grid-rows-1 {
   background: #060511 !important;
+  border: 0px solid var(--panel-border) !important;
 }
 
 /* Super Dark Theme Grid and Table Elements */
@@ -789,10 +791,12 @@ body {
 /* Super Dark Theme Card Elements */
 .theme-super-dark .card {
   background: #060511 !important;
+  border: 10px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .card:hover {
-  background: #060511 !important;
+  background: #d1d0dd !important;
+  border: 10px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .card-secondary {
@@ -934,7 +938,7 @@ body {
 .theme-super-dark .collapse-controls button,
 .theme-super-dark .toggle-button {
   background: #060511 !important;
-  border: 1px solid #060511 !important;
+  border: 1px solid #0b0723 !important;
   border-color: #060511 !important;
   outline: none !important;
   box-shadow: none !important;
@@ -988,7 +992,8 @@ body {
 .theme-super-dark .modal-content {
   background: #060511 !important;
   border: 1px solid var(--panel-border) !important;
-  border-radius: 0.8rem !important;
+  border-top-left-radius: 0.8rem !important;
+  border-top-right-radius: 0.8rem !important;
 }
 
 .theme-super-dark .modal-header {
@@ -1000,6 +1005,8 @@ body {
 
 .theme-super-dark .modal-body {
   background: #060511 !important;
+  border-bottom-left-radius: 0.8rem !important;
+  border-bottom-right-radius: 0.8rem !important;
 }
 
 .theme-super-dark .modal-footer {
@@ -1017,20 +1024,30 @@ body {
 .theme-dark .modal-content {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
+  border-top-left-radius: 0.8rem !important;
+  border-top-right-radius: 0.8rem !important;
 }
 
 .theme-dark .modal-header {
   background: var(--card-bg) !important;
   border-bottom: 1px solid var(--card-border) !important;
+  border-top-left-radius: 0.8rem !important;
+  border-top-right-radius: 0.8rem !important;
 }
 
 .theme-dark .modal-body {
   background: var(--card-bg) !important;
+  border-top-left-radius: 0.8rem !important;
+  border-top-right-radius: 0.8rem !important;
+  border-bottom-left-radius: 0.8rem !important;
+  border-bottom-right-radius: 0.8rem !important;
 }
 
 .theme-dark .modal-footer {
   background: var(--card-bg) !important;
   border-top: 1px solid var(--card-border) !important;
+  border-bottom-left-radius: 0.8rem !important;
+  border-bottom-right-radius: 0.8rem !important;
 }
 
 /* Light Theme Modal Elements */
@@ -1047,10 +1064,16 @@ body {
 .theme-light .modal-header {
   background: var(--card-bg) !important;
   border-bottom: 1px solid var(--card-border) !important;
+  border-top-left-radius: 0.8rem !important;
+  border-top-right-radius: 0.8rem !important;
 }
 
 .theme-light .modal-body {
   background: var(--card-bg) !important;
+  border-top-left-radius: 0.8rem !important;
+  border-top-right-radius: 0.8rem !important;
+  border-bottom-left-radius: 0.8rem !important;
+  border-bottom-right-radius: 0.8rem !important;
 }
 
 .theme-light .modal-footer {
@@ -1932,7 +1955,7 @@ body {
   }
 
   /* Divide Color Overrides for Tables and Lists */
-  .divide-primary > :not([hidden]) ~ :not([hidden]) {
+  .divide-primary> :not([hidden])~ :not([hidden]) {
     border-color: var(--card-border) !important;
   }
 
