@@ -768,20 +768,21 @@ body {
    THEME-SPECIFIC OVERRIDES
    ========================================================================== */
 
-/* Super Dark Theme Specific Rules - Use solid #060511 instead of gradients */
+/* Super Dark Theme Specific Rules - Use solid #060511 with simple borders */
 .theme-super-dark .custom-grid {
   background: #060511 !important;
-  border: .5px solid #eaeaec !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .grid-rows-1 {
   background: #060511 !important;
-  border: 0px solid var(--panel-border) !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 /* Super Dark Theme Grid and Table Elements */
 .theme-super-dark .data-table {
   background: #060511 !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .data-table thead {
@@ -791,38 +792,44 @@ body {
 /* Super Dark Theme Card Elements */
 .theme-super-dark .card {
   background: #060511 !important;
-  border: 10px solid var(--panel-border) !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .card:hover {
-  background: #d1d0dd !important;
-  border: 10px solid var(--panel-border) !important;
+  background: #060511 !important;
+  border: 1px solid var(--card-border-hover) !important;
 }
 
 .theme-super-dark .card-secondary {
   background: #060511 !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .card-tertiary {
   background: #060511 !important;
+  border: 1px solid var(--card-border-subtle) !important;
 }
 
 .theme-super-dark .card-compact {
   background: #060511 !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 /* Super Dark Theme Navigation Elements */
 .theme-super-dark .nav-container {
   background: #060511 !important;
+  border-bottom: 1px solid var(--nav-border) !important;
 }
 
 .theme-super-dark .nav-dropdown {
   background: #060511 !important;
+  border: 1px solid var(--nav-border) !important;
 }
 
 /* Super Dark Theme Button Elements */
 .theme-super-dark .btn-secondary {
   background: #060511 !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .btn-tertiary:hover {
@@ -831,50 +838,60 @@ body {
 
 .theme-super-dark .btn-icon:hover {
   background: #060511 !important;
+  border: 1px solid var(--accent-muted) !important;
 }
 
 /* Super Dark Theme Form Elements */
 .theme-super-dark .form-input {
   background: #060511 !important;
+  border: 1px solid var(--input-border) !important;
 }
 
 .theme-super-dark .form-textarea {
   background: #060511 !important;
+  border: 1px solid var(--input-border) !important;
 }
 
 .theme-super-dark .form-select {
   background: #060511 !important;
+  border: 1px solid var(--input-border) !important;
 }
 
 .theme-super-dark .form-checkbox {
   background: #060511 !important;
+  border: 2px solid var(--input-border) !important;
 }
 
 .theme-super-dark .form-radio {
   background: #060511 !important;
+  border: 2px solid var(--input-border) !important;
 }
 
 /* Super Dark Theme Panel Elements */
 .theme-super-dark .panel {
   background: #060511 !important;
+  border: 1px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .panel-compact {
   background: #060511 !important;
+  border: 1px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .panel-header {
   background: #060511 !important;
+  border-bottom: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .panel-footer {
   background: #060511 !important;
+  border-top: 1px solid var(--card-border) !important;
 }
 
 /* Super Dark Theme Status Indicators */
 .theme-super-dark .status-badge {
   background: #060511 !important;
-  border: 1px solid var(--panel-border) !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .badge-success {
@@ -900,6 +917,7 @@ body {
 /* Super Dark Theme Interactive Elements */
 .theme-super-dark .dropdown-menu {
   background: #060511 !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .dropdown-item:hover {
@@ -912,10 +930,12 @@ body {
 
 .theme-super-dark .tooltip {
   background: #060511 !important;
+  border: 1px solid var(--card-border) !important;
 }
 
 .theme-super-dark .progress-bar {
   background: #060511 !important;
+  border: 1px solid var(--card-border-subtle) !important;
 }
 
 /* Super Dark Theme Collapse/Expand Elements */
@@ -927,8 +947,8 @@ body {
 .theme-super-dark .flowbite-button,
 .theme-super-dark .fwb-button {
   background: #060511 !important;
-  border: 1px solid #060511 !important;
-  border-color: #060511 !important;
+  border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -938,8 +958,8 @@ body {
 .theme-super-dark .collapse-controls button,
 .theme-super-dark .toggle-button {
   background: #060511 !important;
-  border: 1px solid #0b0723 !important;
-  border-color: #060511 !important;
+  border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -955,8 +975,8 @@ body {
 .theme-super-dark .flowbite-button:hover,
 .theme-super-dark .fwb-button:hover {
   background: #060511 !important;
-  border: 1px solid #060511 !important;
-  border-color: #060511 !important;
+  border: 1px solid var(--card-border-hover) !important;
+  border-color: var(--card-border-hover) !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -972,8 +992,8 @@ body {
 .theme-super-dark .flowbite-button:focus,
 .theme-super-dark .fwb-button:focus {
   background: #060511 !important;
-  border: 1px solid #060511 !important;
-  border-color: #060511 !important;
+  border: 1px solid var(--card-border-focus) !important;
+  border-color: var(--card-border-focus) !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -982,8 +1002,8 @@ body {
 .theme-super-dark [data-flowbite] button,
 .theme-super-dark .flowbite-component button {
   background: #060511 !important;
-  border: 1px solid #060511 !important;
-  border-color: #060511 !important;
+  border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
   outline: none !important;
   box-shadow: none !important;
 }
