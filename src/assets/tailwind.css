@@ -360,7 +360,7 @@ body {
 .card {
   @apply border p-6 shadow-lg transition-all duration-300;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1.8px solid var(--card-border);
   border-radius: 0.8rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px var(--shadow-color);
@@ -370,7 +370,7 @@ body {
 .card:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px var(--shadow-color);
-  border: 1px solid var(--card-border-hover);
+  border: 1.8px solid var(--card-border-hover);
   /* Hover border - uses --card-border-hover variable for more visible gray border on card interaction */
   background: var(--card-bg-hover);
 }
@@ -379,7 +379,7 @@ body {
 .card-secondary {
   @apply border p-4 shadow-sm transition-all duration-300;
   background: var(--card-bg-secondary);
-  border: 1px solid var(--card-border-subtle);
+  border: 1.8px solid var(--card-border-subtle);
   border-radius: 0.8rem;
   backdrop-filter: blur(8px);
 }
@@ -388,7 +388,7 @@ body {
 .card-tertiary {
   @apply border p-3 transition-all duration-300;
   background: var(--card-bg-tertiary);
-  border: 1px solid var(--card-border-subtle);
+  border: 1.8px solid var(--card-border-subtle);
   border-radius: 0.8rem;
 }
 
@@ -396,7 +396,7 @@ body {
 .card-compact {
   @apply border p-2 shadow-sm transition-all duration-300;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1.8px solid var(--card-border);
   border-radius: 0.8rem;
 }
 
@@ -587,7 +587,7 @@ body {
 .form-input {
   @apply border px-4 py-3 transition-all duration-200 text-base w-full;
   background: var(--input-bg);
-  border: 1px solid var(--input-border);
+  border: 1.8px solid var(--input-border);
   border-radius: 0.8rem;
   color: var(--text-primary);
 }
@@ -602,7 +602,7 @@ body {
 .form-input:focus {
   outline: none;
   /* Removes default browser outline for custom focus styling */
-  border: 1px solid var(--input-focus-border);
+  border: 1.8px solid var(--input-focus-border);
   /* Focus border - uses --input-focus-border variable for blue accent border on focused form inputs */
   box-shadow: 0 0 0 2px var(--accent-background);
   /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused inputs */
@@ -611,7 +611,7 @@ body {
 
 /* Input Error State */
 .form-input.error {
-  border: 1px solid var(--status-error);
+  border: 1.8px solid var(--status-error);
   /* Error border - uses --status-error variable for red border on form inputs with validation errors */
   box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
   /* Error outline ring - red glow with 10% opacity around error state inputs */
@@ -619,7 +619,7 @@ body {
 
 /* Input Success State */
 .form-input.success {
-  border: 1px solid var(--status-success);
+  border: 1.8px solid var(--status-success);
   /* Success border - uses --status-success variable for green border on successfully validated inputs */
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
   /* Success outline ring - green glow with 10% opacity around success state inputs */
@@ -653,7 +653,7 @@ body {
 .form-textarea {
   @apply border px-4 py-3 transition-all duration-200 text-base w-full resize-y;
   background: var(--input-bg);
-  border: 1px solid var(--input-border);
+  border: 1.8px solid var(--input-border);
   border-radius: 0.8rem;
   color: var(--text-primary);
   min-height: 100px;
@@ -661,7 +661,7 @@ body {
 
 .form-textarea:focus {
   outline: none;
-  border: 1px solid var(--input-focus-border);
+  border: 1.8px solid var(--input-focus-border);
   box-shadow: 0 0 0 2px var(--accent-background);
   background: var(--input-focus-bg);
 }
@@ -670,14 +670,14 @@ body {
 .form-select {
   @apply border px-4 py-3 transition-all duration-200 text-base w-full;
   background: var(--input-bg);
-  border: 1px solid var(--input-border);
+  border: 1.8px solid var(--input-border);
   border-radius: 0.8rem;
   color: var(--text-primary);
 }
 
 .form-select:focus {
   outline: none;
-  border: 1px solid var(--input-focus-border);
+  border: 1.8px solid var(--input-focus-border);
   box-shadow: 0 0 0 2px var(--accent-background);
   background: var(--input-focus-bg);
 }
@@ -719,6 +719,7 @@ body {
   box-shadow: 0 4px 12px var(--shadow-color);
   backdrop-filter: blur(10px);
   border-radius: 0.8rem;
+  border: 1.8px solid var(--grid-border);
 }
 
 /* Grid Item Hover Effects */
@@ -738,7 +739,7 @@ body {
 .data-table {
   @apply w-full border-collapse overflow-hidden;
   background: var(--grid-bg);
-  border: 1px solid var(--card-border);
+  border: 1.8px solid var(--card-border);
   border-radius: 0.8rem;
   box-shadow: 0 4px 12px var(--shadow-color);
 }
@@ -1511,7 +1512,7 @@ body {
 .card-header {
   @apply text-xl font-bold mb-4 pb-3 border-b;
   color: var(--text-primary);
-  border-bottom: 1px solid var(--card-border);
+  border-bottom: 1.8px solid var(--card-border);
 }
 
 /* Primary Headings */
