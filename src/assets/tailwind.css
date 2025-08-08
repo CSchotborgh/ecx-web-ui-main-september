@@ -1275,6 +1275,10 @@ body {
   border-radius: 0.5rem !important;
 }
 
+.dark [data-v-b4e148ca] {
+  border-radius: 0.5rem !important;
+}
+
 /* Light Theme Specific Rules */
 .theme-light .card {
   box-shadow: 0 2px 8px var(--shadow-subtle);
