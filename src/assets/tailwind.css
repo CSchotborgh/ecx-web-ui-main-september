@@ -768,20 +768,30 @@ body {
    THEME-SPECIFIC OVERRIDES
    ========================================================================== */
 
-/* Super Dark Theme Specific Rules - Use solid #060511 instead of gradients */
+/* Super Dark Theme Specific Rules - Use solid #060511 with pin stripe borders */
 .theme-super-dark .custom-grid {
   background: #060511 !important;
-  border: .5px solid #eaeaec !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, #eaeaec 0px, #eaeaec 2px, transparent 2px, transparent 6px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .grid-rows-1 {
   background: #060511 !important;
-  border: 0px solid var(--panel-border) !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.6) 0px, rgba(234, 234, 236, 0.6) 1px, transparent 1px, transparent 4px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 /* Super Dark Theme Grid and Table Elements */
 .theme-super-dark .data-table {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, #eaeaec 0px, #eaeaec 2px, transparent 2px, transparent 6px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .data-table thead {
@@ -791,12 +801,20 @@ body {
 /* Super Dark Theme Card Elements */
 .theme-super-dark .card {
   background: #060511 !important;
-  border: 10px solid var(--panel-border) !important;
+  border: 3px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, #eaeaec 0px, #eaeaec 3px, transparent 3px, transparent 8px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(234, 234, 236, 0.1) !important;
 }
 
 .theme-super-dark .card:hover {
   background: #d1d0dd !important;
-  border: 10px solid var(--panel-border) !important;
+  border: 3px solid transparent !important;
+  background-image: linear-gradient(#d1d0dd, #d1d0dd), repeating-linear-gradient(45deg, #060511 0px, #060511 3px, transparent 3px, transparent 8px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.9), inset 0 0 0 1px rgba(6, 5, 17, 0.2) !important;
 }
 
 .theme-super-dark .card-secondary {
@@ -823,52 +841,100 @@ body {
 /* Super Dark Theme Button Elements */
 .theme-super-dark .btn-secondary {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.8) 0px, rgba(234, 234, 236, 0.8) 1px, transparent 1px, transparent 4px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .btn-tertiary:hover {
   background: #060511 !important;
+  border: 1px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.6) 0px, rgba(234, 234, 236, 0.6) 1px, transparent 1px, transparent 3px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .btn-icon:hover {
   background: #060511 !important;
+  border: 1px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.6) 0px, rgba(234, 234, 236, 0.6) 1px, transparent 1px, transparent 3px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 /* Super Dark Theme Form Elements */
 .theme-super-dark .form-input {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.7) 0px, rgba(234, 234, 236, 0.7) 1px, transparent 1px, transparent 4px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .form-textarea {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.7) 0px, rgba(234, 234, 236, 0.7) 1px, transparent 1px, transparent 4px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .form-select {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.7) 0px, rgba(234, 234, 236, 0.7) 1px, transparent 1px, transparent 4px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .form-checkbox {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.8) 0px, rgba(234, 234, 236, 0.8) 1px, transparent 1px, transparent 3px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .form-radio {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.8) 0px, rgba(234, 234, 236, 0.8) 1px, transparent 1px, transparent 3px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 /* Super Dark Theme Panel Elements */
 .theme-super-dark .panel {
   background: #060511 !important;
+  border: 3px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, #eaeaec 0px, #eaeaec 3px, transparent 3px, transparent 8px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .panel-compact {
   background: #060511 !important;
+  border: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(45deg, rgba(234, 234, 236, 0.8) 0px, rgba(234, 234, 236, 0.8) 2px, transparent 2px, transparent 6px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .panel-header {
   background: #060511 !important;
+  border-bottom: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(90deg, rgba(234, 234, 236, 0.8) 0px, rgba(234, 234, 236, 0.8) 2px, transparent 2px, transparent 6px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 .theme-super-dark .panel-footer {
   background: #060511 !important;
+  border-top: 2px solid transparent !important;
+  background-image: linear-gradient(#060511, #060511), repeating-linear-gradient(90deg, rgba(234, 234, 236, 0.8) 0px, rgba(234, 234, 236, 0.8) 2px, transparent 2px, transparent 6px) !important;
+  background-origin: border-box !important;
+  background-clip: content-box, border-box !important;
 }
 
 /* Super Dark Theme Status Indicators */
