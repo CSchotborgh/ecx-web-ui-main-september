@@ -1572,7 +1572,6 @@ body {
   @apply font-mono text-sm px-2 py-1 rounded;
   background: var(--card-bg-secondary);
   color: var(--accent);
-  border: 1px solid var(--card-border-subtle);
 }
 
 /* ==========================================================================
@@ -4025,6 +4024,8 @@ body {
   /* White headings for maximum contrast in super dark theme */
   font-weight: 600 !important;
   /* Semi-bold weight for all headings in super dark theme */
+  border: none !important;
+  /* Remove borders from headings */
 }
 
 .theme-super-dark p,
@@ -4034,6 +4035,8 @@ body {
 .theme-super-dark article {
   color: var(--text-primary) !important;
   /* White text for all content in super dark theme */
+  border: none !important;
+  /* Remove borders from text elements */
 }
 
 .theme-super-dark strong,
@@ -4042,6 +4045,8 @@ body {
   /* White bold text in super dark theme */
   font-weight: 700 !important;
   /* Bold weight for strong elements in super dark theme */
+  border: none !important;
+  /* Remove borders from bold text */
 }
 
 .theme-super-dark em,
@@ -4050,6 +4055,8 @@ body {
   /* Secondary color for italic text in super dark theme */
   font-style: italic !important;
   /* Italic style for emphasis elements in super dark theme */
+  border: none !important;
+  /* Remove borders from italic text */
 }
 
 .theme-super-dark small {
@@ -4057,6 +4064,8 @@ body {
   /* Tertiary color for small text in super dark theme */
   font-size: 0.875rem !important;
   /* Smaller font size for small elements in super dark theme */
+  border: none !important;
+  /* Remove borders from small text */
 }
 
 .theme-super-dark code,
@@ -4065,12 +4074,12 @@ body {
   /* Secondary background for code in super dark theme */
   color: var(--accent) !important;
   /* Accent color for code text in super dark theme */
-  border: 1px solid var(--card-border) !important;
-  /* Border for code blocks in super dark theme */
   border-radius: 0.8rem !important;
   /* Rounded corners for code blocks in super dark theme */
   padding: 0.25rem 0.5rem !important;
   /* Padding for code elements in super dark theme */
+  border: none !important;
+  /* Remove borders from code elements */
 }
 
 /* Dark Theme Typography Elements */
@@ -4084,6 +4093,8 @@ body {
   /* Light headings for contrast in dark theme */
   font-weight: 600 !important;
   /* Semi-bold weight for all headings in dark theme */
+  border: none !important;
+  /* Remove borders from headings */
 }
 
 .theme-dark p,
@@ -4093,6 +4104,8 @@ body {
 .theme-dark article {
   color: var(--text-primary) !important;
   /* Light text for all content in dark theme */
+  border: none !important;
+  /* Remove borders from text elements */
 }
 
 .theme-dark strong,
@@ -4101,6 +4114,8 @@ body {
   /* Light bold text in dark theme */
   font-weight: 700 !important;
   /* Bold weight for strong elements in dark theme */
+  border: none !important;
+  /* Remove borders from bold text */
 }
 
 .theme-dark em,
@@ -4109,6 +4124,8 @@ body {
   /* Secondary color for italic text in dark theme */
   font-style: italic !important;
   /* Italic style for emphasis elements in dark theme */
+  border: none !important;
+  /* Remove borders from italic text */
 }
 
 .theme-dark small {
@@ -4116,6 +4133,8 @@ body {
   /* Tertiary color for small text in dark theme */
   font-size: 0.875rem !important;
   /* Smaller font size for small elements in dark theme */
+  border: none !important;
+  /* Remove borders from small text */
 }
 
 .theme-dark code,
@@ -4124,12 +4143,12 @@ body {
   /* Secondary background for code in dark theme */
   color: var(--accent) !important;
   /* Accent color for code text in dark theme */
-  border: 1px solid var(--card-border) !important;
-  /* Border for code blocks in dark theme */
   border-radius: 0.8rem !important;
   /* Rounded corners for code blocks in dark theme */
   padding: 0.25rem 0.5rem !important;
   /* Padding for code elements in dark theme */
+  border: none !important;
+  /* Remove borders from code elements */
 }
 
 /* Light Theme Typography Elements */
@@ -4143,6 +4162,8 @@ body {
   /* Dark headings for contrast in light theme */
   font-weight: 600 !important;
   /* Semi-bold weight for all headings in light theme */
+  border: none !important;
+  /* Remove borders from headings */
 }
 
 .theme-light p,
@@ -4152,6 +4173,8 @@ body {
 .theme-light article {
   color: var(--text-primary) !important;
   /* Dark text for all content in light theme */
+  border: none !important;
+  /* Remove borders from text elements */
 }
 
 .theme-light strong,
@@ -4160,6 +4183,8 @@ body {
   /* Dark bold text in light theme */
   font-weight: 700 !important;
   /* Bold weight for strong elements in light theme */
+  border: none !important;
+  /* Remove borders from bold text */
 }
 
 .theme-light em,
@@ -4168,6 +4193,8 @@ body {
   /* Secondary color for italic text in light theme */
   font-style: italic !important;
   /* Italic style for emphasis elements in light theme */
+  border: none !important;
+  /* Remove borders from italic text */
 }
 
 .theme-light small {
@@ -4175,6 +4202,8 @@ body {
   /* Tertiary color for small text in light theme */
   font-size: 0.875rem !important;
   /* Smaller font size for small elements in light theme */
+  border: none !important;
+  /* Remove borders from small text */
 }
 
 .theme-light code,
@@ -4183,12 +4212,12 @@ body {
   /* Secondary background for code in light theme */
   color: var(--accent) !important;
   /* Accent color for code text in light theme */
-  border: 1px solid var(--card-border) !important;
-  /* Border for code blocks in light theme */
   border-radius: 0.8rem !important;
   /* Rounded corners for code blocks in light theme */
   padding: 0.25rem 0.5rem !important;
   /* Padding for code elements in light theme */
+  border: none !important;
+  /* Remove borders from code elements */
 }
 
 /* ==========================================================================
