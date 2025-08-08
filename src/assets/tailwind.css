@@ -1311,6 +1311,7 @@ body {
 .theme-super-dark .text-secondary,
 .theme-super-dark .text-tertiary {
   color: #ffffff !important;
+  border: none !important;
 }
 
 /* Light Theme Text Color Override */
@@ -4025,6 +4026,8 @@ body {
   /* White headings for maximum contrast in super dark theme */
   font-weight: 600 !important;
   /* Semi-bold weight for all headings in super dark theme */
+  border: none !important;
+  /* No borders on headings in super dark theme */
 }
 
 .theme-super-dark p,
@@ -4034,6 +4037,8 @@ body {
 .theme-super-dark article {
   color: var(--text-primary) !important;
   /* White text for all content in super dark theme */
+  border: none !important;
+  /* No borders on text elements in super dark theme */
 }
 
 .theme-super-dark strong,
@@ -4042,6 +4047,8 @@ body {
   /* White bold text in super dark theme */
   font-weight: 700 !important;
   /* Bold weight for strong elements in super dark theme */
+  border: none !important;
+  /* No borders on bold text in super dark theme */
 }
 
 .theme-super-dark em,
@@ -4050,6 +4057,8 @@ body {
   /* Secondary color for italic text in super dark theme */
   font-style: italic !important;
   /* Italic style for emphasis elements in super dark theme */
+  border: none !important;
+  /* No borders on italic text in super dark theme */
 }
 
 .theme-super-dark small {
@@ -4057,6 +4066,8 @@ body {
   /* Tertiary color for small text in super dark theme */
   font-size: 0.875rem !important;
   /* Smaller font size for small elements in super dark theme */
+  border: none !important;
+  /* No borders on small text in super dark theme */
 }
 
 .theme-super-dark code,
