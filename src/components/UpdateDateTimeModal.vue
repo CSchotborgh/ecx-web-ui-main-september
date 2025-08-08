@@ -2,20 +2,21 @@
     <div class="modal-overlay overflow-y-auto overflow-x-hidden fixed inset-0 z-50 flex justify-center items-center w-full h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <div class="modal-content relative rounded-lg shadow">
-                <div class="modal-header flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                <!-- Close button positioned at top right -->
+                <button
+                    type="button"
+                    class="absolute top-3 right-3 z-10 btn-icon text-secondary bg-transparent hover:bg-surface hover:text-primary rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center"
+                    @click="closeModal"
+                >
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+                <div class="modal-header flex items-center p-4 md:p-5 border-b rounded-t">
                     <h3 class="text-xl font-semibold text-primary">
                         Manually Set Date and Time
                     </h3>
-                    <button
-                        type="button"
-                        class="btn-icon text-secondary bg-transparent hover:bg-surface hover:text-primary rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
-                        @click="closeModal"
-                    >
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button>
                 </div>
 
                 <div class="modal-body p-4 md:p-5">
