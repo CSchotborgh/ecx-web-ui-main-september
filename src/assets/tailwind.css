@@ -2870,124 +2870,969 @@ body {
 }
 
 /* ==========================================================================
-   BUTTON ELEMENT OVERRIDES - ALL THEMES
+   COMPREHENSIVE BUTTON ELEMENT OVERRIDES - ALL THEMES
    ========================================================================== */
 
-/* Super Dark Theme Button Elements */
-.theme-super-dark button {
+/* ==========================================================================
+   SUPER DARK THEME BUTTON OVERRIDES
+   ========================================================================== */
+
+/* Generic Button Elements - Super Dark Theme */
+.theme-super-dark button,
+.theme-super-dark input[type="button"],
+.theme-super-dark input[type="submit"],
+.theme-super-dark input[type="reset"],
+.theme-super-dark .btn,
+.theme-super-dark .button,
+.theme-super-dark [role="button"] {
   background: #060511 !important;
-  /* Solid background for all buttons in super dark theme */
   color: var(--text-primary) !important;
-  /* White text for all buttons in super dark theme */
   border: 1px solid var(--card-border) !important;
-  /* Subtle borders for all buttons in super dark theme */
   border-radius: 0.8rem !important;
-  /* Rounded corners for all buttons in super dark theme */
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 2.5rem !important;
 }
 
-.theme-super-dark button:hover {
-  background: var(--card-bg-hover) !important;
-  /* Hover background for all buttons in super dark theme */
+/* Primary Buttons - Super Dark Theme */
+.theme-super-dark .btn-primary,
+.theme-super-dark .button-primary,
+.theme-super-dark .primary-btn,
+.theme-super-dark button.primary,
+.theme-super-dark input[type="submit"] {
+  background: var(--accent) !important;
+  color: #ffffff !important;
   border-color: var(--accent) !important;
-  /* Accent border on hover for all buttons in super dark theme */
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2) !important;
+}
+
+.theme-super-dark .btn-primary:hover,
+.theme-super-dark .button-primary:hover,
+.theme-super-dark .primary-btn:hover,
+.theme-super-dark button.primary:hover,
+.theme-super-dark input[type="submit"]:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Secondary Buttons - Super Dark Theme */
+.theme-super-dark .btn-secondary,
+.theme-super-dark .button-secondary,
+.theme-super-dark .secondary-btn,
+.theme-super-dark button.secondary {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border-color: var(--card-border) !important;
+}
+
+.theme-super-dark .btn-secondary:hover,
+.theme-super-dark .button-secondary:hover,
+.theme-super-dark .secondary-btn:hover,
+.theme-super-dark button.secondary:hover {
+  background: var(--card-bg-hover) !important;
+  border-color: var(--accent) !important;
   color: var(--accent) !important;
-  /* Accent text on hover for all buttons in super dark theme */
 }
 
-.theme-super-dark button:focus {
+/* Tertiary Buttons - Super Dark Theme */
+.theme-super-dark .btn-tertiary,
+.theme-super-dark .button-tertiary,
+.theme-super-dark .tertiary-btn,
+.theme-super-dark button.tertiary {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: none !important;
+  padding: 0.25rem 0.5rem !important;
+}
+
+.theme-super-dark .btn-tertiary:hover,
+.theme-super-dark .button-tertiary:hover,
+.theme-super-dark .tertiary-btn:hover,
+.theme-super-dark button.tertiary:hover {
+  background: var(--accent-background) !important;
+  color: var(--accent) !important;
+}
+
+/* Danger/Destructive Buttons - Super Dark Theme */
+.theme-super-dark .btn-danger,
+.theme-super-dark .button-danger,
+.theme-super-dark .danger-btn,
+.theme-super-dark .btn-destructive,
+.theme-super-dark button.danger,
+.theme-super-dark button.destructive {
+  background: var(--status-error) !important;
+  color: #ffffff !important;
+  border-color: var(--status-error) !important;
+}
+
+.theme-super-dark .btn-danger:hover,
+.theme-super-dark .button-danger:hover,
+.theme-super-dark .danger-btn:hover,
+.theme-super-dark .btn-destructive:hover,
+.theme-super-dark button.danger:hover,
+.theme-super-dark button.destructive:hover {
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Success Buttons - Super Dark Theme */
+.theme-super-dark .btn-success,
+.theme-super-dark .button-success,
+.theme-super-dark .success-btn,
+.theme-super-dark button.success {
+  background: var(--status-success) !important;
+  color: #ffffff !important;
+  border-color: var(--status-success) !important;
+}
+
+.theme-super-dark .btn-success:hover,
+.theme-super-dark .button-success:hover,
+.theme-super-dark .success-btn:hover,
+.theme-super-dark button.success:hover {
+  background: #16a34a !important;
+  border-color: #16a34a !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Warning Buttons - Super Dark Theme */
+.theme-super-dark .btn-warning,
+.theme-super-dark .button-warning,
+.theme-super-dark .warning-btn,
+.theme-super-dark button.warning {
+  background: var(--status-warning) !important;
+  color: #000000 !important;
+  border-color: var(--status-warning) !important;
+}
+
+.theme-super-dark .btn-warning:hover,
+.theme-super-dark .button-warning:hover,
+.theme-super-dark .warning-btn:hover,
+.theme-super-dark button.warning:hover {
+  background: #ea580c !important;
+  border-color: #ea580c !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Info Buttons - Super Dark Theme */
+.theme-super-dark .btn-info,
+.theme-super-dark .button-info,
+.theme-super-dark .info-btn,
+.theme-super-dark button.info {
+  background: var(--status-info) !important;
+  color: #ffffff !important;
+  border-color: var(--status-info) !important;
+}
+
+.theme-super-dark .btn-info:hover,
+.theme-super-dark .button-info:hover,
+.theme-super-dark .info-btn:hover,
+.theme-super-dark button.info:hover {
+  background: #0284c7 !important;
+  border-color: #0284c7 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Ghost Buttons - Super Dark Theme */
+.theme-super-dark .btn-ghost,
+.theme-super-dark .button-ghost,
+.theme-super-dark .ghost-btn,
+.theme-super-dark button.ghost {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1px solid transparent !important;
+}
+
+.theme-super-dark .btn-ghost:hover,
+.theme-super-dark .button-ghost:hover,
+.theme-super-dark .ghost-btn:hover,
+.theme-super-dark button.ghost:hover {
+  background: var(--accent-background) !important;
+  border-color: var(--accent-muted) !important;
+}
+
+/* Outline Buttons - Super Dark Theme */
+.theme-super-dark .btn-outline,
+.theme-super-dark .button-outline,
+.theme-super-dark .outline-btn,
+.theme-super-dark button.outline {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 2px solid var(--accent) !important;
+}
+
+.theme-super-dark .btn-outline:hover,
+.theme-super-dark .button-outline:hover,
+.theme-super-dark .outline-btn:hover,
+.theme-super-dark button.outline:hover {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+/* Icon Buttons - Super Dark Theme */
+.theme-super-dark .btn-icon,
+.theme-super-dark .button-icon,
+.theme-super-dark .icon-btn,
+.theme-super-dark button.icon,
+.theme-super-dark .icon-button {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid transparent !important;
+  padding: 0.5rem !important;
+  min-height: 2rem !important;
+  width: 2rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.theme-super-dark .btn-icon:hover,
+.theme-super-dark .button-icon:hover,
+.theme-super-dark .icon-btn:hover,
+.theme-super-dark button.icon:hover,
+.theme-super-dark .icon-button:hover {
+  background: var(--accent-background) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent-muted) !important;
+}
+
+/* Button Sizes - Super Dark Theme */
+.theme-super-dark .btn-xs,
+.theme-super-dark .button-xs,
+.theme-super-dark button.xs {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  min-height: 1.5rem !important;
+}
+
+.theme-super-dark .btn-sm,
+.theme-super-dark .button-sm,
+.theme-super-dark button.sm {
+  padding: 0.375rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  min-height: 2rem !important;
+}
+
+.theme-super-dark .btn-lg,
+.theme-super-dark .button-lg,
+.theme-super-dark button.lg {
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1.125rem !important;
+  min-height: 3rem !important;
+}
+
+.theme-super-dark .btn-xl,
+.theme-super-dark .button-xl,
+.theme-super-dark button.xl {
+  padding: 1rem 2rem !important;
+  font-size: 1.25rem !important;
+  min-height: 3.5rem !important;
+}
+
+/* Button States - Super Dark Theme */
+.theme-super-dark button:hover,
+.theme-super-dark .btn:hover,
+.theme-super-dark .button:hover,
+.theme-super-dark input[type="button"]:hover,
+.theme-super-dark input[type="submit"]:hover,
+.theme-super-dark input[type="reset"]:hover,
+.theme-super-dark [role="button"]:hover {
+  background: var(--card-bg-hover) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.theme-super-dark button:focus,
+.theme-super-dark .btn:focus,
+.theme-super-dark .button:focus,
+.theme-super-dark input[type="button"]:focus,
+.theme-super-dark input[type="submit"]:focus,
+.theme-super-dark input[type="reset"]:focus,
+.theme-super-dark [role="button"]:focus {
   outline: 2px solid var(--accent) !important;
-  /* Accent outline on focus for all buttons in super dark theme */
   outline-offset: 2px !important;
-  /* Outline offset for all buttons in super dark theme */
+  box-shadow: 0 0 0 3px var(--accent-background) !important;
 }
 
-.theme-super-dark button:disabled {
+.theme-super-dark button:active,
+.theme-super-dark .btn:active,
+.theme-super-dark .button:active,
+.theme-super-dark input[type="button"]:active,
+.theme-super-dark input[type="submit"]:active,
+.theme-super-dark input[type="reset"]:active,
+.theme-super-dark [role="button"]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.theme-super-dark button:disabled,
+.theme-super-dark .btn:disabled,
+.theme-super-dark .button:disabled,
+.theme-super-dark input[type="button"]:disabled,
+.theme-super-dark input[type="submit"]:disabled,
+.theme-super-dark input[type="reset"]:disabled,
+.theme-super-dark [role="button"]:disabled,
+.theme-super-dark .btn.disabled,
+.theme-super-dark .button.disabled {
   background: var(--card-bg-secondary) !important;
-  /* Disabled background for all buttons in super dark theme */
   color: var(--text-disabled) !important;
-  /* Disabled text for all buttons in super dark theme */
   border-color: var(--card-border-subtle) !important;
-  /* Disabled border for all buttons in super dark theme */
   cursor: not-allowed !important;
-  /* Disabled cursor for all buttons in super dark theme */
+  opacity: 0.6 !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-/* Dark Theme Button Elements */
-.theme-dark button {
+/* ==========================================================================
+   DARK THEME BUTTON OVERRIDES
+   ========================================================================== */
+
+/* Generic Button Elements - Dark Theme */
+.theme-dark button,
+.theme-dark input[type="button"],
+.theme-dark input[type="submit"],
+.theme-dark input[type="reset"],
+.theme-dark .btn,
+.theme-dark .button,
+.theme-dark [role="button"] {
   background: var(--card-bg) !important;
-  /* Card background for all buttons in dark theme */
   color: var(--text-primary) !important;
-  /* Light text for all buttons in dark theme */
   border: 1px solid var(--card-border) !important;
-  /* Translucent borders for all buttons in dark theme */
   border-radius: 0.8rem !important;
-  /* Rounded corners for all buttons in dark theme */
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 2.5rem !important;
 }
 
-.theme-dark button:hover {
-  background: var(--card-bg-hover) !important;
-  /* Hover background for all buttons in dark theme */
+/* Primary Buttons - Dark Theme */
+.theme-dark .btn-primary,
+.theme-dark .button-primary,
+.theme-dark .primary-btn,
+.theme-dark button.primary,
+.theme-dark input[type="submit"] {
+  background: var(--accent) !important;
+  color: #0f172a !important;
   border-color: var(--accent) !important;
-  /* Accent border on hover for all buttons in dark theme */
+  box-shadow: 0 2px 4px rgba(96, 165, 250, 0.2) !important;
+}
+
+.theme-dark .btn-primary:hover,
+.theme-dark .button-primary:hover,
+.theme-dark .primary-btn:hover,
+.theme-dark button.primary:hover,
+.theme-dark input[type="submit"]:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(96, 165, 250, 0.3) !important;
+}
+
+/* Secondary Buttons - Dark Theme */
+.theme-dark .btn-secondary,
+.theme-dark .button-secondary,
+.theme-dark .secondary-btn,
+.theme-dark button.secondary {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border-color: var(--card-border) !important;
+}
+
+.theme-dark .btn-secondary:hover,
+.theme-dark .button-secondary:hover,
+.theme-dark .secondary-btn:hover,
+.theme-dark button.secondary:hover {
+  background: var(--card-bg-hover) !important;
+  border-color: var(--accent) !important;
   color: var(--accent) !important;
-  /* Accent text on hover for all buttons in dark theme */
 }
 
-.theme-dark button:focus {
+/* Tertiary Buttons - Dark Theme */
+.theme-dark .btn-tertiary,
+.theme-dark .button-tertiary,
+.theme-dark .tertiary-btn,
+.theme-dark button.tertiary {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: none !important;
+  padding: 0.25rem 0.5rem !important;
+}
+
+.theme-dark .btn-tertiary:hover,
+.theme-dark .button-tertiary:hover,
+.theme-dark .tertiary-btn:hover,
+.theme-dark button.tertiary:hover {
+  background: var(--accent-background) !important;
+  color: var(--accent) !important;
+}
+
+/* Danger/Destructive Buttons - Dark Theme */
+.theme-dark .btn-danger,
+.theme-dark .button-danger,
+.theme-dark .danger-btn,
+.theme-dark .btn-destructive,
+.theme-dark button.danger,
+.theme-dark button.destructive {
+  background: var(--status-error) !important;
+  color: #ffffff !important;
+  border-color: var(--status-error) !important;
+}
+
+.theme-dark .btn-danger:hover,
+.theme-dark .button-danger:hover,
+.theme-dark .danger-btn:hover,
+.theme-dark .btn-destructive:hover,
+.theme-dark button.danger:hover,
+.theme-dark button.destructive:hover {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(248, 113, 113, 0.3) !important;
+}
+
+/* Success Buttons - Dark Theme */
+.theme-dark .btn-success,
+.theme-dark .button-success,
+.theme-dark .success-btn,
+.theme-dark button.success {
+  background: var(--status-success) !important;
+  color: #ffffff !important;
+  border-color: var(--status-success) !important;
+}
+
+.theme-dark .btn-success:hover,
+.theme-dark .button-success:hover,
+.theme-dark .success-btn:hover,
+.theme-dark button.success:hover {
+  background: #22c55e !important;
+  border-color: #22c55e !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(52, 211, 153, 0.3) !important;
+}
+
+/* Warning Buttons - Dark Theme */
+.theme-dark .btn-warning,
+.theme-dark .button-warning,
+.theme-dark .warning-btn,
+.theme-dark button.warning {
+  background: var(--status-warning) !important;
+  color: #000000 !important;
+  border-color: var(--status-warning) !important;
+}
+
+.theme-dark .btn-warning:hover,
+.theme-dark .button-warning:hover,
+.theme-dark .warning-btn:hover,
+.theme-dark button.warning:hover {
+  background: #f59e0b !important;
+  border-color: #f59e0b !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(251, 191, 36, 0.3) !important;
+}
+
+/* Info Buttons - Dark Theme */
+.theme-dark .btn-info,
+.theme-dark .button-info,
+.theme-dark .info-btn,
+.theme-dark button.info {
+  background: var(--status-info) !important;
+  color: #ffffff !important;
+  border-color: var(--status-info) !important;
+}
+
+.theme-dark .btn-info:hover,
+.theme-dark .button-info:hover,
+.theme-dark .info-btn:hover,
+.theme-dark button.info:hover {
+  background: #0ea5e9 !important;
+  border-color: #0ea5e9 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(56, 189, 248, 0.3) !important;
+}
+
+/* Ghost Buttons - Dark Theme */
+.theme-dark .btn-ghost,
+.theme-dark .button-ghost,
+.theme-dark .ghost-btn,
+.theme-dark button.ghost {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1px solid transparent !important;
+}
+
+.theme-dark .btn-ghost:hover,
+.theme-dark .button-ghost:hover,
+.theme-dark .ghost-btn:hover,
+.theme-dark button.ghost:hover {
+  background: var(--accent-background) !important;
+  border-color: var(--accent-muted) !important;
+}
+
+/* Outline Buttons - Dark Theme */
+.theme-dark .btn-outline,
+.theme-dark .button-outline,
+.theme-dark .outline-btn,
+.theme-dark button.outline {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 2px solid var(--accent) !important;
+}
+
+.theme-dark .btn-outline:hover,
+.theme-dark .button-outline:hover,
+.theme-dark .outline-btn:hover,
+.theme-dark button.outline:hover {
+  background: var(--accent) !important;
+  color: #0f172a !important;
+}
+
+/* Icon Buttons - Dark Theme */
+.theme-dark .btn-icon,
+.theme-dark .button-icon,
+.theme-dark .icon-btn,
+.theme-dark button.icon,
+.theme-dark .icon-button {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid transparent !important;
+  padding: 0.5rem !important;
+  min-height: 2rem !important;
+  width: 2rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.theme-dark .btn-icon:hover,
+.theme-dark .button-icon:hover,
+.theme-dark .icon-btn:hover,
+.theme-dark button.icon:hover,
+.theme-dark .icon-button:hover {
+  background: var(--accent-background) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent-muted) !important;
+}
+
+/* Button Sizes - Dark Theme */
+.theme-dark .btn-xs,
+.theme-dark .button-xs,
+.theme-dark button.xs {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  min-height: 1.5rem !important;
+}
+
+.theme-dark .btn-sm,
+.theme-dark .button-sm,
+.theme-dark button.sm {
+  padding: 0.375rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  min-height: 2rem !important;
+}
+
+.theme-dark .btn-lg,
+.theme-dark .button-lg,
+.theme-dark button.lg {
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1.125rem !important;
+  min-height: 3rem !important;
+}
+
+.theme-dark .btn-xl,
+.theme-dark .button-xl,
+.theme-dark button.xl {
+  padding: 1rem 2rem !important;
+  font-size: 1.25rem !important;
+  min-height: 3.5rem !important;
+}
+
+/* Button States - Dark Theme */
+.theme-dark button:hover,
+.theme-dark .btn:hover,
+.theme-dark .button:hover,
+.theme-dark input[type="button"]:hover,
+.theme-dark input[type="submit"]:hover,
+.theme-dark input[type="reset"]:hover,
+.theme-dark [role="button"]:hover {
+  background: var(--card-bg-hover) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.theme-dark button:focus,
+.theme-dark .btn:focus,
+.theme-dark .button:focus,
+.theme-dark input[type="button"]:focus,
+.theme-dark input[type="submit"]:focus,
+.theme-dark input[type="reset"]:focus,
+.theme-dark [role="button"]:focus {
   outline: 2px solid var(--accent) !important;
-  /* Accent outline on focus for all buttons in dark theme */
   outline-offset: 2px !important;
-  /* Outline offset for all buttons in dark theme */
+  box-shadow: 0 0 0 3px var(--accent-background) !important;
 }
 
-.theme-dark button:disabled {
+.theme-dark button:active,
+.theme-dark .btn:active,
+.theme-dark .button:active,
+.theme-dark input[type="button"]:active,
+.theme-dark input[type="submit"]:active,
+.theme-dark input[type="reset"]:active,
+.theme-dark [role="button"]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.theme-dark button:disabled,
+.theme-dark .btn:disabled,
+.theme-dark .button:disabled,
+.theme-dark input[type="button"]:disabled,
+.theme-dark input[type="submit"]:disabled,
+.theme-dark input[type="reset"]:disabled,
+.theme-dark [role="button"]:disabled,
+.theme-dark .btn.disabled,
+.theme-dark .button.disabled {
   background: var(--card-bg-secondary) !important;
-  /* Disabled background for all buttons in dark theme */
   color: var(--text-disabled) !important;
-  /* Disabled text for all buttons in dark theme */
   border-color: var(--card-border-subtle) !important;
-  /* Disabled border for all buttons in dark theme */
   cursor: not-allowed !important;
-  /* Disabled cursor for all buttons in dark theme */
+  opacity: 0.6 !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
-/* Light Theme Button Elements */
-.theme-light button {
+/* ==========================================================================
+   LIGHT THEME BUTTON OVERRIDES
+   ========================================================================== */
+
+/* Generic Button Elements - Light Theme */
+.theme-light button,
+.theme-light input[type="button"],
+.theme-light input[type="submit"],
+.theme-light input[type="reset"],
+.theme-light .btn,
+.theme-light .button,
+.theme-light [role="button"] {
   background: var(--card-bg) !important;
-  /* White background for all buttons in light theme */
   color: var(--text-primary) !important;
-  /* Dark text for all buttons in light theme */
   border: 1px solid var(--card-border) !important;
-  /* Light gray borders for all buttons in light theme */
   border-radius: 0.8rem !important;
-  /* Rounded corners for all buttons in light theme */
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 2.5rem !important;
 }
 
-.theme-light button:hover {
-  background: var(--card-bg-hover) !important;
-  /* Hover background for all buttons in light theme */
+/* Primary Buttons - Light Theme */
+.theme-light .btn-primary,
+.theme-light .button-primary,
+.theme-light .primary-btn,
+.theme-light button.primary,
+.theme-light input[type="submit"] {
+  background: var(--accent) !important;
+  color: #ffffff !important;
   border-color: var(--accent) !important;
-  /* Accent border on hover for all buttons in light theme */
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2) !important;
+}
+
+.theme-light .btn-primary:hover,
+.theme-light .button-primary:hover,
+.theme-light .primary-btn:hover,
+.theme-light button.primary:hover,
+.theme-light input[type="submit"]:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Secondary Buttons - Light Theme */
+.theme-light .btn-secondary,
+.theme-light .button-secondary,
+.theme-light .secondary-btn,
+.theme-light button.secondary {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+  border-color: var(--card-border) !important;
+}
+
+.theme-light .btn-secondary:hover,
+.theme-light .button-secondary:hover,
+.theme-light .secondary-btn:hover,
+.theme-light button.secondary:hover {
+  background: var(--card-bg-hover) !important;
+  border-color: var(--accent) !important;
   color: var(--accent) !important;
-  /* Accent text on hover for all buttons in light theme */
 }
 
-.theme-light button:focus {
+/* Tertiary Buttons - Light Theme */
+.theme-light .btn-tertiary,
+.theme-light .button-tertiary,
+.theme-light .tertiary-btn,
+.theme-light button.tertiary {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: none !important;
+  padding: 0.25rem 0.5rem !important;
+}
+
+.theme-light .btn-tertiary:hover,
+.theme-light .button-tertiary:hover,
+.theme-light .tertiary-btn:hover,
+.theme-light button.tertiary:hover {
+  background: var(--accent-background) !important;
+  color: var(--accent) !important;
+}
+
+/* Danger/Destructive Buttons - Light Theme */
+.theme-light .btn-danger,
+.theme-light .button-danger,
+.theme-light .danger-btn,
+.theme-light .btn-destructive,
+.theme-light button.danger,
+.theme-light button.destructive {
+  background: var(--status-error) !important;
+  color: #ffffff !important;
+  border-color: var(--status-error) !important;
+}
+
+.theme-light .btn-danger:hover,
+.theme-light .button-danger:hover,
+.theme-light .danger-btn:hover,
+.theme-light .btn-destructive:hover,
+.theme-light button.danger:hover,
+.theme-light button.destructive:hover {
+  background: #b91c1c !important;
+  border-color: #b91c1c !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.3) !important;
+}
+
+/* Success Buttons - Light Theme */
+.theme-light .btn-success,
+.theme-light .button-success,
+.theme-light .success-btn,
+.theme-light button.success {
+  background: var(--status-success) !important;
+  color: #ffffff !important;
+  border-color: var(--status-success) !important;
+}
+
+.theme-light .btn-success:hover,
+.theme-light .button-success:hover,
+.theme-light .success-btn:hover,
+.theme-light button.success:hover {
+  background: #15803d !important;
+  border-color: #15803d !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(22, 163, 74, 0.3) !important;
+}
+
+/* Warning Buttons - Light Theme */
+.theme-light .btn-warning,
+.theme-light .button-warning,
+.theme-light .warning-btn,
+.theme-light button.warning {
+  background: var(--status-warning) !important;
+  color: #ffffff !important;
+  border-color: var(--status-warning) !important;
+}
+
+.theme-light .btn-warning:hover,
+.theme-light .button-warning:hover,
+.theme-light .warning-btn:hover,
+.theme-light button.warning:hover {
+  background: #dc2626 !important;
+  border-color: #dc2626 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(234, 88, 12, 0.3) !important;
+}
+
+/* Info Buttons - Light Theme */
+.theme-light .btn-info,
+.theme-light .button-info,
+.theme-light .info-btn,
+.theme-light button.info {
+  background: var(--status-info) !important;
+  color: #ffffff !important;
+  border-color: var(--status-info) !important;
+}
+
+.theme-light .btn-info:hover,
+.theme-light .button-info:hover,
+.theme-light .info-btn:hover,
+.theme-light button.info:hover {
+  background: #0284c7 !important;
+  border-color: #0284c7 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(14, 165, 233, 0.3) !important;
+}
+
+/* Ghost Buttons - Light Theme */
+.theme-light .btn-ghost,
+.theme-light .button-ghost,
+.theme-light .ghost-btn,
+.theme-light button.ghost {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1px solid transparent !important;
+}
+
+.theme-light .btn-ghost:hover,
+.theme-light .button-ghost:hover,
+.theme-light .ghost-btn:hover,
+.theme-light button.ghost:hover {
+  background: var(--accent-background) !important;
+  border-color: var(--accent-muted) !important;
+}
+
+/* Outline Buttons - Light Theme */
+.theme-light .btn-outline,
+.theme-light .button-outline,
+.theme-light .outline-btn,
+.theme-light button.outline {
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 2px solid var(--accent) !important;
+}
+
+.theme-light .btn-outline:hover,
+.theme-light .button-outline:hover,
+.theme-light .outline-btn:hover,
+.theme-light button.outline:hover {
+  background: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+/* Icon Buttons - Light Theme */
+.theme-light .btn-icon,
+.theme-light .button-icon,
+.theme-light .icon-btn,
+.theme-light button.icon,
+.theme-light .icon-button {
+  background: transparent !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid transparent !important;
+  padding: 0.5rem !important;
+  min-height: 2rem !important;
+  width: 2rem !important;
+  border-radius: 0.5rem !important;
+}
+
+.theme-light .btn-icon:hover,
+.theme-light .button-icon:hover,
+.theme-light .icon-btn:hover,
+.theme-light button.icon:hover,
+.theme-light .icon-button:hover {
+  background: var(--accent-background) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent-muted) !important;
+}
+
+/* Button Sizes - Light Theme */
+.theme-light .btn-xs,
+.theme-light .button-xs,
+.theme-light button.xs {
+  padding: 0.25rem 0.5rem !important;
+  font-size: 0.75rem !important;
+  min-height: 1.5rem !important;
+}
+
+.theme-light .btn-sm,
+.theme-light .button-sm,
+.theme-light button.sm {
+  padding: 0.375rem 0.75rem !important;
+  font-size: 0.875rem !important;
+  min-height: 2rem !important;
+}
+
+.theme-light .btn-lg,
+.theme-light .button-lg,
+.theme-light button.lg {
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1.125rem !important;
+  min-height: 3rem !important;
+}
+
+.theme-light .btn-xl,
+.theme-light .button-xl,
+.theme-light button.xl {
+  padding: 1rem 2rem !important;
+  font-size: 1.25rem !important;
+  min-height: 3.5rem !important;
+}
+
+/* Button States - Light Theme */
+.theme-light button:hover,
+.theme-light .btn:hover,
+.theme-light .button:hover,
+.theme-light input[type="button"]:hover,
+.theme-light input[type="submit"]:hover,
+.theme-light input[type="reset"]:hover,
+.theme-light [role="button"]:hover {
+  background: var(--card-bg-hover) !important;
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.theme-light button:focus,
+.theme-light .btn:focus,
+.theme-light .button:focus,
+.theme-light input[type="button"]:focus,
+.theme-light input[type="submit"]:focus,
+.theme-light input[type="reset"]:focus,
+.theme-light [role="button"]:focus {
   outline: 2px solid var(--accent) !important;
-  /* Accent outline on focus for all buttons in light theme */
   outline-offset: 2px !important;
-  /* Outline offset for all buttons in light theme */
+  box-shadow: 0 0 0 3px var(--accent-background) !important;
 }
 
-.theme-light button:disabled {
+.theme-light button:active,
+.theme-light .btn:active,
+.theme-light .button:active,
+.theme-light input[type="button"]:active,
+.theme-light input[type="submit"]:active,
+.theme-light input[type="reset"]:active,
+.theme-light [role="button"]:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.theme-light button:disabled,
+.theme-light .btn:disabled,
+.theme-light .button:disabled,
+.theme-light input[type="button"]:disabled,
+.theme-light input[type="submit"]:disabled,
+.theme-light input[type="reset"]:disabled,
+.theme-light [role="button"]:disabled,
+.theme-light .btn.disabled,
+.theme-light .button.disabled {
   background: var(--card-bg-secondary) !important;
-  /* Disabled background for all buttons in light theme */
   color: var(--text-disabled) !important;
-  /* Disabled text for all buttons in light theme */
   border-color: var(--card-border-subtle) !important;
-  /* Disabled border for all buttons in light theme */
   cursor: not-allowed !important;
-  /* Disabled cursor for all buttons in light theme */
+  opacity: 0.6 !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* ==========================================================================
