@@ -1184,6 +1184,14 @@ body {
   background: rgba(128, 128, 128, 0.08) !important;
 }
 
+/* Glass Effect Override for Custom Grid */
+.custom-grid.glass-effect {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 10px 25px var(--shadow-color) !important;
+}
+
 /* Light Theme Collapse/Expand Elements */
 .theme-light .collapse-toggle,
 .theme-light [data-collapse-toggle],
