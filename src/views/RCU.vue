@@ -354,27 +354,27 @@
                         </div>
 
                         <div class="max-h-100 overflow-y-auto m-6 flex justify-center text-center hidden sm:block">
-                            <fwb-table class="z-0 divide-y divide-gray-200 bg-gray-200">
-                                <fwb-table-head class="bg-gray-50 sticky top-0 z-10">
-                                    <fwb-table-head-cell class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <fwb-table class="data-table z-0">
+                                <fwb-table-head class="sticky top-0 z-10">
+                                    <fwb-table-head-cell class="!px-1 !py-2 text-center text-xs font-medium uppercase tracking-wider">
                                         Start Timestamp
                                     </fwb-table-head-cell>
-                                    <fwb-table-head-cell class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <fwb-table-head-cell class="!px-1 !py-2 text-center text-xs font-medium uppercase tracking-wider">
                                         Description
                                     </fwb-table-head-cell>
-                                    <fwb-table-head-cell class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    <fwb-table-head-cell class="!px-1 !py-2 text-center text-xs font-medium uppercase tracking-wider">
                                         Duration
                                     </fwb-table-head-cell>
                                 </fwb-table-head>
                                 <fwb-table-body>
                                     <fwb-table-row v-for="log in logs" :key="log.timestamp">
-                                        <fwb-table-cell class="!px-6 !py-4 !whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg">
                                             {{ log.start_timestamp }}
                                         </fwb-table-cell>
-                                        <fwb-table-cell class="!px-6 !py-4 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg">
                                             {{ log.description }}
                                         </fwb-table-cell>
-                                        <fwb-table-cell class="!px-6 !py-4 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg">
                                             {{ convertSecondsToTime(log.difference) }}
                                         </fwb-table-cell>
                                     </fwb-table-row>
