@@ -23,7 +23,7 @@
   /* Text Colors - All text elements with high contrast white */
   --text-primary: #ffffff;
   /* Main headings, important text - pure white for maximum contrast */
-  --text-secondary: #e5e7eb;
+  --text-secondary: #060511;
   /* Secondary text, descriptions - slightly off-white */
   --text-tertiary: #9ca3af;
   /* Muted text, placeholders - light gray */
@@ -1911,7 +1911,7 @@ body {
 
   .btn-primary,
   .btn-secondary {
-    border: 1px solid #000;
+    border: 1px solid #000000;
     background: white;
     color: black;
   }
