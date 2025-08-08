@@ -245,13 +245,13 @@
   --text-link-hover: #3b82f6;
 
   /* Card and Panel Backgrounds */
-  --card-bg: rgba(15, 23, 42, 0.9);
+  --card-bg: rgb(30, 37, 51, 0.9);
   --card-bg-secondary: rgba(30, 41, 59, 0.85);
   --card-bg-tertiary: rgba(51, 65, 85, 0.8);
   --card-bg-hover: rgba(30, 41, 59, 0.95);
 
   /* Border Colors */
-  --card-border: rgba(148, 163, 184, 0.2);
+  --card-border: rgb(255, 255, 255, 0.1);
   --card-border-hover: rgba(148, 163, 184, 0.4);
   --card-border-focus: rgba(96, 165, 250, 0.6);
   --card-border-subtle: rgba(148, 163, 184, 0.1);
@@ -296,11 +296,11 @@
   /* Shadow Colors */
   --shadow-color: rgba(0, 0, 0, 0.7);
   --shadow-subtle: rgba(0, 0, 0, 0.4);
-  --shadow-accent: rgba(96, 165, 250, 0.3);
+  --shadow-accent: rgb(255, 255, 255, 0.1);
 
   /* Panel Specific */
   --section-bg: rgba(30, 41, 59, 0.9);
-  --section-border: rgba(148, 163, 184, 0.15);
+  --section-border: rgb(2, 102, 242, 0.15);
   --panel-bg: rgba(15, 23, 42, 0.95);
   --panel-border: rgba(148, 163, 184, 0.3);
 
