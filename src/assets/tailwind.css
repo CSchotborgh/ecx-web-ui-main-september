@@ -360,16 +360,16 @@ body {
 .card {
   @apply border p-6 shadow-lg transition-all duration-300;
   background: var(--card-bg);
-  border: 1.8px solid var(--card-border);
+  border: 0.8px solid var(--card-border);
   border-radius: 0.8rem;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 /* Card Hover State - Interactive feedback */
 .card:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px var(--shadow-color);
+  box-shadow: 0 6px 8px var(--shadow-color);
   border: 1.8px solid var(--card-border-hover);
   /* Hover border - uses --card-border-hover variable for more visible gray border on card interaction */
   background: var(--card-bg-hover);
