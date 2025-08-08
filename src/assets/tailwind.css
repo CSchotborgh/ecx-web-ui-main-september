@@ -1270,6 +1270,11 @@ body {
   background: rgb(75 85 99);
 }
 
+/* Dark theme border radius override for specific Vue components */
+.dark [data-v-b5236db2] {
+  border-radius: 0.125rem !important;
+}
+
 /* Light Theme Specific Rules */
 .theme-light .card {
   box-shadow: 0 2px 8px var(--shadow-subtle);
