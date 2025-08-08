@@ -770,7 +770,7 @@ body {
 .custom-grid {
   @apply m-auto grid grid-cols-1 gap-6 border-none p-6 min-w-full min-h-full text-center items-center content-center justify-center;
   background: var(--grid-bg);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
   backdrop-filter: blur(10px);
   border-radius: 0.8rem;
 }
@@ -1231,7 +1231,7 @@ body {
 .theme-light .fwb-button:focus {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
-  border-color: var(--card-border) !important;
+  border-color: 100px var(--card-border) !important;
   outline: none !important;
   box-shadow: none !important;
 }
