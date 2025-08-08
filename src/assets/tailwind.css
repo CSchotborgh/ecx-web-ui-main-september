@@ -1020,17 +1020,20 @@ body {
 
 /* Super Dark Theme Modal Elements */
 .theme-super-dark .modal-overlay {
-  background: rgba(6, 5, 17, 0.8) !important;
+  background: rgba(6, 5, 17, 0.9) !important;
 }
 
 .theme-super-dark .modal-content {
   background: #060511 !important;
   border: 1px solid var(--panel-border) !important;
+  border-radius: 0.8rem !important;
 }
 
 .theme-super-dark .modal-header {
   background: #060511 !important;
   border-bottom: 1px solid var(--panel-border) !important;
+  border-top-left-radius: 0.8rem !important;
+  border-top-right-radius: 0.8rem !important;
 }
 
 .theme-super-dark .modal-body {
@@ -1040,6 +1043,8 @@ body {
 .theme-super-dark .modal-footer {
   background: #060511 !important;
   border-top: 1px solid var(--panel-border) !important;
+  border-bottom-left-radius: 0.8rem !important;
+  border-bottom-right-radius: 0.8rem !important;
 }
 
 /* Dark Theme Modal Elements */
@@ -1832,149 +1837,149 @@ body {
   .bg-primary {
     background-color: var(--accent) !important;
   }
-  
+
   .bg-secondary {
     background-color: var(--card-bg) !important;
   }
-  
+
   .bg-surface {
     background-color: var(--card-bg-secondary) !important;
   }
-  
+
   .bg-success {
     background-color: var(--status-success) !important;
   }
-  
+
   .bg-error {
     background-color: var(--status-error) !important;
   }
-  
+
   .bg-warning {
     background-color: var(--status-warning) !important;
   }
-  
+
   .bg-info {
     background-color: var(--status-info) !important;
   }
-  
+
   /* Text Color Overrides */
   .text-primary {
     color: var(--text-primary) !important;
   }
-  
+
   .text-secondary {
     color: var(--text-secondary) !important;
   }
-  
+
   .text-tertiary {
     color: var(--text-tertiary) !important;
   }
-  
+
   .text-success {
     color: var(--status-success) !important;
   }
-  
+
   .text-error {
     color: var(--status-error) !important;
   }
-  
+
   .text-warning {
     color: var(--status-warning) !important;
   }
-  
+
   .text-info {
     color: var(--status-info) !important;
   }
-  
+
   .text-accent {
     color: var(--accent) !important;
   }
-  
+
   /* Border Color Overrides */
   .border-primary {
     border-color: var(--card-border) !important;
   }
-  
+
   .border-secondary {
     border-color: var(--card-border-subtle) !important;
   }
-  
+
   .border-accent {
     border-color: var(--accent) !important;
   }
-  
+
   .border-success {
     border-color: var(--status-success) !important;
   }
-  
+
   .border-error {
     border-color: var(--status-error) !important;
   }
-  
+
   .border-warning {
     border-color: var(--status-warning) !important;
   }
-  
+
   /* Ring Color Overrides for Focus States */
   .ring-primary {
     --tw-ring-color: var(--accent) !important;
   }
-  
+
   .ring-success {
     --tw-ring-color: var(--status-success) !important;
   }
-  
+
   .ring-error {
     --tw-ring-color: var(--status-error) !important;
   }
-  
+
   /* Fill Color Overrides for SVG Icons */
   .fill-primary {
     fill: var(--text-primary) !important;
   }
-  
+
   .fill-secondary {
     fill: var(--text-secondary) !important;
   }
-  
+
   .fill-accent {
     fill: var(--accent) !important;
   }
-  
+
   /* Stroke Color Overrides for SVG Icons */
   .stroke-primary {
     stroke: var(--text-primary) !important;
   }
-  
+
   .stroke-secondary {
     stroke: var(--text-secondary) !important;
   }
-  
+
   .stroke-accent {
     stroke: var(--accent) !important;
   }
-  
+
   /* Placeholder Color Overrides */
   .placeholder-primary::placeholder {
     color: var(--input-placeholder) !important;
   }
-  
+
   /* Accent Color Overrides for Form Elements */
   .accent-primary {
     accent-color: var(--accent) !important;
   }
-  
+
   /* Divide Color Overrides for Tables and Lists */
   .divide-primary > :not([hidden]) ~ :not([hidden]) {
     border-color: var(--card-border) !important;
   }
-  
+
   /* Shadow Color Overrides */
   .shadow-primary {
     --tw-shadow-color: var(--shadow-color) !important;
     --tw-shadow: var(--tw-shadow-colored) !important;
   }
-  
+
   .shadow-accent {
     --tw-shadow-color: var(--shadow-accent) !important;
     --tw-shadow: var(--tw-shadow-colored) !important;
@@ -1986,7 +1991,7 @@ body {
   .mobile\:bg-primary {
     background-color: var(--accent) !important;
   }
-  
+
   .mobile\:text-primary {
     color: var(--text-primary) !important;
   }
@@ -1996,7 +2001,7 @@ body {
   .desktop\:bg-primary {
     background-color: var(--accent) !important;
   }
-  
+
   .desktop\:text-primary {
     color: var(--text-primary) !important;
   }
