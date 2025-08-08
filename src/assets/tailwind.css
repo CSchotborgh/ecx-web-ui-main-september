@@ -48,19 +48,19 @@
 
   /* Border Colors - Subtle rounded borders like EdgeRack */
   --card-border: rgba(75, 85, 99, 0.4);
-  /* Main borders - subtle gray */
+  /* Main borders - subtle gray with 40% opacity for .card, .form-input, .data-table selectors */
   --card-border-hover: rgba(156, 163, 175, 0.6);
-  /* Hovered borders - more visible */
+  /* Hovered borders - more visible gray with 60% opacity for :hover states on interactive elements */
   --card-border-focus: rgba(96, 165, 250, 0.8);
-  /* Focused borders - blue accent */
+  /* Focused borders - blue accent with 80% opacity for :focus states on form inputs and buttons */
   --card-border-subtle: rgba(55, 65, 81, 0.3);
-  /* Subtle borders - very light */
+  /* Subtle borders - very light gray with 30% opacity for secondary elements and dividers */
 
   /* Navigation Elements - Match header styling */
   --nav-bg: rgba(10, 14, 26, 0.95);
   /* Navigation background - same as main bg */
   --nav-border: rgba(75, 85, 99, 0.3);
-  /* Navigation borders */
+  /* Navigation borders - subtle gray with 30% opacity for .nav-container border-bottom and .nav-dropdown borders */
   --nav-text: #ffffff;
   /* Navigation text - white */
   --nav-text-hover: #60a5fa;
@@ -96,15 +96,19 @@
   --button-primary-text: #ffffff;
   --button-secondary-bg: transparent;
   --button-secondary-border: rgba(75, 85, 99, 0.4);
+  /* Secondary button borders - subtle gray with 40% opacity for .btn-secondary default state */
   --button-secondary-hover: rgba(55, 65, 81, 0.5);
+  /* Secondary button hover background - darker gray with 50% opacity for .btn-secondary:hover */
   --button-danger-bg: #ef4444;
   --button-danger-hover: #dc2626;
 
   /* Form Elements - Dark input fields */
   --input-bg: rgba(31, 41, 55, 0.8);
   --input-border: rgba(75, 85, 99, 0.4);
+  /* Input default borders - subtle gray with 40% opacity for .form-input, .form-textarea, .form-select default state */
   --input-focus-bg: rgba(15, 20, 25, 0.9);
   --input-focus-border: #3b82f6;
+  /* Input focus borders - solid blue color for .form-input:focus, .form-textarea:focus, .form-select:focus states */
   --input-placeholder: rgba(156, 163, 175, 0.6);
 
   /* Shadow Colors - Deep shadows for depth */
@@ -356,6 +360,7 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px var(--shadow-color);
   border: 1px solid var(--card-border-hover);
+  /* Hover border - uses --card-border-hover variable for more visible gray border on card interaction */
   background: var(--card-bg-hover);
 }
 
@@ -412,6 +417,7 @@ body {
   @apply px-4 py-2 transition-all duration-200 font-medium;
   color: var(--text-secondary);
   border: 1px solid transparent;
+  /* Default transparent border - maintains layout consistency without visible border */
   border-radius: 0;
 }
 
@@ -419,6 +425,7 @@ body {
   color: var(--nav-text-hover);
   background: var(--accent-background);
   border: 1px solid var(--accent-muted);
+  /* Hover border - uses --accent-muted variable for subtle blue accent border on navigation link hover */
   border-radius: 0.4rem;
 }
 
@@ -428,6 +435,7 @@ body {
   color: var(--nav-text);
   background: var(--nav-link-active);
   border: 1px solid var(--accent-muted);
+  /* Active border - uses --accent-muted variable for blue accent border on active/current navigation links */
   border-radius: 0.4rem;
   font-weight: 600;
 }
@@ -494,6 +502,7 @@ body {
   background: var(--button-secondary-bg);
   color: var(--text-primary);
   border: 1px solid var(--button-secondary-border);
+  /* Default border - uses --button-secondary-border variable for subtle gray border on secondary buttons */
   border-radius: 0.4rem;
   font-weight: 500;
 }
@@ -501,6 +510,7 @@ body {
 .btn-secondary:hover {
   background: var(--button-secondary-hover);
   border: 1px solid var(--accent);
+  /* Hover border - changes to solid --accent color for blue accent border on secondary button hover */
   color: var(--accent);
 }
 
@@ -548,12 +558,14 @@ body {
   @apply p-2 transition-all duration-200;
   background: transparent;
   border: 1px solid transparent;
+  /* Default transparent border - maintains consistent sizing without visible border on icon buttons */
   border-radius: 0.4rem;
 }
 
 .btn-icon:hover {
   background: var(--accent-background);
   border: 1px solid var(--accent-muted);
+  /* Hover border - uses --accent-muted variable for subtle blue accent border on icon button hover */
 }
 
 /* ==========================================================================
@@ -578,21 +590,28 @@ body {
 /* Input Focus State */
 .form-input:focus {
   outline: none;
+  /* Removes default browser outline for custom focus styling */
   border: 1px solid var(--input-focus-border);
+  /* Focus border - uses --input-focus-border variable for blue accent border on focused form inputs */
   box-shadow: 0 0 0 2px var(--accent-background);
+  /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused inputs */
   background: var(--input-focus-bg);
 }
 
 /* Input Error State */
 .form-input.error {
   border: 1px solid var(--status-error);
+  /* Error border - uses --status-error variable for red border on form inputs with validation errors */
   box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+  /* Error outline ring - red glow with 10% opacity around error state inputs */
 }
 
 /* Input Success State */
 .form-input.success {
   border: 1px solid var(--status-success);
+  /* Success border - uses --status-success variable for green border on successfully validated inputs */
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+  /* Success outline ring - green glow with 10% opacity around success state inputs */
 }
 
 /* Form Labels */
@@ -1563,7 +1582,9 @@ body {
 
 .focus-ring:focus {
   outline: none;
+  /* Removes default browser outline for custom focus ring styling */
   box-shadow: 0 0 0 2px var(--accent-background), 0 0 0 4px var(--accent-muted);
+  /* Double focus ring - inner ring uses --accent-background (subtle blue), outer ring uses --accent-muted (visible blue) */
 }
 
 /* Animated Border - Moving border effect */
