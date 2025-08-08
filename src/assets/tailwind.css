@@ -1317,6 +1317,11 @@ body {
   background: var(--card-bg) !important;
 }
 
+/* Dark mode border radius override for table cells */
+.dark .px-6.py-4.first\:font-medium.first\:text-gray-900.first\:dark\:text-white.first\:whitespace-nowrap.last\:text-right.\!px-1.\!py-2.\!whitespace-normal.max-w-\[120px\].md\:max-w-none.text-center.text-xs.md\:text-sm.lg\:text-lg.text-gray-500 {
+  border-radius: 0 !important;
+}
+
 /* Light Theme Specific Rules */
 .theme-light .card {
   box-shadow: 0 2px 8px var(--shadow-subtle);
