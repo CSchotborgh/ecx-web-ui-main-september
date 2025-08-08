@@ -521,6 +521,7 @@ body {
   font-weight: 500;
   padding: 1% 2%;
   white-space: nowrap;
+  font-size: 14px;
 }
 
 .btn-primary:hover {
@@ -550,6 +551,7 @@ body {
   font-weight: 500;
   padding: 1% 2%;
   white-space: nowrap;
+  font-size: 14px;
 }
 
 .btn-secondary:hover {
@@ -584,6 +586,7 @@ body {
   border-radius: 0.4%;
   padding: 1% 2%;
   white-space: nowrap;
+  font-size: 14px;
 }
 
 .btn-danger:hover {
@@ -1784,6 +1787,45 @@ body {
    MODAL AND OVERLAY ELEMENTS
    ========================================================================== */
 
+/* Modal Input Elements - Fixed font sizes for form inputs in modals */
+.modal-content .form-input,
+.modal-content .form-textarea,
+.modal-content .form-select,
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+/* Modal Button Elements - Ensure consistent button sizing in modals */
+.modal-content button,
+.modal-content .btn,
+.modal-content .btn-primary,
+.modal-content .btn-secondary,
+.modal-content .btn-danger,
+.modal-content .btn-icon {
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+/* Modal Select Dropdown Text */
+.modal-content .fwb-select,
+.modal-content [class*="select"] {
+  font-size: 14px !important;
+}
+
+/* Modal Small Text Elements */
+.modal-content .text-sm {
+  font-size: 12px !important;
+}
+
+/* Modal Link Elements */
+.modal-content a,
+.modal-content .text-link {
+  font-size: 14px !important;
+}
+
 /* Modal Overlay - Background overlay for modals */
 .modal-overlay {
   @apply fixed inset-0 z-50;
@@ -1799,17 +1841,39 @@ body {
   border-radius: 0.8rem;
   backdrop-filter: blur(15px);
   box-shadow: 0 25px 50px var(--shadow-color);
+  font-size: 14px;
 }
 
 /* Modal Header */
 .modal-header {
   @apply px-6 py-4 border-b;
   border-bottom: 1px solid var(--card-border);
+  font-size: 18px;
+}
+
+/* Modal Header Titles */
+.modal-header h3 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
 }
 
 /* Modal Body */
 .modal-body {
   @apply px-6 py-4;
+  font-size: 14px;
+}
+
+/* Modal Body Text */
+.modal-body p {
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+/* Modal Body Labels */
+.modal-body label {
+  font-size: 14px !important;
+  font-weight: 500 !important;
 }
 
 /* Modal Footer */
