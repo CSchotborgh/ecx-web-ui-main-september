@@ -432,8 +432,10 @@ body {
 
 /* Navigation Brand/Logo */
 .nav-brand {
-  @apply font-bold text-lg transition-colors duration-200;
+  @apply font-semibold text-lg transition-colors duration-200;
   color: var(--nav-text);
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
 }
 
 .nav-brand:hover {
@@ -442,9 +444,11 @@ body {
 
 /* Navigation Links */
 .nav-link {
-  @apply px-4 py-2 transition-all duration-200 font-medium;
+  @apply px-4 py-2 transition-all duration-200 font-semibold;
   color: var(--text-secondary);
   border: 1px solid transparent;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
   /* Default transparent border - maintains layout consistency without visible border */
   border-radius: 0;
 }
@@ -465,6 +469,7 @@ body {
   border: 1px solid var(--accent-muted);
   /* Active border - uses --accent-muted variable for blue accent border on active/current navigation links */
   border-radius: 0.4rem;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
 }
 
