@@ -132,6 +132,35 @@ The application supports three themes:
 
 Theme switching is handled by the `ThemeStore` and persisted across sessions.
 
+### Border Radius Standards
+
+The application uses consistent border radius values across all components:
+
+**Primary Radius (`0.8rem`)** - Used for most containers:
+- Cards (`.card`, `.card-secondary`, `.card-tertiary`, `.card-compact`)
+- Form elements (`.form-input`, `.form-textarea`, `.form-select`)
+- Panels (`.panel`, `.panel-compact`)
+- Grids and tables (`.custom-grid`, `.data-table`)
+- Modal components (`.modal-content`, `.modal-body`)
+- Utility classes (`.glass-effect`, `.tooltip`, `.progress-bar`, `.alert`)
+
+**Secondary Radius (`0.4rem`)** - Used for interactive elements:
+- Buttons (`.btn-primary`, `.btn-secondary`, `.btn-tertiary`, `.btn-danger`)
+- Navigation links (`.nav-link` on hover/active states)
+
+**Icon Button Radius (`0.5rem`)** - Used for:
+- Icon-only buttons (`.btn-icon`)
+
+**Sharp Corners (`0`)** - Used for:
+- Dropdown menus (`.nav-dropdown`, `.dropdown-menu`)
+- Code text elements (`.text-code`)
+
+**Partial Rounding** - Used for connected elements:
+- Panel/Modal headers: `0.8rem 0.8rem 0 0` (top corners only)
+- Panel/Modal footers: `0 0 0.8rem 0.8rem` (bottom corners only)
+
+This consistent approach ensures a cohesive visual design across all three themes.
+
 ## 🔐 Security Features
 
 - **CSRF Protection**: Tokens retrieved and validated on each request
