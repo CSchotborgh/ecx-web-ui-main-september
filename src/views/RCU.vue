@@ -64,12 +64,9 @@
             <div v-else class="text-red-500">MODBUS Error: {{ modbus_error }}</div>
         </div>
 
-        <!-- Two Column Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-            
-            <!-- Left Column: Cooling Unit -->
-            <div class="space-y-6">
-                <h2 class="text-xl font-semibold mb-4">Cooling Unit Readings</h2>   
+        <!-- Full Width Layout for Cooling Unit Readings and States -->
+        <div class="space-y-6 mt-6">
+            <h2 class="text-xl font-semibold mb-4">Cooling Unit Readings</h2>   
 
         <!-- States Grid -->
         <div class="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
@@ -138,6 +135,13 @@
                 </Transition>
             </div>
         </div>
+        </div>
+
+        <!-- Two Column Layout for remaining sections -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+            
+            <!-- Left Column: Control and other sections -->
+            <div class="space-y-6">
 
         <!-- Control Grid -->
         <div class="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
