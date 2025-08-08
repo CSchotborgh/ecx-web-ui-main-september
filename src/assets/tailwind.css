@@ -788,7 +788,7 @@ body {
 
 /* Super Dark Theme Card Elements */
 .theme-super-dark .card {
-  background: #060511 !important;
+  background: #0a071e !important;
 }
 
 .theme-super-dark .card:hover {
@@ -818,7 +818,7 @@ body {
 
 /* Super Dark Theme Button Elements */
 .theme-super-dark .btn-secondary {
-  background: #060511 !important;
+  background: #0a071f !important;
 }
 
 .theme-super-dark .btn-tertiary:hover {
@@ -852,7 +852,7 @@ body {
 
 /* Super Dark Theme Panel Elements */
 .theme-super-dark .panel {
-  background: #060511 !important;
+  background: #0a0720 !important;
 }
 
 .theme-super-dark .panel-compact {
@@ -1957,7 +1957,7 @@ body {
   }
 
   /* Divide Color Overrides for Tables and Lists */
-  .divide-primary > :not([hidden]) ~ :not([hidden]) {
+  .divide-primary> :not([hidden])~ :not([hidden]) {
     border-color: var(--card-border) !important;
   }
 
