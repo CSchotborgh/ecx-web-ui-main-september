@@ -4,7 +4,7 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <img src="/images/ecx_logo.png" alt="ECX Logo" class="h-8 w-8">
+                    <img src="/images/ecx_logo.png" alt="ECX Logo">
                     <span class="text-xl font-bold text-white">EDGERACK</span>
                 </div>
 
