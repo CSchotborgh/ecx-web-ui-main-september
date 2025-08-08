@@ -349,7 +349,7 @@ body {
 .card {
   @apply border p-6 shadow-lg transition-all duration-300;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1.8px solid var(--card-border);
   border-radius: 0.8rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px var(--shadow-color);
@@ -359,7 +359,7 @@ body {
 .card:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px var(--shadow-color);
-  border: 1px solid var(--card-border-hover);
+  border: 1.8px solid var(--card-border-hover);
   /* Hover border - uses --card-border-hover variable for more visible gray border on card interaction */
   background: var(--card-bg-hover);
 }
@@ -368,7 +368,7 @@ body {
 .card-secondary {
   @apply border p-4 shadow-sm transition-all duration-300;
   background: var(--card-bg-secondary);
-  border: 1px solid var(--card-border-subtle);
+  border: 1.8px solid var(--card-border-subtle);
   border-radius: 0.8rem;
   backdrop-filter: blur(8px);
 }
@@ -377,7 +377,7 @@ body {
 .card-tertiary {
   @apply border p-3 transition-all duration-300;
   background: var(--card-bg-tertiary);
-  border: 1px solid var(--card-border-subtle);
+  border: 1.8px solid var(--card-border-subtle);
   border-radius: 0.8rem;
 }
 
@@ -385,7 +385,7 @@ body {
 .card-compact {
   @apply border p-2 shadow-sm transition-all duration-300;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1.8px solid var(--card-border);
   border-radius: 0.8rem;
 }
 
@@ -792,27 +792,27 @@ body {
 /* Super Dark Theme Card Elements */
 .theme-super-dark .card {
   background: #060511 !important;
-  border: 1px solid var(--card-border) !important;
+  border: 1.8px solid var(--card-border) !important;
 }
 
 .theme-super-dark .card:hover {
   background: #060511 !important;
-  border: 1px solid var(--card-border-hover) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
 }
 
 .theme-super-dark .card-secondary {
   background: #060511 !important;
-  border: 1px solid var(--card-border) !important;
+  border: 1.8px solid var(--card-border) !important;
 }
 
 .theme-super-dark .card-tertiary {
   background: #060511 !important;
-  border: 1px solid var(--card-border-subtle) !important;
+  border: 1.8px solid var(--card-border-subtle) !important;
 }
 
 .theme-super-dark .card-compact {
   background: #060511 !important;
-  border: 1px solid var(--card-border) !important;
+  border: 1.8px solid var(--card-border) !important;
 }
 
 /* Super Dark Theme Navigation Elements */
