@@ -1279,6 +1279,44 @@ body {
   border-radius: 0.5rem !important;
 }
 
+/* Table cell theme overrides */
+.theme-super-dark .px-6.py-4.first\:font-medium.first\:text-gray-900.first\:dark\:text-white,
+.theme-super-dark .text-gray-500 {
+  color: var(--text-primary) !important;
+  background: rgba(6, 5, 17, 0.8) !important;
+}
+
+.theme-dark .px-6.py-4.first\:font-medium.first\:text-gray-900.first\:dark\:text-white,
+.theme-dark .text-gray-500 {
+  color: var(--text-primary) !important;
+  background: var(--card-bg) !important;
+}
+
+.theme-light .px-6.py-4.first\:font-medium.first\:text-gray-900.first\:dark\:text-white,
+.theme-light .text-gray-500 {
+  color: var(--text-primary) !important;
+  background: var(--card-bg) !important;
+}
+
+/* More specific table cell styling */
+.theme-super-dark td.text-gray-500,
+.theme-super-dark th.text-gray-500 {
+  color: var(--text-primary) !important;
+  background: rgba(6, 5, 17, 0.9) !important;
+}
+
+.theme-dark td.text-gray-500,
+.theme-dark th.text-gray-500 {
+  color: var(--text-primary) !important;
+  background: var(--table-row-even) !important;
+}
+
+.theme-light td.text-gray-500,
+.theme-light th.text-gray-500 {
+  color: var(--text-primary) !important;
+  background: var(--card-bg) !important;
+}
+
 /* Light Theme Specific Rules */
 .theme-light .card {
   box-shadow: 0 2px 8px var(--shadow-subtle);
