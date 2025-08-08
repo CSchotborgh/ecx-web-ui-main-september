@@ -987,44 +987,6 @@ body {
 /* Super Dark Theme Modal Elements */
 .theme-super-dark .modal-content {
   background: #060511 !important;
-}
-
-.theme-super-dark .modal-header {
-  background: #060511 !important;
-}
-
-.theme-super-dark .modal-footer {
-  background: #060511 !important;
-}
-
-/* Super Dark Theme Alert Elements */
-.theme-super-dark .alert-success {
-  background: #060511 !important;
-  border: 1px solid var(--status-success) !important;
-}
-
-.theme-super-dark .alert-error {
-  background: #060511 !important;
-  border: 1px solid var(--status-error) !important;
-}
-
-.theme-super-dark .alert-warning {
-  background: #060511 !important;
-  border: 1px solid var(--status-warning) !important;
-}
-
-.theme-super-dark .alert-info {
-  background: #060511 !important;
-  border: 1px solid var(--status-info) !important;
-}
-
-/* Super Dark Theme Modal Elements */
-.theme-super-dark .modal-overlay {
-  background: rgba(6, 5, 17, 0.9) !important;
-}
-
-.theme-super-dark .modal-content {
-  background: #060511 !important;
   border: 1px solid var(--panel-border) !important;
   border-radius: 0.8rem !important;
 }
