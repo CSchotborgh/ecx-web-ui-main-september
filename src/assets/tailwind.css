@@ -350,6 +350,7 @@ body {
   @apply border p-6 shadow-lg transition-all duration-300;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  /* Default border - uses --card-border variable (rgba(75, 85, 99, 0.4)) for subtle gray border with 40% opacity on .card selector */
   border-radius: 0.8rem;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px var(--shadow-color);
@@ -360,8 +361,18 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 6px 16px var(--shadow-color);
   border: 1px solid var(--card-border-hover);
-  /* Hover border - uses --card-border-hover variable for more visible gray border on card interaction */
+  /* Hover border - uses --card-border-hover variable (rgba(156, 163, 175, 0.6)) for more visible gray border with 60% opacity on .card:hover selector */
   background: var(--card-bg-hover);
+}
+
+/* Card Focus State - Keyboard navigation support */
+.card:focus {
+  outline: none;
+  /* Removes default browser outline for custom focus styling on .card:focus selector */
+  border: 1px solid var(--card-border-focus);
+  /* Focus border - uses --card-border-focus variable (rgba(96, 165, 250, 0.8)) for blue accent border with 80% opacity on .card:focus selector */
+  box-shadow: 0 0 0 2px var(--accent-background);
+  /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused card elements */
 }
 
 /* Secondary Card Variant - Less prominent containers */
@@ -369,8 +380,26 @@ body {
   @apply border p-4 shadow-sm transition-all duration-300;
   background: var(--card-bg-secondary);
   border: 1px solid var(--card-border-subtle);
+  /* Default border - uses --card-border-subtle variable (rgba(55, 65, 81, 0.3)) for very light gray border with 30% opacity on .card-secondary selector */
   border-radius: 0.8rem;
   backdrop-filter: blur(8px);
+}
+
+/* Secondary Card Hover State */
+.card-secondary:hover {
+  border: 1px solid var(--card-border);
+  /* Hover border - uses --card-border variable for standard gray border with 40% opacity on .card-secondary:hover selector */
+  background: var(--card-bg-hover);
+}
+
+/* Secondary Card Focus State */
+.card-secondary:focus {
+  outline: none;
+  /* Removes default browser outline for custom focus styling on .card-secondary:focus selector */
+  border: 1px solid var(--card-border-focus);
+  /* Focus border - uses --card-border-focus variable for blue accent border with 80% opacity on .card-secondary:focus selector */
+  box-shadow: 0 0 0 2px var(--accent-background);
+  /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused secondary cards */
 }
 
 /* Tertiary Card Variant - Minimal containers */
@@ -378,7 +407,25 @@ body {
   @apply border p-3 transition-all duration-300;
   background: var(--card-bg-tertiary);
   border: 1px solid var(--card-border-subtle);
+  /* Default border - uses --card-border-subtle variable for very light gray border with 30% opacity on .card-tertiary selector */
   border-radius: 0.8rem;
+}
+
+/* Tertiary Card Hover State */
+.card-tertiary:hover {
+  border: 1px solid var(--card-border);
+  /* Hover border - uses --card-border variable for standard gray border with 40% opacity on .card-tertiary:hover selector */
+  background: var(--card-bg-hover);
+}
+
+/* Tertiary Card Focus State */
+.card-tertiary:focus {
+  outline: none;
+  /* Removes default browser outline for custom focus styling on .card-tertiary:focus selector */
+  border: 1px solid var(--card-border-focus);
+  /* Focus border - uses --card-border-focus variable for blue accent border with 80% opacity on .card-tertiary:focus selector */
+  box-shadow: 0 0 0 2px var(--accent-background);
+  /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused tertiary cards */
 }
 
 /* Compact Card Variant - Space-efficient containers */
@@ -386,7 +433,25 @@ body {
   @apply border p-2 shadow-sm transition-all duration-300;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  /* Default border - uses --card-border variable for subtle gray border with 40% opacity on .card-compact selector */
   border-radius: 0.8rem;
+}
+
+/* Compact Card Hover State */
+.card-compact:hover {
+  border: 1px solid var(--card-border-hover);
+  /* Hover border - uses --card-border-hover variable for more visible gray border with 60% opacity on .card-compact:hover selector */
+  background: var(--card-bg-hover);
+}
+
+/* Compact Card Focus State */
+.card-compact:focus {
+  outline: none;
+  /* Removes default browser outline for custom focus styling on .card-compact:focus selector */
+  border: 1px solid var(--card-border-focus);
+  /* Focus border - uses --card-border-focus variable for blue accent border with 80% opacity on .card-compact:focus selector */
+  box-shadow: 0 0 0 2px var(--accent-background);
+  /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused compact cards */
 }
 
 /* ==========================================================================
