@@ -1181,7 +1181,7 @@ body {
 
 /* Light Theme Tailwind Classes Override */
 .theme-light .bg-slate-800 {
-  background: rgba(128, 128, 128, 0.05) !important;
+  background: rgba(128, 128, 128, 0.08) !important;
 }
 
 /* Light Theme Collapse/Expand Elements */
