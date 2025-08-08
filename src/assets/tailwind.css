@@ -3447,6 +3447,802 @@ body {
 }
 
 /* ==========================================================================
+   COMPREHENSIVE COMPONENT OVERRIDE RULES - ALL THEMES
+   ========================================================================== */
+
+/* ==========================================================================
+   VUE.JS COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Vue Components */
+.theme-super-dark .vue-component,
+.theme-super-dark [class*="vue-"],
+.theme-super-dark .v-enter-active,
+.theme-super-dark .v-leave-active,
+.theme-super-dark .transition-group,
+.theme-super-dark .router-view,
+.theme-super-dark .router-link,
+.theme-super-dark .router-link-active,
+.theme-super-dark .router-link-exact-active {
+  background: #060511 !important; /* Solid background for all Vue components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all Vue components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all Vue components in super dark theme */
+  transition: all 0.3s ease !important; /* Smooth transitions for all Vue components in super dark theme */
+}
+
+/* Dark Theme Vue Components */
+.theme-dark .vue-component,
+.theme-dark [class*="vue-"],
+.theme-dark .v-enter-active,
+.theme-dark .v-leave-active,
+.theme-dark .transition-group,
+.theme-dark .router-view,
+.theme-dark .router-link,
+.theme-dark .router-link-active,
+.theme-dark .router-link-exact-active {
+  background: var(--card-bg) !important; /* Card background for all Vue components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all Vue components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all Vue components in dark theme */
+  transition: all 0.3s ease !important; /* Smooth transitions for all Vue components in dark theme */
+}
+
+/* Light Theme Vue Components */
+.theme-light .vue-component,
+.theme-light [class*="vue-"],
+.theme-light .v-enter-active,
+.theme-light .v-leave-active,
+.theme-light .transition-group,
+.theme-light .router-view,
+.theme-light .router-link,
+.theme-light .router-link-active,
+.theme-light .router-link-exact-active {
+  background: var(--card-bg) !important; /* White background for all Vue components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all Vue components in light theme */
+  border-color: var(--card-border) !important; /* Border for all Vue components in light theme */
+  transition: all 0.3s ease !important; /* Smooth transitions for all Vue components in light theme */
+}
+
+/* ==========================================================================
+   FLOWBITE COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Flowbite Components */
+.theme-super-dark [data-flowbite],
+.theme-super-dark .flowbite-component,
+.theme-super-dark .fwb-accordion,
+.theme-super-dark .fwb-alert,
+.theme-super-dark .fwb-avatar,
+.theme-super-dark .fwb-badge,
+.theme-super-dark .fwb-breadcrumb,
+.theme-super-dark .fwb-button,
+.theme-super-dark .fwb-button-group,
+.theme-super-dark .fwb-card,
+.theme-super-dark .fwb-carousel,
+.theme-super-dark .fwb-dropdown,
+.theme-super-dark .fwb-footer,
+.theme-super-dark .fwb-list-group,
+.theme-super-dark .fwb-modal,
+.theme-super-dark .fwb-navbar,
+.theme-super-dark .fwb-pagination,
+.theme-super-dark .fwb-popover,
+.theme-super-dark .fwb-progress,
+.theme-super-dark .fwb-rating,
+.theme-super-dark .fwb-sidebar,
+.theme-super-dark .fwb-spinner,
+.theme-super-dark .fwb-tab,
+.theme-super-dark .fwb-table,
+.theme-super-dark .fwb-toast,
+.theme-super-dark .fwb-tooltip {
+  background: #060511 !important; /* Solid background for all Flowbite components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all Flowbite components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all Flowbite components in super dark theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all Flowbite components in super dark theme */
+}
+
+/* Dark Theme Flowbite Components */
+.theme-dark [data-flowbite],
+.theme-dark .flowbite-component,
+.theme-dark .fwb-accordion,
+.theme-dark .fwb-alert,
+.theme-dark .fwb-avatar,
+.theme-dark .fwb-badge,
+.theme-dark .fwb-breadcrumb,
+.theme-dark .fwb-button,
+.theme-dark .fwb-button-group,
+.theme-dark .fwb-card,
+.theme-dark .fwb-carousel,
+.theme-dark .fwb-dropdown,
+.theme-dark .fwb-footer,
+.theme-dark .fwb-list-group,
+.theme-dark .fwb-modal,
+.theme-dark .fwb-navbar,
+.theme-dark .fwb-pagination,
+.theme-dark .fwb-popover,
+.theme-dark .fwb-progress,
+.theme-dark .fwb-rating,
+.theme-dark .fwb-sidebar,
+.theme-dark .fwb-spinner,
+.theme-dark .fwb-tab,
+.theme-dark .fwb-table,
+.theme-dark .fwb-toast,
+.theme-dark .fwb-tooltip {
+  background: var(--card-bg) !important; /* Card background for all Flowbite components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all Flowbite components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all Flowbite components in dark theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all Flowbite components in dark theme */
+}
+
+/* Light Theme Flowbite Components */
+.theme-light [data-flowbite],
+.theme-light .flowbite-component,
+.theme-light .fwb-accordion,
+.theme-light .fwb-alert,
+.theme-light .fwb-avatar,
+.theme-light .fwb-badge,
+.theme-light .fwb-breadcrumb,
+.theme-light .fwb-button,
+.theme-light .fwb-button-group,
+.theme-light .fwb-card,
+.theme-light .fwb-carousel,
+.theme-light .fwb-dropdown,
+.theme-light .fwb-footer,
+.theme-light .fwb-list-group,
+.theme-light .fwb-modal,
+.theme-light .fwb-navbar,
+.theme-light .fwb-pagination,
+.theme-light .fwb-popover,
+.theme-light .fwb-progress,
+.theme-light .fwb-rating,
+.theme-light .fwb-sidebar,
+.theme-light .fwb-spinner,
+.theme-light .fwb-tab,
+.theme-light .fwb-table,
+.theme-light .fwb-toast,
+.theme-light .fwb-tooltip {
+  background: var(--card-bg) !important; /* White background for all Flowbite components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all Flowbite components in light theme */
+  border-color: var(--card-border) !important; /* Border for all Flowbite components in light theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all Flowbite components in light theme */
+}
+
+/* ==========================================================================
+   MODERN WEB COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Web Components */
+.theme-super-dark custom-element,
+.theme-super-dark web-component,
+.theme-super-dark [is="custom-element"],
+.theme-super-dark shadow-root,
+.theme-super-dark ::part(*),
+.theme-super-dark slot,
+.theme-super-dark template {
+  background: #060511 !important; /* Solid background for all web components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all web components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all web components in super dark theme */
+}
+
+/* Dark Theme Web Components */
+.theme-dark custom-element,
+.theme-dark web-component,
+.theme-dark [is="custom-element"],
+.theme-dark shadow-root,
+.theme-dark ::part(*),
+.theme-dark slot,
+.theme-dark template {
+  background: var(--card-bg) !important; /* Card background for all web components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all web components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all web components in dark theme */
+}
+
+/* Light Theme Web Components */
+.theme-light custom-element,
+.theme-light web-component,
+.theme-light [is="custom-element"],
+.theme-light shadow-root,
+.theme-light ::part(*),
+.theme-light slot,
+.theme-light template {
+  background: var(--card-bg) !important; /* White background for all web components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all web components in light theme */
+  border-color: var(--card-border) !important; /* Border for all web components in light theme */
+}
+
+/* ==========================================================================
+   HTML5 SEMANTIC ELEMENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme HTML5 Semantic Elements */
+.theme-super-dark main,
+.theme-super-dark section,
+.theme-super-dark article,
+.theme-super-dark aside,
+.theme-super-dark header,
+.theme-super-dark footer,
+.theme-super-dark nav,
+.theme-super-dark figure,
+.theme-super-dark figcaption,
+.theme-super-dark details,
+.theme-super-dark summary,
+.theme-super-dark mark,
+.theme-super-dark time,
+.theme-super-dark address,
+.theme-super-dark blockquote,
+.theme-super-dark cite {
+  background: #060511 !important; /* Solid background for all HTML5 semantic elements in super dark theme */
+  color: var(--text-primary) !important; /* White text for all HTML5 semantic elements in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all HTML5 semantic elements in super dark theme */
+}
+
+/* Dark Theme HTML5 Semantic Elements */
+.theme-dark main,
+.theme-dark section,
+.theme-dark article,
+.theme-dark aside,
+.theme-dark header,
+.theme-dark footer,
+.theme-dark nav,
+.theme-dark figure,
+.theme-dark figcaption,
+.theme-dark details,
+.theme-dark summary,
+.theme-dark mark,
+.theme-dark time,
+.theme-dark address,
+.theme-dark blockquote,
+.theme-dark cite {
+  background: var(--card-bg) !important; /* Card background for all HTML5 semantic elements in dark theme */
+  color: var(--text-primary) !important; /* Light text for all HTML5 semantic elements in dark theme */
+  border-color: var(--card-border) !important; /* Border for all HTML5 semantic elements in dark theme */
+}
+
+/* Light Theme HTML5 Semantic Elements */
+.theme-light main,
+.theme-light section,
+.theme-light article,
+.theme-light aside,
+.theme-light header,
+.theme-light footer,
+.theme-light nav,
+.theme-light figure,
+.theme-light figcaption,
+.theme-light details,
+.theme-light summary,
+.theme-light mark,
+.theme-light time,
+.theme-light address,
+.theme-light blockquote,
+.theme-light cite {
+  background: var(--card-bg) !important; /* White background for all HTML5 semantic elements in light theme */
+  color: var(--text-primary) !important; /* Dark text for all HTML5 semantic elements in light theme */
+  border-color: var(--card-border) !important; /* Border for all HTML5 semantic elements in light theme */
+}
+
+/* ==========================================================================
+   PROGRESSIVE WEB APP COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme PWA Components */
+.theme-super-dark .pwa-install-prompt,
+.theme-super-dark .pwa-update-available,
+.theme-super-dark .pwa-offline-indicator,
+.theme-super-dark .service-worker-update,
+.theme-super-dark .app-shell,
+.theme-super-dark .splash-screen,
+.theme-super-dark .app-bar,
+.theme-super-dark .bottom-navigation,
+.theme-super-dark .fab,
+.theme-super-dark .snackbar {
+  background: #060511 !important; /* Solid background for all PWA components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all PWA components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all PWA components in super dark theme */
+}
+
+/* Dark Theme PWA Components */
+.theme-dark .pwa-install-prompt,
+.theme-dark .pwa-update-available,
+.theme-dark .pwa-offline-indicator,
+.theme-dark .service-worker-update,
+.theme-dark .app-shell,
+.theme-dark .splash-screen,
+.theme-dark .app-bar,
+.theme-dark .bottom-navigation,
+.theme-dark .fab,
+.theme-dark .snackbar {
+  background: var(--card-bg) !important; /* Card background for all PWA components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all PWA components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all PWA components in dark theme */
+}
+
+/* Light Theme PWA Components */
+.theme-light .pwa-install-prompt,
+.theme-light .pwa-update-available,
+.theme-light .pwa-offline-indicator,
+.theme-light .service-worker-update,
+.theme-light .app-shell,
+.theme-light .splash-screen,
+.theme-light .app-bar,
+.theme-light .bottom-navigation,
+.theme-light .fab,
+.theme-light .snackbar {
+  background: var(--card-bg) !important; /* White background for all PWA components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all PWA components in light theme */
+  border-color: var(--card-border) !important; /* Border for all PWA components in light theme */
+}
+
+/* ==========================================================================
+   THIRD-PARTY LIBRARY COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Third-Party Components */
+.theme-super-dark .bootstrap-component,
+.theme-super-dark .material-ui-component,
+.theme-super-dark .antd-component,
+.theme-super-dark .element-ui-component,
+.theme-super-dark .vuetify-component,
+.theme-super-dark .quasar-component,
+.theme-super-dark .chakra-ui-component,
+.theme-super-dark .mantine-component,
+.theme-super-dark .semantic-ui-component,
+.theme-super-dark .bulma-component,
+.theme-super-dark .foundation-component,
+.theme-super-dark [class*="ui-"],
+.theme-super-dark [class*="ant-"],
+.theme-super-dark [class*="el-"],
+.theme-super-dark [class*="v-"],
+.theme-super-dark [class*="q-"],
+.theme-super-dark [class*="chakra-"],
+.theme-super-dark [class*="mantine-"] {
+  background: #060511 !important; /* Solid background for all third-party components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all third-party components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all third-party components in super dark theme */
+}
+
+/* Dark Theme Third-Party Components */
+.theme-dark .bootstrap-component,
+.theme-dark .material-ui-component,
+.theme-dark .antd-component,
+.theme-dark .element-ui-component,
+.theme-dark .vuetify-component,
+.theme-dark .quasar-component,
+.theme-dark .chakra-ui-component,
+.theme-dark .mantine-component,
+.theme-dark .semantic-ui-component,
+.theme-dark .bulma-component,
+.theme-dark .foundation-component,
+.theme-dark [class*="ui-"],
+.theme-dark [class*="ant-"],
+.theme-dark [class*="el-"],
+.theme-dark [class*="v-"],
+.theme-dark [class*="q-"],
+.theme-dark [class*="chakra-"],
+.theme-dark [class*="mantine-"] {
+  background: var(--card-bg) !important; /* Card background for all third-party components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all third-party components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all third-party components in dark theme */
+}
+
+/* Light Theme Third-Party Components */
+.theme-light .bootstrap-component,
+.theme-light .material-ui-component,
+.theme-light .antd-component,
+.theme-light .element-ui-component,
+.theme-light .vuetify-component,
+.theme-light .quasar-component,
+.theme-light .chakra-ui-component,
+.theme-light .mantine-component,
+.theme-light .semantic-ui-component,
+.theme-light .bulma-component,
+.theme-light .foundation-component,
+.theme-light [class*="ui-"],
+.theme-light [class*="ant-"],
+.theme-light [class*="el-"],
+.theme-light [class*="v-"],
+.theme-light [class*="q-"],
+.theme-light [class*="chakra-"],
+.theme-light [class*="mantine-"] {
+  background: var(--card-bg) !important; /* White background for all third-party components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all third-party components in light theme */
+  border-color: var(--card-border) !important; /* Border for all third-party components in light theme */
+}
+
+/* ==========================================================================
+   ANIMATION AND TRANSITION COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Animation Components */
+.theme-super-dark .fade-enter-active,
+.theme-super-dark .fade-leave-active,
+.theme-super-dark .slide-up-enter-active,
+.theme-super-dark .slide-up-leave-active,
+.theme-super-dark .bounce-enter-active,
+.theme-super-dark .bounce-leave-active,
+.theme-super-dark .zoom-enter-active,
+.theme-super-dark .zoom-leave-active,
+.theme-super-dark .flip-enter-active,
+.theme-super-dark .flip-leave-active,
+.theme-super-dark .rotate-enter-active,
+.theme-super-dark .rotate-leave-active,
+.theme-super-dark .scale-enter-active,
+.theme-super-dark .scale-leave-active {
+  background: #060511 !important; /* Solid background for all animation components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all animation components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all animation components in super dark theme */
+}
+
+/* Dark Theme Animation Components */
+.theme-dark .fade-enter-active,
+.theme-dark .fade-leave-active,
+.theme-dark .slide-up-enter-active,
+.theme-dark .slide-up-leave-active,
+.theme-dark .bounce-enter-active,
+.theme-dark .bounce-leave-active,
+.theme-dark .zoom-enter-active,
+.theme-dark .zoom-leave-active,
+.theme-dark .flip-enter-active,
+.theme-dark .flip-leave-active,
+.theme-dark .rotate-enter-active,
+.theme-dark .rotate-leave-active,
+.theme-dark .scale-enter-active,
+.theme-dark .scale-leave-active {
+  background: var(--card-bg) !important; /* Card background for all animation components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all animation components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all animation components in dark theme */
+}
+
+/* Light Theme Animation Components */
+.theme-light .fade-enter-active,
+.theme-light .fade-leave-active,
+.theme-light .slide-up-enter-active,
+.theme-light .slide-up-leave-active,
+.theme-light .bounce-enter-active,
+.theme-light .bounce-leave-active,
+.theme-light .zoom-enter-active,
+.theme-light .zoom-leave-active,
+.theme-light .flip-enter-active,
+.theme-light .flip-leave-active,
+.theme-light .rotate-enter-active,
+.theme-light .rotate-leave-active,
+.theme-light .scale-enter-active,
+.theme-light .scale-leave-active {
+  background: var(--card-bg) !important; /* White background for all animation components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all animation components in light theme */
+  border-color: var(--card-border) !important; /* Border for all animation components in light theme */
+}
+
+/* ==========================================================================
+   ACCESSIBILITY COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Accessibility Components */
+.theme-super-dark .sr-only,
+.theme-super-dark .screen-reader-text,
+.theme-super-dark .visually-hidden,
+.theme-super-dark [aria-hidden="false"],
+.theme-super-dark [role="alert"],
+.theme-super-dark [role="status"],
+.theme-super-dark [role="log"],
+.theme-super-dark [role="marquee"],
+.theme-super-dark [role="timer"],
+.theme-super-dark .skip-link,
+.theme-super-dark .focus-trap,
+.theme-super-dark .landmark {
+  background: #060511 !important; /* Solid background for all accessibility components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all accessibility components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all accessibility components in super dark theme */
+}
+
+/* Dark Theme Accessibility Components */
+.theme-dark .sr-only,
+.theme-dark .screen-reader-text,
+.theme-dark .visually-hidden,
+.theme-dark [aria-hidden="false"],
+.theme-dark [role="alert"],
+.theme-dark [role="status"],
+.theme-dark [role="log"],
+.theme-dark [role="marquee"],
+.theme-dark [role="timer"],
+.theme-dark .skip-link,
+.theme-dark .focus-trap,
+.theme-dark .landmark {
+  background: var(--card-bg) !important; /* Card background for all accessibility components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all accessibility components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all accessibility components in dark theme */
+}
+
+/* Light Theme Accessibility Components */
+.theme-light .sr-only,
+.theme-light .screen-reader-text,
+.theme-light .visually-hidden,
+.theme-light [aria-hidden="false"],
+.theme-light [role="alert"],
+.theme-light [role="status"],
+.theme-light [role="log"],
+.theme-light [role="marquee"],
+.theme-light [role="timer"],
+.theme-light .skip-link,
+.theme-light .focus-trap,
+.theme-light .landmark {
+  background: var(--card-bg) !important; /* White background for all accessibility components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all accessibility components in light theme */
+  border-color: var(--card-border) !important; /* Border for all accessibility components in light theme */
+}
+
+/* ==========================================================================
+   INTERACTIVE WIDGET COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Interactive Widget Components */
+.theme-super-dark .widget,
+.theme-super-dark .widget-header,
+.theme-super-dark .widget-body,
+.theme-super-dark .widget-footer,
+.theme-super-dark .dashboard-widget,
+.theme-super-dark .chart-widget,
+.theme-super-dark .graph-widget,
+.theme-super-dark .stats-widget,
+.theme-super-dark .calendar-widget,
+.theme-super-dark .clock-widget,
+.theme-super-dark .weather-widget,
+.theme-super-dark .social-widget,
+.theme-super-dark .news-widget,
+.theme-super-dark .feed-widget {
+  background: #060511 !important; /* Solid background for all interactive widget components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all interactive widget components in super dark theme */
+  border: 1px solid var(--card-border) !important; /* Border for all interactive widget components in super dark theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all interactive widget components in super dark theme */
+}
+
+/* Dark Theme Interactive Widget Components */
+.theme-dark .widget,
+.theme-dark .widget-header,
+.theme-dark .widget-body,
+.theme-dark .widget-footer,
+.theme-dark .dashboard-widget,
+.theme-dark .chart-widget,
+.theme-dark .graph-widget,
+.theme-dark .stats-widget,
+.theme-dark .calendar-widget,
+.theme-dark .clock-widget,
+.theme-dark .weather-widget,
+.theme-dark .social-widget,
+.theme-dark .news-widget,
+.theme-dark .feed-widget {
+  background: var(--card-bg) !important; /* Card background for all interactive widget components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all interactive widget components in dark theme */
+  border: 1px solid var(--card-border) !important; /* Border for all interactive widget components in dark theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all interactive widget components in dark theme */
+}
+
+/* Light Theme Interactive Widget Components */
+.theme-light .widget,
+.theme-light .widget-header,
+.theme-light .widget-body,
+.theme-light .widget-footer,
+.theme-light .dashboard-widget,
+.theme-light .chart-widget,
+.theme-light .graph-widget,
+.theme-light .stats-widget,
+.theme-light .calendar-widget,
+.theme-light .clock-widget,
+.theme-light .weather-widget,
+.theme-light .social-widget,
+.theme-light .news-widget,
+.theme-light .feed-widget {
+  background: var(--card-bg) !important; /* White background for all interactive widget components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all interactive widget components in light theme */
+  border: 1px solid var(--card-border) !important; /* Border for all interactive widget components in light theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all interactive widget components in light theme */
+}
+
+/* ==========================================================================
+   LAYOUT AND GRID COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Layout Components */
+.theme-super-dark .layout,
+.theme-super-dark .layout-header,
+.theme-super-dark .layout-sidebar,
+.theme-super-dark .layout-content,
+.theme-super-dark .layout-footer,
+.theme-super-dark .grid-container,
+.theme-super-dark .grid-item,
+.theme-super-dark .flex-container,
+.theme-super-dark .flex-item,
+.theme-super-dark .masonry-container,
+.theme-super-dark .masonry-item,
+.theme-super-dark .responsive-container,
+.theme-super-dark .sticky-container,
+.theme-super-dark .fixed-container {
+  background: #060511 !important; /* Solid background for all layout components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all layout components in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all layout components in super dark theme */
+}
+
+/* Dark Theme Layout Components */
+.theme-dark .layout,
+.theme-dark .layout-header,
+.theme-dark .layout-sidebar,
+.theme-dark .layout-content,
+.theme-dark .layout-footer,
+.theme-dark .grid-container,
+.theme-dark .grid-item,
+.theme-dark .flex-container,
+.theme-dark .flex-item,
+.theme-dark .masonry-container,
+.theme-dark .masonry-item,
+.theme-dark .responsive-container,
+.theme-dark .sticky-container,
+.theme-dark .fixed-container {
+  background: var(--card-bg) !important; /* Card background for all layout components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all layout components in dark theme */
+  border-color: var(--card-border) !important; /* Border for all layout components in dark theme */
+}
+
+/* Light Theme Layout Components */
+.theme-light .layout,
+.theme-light .layout-header,
+.theme-light .layout-sidebar,
+.theme-light .layout-content,
+.theme-light .layout-footer,
+.theme-light .grid-container,
+.theme-light .grid-item,
+.theme-light .flex-container,
+.theme-light .flex-item,
+.theme-light .masonry-container,
+.theme-light .masonry-item,
+.theme-light .responsive-container,
+.theme-light .sticky-container,
+.theme-light .fixed-container {
+  background: var(--card-bg) !important; /* White background for all layout components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all layout components in light theme */
+  border-color: var(--card-border) !important; /* Border for all layout components in light theme */
+}
+
+/* ==========================================================================
+   DATA VISUALIZATION COMPONENT OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Data Visualization Components */
+.theme-super-dark .chart,
+.theme-super-dark .graph,
+.theme-super-dark .plot,
+.theme-super-dark .diagram,
+.theme-super-dark .timeline,
+.theme-super-dark .gantt-chart,
+.theme-super-dark .pie-chart,
+.theme-super-dark .bar-chart,
+.theme-super-dark .line-chart,
+.theme-super-dark .area-chart,
+.theme-super-dark .scatter-plot,
+.theme-super-dark .heatmap,
+.theme-super-dark .treemap,
+.theme-super-dark .sunburst-chart,
+.theme-super-dark .candlestick-chart,
+.theme-super-dark .radar-chart {
+  background: #060511 !important; /* Solid background for all data visualization components in super dark theme */
+  color: var(--text-primary) !important; /* White text for all data visualization components in super dark theme */
+  border: 1px solid var(--card-border) !important; /* Border for all data visualization components in super dark theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all data visualization components in super dark theme */
+}
+
+/* Dark Theme Data Visualization Components */
+.theme-dark .chart,
+.theme-dark .graph,
+.theme-dark .plot,
+.theme-dark .diagram,
+.theme-dark .timeline,
+.theme-dark .gantt-chart,
+.theme-dark .pie-chart,
+.theme-dark .bar-chart,
+.theme-dark .line-chart,
+.theme-dark .area-chart,
+.theme-dark .scatter-plot,
+.theme-dark .heatmap,
+.theme-dark .treemap,
+.theme-dark .sunburst-chart,
+.theme-dark .candlestick-chart,
+.theme-dark .radar-chart {
+  background: var(--card-bg) !important; /* Card background for all data visualization components in dark theme */
+  color: var(--text-primary) !important; /* Light text for all data visualization components in dark theme */
+  border: 1px solid var(--card-border) !important; /* Border for all data visualization components in dark theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all data visualization components in dark theme */
+}
+
+/* Light Theme Data Visualization Components */
+.theme-light .chart,
+.theme-light .graph,
+.theme-light .plot,
+.theme-light .diagram,
+.theme-light .timeline,
+.theme-light .gantt-chart,
+.theme-light .pie-chart,
+.theme-light .bar-chart,
+.theme-light .line-chart,
+.theme-light .area-chart,
+.theme-light .scatter-plot,
+.theme-light .heatmap,
+.theme-light .treemap,
+.theme-light .sunburst-chart,
+.theme-light .candlestick-chart,
+.theme-light .radar-chart {
+  background: var(--card-bg) !important; /* White background for all data visualization components in light theme */
+  color: var(--text-primary) !important; /* Dark text for all data visualization components in light theme */
+  border: 1px solid var(--card-border) !important; /* Border for all data visualization components in light theme */
+  border-radius: 0.8rem !important; /* Rounded corners for all data visualization components in light theme */
+}
+
+/* ==========================================================================
+   GENERIC COMPONENT CLASS OVERRIDES - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Generic Component Classes */
+.theme-super-dark [class*="component"],
+.theme-super-dark [class*="widget"],
+.theme-super-dark [class*="module"],
+.theme-super-dark [class*="element"],
+.theme-super-dark [class*="item"],
+.theme-super-dark [class*="block"],
+.theme-super-dark [class*="section"],
+.theme-super-dark [class*="container"],
+.theme-super-dark [class*="wrapper"],
+.theme-super-dark [class*="holder"],
+.theme-super-dark [class*="box"],
+.theme-super-dark [class*="panel"],
+.theme-super-dark [id*="component"],
+.theme-super-dark [id*="widget"],
+.theme-super-dark [id*="module"],
+.theme-super-dark [id*="element"] {
+  background: #060511 !important; /* Solid background for all generic component classes in super dark theme */
+  color: var(--text-primary) !important; /* White text for all generic component classes in super dark theme */
+  border-color: var(--card-border) !important; /* Border for all generic component classes in super dark theme */
+}
+
+/* Dark Theme Generic Component Classes */
+.theme-dark [class*="component"],
+.theme-dark [class*="widget"],
+.theme-dark [class*="module"],
+.theme-dark [class*="element"],
+.theme-dark [class*="item"],
+.theme-dark [class*="block"],
+.theme-dark [class*="section"],
+.theme-dark [class*="container"],
+.theme-dark [class*="wrapper"],
+.theme-dark [class*="holder"],
+.theme-dark [class*="box"],
+.theme-dark [class*="panel"],
+.theme-dark [id*="component"],
+.theme-dark [id*="widget"],
+.theme-dark [id*="module"],
+.theme-dark [id*="element"] {
+  background: var(--card-bg) !important; /* Card background for all generic component classes in dark theme */
+  color: var(--text-primary) !important; /* Light text for all generic component classes in dark theme */
+  border-color: var(--card-border) !important; /* Border for all generic component classes in dark theme */
+}
+
+/* Light Theme Generic Component Classes */
+.theme-light [class*="component"],
+.theme-light [class*="widget"],
+.theme-light [class*="module"],
+.theme-light [class*="element"],
+.theme-light [class*="item"],
+.theme-light [class*="block"],
+.theme-light [class*="section"],
+.theme-light [class*="container"],
+.theme-light [class*="wrapper"],
+.theme-light [class*="holder"],
+.theme-light [class*="box"],
+.theme-light [class*="panel"],
+.theme-light [id*="component"],
+.theme-light [id*="widget"],
+.theme-light [id*="module"],
+.theme-light [id*="element"] {
+  background: var(--card-bg) !important; /* White background for all generic component classes in light theme */
+  color: var(--text-primary) !important; /* Dark text for all generic component classes in light theme */
+  border-color: var(--card-border) !important; /* Border for all generic component classes in light theme */
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN ADJUSTMENTS
    ========================================================================== */
 
@@ -3487,6 +4283,19 @@ body {
   .form-select {
     @apply text-sm;
   }
+
+  /* Mobile Component Overrides */
+  .theme-super-dark .widget,
+  .theme-dark .widget,
+  .theme-light .widget {
+    @apply p-3 text-sm;
+  }
+
+  .theme-super-dark [class*="component"],
+  .theme-dark [class*="component"],
+  .theme-light [class*="component"] {
+    @apply text-sm;
+  }
 }
 
 /* Tablet Responsive Adjustments */
@@ -3498,6 +4307,13 @@ body {
   .section-container {
     @apply py-14;
   }
+
+  /* Tablet Component Overrides */
+  .theme-super-dark .widget,
+  .theme-dark .widget,
+  .theme-light .widget {
+    @apply p-4;
+  }
 }
 
 /* Desktop Responsive Adjustments */
@@ -3508,6 +4324,21 @@ body {
 
   .hover-lift:hover {
     transform: translateY(-4px);
+  }
+
+  /* Desktop Component Hover Effects */
+  .theme-super-dark .widget:hover,
+  .theme-dark .widget:hover,
+  .theme-light .widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+  }
+
+  .theme-super-dark [class*="component"]:hover,
+  .theme-dark [class*="component"]:hover,
+  .theme-light [class*="component"]:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px var(--shadow-subtle);
   }
 }
 
@@ -3530,5 +4361,16 @@ body {
     border: 1px solid #000;
     background: white;
     color: black;
+  }
+
+  /* Print Component Overrides */
+  .widget,
+  [class*="component"],
+  [class*="widget"],
+  [data-flowbite] {
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
   }
 }
