@@ -1275,6 +1275,13 @@ body {
   border-radius: 0.5rem !important;
 }
 
+/* Super Dark Theme Text Color Override */
+.theme-super-dark .text-gray-500,
+.theme-super-dark .text-secondary,
+.theme-super-dark .text-tertiary {
+  color: #ffffff !important;
+}
+
 /* Light Theme Specific Rules */
 .theme-light .card {
   box-shadow: 0 2px 8px var(--shadow-subtle);
