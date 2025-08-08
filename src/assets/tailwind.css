@@ -900,9 +900,14 @@ body {
 .theme-super-dark [data-collapse-toggle],
 .theme-super-dark .collapse-button,
 .theme-super-dark .expand-button,
-.theme-super-dark button[aria-expanded] {
+.theme-super-dark button[aria-expanded],
+.theme-super-dark .flowbite-button,
+.theme-super-dark .fwb-button {
   background: #060511 !important;
   border: 1px solid #060511 !important;
+  border-color: #060511 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .theme-super-dark .expand-all,
@@ -911,6 +916,9 @@ body {
 .theme-super-dark .toggle-button {
   background: #060511 !important;
   border: 1px solid #060511 !important;
+  border-color: #060511 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .theme-super-dark .expand-all:hover,
@@ -920,17 +928,41 @@ body {
 .theme-super-dark [data-collapse-toggle]:hover,
 .theme-super-dark .collapse-button:hover,
 .theme-super-dark .expand-button:hover,
-.theme-super-dark button[aria-expanded]:hover {
+.theme-super-dark button[aria-expanded]:hover,
+.theme-super-dark .flowbite-button:hover,
+.theme-super-dark .fwb-button:hover {
   background: #060511 !important;
   border: 1px solid #060511 !important;
+  border-color: #060511 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.theme-super-dark .expand-all:focus,
+.theme-super-dark .collapse-all:focus,
+.theme-super-dark .collapse-controls button:focus,
+.theme-super-dark .toggle-button:focus,
+.theme-super-dark [data-collapse-toggle]:focus,
+.theme-super-dark .collapse-button:focus,
+.theme-super-dark .expand-button:focus,
+.theme-super-dark button[aria-expanded]:focus,
+.theme-super-dark .flowbite-button:focus,
+.theme-super-dark .fwb-button:focus {
+  background: #060511 !important;
+  border: 1px solid #060511 !important;
+  border-color: #060511 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Super Dark Theme - Target any button within flowbite components */
-.theme-super-dark .fwb-button,
 .theme-super-dark [data-flowbite] button,
 .theme-super-dark .flowbite-component button {
   background: #060511 !important;
   border: 1px solid #060511 !important;
+  border-color: #060511 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Super Dark Theme Modal Elements */
@@ -991,9 +1023,14 @@ body {
 .theme-dark [data-collapse-toggle],
 .theme-dark .collapse-button,
 .theme-dark .expand-button,
-.theme-dark button[aria-expanded] {
+.theme-dark button[aria-expanded],
+.theme-dark .flowbite-button,
+.theme-dark .fwb-button {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .theme-dark .expand-all,
@@ -1002,6 +1039,9 @@ body {
 .theme-dark .toggle-button {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .theme-dark .expand-all:hover,
@@ -1011,16 +1051,40 @@ body {
 .theme-dark [data-collapse-toggle]:hover,
 .theme-dark .collapse-button:hover,
 .theme-dark .expand-button:hover,
-.theme-dark button[aria-expanded]:hover {
+.theme-dark button[aria-expanded]:hover,
+.theme-dark .flowbite-button:hover,
+.theme-dark .fwb-button:hover {
   background: var(--card-bg-hover) !important;
   border: 1px solid var(--card-border-hover) !important;
+  border-color: var(--card-border-hover) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.theme-dark .fwb-button,
+.theme-dark .expand-all:focus,
+.theme-dark .collapse-all:focus,
+.theme-dark .collapse-controls button:focus,
+.theme-dark .toggle-button:focus,
+.theme-dark [data-collapse-toggle]:focus,
+.theme-dark .collapse-button:focus,
+.theme-dark .expand-button:focus,
+.theme-dark button[aria-expanded]:focus,
+.theme-dark .flowbite-button:focus,
+.theme-dark .fwb-button:focus {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .theme-dark [data-flowbite] button,
 .theme-dark .flowbite-component button {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Light Theme Tailwind Classes Override */
@@ -1033,9 +1097,14 @@ body {
 .theme-light [data-collapse-toggle],
 .theme-light .collapse-button,
 .theme-light .expand-button,
-.theme-light button[aria-expanded] {
+.theme-light button[aria-expanded],
+.theme-light .flowbite-button,
+.theme-light .fwb-button {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .theme-light .expand-all,
@@ -1044,6 +1113,9 @@ body {
 .theme-light .toggle-button {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .theme-light .expand-all:hover,
@@ -1053,16 +1125,40 @@ body {
 .theme-light [data-collapse-toggle]:hover,
 .theme-light .collapse-button:hover,
 .theme-light .expand-button:hover,
-.theme-light button[aria-expanded]:hover {
+.theme-light button[aria-expanded]:hover,
+.theme-light .flowbite-button:hover,
+.theme-light .fwb-button:hover {
   background: var(--card-bg-hover) !important;
   border: 1px solid var(--card-border-hover) !important;
+  border-color: var(--card-border-hover) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.theme-light .fwb-button,
+.theme-light .expand-all:focus,
+.theme-light .collapse-all:focus,
+.theme-light .collapse-controls button:focus,
+.theme-light .toggle-button:focus,
+.theme-light [data-collapse-toggle]:focus,
+.theme-light .collapse-button:focus,
+.theme-light .expand-button:focus,
+.theme-light button[aria-expanded]:focus,
+.theme-light .flowbite-button:focus,
+.theme-light .fwb-button:focus {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .theme-light [data-flowbite] button,
 .theme-light .flowbite-component button {
   background: var(--card-bg) !important;
   border: 1px solid var(--card-border) !important;
+  border-color: var(--card-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Super Dark Theme Section Elements */
