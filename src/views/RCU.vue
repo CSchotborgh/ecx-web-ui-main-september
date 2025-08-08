@@ -42,7 +42,7 @@
             </div>
         </template>
     </fwb-modal>
-    <main class="container text-white">
+    <main class="container text-white text-opacity-50">
 
         <!-- Header and Expansion/Collapse Control -->
         <div class="flex flex-row">
