@@ -2193,7 +2193,7 @@ input[type="reset"] {
 /* Compact Panel Variant */
 .panel-compact {
   @apply p-4;
-  background: var(--panel-bg);
+  background: #282541 !important;
   border: 1px solid var(--panel-border);
   border-radius: 0.8rem;
   box-shadow: 0 4px 12px var(--shadow-color);
@@ -2202,15 +2202,15 @@ input[type="reset"] {
 /* Header Panel - Top-level headers */
 .panel-header {
   @apply p-6 border-b;
-  background: #060511 !important;
+  background: #0b0721 !important;
   border-bottom: 1px solid var(--card-border);
-  border-radius: 0.8rem 0.8rem 0 0;
+  border-radius: 0.12rem 0.12rem 0 0;
 }
 
 /* Footer Panel - Bottom-level footers */
 .panel-footer {
   @apply p-6 border-t;
-  background: #060511 !important;
+  background: #0b0721 !important;
   border-top: 1px solid var(--card-border);
   border-radius: 0 0 0.8rem 0.8rem;
 }
