@@ -375,46 +375,50 @@ body {
 
 /* Main Card Component - Primary containers for content */
 .card {
-  @apply border p-6 shadow-lg transition-all duration-300;
+  @apply border shadow-lg transition-all duration-300;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 0.8rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px var(--shadow-color);
+  border: 0.1% solid var(--card-border);
+  border-radius: 1%;
+  backdrop-filter: blur(1%);
+  box-shadow: 0 0.4% 1.2% var(--shadow-color);
+  padding: 3%;
 }
 
 /* Card Hover State - Interactive feedback */
 .card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px var(--shadow-color);
-  border: 1px solid var(--card-border-hover);
+  transform: translateY(-0.1%);
+  box-shadow: 0 0.6% 1.6% var(--shadow-color);
+  border: 0.1% solid var(--card-border-hover);
   /* Hover border - uses --card-border-hover variable for more visible gray border on card interaction */
   background: var(--card-bg-hover);
 }
 
 /* Secondary Card Variant - Less prominent containers */
 .card-secondary {
-  @apply border p-4 shadow-sm transition-all duration-300;
+  @apply border shadow-sm transition-all duration-300;
   background: var(--card-bg-secondary);
-  border: 1px solid var(--card-border-subtle);
-  border-radius: 0.8rem;
-  backdrop-filter: blur(8px);
+  border: 0.1% solid var(--card-border-subtle);
+  border-radius: 1%;
+  backdrop-filter: blur(0.8%);
+  padding: 2%;
 }
 
 /* Tertiary Card Variant - Minimal containers */
 .card-tertiary {
-  @apply border p-3 transition-all duration-300;
+  @apply border transition-all duration-300;
   background: var(--card-bg-tertiary);
-  border: 1px solid var(--card-border-subtle);
-  border-radius: 0.8rem;
+  border: 0.1% solid var(--card-border-subtle);
+  border-radius: 1%;
+  padding: 1.5%;
 }
 
 /* Compact Card Variant - Space-efficient containers */
 .card-compact {
-  @apply border p-2 shadow-sm transition-all duration-300;
+  @apply border shadow-sm transition-all duration-300;
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 0.8rem;
+  border: 0.1% solid var(--card-border);
+  border-radius: 1%;
+  padding: 1%;
 }
 
 /* ==========================================================================
@@ -425,17 +429,18 @@ body {
 .nav-container {
   @apply border-b transition-all duration-300;
   background: var(--nav-bg);
-  border-bottom: 1px solid var(--nav-border);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 2px 8px var(--shadow-color);
+  border-bottom: 0.1% solid var(--nav-border);
+  backdrop-filter: blur(1.5%);
+  box-shadow: 0 0.2% 0.8% var(--shadow-color);
 }
 
 /* Navigation Brand/Logo */
 .nav-brand {
-  @apply font-semibold text-lg transition-colors duration-200;
+  @apply font-semibold transition-colors duration-200;
   color: var(--nav-text);
   font-family: 'Lato', sans-serif;
   font-weight: 600;
+  font-size: 1.8%;
 }
 
 .nav-brand:hover {
@@ -444,11 +449,12 @@ body {
 
 /* Navigation Links */
 .nav-link {
-  @apply px-4 py-2 transition-all duration-200 font-semibold;
+  @apply transition-all duration-200 font-semibold;
   color: var(--text-secondary);
-  border: 1px solid transparent;
+  border: 0.1% solid transparent;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
+  padding: 1% 2%;
   /* Default transparent border - maintains layout consistency without visible border */
   border-radius: 0;
 }
@@ -456,9 +462,9 @@ body {
 .nav-link:hover {
   color: var(--nav-text-hover);
   background: var(--accent-background);
-  border: 1px solid var(--accent-muted);
+  border: 0.1% solid var(--accent-muted);
   /* Hover border - uses --accent-muted variable for subtle blue accent border on navigation link hover */
-  border-radius: 0.4rem;
+  border-radius: 0.4%;
 }
 
 /* Active Navigation Link */
@@ -466,28 +472,30 @@ body {
 .router-link-exact-active {
   color: var(--nav-text);
   background: var(--nav-link-active);
-  border: 1px solid var(--accent-muted);
+  border: 0.1% solid var(--accent-muted);
   /* Active border - uses --accent-muted variable for blue accent border on active/current navigation links */
-  border-radius: 0.4rem;
+  border-radius: 0.4%;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
 }
 
 /* Navigation Dropdown Menu */
 .nav-dropdown {
-  @apply absolute top-full left-0 mt-2 shadow-lg border;
+  @apply absolute top-full left-0 shadow-lg border;
   background: var(--nav-bg);
-  border: 1px solid var(--nav-border);
+  border: 0.1% solid var(--nav-border);
   border-radius: 0;
-  backdrop-filter: blur(15px);
-  min-width: 200px;
+  backdrop-filter: blur(1.5%);
+  min-width: 20%;
+  margin-top: 0.2%;
 }
 
 /* Navigation Dropdown Items */
 .nav-dropdown-item {
-  @apply px-4 py-2 transition-colors duration-200 cursor-pointer;
+  @apply transition-colors duration-200 cursor-pointer;
   color: var(--nav-text);
-  border-bottom: 1px solid var(--nav-border);
+  border-bottom: 0.1% solid var(--nav-border);
+  padding: 1% 2%;
 }
 
 .nav-dropdown-item:hover {
@@ -505,18 +513,19 @@ body {
 
 /* Primary Action Buttons - Main call-to-action elements */
 .btn-primary {
-  @apply px-4 py-2 font-medium transition-all duration-200 shadow-sm;
+  @apply font-medium transition-all duration-200 shadow-sm;
   background: var(--button-primary-bg);
   color: var(--button-primary-text);
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.4%;
   font-weight: 500;
+  padding: 1% 2%;
 }
 
 .btn-primary:hover {
   background: var(--button-primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px var(--shadow-accent);
+  transform: translateY(-0.1%);
+  box-shadow: 0 0.4% 1.2% var(--shadow-accent);
 }
 
 .btn-primary:active {
@@ -531,29 +540,31 @@ body {
 
 /* Secondary Buttons - Alternative actions */
 .btn-secondary {
-  @apply px-4 py-2 font-medium transition-all duration-200 border;
+  @apply font-medium transition-all duration-200 border;
   background: var(--button-secondary-bg);
   color: var(--text-primary);
-  border: 1px solid var(--button-secondary-border);
+  border: 0.1% solid var(--button-secondary-border);
   /* Default border - uses --button-secondary-border variable for subtle gray border on secondary buttons */
-  border-radius: 0.4rem;
+  border-radius: 0.4%;
   font-weight: 500;
+  padding: 1% 2%;
 }
 
 .btn-secondary:hover {
   background: var(--button-secondary-hover);
-  border: 1px solid var(--accent);
+  border: 0.1% solid var(--accent);
   /* Hover border - changes to solid --accent color for blue accent border on secondary button hover */
   color: var(--accent);
 }
 
 /* Tertiary Buttons - Minimal styling */
 .btn-tertiary {
-  @apply px-3 py-1.5 font-medium transition-all duration-200;
+  @apply font-medium transition-all duration-200;
   background: transparent;
   color: var(--text-secondary);
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.4%;
+  padding: 0.75% 1.5%;
 }
 
 .btn-tertiary:hover {
@@ -563,41 +574,45 @@ body {
 
 /* Danger/Destructive Buttons - Warning actions */
 .btn-danger {
-  @apply px-4 py-2 font-semibold transition-all duration-200;
+  @apply font-semibold transition-all duration-200;
   background: var(--button-danger-bg);
   color: white;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.4%;
+  padding: 1% 2%;
 }
 
 .btn-danger:hover {
   background: var(--button-danger-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+  transform: translateY(-0.1%);
+  box-shadow: 0 0.8% 2% rgba(239, 68, 68, 0.3);
 }
 
 /* Small Button Variant */
 .btn-sm {
-  @apply px-3 py-1.5 text-sm;
+  padding: 0.75% 1.5%;
+  font-size: 0.85%;
 }
 
 /* Large Button Variant */
 .btn-lg {
-  @apply px-8 py-4 text-lg;
+  padding: 2% 4%;
+  font-size: 1.8%;
 }
 
 /* Icon-only Buttons */
 .btn-icon {
-  @apply p-2 transition-all duration-200;
+  @apply transition-all duration-200;
   background: transparent;
-  border: 1px solid transparent;
+  border: 0.1% solid transparent;
   /* Default transparent border - maintains consistent sizing without visible border on icon buttons */
-  border-radius: 0.4rem;
+  border-radius: 0.4%;
+  padding: 1%;
 }
 
 .btn-icon:hover {
   background: var(--accent-background);
-  border: 1px solid var(--accent-muted);
+  border: 0.1% solid var(--accent-muted);
   /* Hover border - uses --accent-muted variable for subtle blue accent border on icon button hover */
 }
 
@@ -607,11 +622,13 @@ body {
 
 /* Text Input Fields */
 .form-input {
-  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
+  @apply border transition-all duration-200 w-full;
   background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 0.8rem;
+  border: 0.1% solid var(--input-border);
+  border-radius: 1%;
   color: var(--text-primary);
+  padding: 1.5% 2%;
+  font-size: 1%;
 }
 
 /* Input Placeholder Styling */
@@ -624,33 +641,35 @@ body {
 .form-input:focus {
   outline: none;
   /* Removes default browser outline for custom focus styling */
-  border: 1px solid var(--input-focus-border);
+  border: 0.1% solid var(--input-focus-border);
   /* Focus border - uses --input-focus-border variable for blue accent border on focused form inputs */
-  box-shadow: 0 0 0 2px var(--accent-background);
+  box-shadow: 0 0 0 0.2% var(--accent-background);
   /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused inputs */
   background: var(--input-focus-bg);
 }
 
 /* Input Error State */
 .form-input.error {
-  border: 1px solid var(--status-error);
+  border: 0.1% solid var(--status-error);
   /* Error border - uses --status-error variable for red border on form inputs with validation errors */
-  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+  box-shadow: 0 0 0 0.2% rgba(239, 68, 68, 0.1);
   /* Error outline ring - red glow with 10% opacity around error state inputs */
 }
 
 /* Input Success State */
 .form-input.success {
-  border: 1px solid var(--status-success);
+  border: 0.1% solid var(--status-success);
   /* Success border - uses --status-success variable for green border on successfully validated inputs */
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 0 0.2% rgba(16, 185, 129, 0.1);
   /* Success outline ring - green glow with 10% opacity around success state inputs */
 }
 
 /* Form Labels */
 .form-label {
-  @apply block text-sm font-semibold mb-2;
+  @apply block font-semibold;
   color: var(--text-primary);
+  font-size: 0.85%;
+  margin-bottom: 1%;
 }
 
 /* Required Field Indicator */
@@ -661,55 +680,63 @@ body {
 
 /* Form Help Text */
 .form-help {
-  @apply text-xs mt-1;
   color: var(--text-tertiary);
+  font-size: 0.75%;
+  margin-top: 0.5%;
 }
 
 /* Form Error Text */
 .form-error {
-  @apply text-xs mt-1;
   color: var(--status-error);
+  font-size: 0.75%;
+  margin-top: 0.5%;
 }
 
 /* Textarea Elements */
 .form-textarea {
-  @apply border px-4 py-3 transition-all duration-200 text-base w-full resize-y;
+  @apply border transition-all duration-200 w-full resize-y;
   background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 0.8rem;
+  border: 0.1% solid var(--input-border);
+  border-radius: 1%;
   color: var(--text-primary);
-  min-height: 100px;
+  min-height: 10%;
+  padding: 1.5% 2%;
+  font-size: 1%;
 }
 
 .form-textarea:focus {
   outline: none;
-  border: 1px solid var(--input-focus-border);
-  box-shadow: 0 0 0 2px var(--accent-background);
+  border: 0.1% solid var(--input-focus-border);
+  box-shadow: 0 0 0 0.2% var(--accent-background);
   background: var(--input-focus-bg);
 }
 
 /* Select Dropdown Elements */
 .form-select {
-  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
+  @apply border transition-all duration-200 w-full;
   background: var(--input-bg);
-  border: 1px solid var(--input-border);
-  border-radius: 0.8rem;
+  border: 0.1% solid var(--input-border);
+  border-radius: 1%;
   color: var(--text-primary);
+  padding: 1.5% 2%;
+  font-size: 1%;
 }
 
 .form-select:focus {
   outline: none;
-  border: 1px solid var(--input-focus-border);
-  box-shadow: 0 0 0 2px var(--accent-background);
+  border: 0.1% solid var(--input-focus-border);
+  box-shadow: 0 0 0 0.2% var(--accent-background);
   background: var(--input-focus-bg);
 }
 
 /* Checkbox Elements */
 .form-checkbox {
-  @apply w-4 h-4 rounded border-2 transition-colors duration-200;
+  @apply rounded border-2 transition-colors duration-200;
   background: var(--input-bg);
-  border: 2px solid var(--input-border);
+  border: 0.2% solid var(--input-border);
   accent-color: var(--accent);
+  width: 2%;
+  height: 2%;
 }
 
 .form-checkbox:checked {
@@ -719,10 +746,12 @@ body {
 
 /* Radio Button Elements */
 .form-radio {
-  @apply w-4 h-4 border-2 transition-colors duration-200;
+  @apply border-2 transition-colors duration-200;
   background: var(--input-bg);
-  border: 2px solid var(--input-border);
+  border: 0.2% solid var(--input-border);
   accent-color: var(--accent);
+  width: 2%;
+  height: 2%;
 }
 
 .form-radio:checked {
@@ -736,11 +765,13 @@ body {
 
 /* Custom Grid Layout - Main grid container */
 .custom-grid {
-  @apply m-auto grid grid-cols-1 gap-6 border-none p-6 min-w-full min-h-full text-center items-center content-center justify-center;
+  @apply m-auto grid grid-cols-1 border-none min-w-full min-h-full text-center items-center content-center justify-center;
   background: var(--grid-bg);
-  box-shadow: 0 4px 12px var(--shadow-color);
-  backdrop-filter: blur(10px);
-  border-radius: 0.8rem;
+  box-shadow: 0 0.4% 1.2% var(--shadow-color);
+  backdrop-filter: blur(1%);
+  border-radius: 1%;
+  gap: 3%;
+  padding: 3%;
 }
 
 /* Grid Item Hover Effects */
@@ -751,18 +782,19 @@ body {
 
 /* System Grid Item - For system section grid elements */
 .system-grid-item {
-  @apply grid grid-cols-1 m-1 text-center border align-middle sm:grid-cols-2;
+  @apply grid grid-cols-1 text-center border align-middle sm:grid-cols-2;
   background: #060511 !important;
-  border-radius: 0.8rem;
+  border-radius: 1%;
+  margin: 0.5%;
 }
 
 /* Data Table Container */
 .data-table {
   @apply w-full border-collapse overflow-hidden;
   background: var(--grid-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 0.8rem;
-  box-shadow: 0 4px 12px var(--shadow-color);
+  border: 0.1% solid var(--card-border);
+  border-radius: 1%;
+  box-shadow: 0 0.4% 1.2% var(--shadow-color);
 }
 
 /* Table Header */
@@ -771,9 +803,10 @@ body {
 }
 
 .data-table th {
-  @apply px-4 py-3 text-left font-semibold;
+  @apply text-left font-semibold;
   color: var(--text-primary);
-  border-bottom: 2px solid var(--card-border);
+  border-bottom: 0.2% solid var(--card-border);
+  padding: 1.5% 2%;
 }
 
 /* Table Body Rows */
@@ -791,9 +824,9 @@ body {
 
 /* Table Data Cells */
 .data-table td {
-  @apply px-4 py-3;
   color: var(--text-primary);
-  border-bottom: 1px solid var(--card-border-subtle);
+  border-bottom: 0.1% solid var(--card-border-subtle);
+  padding: 1.5% 2%;
 }
 
 /* ==========================================================================
