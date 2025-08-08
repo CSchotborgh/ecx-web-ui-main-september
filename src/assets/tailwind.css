@@ -1282,6 +1282,20 @@ body {
   color: #ffffff !important;
 }
 
+/* Light Theme Text Color Override */
+.theme-light .text-gray-500,
+.theme-light .text-secondary,
+.theme-light .text-tertiary {
+  color: var(--text-primary) !important;
+}
+
+/* Light Theme Table Cell Text Color Override */
+.theme-light td.text-gray-500,
+.theme-light th.text-gray-500,
+.theme-light .px-6.py-4.first\:font-medium.first\:text-gray-900.first\:dark\:text-white {
+  color: var(--text-primary) !important;
+}
+
 /* Light Theme Specific Rules */
 .theme-light .card {
   box-shadow: 0 2px 8px var(--shadow-subtle);
