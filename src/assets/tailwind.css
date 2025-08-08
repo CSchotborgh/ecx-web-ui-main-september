@@ -17,16 +17,21 @@
 :root {
   /* Background Gradients - Main page backgrounds with deep navy/black theme */
   --bg-gradient: linear-gradient(45deg, #0c0826 100%, #060511 25%, #060511 50%, #141028 100%);
+  /* Deep navy gradient with black accents */
   --bg-secondary: linear-gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%);
-  --bg-tertiary: rgb(15, 13, 24, 0.95);
+  /* Secondary navy gradient with black accents */
+  --bg-tertiary: rgb(15, 13, 24, 0.01);
+  /* Very light navy background for tertiary elements */
 
+  /* Background Colors - Solid colors for specific elements */
   /* Text Colors - All text elements with high contrast white */
   --text-primary: #dfe2e5;
+  /* Primary text, headings, and important text - slightly off-white for contrast */
   /* Main headings, important text - pure white for maximum contrast */
   --text-secondary: #e5e7eb;
   /* Secondary text, descriptions - slightly off-white */
   --text-tertiary: #9ca3af;
-  /* Muted text, placeholders - light gray */
+  /* Tertiary text, captions - light gray */
   --text-disabled: #6b7280;
   /* Disabled text - medium gray */
   --text-inverse: #060511;
@@ -100,6 +105,7 @@
   --button-secondary-hover: rgba(55, 65, 81, 0.5);
   /* Secondary button hover background - darker gray with 50% opacity for .btn-secondary:hover */
   --button-danger-bg: #ef4444;
+  /* Danger button background - red */
   --button-danger-hover: #dc2626;
 
   /* Form Elements - Dark input fields */
@@ -107,17 +113,22 @@
   --input-border: rgba(75, 85, 99, 0.4);
   /* Input default borders - subtle gray with 40% opacity for .form-input, .form-textarea, .form-select default state */
   --input-focus-bg: rgba(15, 20, 25, 0.9);
+  /* Input focus backgrounds - dark gray with 90% opacity for .form-input:focus, .form-textarea:focus, .form-select:focus states */
   --input-focus-border: #3b82f6;
   /* Input focus borders - solid blue color for .form-input:focus, .form-textarea:focus, .form-select:focus states */
   --input-placeholder: rgba(156, 163, 175, 0.6);
 
   /* Shadow Colors - Deep shadows for depth */
   --shadow-color: rgba(0, 0, 0, 0.8);
+  /* Main shadows - dark gray with 80% opacity for .card, .panel, .data-table, .nav-container, .modal-content, .alert selectors */
   --shadow-subtle: rgba(0, 0, 0, 0.4);
+  /* Subtle shadows - lighter gray with 40% opacity for .card-secondary, .card-tertiary, .card-compact, .btn-primary, .btn-secondary selectors */
   --shadow-accent: rgba(59, 130, 246, 0.3);
+  /* Accent shadows - translucent blue with 30% opacity for .btn-primary:hover, .btn-primary:active, .btn-primary:disabled selectors */
 
   /* Panel Specific - Card-like containers */
   --section-bg: rgba(15, 20, 25, 0.9);
+  /* Section backgrounds - dark gray with 90% opacity for .section-container */
   --section-border: rgba(75, 85, 99, 0.3);
   --panel-bg: rgba(10, 14, 26, 0.95);
   --panel-border: rgba(75, 85, 99, 0.4);
@@ -1273,12 +1284,13 @@ body {
 
 /* Super Dark Theme Section Elements */
 .theme-super-dark .section-container {
-  background: #060511 !important;
+  background: #ffffff !important;
 }
 
 /* Dark Theme Specific Rules */
 .theme-dark .nav-container {
   background: var(--nav-bg);
+  /* Dark slate background for navigation container */
   box-shadow: 0 2px 12px var(--shadow-color);
 }
 
