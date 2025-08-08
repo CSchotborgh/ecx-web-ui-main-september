@@ -520,6 +520,7 @@ body {
   border-radius: 0.4%;
   font-weight: 500;
   padding: 1% 2%;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -548,6 +549,7 @@ body {
   border-radius: 0.4%;
   font-weight: 500;
   padding: 1% 2%;
+  white-space: nowrap;
 }
 
 .btn-secondary:hover {
@@ -565,6 +567,7 @@ body {
   border: none;
   border-radius: 0.4%;
   padding: 0.75% 1.5%;
+  white-space: nowrap;
 }
 
 .btn-tertiary:hover {
@@ -580,6 +583,7 @@ body {
   border: none;
   border-radius: 0.4%;
   padding: 1% 2%;
+  white-space: nowrap;
 }
 
 .btn-danger:hover {
@@ -608,6 +612,7 @@ body {
   /* Default transparent border - maintains consistent sizing without visible border on icon buttons */
   border-radius: 0.4%;
   padding: 1%;
+  white-space: nowrap;
 }
 
 .btn-icon:hover {
@@ -1879,6 +1884,21 @@ body {
 /* Scrollbar Corner */
 ::-webkit-scrollbar-corner {
   background: var(--scrollbar-track);
+}
+
+/* ==========================================================================
+   GLOBAL BUTTON TEXT WRAPPING PREVENTION
+   ========================================================================== */
+
+/* Prevent text wrapping in all button elements */
+button,
+.button,
+.btn,
+[role="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  white-space: nowrap;
 }
 
 /* ==========================================================================
