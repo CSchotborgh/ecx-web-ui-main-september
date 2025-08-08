@@ -137,12 +137,6 @@
         </div>
         </div>
 
-        <!-- Two Column Layout for remaining sections -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-            
-            <!-- Left Column: Control and other sections -->
-            <div class="space-y-6">
-
         <!-- Control Grid -->
         <div class="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
             <div class="my-6 mx-2">
@@ -396,105 +390,6 @@
                 </Transition>
             </div>
         </div>
-            </div>
-
-            <!-- Right Column: Cabinet -->
-            <div class="space-y-6">
-                <h2 class="text-xl font-semibold mb-4">Cabinet Information</h2>
-                
-                <!-- Cabinet Status Grid -->
-                <div class="max-h-fit grid grid-rows-1 border rounded-3xl bg-slate-800">
-                    <div class="my-6 mx-2">
-                        <div class="container flex flex-row">
-                            <div class="flex items-start">Cabinet Status:</div>
-                            <div class="flex gap-3 flex-1 justify-end">
-                                <button @click="showCabinetStatus = !showCabinetStatus">
-                                    <div v-if="showCabinetStatus">[ - ]</div>
-                                    <div v-else>[ + ]</div>
-                                </button>
-                            </div>
-                        </div>
-                        <Transition>    
-                            <div v-show="showCabinetStatus" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 m-2 mx-auto p-2 gap-8 w-full text-white">
-                                <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600">
-                                    <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Power Status:</div>
-                                    <div class="flex justify-center">
-                                        <fwb-badge type="green" size="md">ONLINE</fwb-badge>
-                                    </div>                        
-                                </div>
-                                <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600">
-                                    <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Door Status:</div>
-                                    <div class="flex justify-center">
-                                        <fwb-badge type="default" size="md">CLOSED</fwb-badge>
-                                    </div>
-                                </div>
-                                <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600">
-                                    <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Lock Status:</div>
-                                    <div class="flex justify-center">
-                                        <fwb-badge type="green" size="md">SECURE</fwb-badge>
-                                    </div>
-                                </div>
-                            </div>
-                        </Transition>
-                    </div>
-                </div>
-
-                <!-- Cabinet Environmental Grid -->
-                <div class="max-h-fit grid grid-rows-1 border rounded-3xl bg-slate-800">
-                    <div class="my-6 mx-2">
-                        <div class="container flex flex-row">
-                            <div class="flex items-start">Environmental:</div>
-                            <div class="flex gap-3 flex-1 justify-end">
-                                <button @click="showCabinetEnvironmental = !showCabinetEnvironmental">
-                                    <div v-if="showCabinetEnvironmental">[ - ]</div>
-                                    <div v-else>[ + ]</div>
-                                </button>
-                            </div>
-                        </div>
-                        <Transition>    
-                            <div v-show="showCabinetEnvironmental" class="grid grid-cols-1 sm:grid-cols-2 m-2 mx-auto p-2 gap-8 w-full text-white">
-                                <div class="custom-grid">
-                                    <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Ambient Temp ({{ degreeSymbol }}):</div>
-                                    <div class="text-4xl">{{ usingFahrenheit ? '72.0' : '22.2' }}</div>
-                                </div>
-                                <div class="custom-grid">
-                                    <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Humidity:</div>
-                                    <div class="text-4xl">45%</div>
-                                </div>
-                            </div>
-                        </Transition>
-                    </div>
-                </div>
-
-                <!-- Cabinet Power Grid -->
-                <div class="max-h-fit grid grid-rows-1 border rounded-3xl bg-slate-800">
-                    <div class="my-6 mx-2">
-                        <div class="container flex flex-row">
-                            <div class="flex items-start">Power Metrics:</div>
-                            <div class="flex gap-3 flex-1 justify-end">
-                                <button @click="showCabinetPower = !showCabinetPower">
-                                    <div v-if="showCabinetPower">[ - ]</div>
-                                    <div v-else>[ + ]</div>
-                                </button>
-                            </div>
-                        </div>
-                        <Transition>    
-                            <div v-show="showCabinetPower" class="grid grid-cols-1 sm:grid-cols-2 m-2 mx-auto p-2 gap-8 w-full text-white">
-                                <div class="custom-grid">
-                                    <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Input Voltage (VAC):</div>
-                                    <div class="text-4xl">240</div>
-                                </div>
-                                <div class="custom-grid">
-                                    <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Power Draw (W):</div>
-                                    <div class="text-4xl">1850</div>
-                                </div>
-                            </div>
-                        </Transition>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </main>
 </template>
 
@@ -513,9 +408,7 @@ let showInternalGridControl = ref(true);
 let showInternalGridMotors = ref(true);
 let showInternalGridOther = ref(true);
 let showInternalAlarmGrid = ref(true);
-let showCabinetStatus = ref(true);
-let showCabinetEnvironmental = ref(true);
-let showCabinetPower = ref(true);
+
 let triggerExpandAll = ref(true);
 
 let hasActiveAlarms = ref(false);
@@ -635,9 +528,7 @@ const toggleExpansion = () => {
         showInternalGridTemps.value = false;
         showInternalAlarmGrid.value = false;
         showInternalGridControl.value = false;
-        showCabinetStatus.value = false;
-        showCabinetEnvironmental.value = false;
-        showCabinetPower.value = false;
+        
     } else {
         showInternalGridMotors.value = true;
         showInternalGridStates.value = true;
@@ -645,9 +536,7 @@ const toggleExpansion = () => {
         showInternalGridTemps.value = true;
         showInternalAlarmGrid.value = true;
         showInternalGridControl.value = true;
-        showCabinetStatus.value = true;
-        showCabinetEnvironmental.value = true;
-        showCabinetPower.value = true;
+        
     }
 
     triggerExpandAll = !triggerExpandAll;
