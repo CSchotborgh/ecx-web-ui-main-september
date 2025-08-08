@@ -1304,23 +1304,14 @@ body {
 }
 
 /* Light Theme Input Labels and Form Elements */
-.theme-light .block.text-sm.font-medium,
-.theme-light .text-sm.font-medium,
-.theme-light .text-xs.font-medium,
-.theme-light .font-bold,
-.theme-light .font-semibold {
+.theme-light label,
+.theme-light .form-label,
+.theme-light .text-label,
+.theme-light [class*="label"] {
   color: var(--text-primary) !important;
 }
 
 /* Light Theme Font Styling Overrides */
-.theme-light .font-sans,
-.theme-light .text-lg,
-.theme-light .text-xl,
-.theme-light .text-2xl,
-.theme-light .text-3xl,
-.theme-light .text-4xl,
-.theme-light .text-5xl,
-.theme-light .text-6xl,
 .theme-light h1,
 .theme-light h2,
 .theme-light h3,
@@ -1330,19 +1321,6 @@ body {
 .theme-light p,
 .theme-light span,
 .theme-light div {
-  color: var(--text-primary) !important;
-}
-
-/* Light Theme Specific Font Weights */
-.theme-light .font-thin,
-.theme-light .font-extralight,
-.theme-light .font-light,
-.theme-light .font-normal,
-.theme-light .font-medium,
-.theme-light .font-semibold,
-.theme-light .font-bold,
-.theme-light .font-extrabold,
-.theme-light .font-black {
   color: var(--text-primary) !important;
 }
 
