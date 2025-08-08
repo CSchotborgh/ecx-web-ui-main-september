@@ -1,14 +1,14 @@
 <template>
-    <div class="overflow-y-auto overflow-x-hidden fixed inset-0 z-50 flex justify-center items-center w-full h-full bg-black bg-opacity-50">
+    <div class="modal-overlay overflow-y-auto overflow-x-hidden fixed inset-0 z-50 flex justify-center items-center w-full h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            <div class="modal-content relative rounded-lg shadow">
+                <div class="modal-header flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                    <h3 class="text-xl font-semibold text-primary">
                         Manually Set Date and Time
                     </h3>
                     <button
                         type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        class="btn-icon text-secondary bg-transparent hover:bg-surface hover:text-primary rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
                         @click="closeModal"
                     >
                         <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
@@ -18,8 +18,8 @@
                     </button>
                 </div>
 
-                <div class="p-4 md:p-5">
-                    <p class="mb-4 text-sm text-gray-500 dark:text-gray-300">Current Date and Time: <span class="italic font-bold">{{ datetime }}</span></p>
+                <div class="modal-body p-4 md:p-5">
+                    <p class="mb-4 text-sm text-secondary">Current Date and Time: <span class="italic font-bold">{{ datetime }}</span></p>
 
                     <!-- Responsive dropdown inputs for updating date and time -->
                     <div class="mb-4 sm:flex sm:space-x-4">
@@ -104,11 +104,11 @@
                             </fwb-select>
                         </div>
                     </div>
-                    <p class="mb-4 text-sm text-gray-500 dark:text-gray-300">New Date and Time: {{ datetimeString }}</p>
+                    <p class="mb-4 text-sm text-secondary">New Date and Time: {{ datetimeString }}</p>
 
                     <div class="flex justify-between mt-10 mx-6">
-                        <fwb-button @click.prevent="closeModal" color="alternative" pill>Cancel</fwb-button>
-                        <fwb-button @click.prevent="submitForm" gradient="blue" pill>Set Date/Time</fwb-button>
+                        <fwb-button @click.prevent="closeModal" class="btn-secondary" pill>Cancel</fwb-button>
+                        <fwb-button @click.prevent="submitForm" class="btn-primary" pill>Set Date/Time</fwb-button>
                     </div>
                 </div>
             </div>

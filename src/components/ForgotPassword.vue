@@ -1,15 +1,15 @@
 <!-- src/components/ForgotPassword.vue -->
 <template>
-  <div v-if="show" id="authentication-modal" tabindex="-1" aria-hidden="true" class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black bg-opacity-50">
+  <div v-if="show" id="authentication-modal" tabindex="-1" aria-hidden="true" class="modal-overlay overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
       <!-- Modal content -->
-      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <div class="modal-content relative rounded-lg shadow">
         <!-- Modal header -->
-        <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+        <div class="modal-header flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+          <h3 class="text-xl font-semibold text-primary">
             Forgot Password Form
           </h3>
-          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" @click="closeModal">
+          <button type="button" class="btn-icon text-secondary bg-transparent hover:bg-surface hover:text-primary rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" @click="closeModal">
             <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
             </svg>
@@ -17,37 +17,37 @@
           </button>
         </div>
         <!-- Modal body -->
-        <div class="p-4 md:p-5">
-          <div class="flex mx-auto text-sm justify-center text-white">
+        <div class="modal-body p-4 md:p-5">
+          <div class="flex mx-auto text-sm justify-center text-primary">
             To reset password for a user, input the username and either of the MAC addresses for the ethernet interfaces.
           </div>
-          <div class="flex mx-auto text-sm justify-center text-white mt-2">
+          <div class="flex mx-auto text-sm justify-center text-primary mt-2">
             Example: if your MAC address is 01:63:42:AD:45:00, type in "016342ad4500"
           </div>
         </div>
 
-        <div class="p-4 md:p-5">
+        <div class="modal-body p-4 md:p-5">
           <form class="space-y-4" @submit.prevent="forgotpass">
             <div>
-              <fwb-input v-model="username" :disabled="readyForNewPassword" type="text" label="Username" placeholder="Username" required  :class="readyForNewPassword ? '!text-gray-500' : 'text-white'"/>
+              <fwb-input v-model="username" :disabled="readyForNewPassword" type="text" label="Username" placeholder="Username" required  :class="readyForNewPassword ? '!text-tertiary' : 'text-primary'"/>
             </div>
             <div>
-              <fwb-input v-model="mac_address" :disabled="readyForNewPassword" type="text" label="MAC Address (ETH1 or ETH2)" placeholder="00aabbccddee" required  :class="readyForNewPassword ? '!text-gray-500' : 'text-white'"/>
+              <fwb-input v-model="mac_address" :disabled="readyForNewPassword" type="text" label="MAC Address (ETH1 or ETH2)" placeholder="00aabbccddee" required  :class="readyForNewPassword ? '!text-tertiary' : 'text-primary'"/>
             </div>
-            <div class="flex mx-auto text-sm justify-center text-red-500" v-show="errorForgotPassMessage">
+            <div class="flex mx-auto text-sm justify-center text-error" v-show="errorForgotPassMessage">
               {{ errorForgotPassMessage }}
             </div>
-            <fwb-button gradient="blue" :disabled="readyForNewPassword" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Verify MAC</fwb-button>
-            <div class="flex mx-auto text-sm justify-center text-green-500" v-show="resultForgotPassMessage">
+            <fwb-button gradient="blue" :disabled="readyForNewPassword" class="btn-primary w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center">Verify MAC</fwb-button>
+            <div class="flex mx-auto text-sm justify-center text-success" v-show="resultForgotPassMessage">
               {{ resultForgotPassMessage }}
             </div>
          </form>
         </div>
         
         <!-- Second Modal Section: Adjust password -->
-        <div v-show="readyForNewPassword" class="p-4 md:p-5">
+        <div v-show="readyForNewPassword" class="modal-body p-4 md:p-5">
 
-          <div class="mx-auto text-sm justify-center text-center text-white">
+          <div class="mx-auto text-sm justify-center text-center text-primary">
               Password for <span class="italic font-bold">{{ username }}</span> has been successfully reset to <span class="italic font-bold">enconnex</span>! You may now close this popup. To change your password, refresh homepage and log in again, click the "Hi {{ username }}!" link at the nav-bar to modify user settings.
           </div>
 
