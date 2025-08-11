@@ -5736,6 +5736,65 @@ button[aria-expanded]:focus {
 }
 
 /* ==========================================================================
+   TRANSPARENT GRID COMPONENT STYLING - ALL THEMES
+   ========================================================================== */
+
+/* Max-h-fit My-6 Grid Component Styling - Transparent background with theme-consistent borders */
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  @apply transition-all duration-300;
+  background: transparent !important;
+  border: 1.8px solid var(--card-border) !important;
+  border-radius: 1.5rem !important;
+  color: var(--text-primary) !important;
+  padding: 1rem !important;
+  backdrop-filter: blur(5px) !important;
+  box-shadow: 0 1px 3px var(--shadow-subtle) !important;
+}
+
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  transform: translateY(-1px) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 6px var(--shadow-subtle) !important;
+}
+
+/* Super Dark Theme Specific Styling */
+.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  background: transparent !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  background: transparent !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* Dark Theme Specific Styling */
+.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  background: transparent !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  background: transparent !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* Light Theme Specific Styling */
+.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  background: transparent !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  background: transparent !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN ADJUSTMENTS
    ========================================================================== */
 
