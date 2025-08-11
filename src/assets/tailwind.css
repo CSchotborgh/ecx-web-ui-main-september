@@ -299,7 +299,7 @@
 
   /* Form Elements */
   --input-bg: rgba(30, 41, 59, 0.8);
-  --input-border: var(--card-border);
+  --input-border: rgba(30, 41, 59, 0.8);
   --input-focus-bg: rgba(15, 23, 42, 0.9);
   --input-focus-border: var(--accent);
   --input-placeholder: rgba(203, 213, 225, 0.6);
