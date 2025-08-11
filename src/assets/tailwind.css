@@ -789,17 +789,18 @@ body {
 /* Super Dark Theme Specific Rules - Use solid #060511 with simple borders */
 .theme-super-dark .custom-grid {
   background: #060511 !important;
-  border: 1px solid var(--card-border) !important;
+  border: 2px solid var(--card-border) !important;
 }
 
 .theme-super-dark .grid-rows-1 {
   background: #060511 !important;
-  border: 1px solid var(--card-border) !important;
+  border: 2px solid #ffffff;
 }
 
-/* Super Dark Theme Grid and Table Elements */
+
+/* Super Dark Theme Grid and Table Elements my-6 mx-2 */
 .theme-super-dark .data-table {
-  background: #060511 !important;
+  background: #fafaff !important;
   border: 1px solid var(--card-border) !important;
 }
 
@@ -1532,7 +1533,7 @@ body {
    ========================================================================== */
 
 /* Super Dark Theme Navigation Link Styling */
-.theme-super-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link,
+.theme-super-dark #app>nav>div>div.flex.items-center.justify-between.h-16>div.hidden.md\:flex.items-center.space-x-1>a.router-link-active.router-link-exact-active.nav-link,
 .theme-super-dark .nav-link.router-link-active,
 .theme-super-dark .nav-link.router-link-exact-active {
   border: 1px solid transparent !important;
@@ -1547,7 +1548,7 @@ body {
   /* Subtle glow for active navigation links in super dark theme */
 }
 
-.theme-super-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link:hover,
+.theme-super-dark #app>nav>div>div.flex.items-center.justify-between.h-16>div.hidden.md\:flex.items-center.space-x-1>a.router-link-active.router-link-exact-active.nav-link:hover,
 .theme-super-dark .nav-link.router-link-active:hover,
 .theme-super-dark .nav-link.router-link-exact-active:hover {
   border: 1px solid transparent !important;
@@ -1561,7 +1562,7 @@ body {
 }
 
 /* Dark Theme Navigation Link Styling */
-.theme-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link,
+.theme-dark #app>nav>div>div.flex.items-center.justify-between.h-16>div.hidden.md\:flex.items-center.space-x-1>a.router-link-active.router-link-exact-active.nav-link,
 .theme-dark .nav-link.router-link-active,
 .theme-dark .nav-link.router-link-exact-active {
   border: 1px solid transparent !important;
@@ -1576,7 +1577,7 @@ body {
   /* Subtle glow for active navigation links in dark theme */
 }
 
-.theme-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link:hover,
+.theme-dark #app>nav>div>div.flex.items-center.justify-between.h-16>div.hidden.md\:flex.items-center.space-x-1>a.router-link-active.router-link-exact-active.nav-link:hover,
 .theme-dark .nav-link.router-link-active:hover,
 .theme-dark .nav-link.router-link-exact-active:hover {
   border: 1px solid transparent !important;
@@ -1590,7 +1591,7 @@ body {
 }
 
 /* Light Theme Navigation Link Styling */
-.theme-light #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link,
+.theme-light #app>nav>div>div.flex.items-center.justify-between.h-16>div.hidden.md\:flex.items-center.space-x-1>a.router-link-active.router-link-exact-active.nav-link,
 .theme-light .nav-link.router-link-active,
 .theme-light .nav-link.router-link-exact-active {
   border: 1px solid transparent !important;
@@ -1605,7 +1606,7 @@ body {
   /* Subtle glow for active navigation links in light theme */
 }
 
-.theme-light #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link:hover,
+.theme-light #app>nav>div>div.flex.items-center.justify-between.h-16>div.hidden.md\:flex.items-center.space-x-1>a.router-link-active.router-link-exact-active.nav-link:hover,
 .theme-light .nav-link.router-link-active:hover,
 .theme-light .nav-link.router-link-exact-active:hover {
   border: 1px solid transparent !important;
@@ -1616,79 +1617,6 @@ body {
   /* Stronger glow on hover for active links in light theme */
   transform: scale(1.01) !important;
   /* Slight scale increase on hover for active links in light theme */
-}
-
-/* ==========================================================================
-   TABLE LABEL CUSTOMIZATIONS - ALL THEMES
-   ========================================================================== */
-
-/* Super Dark Theme Table Label Styling */
-.theme-super-dark .table-label,
-.theme-super-dark div.table-label,
-.theme-super-dark .text-sm.table-label {
-  border: 1px solid transparent !important;
-  /* Transparent border for table labels in super dark theme */
-  padding: 0.25rem !important;
-  /* Padding for table labels in super dark theme */
-  border-radius: 0.4rem !important;
-  /* Rounded corners for table labels in super dark theme */
-  transition: all 0.3s ease !important;
-  /* Smooth transition for table labels in super dark theme */
-}
-
-.theme-super-dark .table-label:hover,
-.theme-super-dark div.table-label:hover,
-.theme-super-dark .text-sm.table-label:hover {
-  border: 1px solid rgba(59, 130, 246, 0.3) !important;
-  /* Blue border on hover for table labels in super dark theme */
-  background: rgba(59, 130, 246, 0.05) !important;
-  /* Subtle blue background on hover for table labels in super dark theme */
-}
-
-/* Dark Theme Table Label Styling */
-.theme-dark .table-label,
-.theme-dark div.table-label,
-.theme-dark .text-sm.table-label {
-  border: 1px solid transparent !important;
-  /* Transparent border for table labels in dark theme */
-  padding: 0.25rem !important;
-  /* Padding for table labels in dark theme */
-  border-radius: 0.4rem !important;
-  /* Rounded corners for table labels in dark theme */
-  transition: all 0.3s ease !important;
-  /* Smooth transition for table labels in dark theme */
-}
-
-.theme-dark .table-label:hover,
-.theme-dark div.table-label:hover,
-.theme-dark .text-sm.table-label:hover {
-  border: 1px solid rgba(96, 165, 250, 0.4) !important;
-  /* Blue border on hover for table labels in dark theme */
-  background: rgba(96, 165, 250, 0.08) !important;
-  /* Subtle blue background on hover for table labels in dark theme */
-}
-
-/* Light Theme Table Label Styling */
-.theme-light .table-label,
-.theme-light div.table-label,
-.theme-light .text-sm.table-label {
-  border: 1px solid transparent !important;
-  /* Transparent border for table labels in light theme */
-  padding: 0.25rem !important;
-  /* Padding for table labels in light theme */
-  border-radius: 0.4rem !important;
-  /* Rounded corners for table labels in light theme */
-  transition: all 0.3s ease !important;
-  /* Smooth transition for table labels in light theme */
-}
-
-.theme-light .table-label:hover,
-.theme-light div.table-label:hover,
-.theme-light .text-sm.table-label:hover {
-  border: 1px solid rgba(59, 130, 246, 0.3) !important;
-  /* Blue border on hover for table labels in light theme */
-  background: rgba(59, 130, 246, 0.06) !important;
-  /* Subtle blue background on hover for table labels in light theme */
 }
 
 /* ==========================================================================
