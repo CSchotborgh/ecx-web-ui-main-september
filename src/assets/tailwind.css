@@ -1045,13 +1045,6 @@ body {
   background: #ffffff !important;
 }
 
-/* Dark Theme Specific Rules */
-.theme-dark .nav-container {
-  background: var(--nav-bg);
-  /* Dark slate background for navigation container */
-  box-shadow: 0 2px 12px var(--shadow-color);
-}
-
 /* Dark theme overrides for custom-grid */
 .dark .custom-grid {
   border-radius: 0.8rem;
@@ -2488,27 +2481,6 @@ body {
   .decoration-warning {
     text-decoration-color: var(--status-warning) !important;
     /* Super Dark Theme: #f59e0b, Dark Theme: #fbbf24, Light Theme: #ea580c */
-  }
-}
-
-/* Responsive Tailwind Color Overrides */
-@media (max-width: 768px) {
-  .mobile\:bg-primary {
-    background-color: var(--accent) !important;
-  }
-
-  .mobile\:text-primary {
-    color: var(--text-primary) !important;
-  }
-}
-
-@media (min-width: 769px) {
-  .desktop\:bg-primary {
-    background-color: var(--accent) !important;
-  }
-
-  .desktop\:text-primary {
-    color: var(--text-primary) !important;
   }
 }
 
@@ -4685,15 +4657,15 @@ button[aria-expanded]:focus {
 .theme-dark img {
   border-radius: 0.8rem !important;
   /* Rounded corners for all images in dark theme */
-  border: 1px solid transparent !important;
-  /* Transparent border for all images in dark theme */
+  border: 1px solid var(--card-border) !important;
+  /* Border for all images in dark theme */
 }
 
 .theme-light img {
   border-radius: 0.8rem !important;
   /* Rounded corners for all images in light theme */
-  border: 1px solid transparent !important;
-  /* Transparent border for all images in light theme */
+  border: 1px solid var(--card-border) !important;
+  /* Light gray border for all images in light theme */
 }
 
 .theme-super-dark video {
@@ -5694,9 +5666,9 @@ button[aria-expanded]:focus {
 
 .my-6.mx-2:hover {
   transform: translateY(-1px) !important;
-  box-shadow: 0 0px 0px var(--shadow-color) !important;
   border: 1.8px solid var(--card-border-hover) !important;
-  background: var(--card-bg-hover) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 6px var(--shadow-subtle) !important;
 }
 
 /* Super Dark Theme Specific Styling */
@@ -5779,8 +5751,7 @@ button[aria-expanded]:focus {
 
   /* Mobile Component Overrides */
   .theme-super-dark .widget,
-  .theme-dark .widget,
-  .theme-light .widget {
+  .theme-dark .widget,.theme-light .widget {
     @apply p-3 text-sm;
   }
 
@@ -5866,4 +5837,133 @@ button[aria-expanded]:focus {
     color: black !important;
     border: 1px solid #ccc !important;
   }
+}
+
+/* ==========================================================================
+   LEGACY TAILWIND CLASS OVERRIDES
+   ========================================================================== */
+
+/* Custom Grid Component - Matches the original .custom-grid styling for consistency */
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  @apply border shadow-lg transition-all duration-300;
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  border-radius: 0.8rem !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 5px var(--shadow-color) !important;
+  color: var(--text-primary) !important;
+  padding: 1rem !important;
+}
+
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  transform: translateY(-1px) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 6px var(--shadow-subtle) !important;
+}
+
+/* Super Dark Theme Specific Styling for the custom grid component */
+.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  background: #060511 !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  background: #060511 !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* Dark Theme Specific Styling for the custom grid component */
+.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* Light Theme Specific Styling for the custom grid component */
+.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* ==========================================================================
+   CONSOLIDATED COMPONENT OVERRIDES FOR UNIFIED STYLING
+   ========================================================================== */
+
+/* Unified Styling for Components Across Themes */
+.theme-super-dark .custom-grid,
+.theme-dark .custom-grid,
+.theme-light .custom-grid {
+  @apply border p-6 shadow-lg transition-all duration-300;
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  border-radius: 0.8rem !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 5px var(--shadow-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-super-dark .custom-grid:hover,
+.theme-dark .custom-grid:hover,
+.theme-light .custom-grid:hover {
+  transform: translateY(-1px) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 6px var(--shadow-subtle) !important;
+}
+
+/* ==========================================================================
+   USER CUSTOMIZATION FOR GRID COMPONENT - OVERRIDES
+   ========================================================================== */
+
+/* Customizable Grid Component - User can override border and background colors */
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  /* User-customizable properties - can be overridden with CSS custom properties */
+  --user-border-color: var(--card-border);
+  --user-background-color: transparent;
+
+  /* Component styling */
+  transition: all 0.3s ease !important;
+  background: var(--user-background-color) !important;
+  border: 1.8px solid var(--user-border-color) !important;
+  border-radius: 1.5rem !important;
+  color: var(--text-primary) !important;
+  padding: 1rem !important;
+  backdrop-filter: blur(5px) !important;
+  box-shadow: 0 1px 3px var(--shadow-subtle) !important;
+}
+
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover {
+  transform: translateY(-1px) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 6px var(--shadow-subtle) !important;
+}
+
+/* Theme-specific overrides with user customization support */
+.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  --user-border-color: var(--user-border-override, var(--card-border));
+  --user-background-color: var(--user-background-override, transparent);
+}
+
+.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  --user-border-color: var(--user-border-override, var(--card-border));
+  --user-background-color: var(--user-background-override, transparent);
+}
+
+.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
+  --user-border-color: var(--user-border-override, var(--card-border));
+  --user-background-color: var(--user-background-override, transparent);
 }
