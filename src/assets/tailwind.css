@@ -1619,6 +1619,79 @@ body {
 }
 
 /* ==========================================================================
+   TABLE LABEL CUSTOMIZATIONS - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Table Label Styling */
+.theme-super-dark .table-label,
+.theme-super-dark div.table-label,
+.theme-super-dark .text-sm.table-label {
+  border: 1px solid transparent !important;
+  /* Transparent border for table labels in super dark theme */
+  padding: 0.25rem !important;
+  /* Padding for table labels in super dark theme */
+  border-radius: 0.4rem !important;
+  /* Rounded corners for table labels in super dark theme */
+  transition: all 0.3s ease !important;
+  /* Smooth transition for table labels in super dark theme */
+}
+
+.theme-super-dark .table-label:hover,
+.theme-super-dark div.table-label:hover,
+.theme-super-dark .text-sm.table-label:hover {
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  /* Blue border on hover for table labels in super dark theme */
+  background: rgba(59, 130, 246, 0.05) !important;
+  /* Subtle blue background on hover for table labels in super dark theme */
+}
+
+/* Dark Theme Table Label Styling */
+.theme-dark .table-label,
+.theme-dark div.table-label,
+.theme-dark .text-sm.table-label {
+  border: 1px solid transparent !important;
+  /* Transparent border for table labels in dark theme */
+  padding: 0.25rem !important;
+  /* Padding for table labels in dark theme */
+  border-radius: 0.4rem !important;
+  /* Rounded corners for table labels in dark theme */
+  transition: all 0.3s ease !important;
+  /* Smooth transition for table labels in dark theme */
+}
+
+.theme-dark .table-label:hover,
+.theme-dark div.table-label:hover,
+.theme-dark .text-sm.table-label:hover {
+  border: 1px solid rgba(96, 165, 250, 0.4) !important;
+  /* Blue border on hover for table labels in dark theme */
+  background: rgba(96, 165, 250, 0.08) !important;
+  /* Subtle blue background on hover for table labels in dark theme */
+}
+
+/* Light Theme Table Label Styling */
+.theme-light .table-label,
+.theme-light div.table-label,
+.theme-light .text-sm.table-label {
+  border: 1px solid transparent !important;
+  /* Transparent border for table labels in light theme */
+  padding: 0.25rem !important;
+  /* Padding for table labels in light theme */
+  border-radius: 0.4rem !important;
+  /* Rounded corners for table labels in light theme */
+  transition: all 0.3s ease !important;
+  /* Smooth transition for table labels in light theme */
+}
+
+.theme-light .table-label:hover,
+.theme-light div.table-label:hover,
+.theme-light .text-sm.table-label:hover {
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+  /* Blue border on hover for table labels in light theme */
+  background: rgba(59, 130, 246, 0.06) !important;
+  /* Subtle blue background on hover for table labels in light theme */
+}
+
+/* ==========================================================================
    THEME-SPECIFIC VUE COMPONENT OVERRIDES
    ========================================================================== */
 
