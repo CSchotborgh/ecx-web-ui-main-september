@@ -5694,7 +5694,6 @@ button[aria-expanded]:focus {
 
 /* My-6 Mx-2 Component Styling - Matches home page card styling */
 .my-6.mx-2 {
-  @apply border shadow-lg transition-all duration-300;
   background: var(--card-bg) !important;
   border: 1.8px solid var(--card-border) !important;
   border-radius: 0.8rem !important;
@@ -5702,12 +5701,12 @@ button[aria-expanded]:focus {
   box-shadow: 0 2px 5px var(--shadow-color) !important;
   color: var(--text-primary) !important;
   padding: 1.5rem !important;
+  transition: all 0.3s ease !important;
 }
 
 /* Max-h-fit Grid Component Styling - Matches my-6 mx-2 styling exactly */
 .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
 .max-h-fit.my-6.grid {
-  @apply border shadow-lg transition-all duration-300;
   background: var(--card-bg) !important;
   border: 1.8px solid var(--card-border) !important;
   border-radius: 0.8rem !important;
@@ -5719,6 +5718,7 @@ button[aria-expanded]:focus {
   display: grid !important;
   grid-template-rows: 1fr !important;
   max-height: fit-content !important;
+  transition: all 0.3s ease !important;
 }
 
 .my-6.mx-2:hover {
