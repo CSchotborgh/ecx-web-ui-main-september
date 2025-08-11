@@ -4678,8 +4678,8 @@ body {
 .theme-super-dark img {
   border-radius: 0.8rem !important;
   /* Rounded corners for all images in super dark theme */
-  border: 1px solid var(--card-border) !important;
-  /* Border for all images in super dark theme */
+  border: 1px solid transparent !important;
+  /* Transparent border for all images in super dark theme */
 }
 
 .theme-super-dark video {
