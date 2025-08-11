@@ -5704,7 +5704,32 @@ button[aria-expanded]:focus {
   padding: 1.5rem !important;
 }
 
+/* Max-h-fit Grid Component Styling - Matches my-6 mx-2 styling exactly */
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
+.max-h-fit.my-6.grid {
+  @apply border shadow-lg transition-all duration-300;
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  border-radius: 0.8rem !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 5px var(--shadow-color) !important;
+  color: var(--text-primary) !important;
+  padding: 1.5rem !important;
+  margin: 1.5rem 0 !important;
+  display: grid !important;
+  grid-template-rows: 1fr !important;
+  max-height: fit-content !important;
+}
+
 .my-6.mx-2:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0px 0px var(--shadow-color) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+  background: var(--card-bg-hover) !important;
+}
+
+.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
+.max-h-fit.my-6.grid:hover {
   transform: translateY(-1px) !important;
   box-shadow: 0 0px 0px var(--shadow-color) !important;
   border: 1.8px solid var(--card-border-hover) !important;
@@ -5723,6 +5748,19 @@ button[aria-expanded]:focus {
   border: 1.8px solid var(--card-border-hover) !important;
 }
 
+.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
+.theme-super-dark .max-h-fit.my-6.grid {
+  background: #060511 !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
+.theme-super-dark .max-h-fit.my-6.grid:hover {
+  background: #060511 !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
 /* Dark Theme Specific Styling */
 .theme-dark .my-6.mx-2 {
   background: var(--card-bg) !important;
@@ -5735,6 +5773,19 @@ button[aria-expanded]:focus {
   border: 1.8px solid var(--card-border-hover) !important;
 }
 
+.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
+.theme-dark .max-h-fit.my-6.grid {
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
+.theme-dark .max-h-fit.my-6.grid:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
 /* Light Theme Specific Styling */
 .theme-light .my-6.mx-2 {
   background: var(--card-bg) !important;
@@ -5743,6 +5794,19 @@ button[aria-expanded]:focus {
 }
 
 .theme-light .my-6.mx-2:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
+.theme-light .max-h-fit.my-6.grid {
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
+.theme-light .max-h-fit.my-6.grid:hover {
   background: var(--card-bg-hover) !important;
   border: 1.8px solid var(--card-border-hover) !important;
 }
