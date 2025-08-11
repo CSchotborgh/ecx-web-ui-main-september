@@ -337,6 +337,454 @@
 }
 
 /* ==========================================================================
+   BASE HTML ELEMENTS
+   ========================================================================== */
+
+/* Root HTML and Body Elements */
+html,
+body {
+  @apply font-sans min-h-screen;
+  color: var(--text-primary);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Font Family Override for Flowbite Components */
+.fwb-component {
+  font-family: 'Lato', sans-serif !important;
+}
+
+/* ==========================================================================
+   CARD AND CONTAINER ELEMENTS
+   ========================================================================== */
+
+/* Main Card Component - Primary containers for content */
+.card {
+  @apply border p-6 shadow-lg transition-all duration-300;
+  background: var(--card-bg);
+  border: 0.8px solid var(--card-border);
+  border-radius: 0.8rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Card Hover State - Interactive feedback */
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0px 0px var(--shadow-color);
+  border: 1.8px solid var(--card-border-hover);
+  /* Hover border - uses --card-border-hover variable for more visible gray border on card interaction */
+  background: var(--card-bg-hover);
+}
+
+/* Secondary Card Variant - Less prominent containers */
+.card-secondary {
+  @apply border p-4 shadow-sm transition-all duration-300;
+  background: var(--card-bg-secondary);
+  border: 1.8px solid var(--card-border-subtle);
+  border-radius: 0.8rem;
+  backdrop-filter: blur(8px);
+}
+
+/* Tertiary Card Variant - Minimal containers */
+.card-tertiary {
+  @apply border p-3 transition-all duration-300;
+  background: var(--card-bg-tertiary);
+  border: 1.8px solid var(--card-border-subtle);
+  border-radius: 0.8rem;
+}
+
+/* Compact Card Variant - Space-efficient containers */
+.card-compact {
+  @apply border p-2 shadow-sm transition-all duration-300;
+  background: var(--card-bg);
+  border: 1.8px solid var(--card-border);
+  border-radius: 0.8rem;
+}
+
+/* ==========================================================================
+   NAVIGATION ELEMENTS
+   ========================================================================== */
+
+/* Main Navigation Container */
+.nav-container {
+  @apply border-b transition-all duration-300;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Navigation Brand/Logo */
+.nav-brand {
+  @apply font-bold text-lg transition-colors duration-200;
+  color: var(--nav-text);
+}
+
+.nav-brand:hover {
+  color: var(--nav-text-hover);
+}
+
+/* Navigation Links */
+.nav-link {
+  @apply px-4 py-2 transition-all duration-200 font-medium;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  /* Default transparent border - maintains layout consistency without visible border */
+  border-radius: 0;
+}
+
+.nav-link:hover {
+  color: var(--nav-text-hover);
+  background: var(--accent-background);
+  border: 1px solid var(--accent-muted);
+  /* Hover border - uses --accent-muted variable for subtle blue accent border on navigation link hover */
+  border-radius: 0.4rem;
+}
+
+/* Active Navigation Link */
+.nav-link.active,
+.router-link-exact-active {
+  color: var(--nav-text);
+  background: var(--nav-link-active);
+  border: 1px solid var(--accent-muted);
+  /* Active border - uses --accent-muted variable for blue accent border on active/current navigation links */
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
+/* Navigation Dropdown Menu */
+.nav-dropdown {
+  @apply absolute top-full left-0 mt-2 shadow-lg border;
+  background: var(--nav-bg);
+  border: 1px solid var(--nav-border);
+  border-radius: 0;
+  backdrop-filter: blur(15px);
+  min-width: 200px;
+}
+
+/* Navigation Dropdown Items */
+.nav-dropdown-item {
+  @apply px-4 py-2 transition-colors duration-200 cursor-pointer;
+  color: var(--nav-text);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+.nav-dropdown-item:hover {
+  background: var(--accent-background);
+  color: var(--nav-text-hover);
+}
+
+.nav-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   BUTTON ELEMENTS
+   ========================================================================== */
+
+/* Primary Action Buttons - Main call-to-action elements */
+.btn-primary {
+  @apply px-4 py-2 font-medium transition-all duration-200 shadow-sm;
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-accent);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary Buttons - Alternative actions */
+.btn-secondary {
+  @apply px-4 py-2 font-medium transition-all duration-200 border;
+  background: var(--button-secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--button-secondary-border);
+  /* Default border - uses --button-secondary-border variable for subtle gray border on secondary buttons */
+  border-radius: 0.4rem;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background: var(--button-secondary-hover);
+  border: 1px solid var(--accent);
+  /* Hover border - changes to solid --accent color for blue accent border on secondary button hover */
+  color: var(--accent);
+}
+
+/* Tertiary Buttons - Minimal styling */
+.btn-tertiary {
+  @apply px-3 py-1.5 font-medium transition-all duration-200;
+  background: transparent;
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.btn-tertiary:hover {
+  background: var(--accent-background);
+  color: var(--accent);
+}
+
+/* Danger/Destructive Buttons - Warning actions */
+.btn-danger {
+  @apply px-4 py-2 font-semibold transition-all duration-200;
+  background: var(--button-danger-bg);
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.btn-danger:hover {
+  background: var(--button-danger-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Small Button Variant */
+.btn-sm {
+  @apply px-3 py-1.5 text-sm;
+}
+
+/* Large Button Variant */
+.btn-lg {
+  @apply px-8 py-4 text-lg;
+  background: #060511 !important;
+  border: 1px solid #ffffff;
+}
+
+/* Icon-only Buttons */
+.btn-icon {
+  @apply p-2 transition-all duration-200;
+  background: transparent;
+  border: 1px solid transparent;
+  /* Default transparent border - maintains consistent sizing without visible border on icon buttons */
+  border-radius: 0.4rem;
+}
+
+.btn-icon:hover {
+  background: var(--accent-background);
+  border: 1px solid var(--accent-muted);
+  /* Hover border - uses --accent-muted variable for subtle blue accent border on icon button hover */
+}
+
+/* ==========================================================================
+   FORM ELEMENTS
+   ========================================================================== */
+
+/* Text Input Fields */
+.form-input {
+  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
+  background: var(--input-bg);
+  border: 1.8px solid var(--input-border);
+  border-radius: 0.8rem;
+  color: var(--text-primary);
+}
+
+/* Input Placeholder Styling */
+.form-input::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+/* Input Focus State */
+.form-input:focus {
+  outline: none;
+  /* Removes default browser outline for custom focus styling */
+  border: 1.8px solid var(--input-focus-border);
+  /* Focus border - uses --input-focus-border variable for blue accent border on focused form inputs */
+  box-shadow: 0 0 0 2px var(--accent-background);
+  /* Focus outline ring - uses --accent-background variable for subtle blue glow around focused inputs */
+  background: var(--input-focus-bg);
+}
+
+/* Input Error State */
+.form-input.error {
+  border: 1.8px solid var(--status-error);
+  /* Error border - uses --status-error variable for red border on form inputs with validation errors */
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+  /* Error outline ring - red glow with 10% opacity around error state inputs */
+}
+
+/* Input Success State */
+.form-input.success {
+  border: 1.8px solid var(--status-success);
+  /* Success border - uses --status-success variable for green border on successfully validated inputs */
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+  /* Success outline ring - green glow with 10% opacity around success state inputs */
+}
+
+/* Form Labels */
+.form-label {
+  @apply block text-sm font-semibold mb-2;
+  color: var(--text-primary);
+}
+
+/* Required Field Indicator */
+.form-label.required::after {
+  content: ' *';
+  color: var(--status-error);
+}
+
+/* Form Help Text */
+.form-help {
+  @apply text-xs mt-1;
+  color: var(--text-tertiary);
+}
+
+/* Form Error Text */
+.form-error {
+  @apply text-xs mt-1;
+  color: var(--status-error);
+}
+
+/* Textarea Elements */
+.form-textarea {
+  @apply border px-4 py-3 transition-all duration-200 text-base w-full resize-y;
+  background: var(--input-bg);
+  border: 1.8px solid var(--input-border);
+  border-radius: 0.8rem;
+  color: var(--text-primary);
+  min-height: 100px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border: 1.8px solid var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--accent-background);
+  background: var(--input-focus-bg);
+}
+
+/* Select Dropdown Elements */
+.form-select {
+  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
+  background: var(--input-bg);
+  border: 1.8px solid var(--input-border);
+  border-radius: 0.8rem;
+  color: var(--text-primary);
+}
+
+.form-select:focus {
+  outline: none;
+  border: 1.8px solid var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--accent-background);
+  background: var(--input-focus-bg);
+}
+
+/* Checkbox Elements */
+.form-checkbox {
+  @apply w-4 h-4 rounded border-2 transition-colors duration-200;
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  accent-color: var(--accent);
+}
+
+.form-checkbox:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Radio Button Elements */
+.form-radio {
+  @apply w-4 h-4 border-2 transition-colors duration-200;
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
+  accent-color: var(--accent);
+}
+
+.form-radio:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   GRID AND TABLE ELEMENTS
+   ========================================================================== */
+
+/* Custom Grid Layout - Main grid container */
+.custom-grid {
+  @apply m-auto grid grid-cols-1 gap-6 border-none p-6 min-w-full min-h-full text-center items-center content-center justify-center;
+  background: var(--grid-bg);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  border-radius: 0.8rem;
+  border: 1.8px solid var(--grid-border);
+}
+
+/* Grid Item Hover Effects */
+.custom-grid:hover {
+  background: var(--grid-hover);
+  border-color: var(--card-border-hover);
+}
+
+/* System Grid Item - For system section grid elements */
+.system-grid-item {
+  @apply grid grid-cols-1 m-1 text-center border align-middle sm:grid-cols-2;
+  background: #060511 !important;
+  border-radius: 0.8rem;
+}
+
+/* Data Table Container */
+.data-table {
+  @apply w-full border-collapse overflow-hidden;
+  background: var(--grid-bg);
+  border: 1.8px solid var(--card-border);
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Table Header */
+.data-table thead {
+  background: var(--table-header-bg);
+
+}
+
+.data-table th {
+  @apply px-4 py-3 text-left font-semibold;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--card-border);
+}
+
+/* Table Body Rows */
+.data-table tbody tr:nth-child(even) {
+  background: var(--table-row-even);
+}
+
+.data-table tbody tr:nth-child(odd) {
+  background: var(--table-row-odd);
+}
+
+.data-table tbody tr:hover {
+  background: var(--table-row-hover);
+}
+
+/* Table Data Cells */
+.data-table td {
+  @apply px-4 py-3;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border-subtle);
+}
+
+/* ==========================================================================
    CONSOLIDATED THEME OVERRIDES
    ========================================================================== */
 
@@ -344,10 +792,9 @@
 .theme-super-dark {
   --theme-bg: #060511;
   --theme-text: #ffffff;
-  --theme-border: rgb(6, 5, 17, 0.6);
-  --theme-border-hover: rgb(6, 5, 17, 0.6);
-  --theme-border-static: rgb(255, 255, 255, 0.6);
-  --theme-border-focus: rgb(12, 8, 38, 0.8);
+  --theme-border: rgba(75, 85, 99, 0.4);
+  --theme-border-hover: rgba(156, 163, 175, 0.6);
+  --theme-border-focus: rgba(96, 165, 250, 0.8);
 }
 
 .theme-dark {
@@ -370,7 +817,7 @@
    CONSOLIDATED COMPONENT OVERRIDES - ALL THEMES
    ========================================================================== */
 
-/* Core UI Components Super Dark Mode */
+/* Core UI Components */
 .theme-super-dark .custom-grid,
 .theme-super-dark .grid-rows-1,
 .theme-super-dark .data-table,
@@ -388,11 +835,9 @@
   background: var(--theme-bg) !important;
   color: var(--theme-text) !important;
   border-color: var(--theme-border) !important;
-  border-color: var(--theme-border-static) !important;
   border-radius: 0.8rem !important;
 }
 
-/* Core UI Components Dark Mode */
 .theme-dark .custom-grid,
 .theme-dark .data-table,
 .theme-dark .card,
@@ -406,13 +851,12 @@
 .theme-dark .tooltip,
 .theme-dark .progress-bar,
 .theme-dark .status-badge {
-  background: var(--theme-) !important;
+  background: var(--theme-bg) !important;
   color: var(--theme-text) !important;
   border-color: var(--theme-border) !important;
   border-radius: 0.8rem !important;
 }
 
-/* Core UI Components Light Mode */
 .theme-light .custom-grid,
 .theme-light .data-table,
 .theme-light .card,
@@ -432,7 +876,7 @@
   border-radius: 0.8rem !important;
 }
 
-/* Hover States Super Dark Mode */
+/* Hover States */
 .theme-super-dark .card:hover,
 .theme-super-dark .btn-secondary:hover,
 .theme-super-dark .btn-tertiary:hover,
@@ -440,21 +884,19 @@
 .theme-super-dark .dropdown-item:hover,
 .theme-super-dark .nav-dropdown-item:hover {
   background: var(--theme-bg) !important;
-  border-color: var(--theme-border) !important;
+  border-color: var(--theme-border-hover) !important;
 }
 
-/* Hover States Dark Mode */
 .theme-dark .card:hover,
 .theme-dark .btn-secondary:hover,
 .theme-dark .btn-tertiary:hover,
 .theme-dark .btn-icon:hover,
 .theme-dark .dropdown-item:hover,
 .theme-dark .nav-dropdown-item:hover {
-  background: var(--card-bg) !important;
-  border-color: var(--theme-border) !important;
+  background: var(--card-bg-hover) !important;
+  border-color: var(--theme-border-hover) !important;
 }
 
-/* Hover States Light Mode */
 .theme-light .card:hover,
 .theme-light .btn-secondary:hover,
 .theme-light .btn-tertiary:hover,
@@ -493,11 +935,9 @@
   box-shadow: 0 0 0 2px var(--accent-background) !important;
 }
 
-/* Special Super Dark Overrides Cooling Unit grid-custom*/
+/* Special Super Dark Overrides */
 .theme-super-dark .custom-grid {
-  background: #060511 !important;
-  border-radius: 0.8rem;
-  border: 1.1px solid #ffffff !important;
+  border: 2px solid var(--card-border) !important;
 }
 
 .theme-super-dark .text-red-500 {
@@ -510,21 +950,21 @@
 }
 
 .theme-super-dark .card {
-  border: 3.5px solid #ffffff !important;
+  border: 3px solid #ffffff !important;
 }
 
 .theme-super-dark .card:hover {
-  border: 0px solid var(--card-border-hover) !important;
+  border: 1px solid var(--card-border-hover) !important;
 }
 
 /* Modal Specific Overrides */
 .theme-super-dark .modal-header {
-  background: #060511 !important;
+  background: #0c0826 !important;
   border-bottom: 1px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .modal-body {
-  background: #060511 !important;
+  background: #0c0826 !important;
 }
 
 .theme-super-dark .modal-footer {
@@ -546,13 +986,13 @@
 }
 
 .theme-light .modal-overlay {
-  background: rgb(214, 214, 214, 0.4) !important;
+  background: rgba(15, 23, 42, 0.4) !important;
 }
 
 /* Glass Effects */
 .glass-effect {
-  background: rgb(77, 76, 76, 0.05) !important;
-  border: 3px solid var(--card-border) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid var(--card-border) !important;
   backdrop-filter: blur(15px) !important;
   box-shadow: 0 10px 25px var(--shadow-color) !important;
 }
@@ -560,13 +1000,6 @@
 .theme-super-dark .glass-effect,
 .theme-super-dark .glass-effect-strong {
   background: #0c0826 !important;
-}
-
-/* Dark Theme Specific Rules */
-.theme-super-dark .nav-container {
-  background: var(--nav-bg);
-  /* Dark slate background for navigation container */
-  box-shadow: 0 2px 12px var(--shadow-color);
 }
 
 /* ==========================================================================
@@ -600,9 +1033,12 @@
 }
 */
 
+/* DEPRECATED: Complex transform utilities - Use custom CSS */
+/*
 .transform-gpu {
   transform: translateZ(0) !important;
 }
+*/
 
 /* Section Container Override */
 .theme-super-dark .section-container {
@@ -2199,7 +2635,7 @@
 .panel-header {
   @apply p-6 border-b;
   background: #060511 !important;
-  border-bottom: 0px solid var(--card-border);
+  border-bottom: 2px solid var(--card-border);
   border-radius: 0.8rem 0.8rem 0 0;
 }
 
@@ -2514,31 +2950,18 @@ button[aria-expanded]:focus {
 .theme-super-dark .button,
 .theme-super-dark [role="button"] {
   background: #060511 !important;
-  /* Solid background for all inputs in super dark theme */
   color: var(--text-primary) !important;
-  /* White text for all inputs in super dark theme */
   border: 1px solid var(--card-border) !important;
-  /* Input borders for all inputs in super dark theme */
   border-radius: 0.8rem !important;
-  /* Rounded corners for all inputs in super dark theme */
   padding: 0.5rem 1rem !important;
-  /* Padding for all inputs in super dark theme */
   font-weight: 500 !important;
-  /* Medium weight for all inputs in super dark theme */
   transition: all 0.2s ease !important;
-  /* Smooth transition for all inputs in super dark theme */
   cursor: pointer !important;
-  /* Pointer cursor for all inputs in super dark theme */
   text-decoration: none !important;
-  /* No underline for all inputs in super dark theme */
   display: inline-flex !important;
-  /* Inline flex display for all inputs in super dark theme */
   align-items: center !important;
-  /* Center align items for all inputs in super dark theme */
   justify-content: center !important;
-  /* Center justify items for all inputs in super dark theme */
   min-height: 2.5rem !important;
-  /* Minimum height for all inputs in super dark theme */
 }
 
 /* Primary Buttons - Super Dark Theme */
