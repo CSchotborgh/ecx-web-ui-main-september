@@ -1010,6 +1010,37 @@ body {
   box-shadow: none !important;
 }
 
+/* Remove outlines from all button elements in super dark theme */
+.theme-super-dark button,
+.theme-super-dark button *,
+.theme-super-dark input[type="button"],
+.theme-super-dark input[type="submit"],
+.theme-super-dark input[type="reset"],
+.theme-super-dark .btn,
+.theme-super-dark .btn *,
+.theme-super-dark .button,
+.theme-super-dark .button *,
+.theme-super-dark [role="button"],
+.theme-super-dark [role="button"] * {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.theme-super-dark button:focus,
+.theme-super-dark button *:focus,
+.theme-super-dark input[type="button"]:focus,
+.theme-super-dark input[type="submit"]:focus,
+.theme-super-dark input[type="reset"]:focus,
+.theme-super-dark .btn:focus,
+.theme-super-dark .btn *:focus,
+.theme-super-dark .button:focus,
+.theme-super-dark .button *:focus,
+.theme-super-dark [role="button"]:focus,
+.theme-super-dark [role="button"] *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 /* Super Dark Theme - Target any button within flowbite components */
 .theme-super-dark [data-flowbite] button,
 .theme-super-dark .flowbite-component button {
