@@ -1444,24 +1444,24 @@ body {
 
 /* Super Dark Theme Logo Styling */
 .theme-super-dark img[alt="ECX Logo"] {
-  filter: brightness(1.2) contrast(1.1) hue-rotate(10deg) !important;
+  filter: brightness(1.0) contrast(1.0) hue-rotate(10deg) !important;
   /* Enhanced brightness and slight blue tint for super dark theme */
   border: 0px solid transparent !important;
   /* Transparent border for super dark theme logo */
   border-radius: 0.8rem !important;
   /* Rounded corners for super dark theme logo */
-  background: rgba(59, 130, 246, 0.05) !important;
+  background: rgba(59, 130, 246, 0.00) !important;
   /* Subtle blue glow background for super dark theme logo */
   padding: 0.5rem !important;
   /* Padding around super dark theme logo */
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2) !important;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.0) !important;
   /* Blue glow shadow for super dark theme logo */
   transition: all 0.3s ease !important;
   /* Smooth transition for super dark theme logo */
 }
 
 .theme-super-dark img[alt="ECX Logo"]:hover {
-  filter: brightness(0) contrast(0) hue-rotate(15deg) !important;
+  filter: brightness(1.0) contrast(1.0) hue-rotate(15deg) !important;
   /* Enhanced hover effects for super dark theme logo */
   box-shadow: 0 0 25px rgba(59, 130, 246, 0.4) !important;
   /* Stronger glow on hover for super dark theme logo */
@@ -1473,7 +1473,7 @@ body {
 .theme-dark img[alt="ECX Logo"] {
   filter: brightness(1.0) contrast(1.0) saturate(0) !important;
   /* Enhanced brightness and saturation for dark theme */
-  border: 0px solid rgba(96, 165, 250, 0) !important;
+  border: 0px solid rgba(96, 165, 250, 0.0) !important;
   /* Subtle blue border for dark theme logo */
   border-radius: 0.8rem !important;
   /* Rounded corners for dark theme logo */
@@ -1537,7 +1537,7 @@ body {
 .theme-super-dark .nav-link.router-link-exact-active {
   border: 1px solid transparent !important;
   /* Transparent border for active navigation links in super dark theme */
-  background: rgba(59, 130, 246, 0.1) !important;
+  background: rgb(12, 8, 38, 0.1) !important;
   /* Subtle blue background for active links in super dark theme */
   color: var(--nav-text) !important;
   /* Navigation text color for active links in super dark theme */
