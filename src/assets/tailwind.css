@@ -5741,7 +5741,7 @@ button[aria-expanded]:focus {
 
 /* Max-h-fit My-6 Grid Component Styling - Transparent background with theme-consistent borders */
 .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
-  @apply transition-all duration-300;
+  transition: all 0.3s ease !important;
   background: transparent !important;
   border: 1.8px solid var(--card-border) !important;
   border-radius: 1.5rem !important;
