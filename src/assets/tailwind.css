@@ -5845,7 +5845,8 @@ button[aria-expanded]:focus {
 
 /* Custom Grid Component - Matches the original .custom-grid styling for consistency */
 .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800 {
-  @apply border shadow-lg transition-all duration-300;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
   background: var(--card-bg) !important;
   border: 1.8px solid var(--card-border) !important;
   border-radius: 0.8rem !important;
