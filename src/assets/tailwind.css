@@ -4682,6 +4682,20 @@ body {
   /* Transparent border for all images in super dark theme */
 }
 
+.theme-dark img {
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all images in dark theme */
+  border: 1px solid transparent !important;
+  /* Transparent border for all images in dark theme */
+}
+
+.theme-light img {
+  border-radius: 0.8rem !important;
+  /* Rounded corners for all images in light theme */
+  border: 1px solid transparent !important;
+  /* Transparent border for all images in light theme */
+}
+
 .theme-super-dark video {
   border-radius: 0.8rem !important;
   /* Rounded corners for all videos in super dark theme */
