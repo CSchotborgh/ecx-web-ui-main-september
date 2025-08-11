@@ -786,19 +786,26 @@ body {
    THEME-SPECIFIC OVERRIDES
    ========================================================================== */
 
-/* Super Dark Theme Specific Rules - Use solid #060511 with simple borders */
+/* Super Dark Theme Specific Class Rules - Use solid #060511 with simple borders on Home View */
 .theme-super-dark .custom-grid {
   background: #060511 !important;
   border: 2px solid var(--card-border) !important;
 }
 
+/* Super Dark Theme Specifi Class Rules - Use solid #060511 with simple borders on Cooling Unit View */
 .theme-super-dark .grid-rows-1 {
   background: #060511 !important;
-  border: 2px solid #ffffff;
+  border: px solid #ffffff;
+}
+
+/* Super Dark Theme Specifi Class Rules - Use solid #060511 with simple borders on Cooling Unit View */
+.theme-super-dark .text-red-500 {
+  background: #ff6666 !important;
+  border-radius: 0.8rem;
 }
 
 
-/* Super Dark Theme Grid and Table Elements my-6 mx-2 */
+/* Super Dark Theme Grid and Table Elements*/
 .theme-super-dark .data-table {
   background: #fafaff !important;
   border: 1px solid var(--card-border) !important;
