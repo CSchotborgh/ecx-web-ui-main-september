@@ -5677,6 +5677,65 @@ button[aria-expanded]:focus {
 }
 
 /* ==========================================================================
+   CUSTOM SPACING COMPONENT STYLING - ALL THEMES
+   ========================================================================== */
+
+/* My-6 Mx-2 Component Styling - Matches home page card styling */
+.my-6.mx-2 {
+  @apply border shadow-lg transition-all duration-300;
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  border-radius: 0.8rem !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 2px 5px var(--shadow-color) !important;
+  color: var(--text-primary) !important;
+  padding: 1.5rem !important;
+}
+
+.my-6.mx-2:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 0px 0px var(--shadow-color) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+  background: var(--card-bg-hover) !important;
+}
+
+/* Super Dark Theme Specific Styling */
+.theme-super-dark .my-6.mx-2 {
+  background: #060511 !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-super-dark .my-6.mx-2:hover {
+  background: #060511 !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* Dark Theme Specific Styling */
+.theme-dark .my-6.mx-2 {
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-dark .my-6.mx-2:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* Light Theme Specific Styling */
+.theme-light .my-6.mx-2 {
+  background: var(--card-bg) !important;
+  border: 1.8px solid var(--card-border) !important;
+  color: var(--text-primary) !important;
+}
+
+.theme-light .my-6.mx-2:hover {
+  background: var(--card-bg-hover) !important;
+  border: 1.8px solid var(--card-border-hover) !important;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN ADJUSTMENTS
    ========================================================================== */
 
