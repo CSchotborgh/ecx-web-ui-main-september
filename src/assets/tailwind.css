@@ -792,9 +792,10 @@ body {
 .theme-super-dark {
   --theme-bg: #060511;
   --theme-text: #ffffff;
-  --theme-border: rgb(255, 255, 255, 1.4);
+  --theme-border:  rgb(6, 5, 17, 0.6);
   --theme-border-hover: rgb(6, 5, 17, 0.6);
-  --theme-border-focus: rgba(96, 165, 250, 0.8);
+  --theme-border-static: rgb(255, 255, 255, 0.6);
+  --theme-border-focus: rgb(12, 8, 38, 0.8);
 }
 
 .theme-dark {
@@ -835,6 +836,7 @@ body {
   background: var(--theme-bg) !important;
   color: var(--theme-text) !important;
   border-color: var(--theme-border) !important;
+  border-color: var(--theme-border-static) !important;
   border-radius: 0.8rem !important;
 }
 
@@ -852,7 +854,7 @@ body {
 .theme-dark .tooltip,
 .theme-dark .progress-bar,
 .theme-dark .status-badge {
-  background: var(--theme-bg) !important;
+  background: var(--theme-) !important;
   color: var(--theme-text) !important;
   border-color: var(--theme-border) !important;
   border-radius: 0.8rem !important;
@@ -886,7 +888,7 @@ body {
 .theme-super-dark .dropdown-item:hover,
 .theme-super-dark .nav-dropdown-item:hover {
   background: var(--theme-bg) !important;
-  border-color: var(--theme-border-hover) !important;
+  border-color: var(--theme-border) !important;
 }
 
 /* Hover States Dark Mode */
@@ -896,8 +898,8 @@ body {
 .theme-dark .btn-icon:hover,
 .theme-dark .dropdown-item:hover,
 .theme-dark .nav-dropdown-item:hover {
-  background: var(--card-bg-hover) !important;
-  border-color: var(--theme-border-hover) !important;
+  background: var(--card-bg) !important;
+  border-color: var(--theme-border) !important;
 }
 
 /* Hover States Light Mode */
@@ -911,7 +913,7 @@ body {
   border-color: var(--theme-border-hover) !important;
 }
 
-/* Focus States Super Dark Mode */
+/* Focus States */
 .theme-super-dark input:focus,
 .theme-super-dark textarea:focus,
 .theme-super-dark select:focus,
@@ -921,7 +923,6 @@ body {
   box-shadow: 0 0 0 2px var(--accent-background) !important;
 }
 
-/* Focus States Dark Mode */
 .theme-dark input:focus,
 .theme-dark textarea:focus,
 .theme-dark select:focus,
@@ -941,13 +942,12 @@ body {
 }
 
 /* Special Super Dark Overrides Cooling Unit grid-custom*/
-  /*
 .theme-super-dark .custom-grid {
   background: #060511 !important;
   border-radius: 0.8rem;
   border: 1.1px solid #ffffff !important;
 }
-  */
+
 .theme-super-dark .text-red-500 {
   background: #ff6666 !important;
   border-radius: 0.8rem;
@@ -967,12 +967,12 @@ body {
 
 /* Modal Specific Overrides */
 .theme-super-dark .modal-header {
-  background: #0c0826 !important;
+  background: #060511 !important;
   border-bottom: 1px solid var(--panel-border) !important;
 }
 
 .theme-super-dark .modal-body {
-  background: #0c0826 !important;
+  background: #060511 !important;
 }
 
 .theme-super-dark .modal-footer {
@@ -5704,32 +5704,7 @@ button[aria-expanded]:focus {
   padding: 1.5rem !important;
 }
 
-/* Max-h-fit Grid Component Styling - Matches my-6 mx-2 styling exactly */
-.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
-.max-h-fit.my-6.grid {
-  @apply border shadow-lg transition-all duration-300;
-  background: var(--card-bg) !important;
-  border: 1.8px solid var(--card-border) !important;
-  border-radius: 0.8rem !important;
-  backdrop-filter: blur(10px) !important;
-  box-shadow: 0 2px 5px var(--shadow-color) !important;
-  color: var(--text-primary) !important;
-  padding: 1.5rem !important;
-  margin: 1.5rem 0 !important;
-  display: grid !important;
-  grid-template-rows: 1fr !important;
-  max-height: fit-content !important;
-}
-
 .my-6.mx-2:hover {
-  transform: translateY(-1px) !important;
-  box-shadow: 0 0px 0px var(--shadow-color) !important;
-  border: 1.8px solid var(--card-border-hover) !important;
-  background: var(--card-bg-hover) !important;
-}
-
-.max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
-.max-h-fit.my-6.grid:hover {
   transform: translateY(-1px) !important;
   box-shadow: 0 0px 0px var(--shadow-color) !important;
   border: 1.8px solid var(--card-border-hover) !important;
@@ -5748,19 +5723,6 @@ button[aria-expanded]:focus {
   border: 1.8px solid var(--card-border-hover) !important;
 }
 
-.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
-.theme-super-dark .max-h-fit.my-6.grid {
-  background: #060511 !important;
-  border: 1.8px solid var(--card-border) !important;
-  color: var(--text-primary) !important;
-}
-
-.theme-super-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
-.theme-super-dark .max-h-fit.my-6.grid:hover {
-  background: #060511 !important;
-  border: 1.8px solid var(--card-border-hover) !important;
-}
-
 /* Dark Theme Specific Styling */
 .theme-dark .my-6.mx-2 {
   background: var(--card-bg) !important;
@@ -5773,19 +5735,6 @@ button[aria-expanded]:focus {
   border: 1.8px solid var(--card-border-hover) !important;
 }
 
-.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
-.theme-dark .max-h-fit.my-6.grid {
-  background: var(--card-bg) !important;
-  border: 1.8px solid var(--card-border) !important;
-  color: var(--text-primary) !important;
-}
-
-.theme-dark .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
-.theme-dark .max-h-fit.my-6.grid:hover {
-  background: var(--card-bg-hover) !important;
-  border: 1.8px solid var(--card-border-hover) !important;
-}
-
 /* Light Theme Specific Styling */
 .theme-light .my-6.mx-2 {
   background: var(--card-bg) !important;
@@ -5794,19 +5743,6 @@ button[aria-expanded]:focus {
 }
 
 .theme-light .my-6.mx-2:hover {
-  background: var(--card-bg-hover) !important;
-  border: 1.8px solid var(--card-border-hover) !important;
-}
-
-.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800,
-.theme-light .max-h-fit.my-6.grid {
-  background: var(--card-bg) !important;
-  border: 1.8px solid var(--card-border) !important;
-  color: var(--text-primary) !important;
-}
-
-.theme-light .max-h-fit.my-6.grid.grid-rows-1.border.rounded-3xl.bg-slate-800:hover,
-.theme-light .max-h-fit.my-6.grid:hover {
   background: var(--card-bg-hover) !important;
   border: 1.8px solid var(--card-border-hover) !important;
 }
