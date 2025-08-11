@@ -1528,6 +1528,97 @@ body {
 }
 
 /* ==========================================================================
+   NAVIGATION LINK CUSTOMIZATIONS - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Navigation Link Styling */
+.theme-super-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link,
+.theme-super-dark .nav-link.router-link-active,
+.theme-super-dark .nav-link.router-link-exact-active {
+  border: 1px solid transparent !important;
+  /* Transparent border for active navigation links in super dark theme */
+  background: rgba(59, 130, 246, 0.1) !important;
+  /* Subtle blue background for active links in super dark theme */
+  color: var(--nav-text) !important;
+  /* Navigation text color for active links in super dark theme */
+  border-radius: 0.4rem !important;
+  /* Rounded corners for active navigation links in super dark theme */
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2) !important;
+  /* Subtle glow for active navigation links in super dark theme */
+}
+
+.theme-super-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link:hover,
+.theme-super-dark .nav-link.router-link-active:hover,
+.theme-super-dark .nav-link.router-link-exact-active:hover {
+  border: 1px solid transparent !important;
+  /* Keep transparent border on hover for active links in super dark theme */
+  background: rgba(59, 130, 246, 0.2) !important;
+  /* Enhanced background on hover for active links in super dark theme */
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.3) !important;
+  /* Stronger glow on hover for active links in super dark theme */
+  transform: scale(1.02) !important;
+  /* Slight scale increase on hover for active links in super dark theme */
+}
+
+/* Dark Theme Navigation Link Styling */
+.theme-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link,
+.theme-dark .nav-link.router-link-active,
+.theme-dark .nav-link.router-link-exact-active {
+  border: 1px solid transparent !important;
+  /* Transparent border for active navigation links in dark theme */
+  background: rgba(96, 165, 250, 0.15) !important;
+  /* Subtle blue background for active links in dark theme */
+  color: var(--nav-text) !important;
+  /* Navigation text color for active links in dark theme */
+  border-radius: 0.4rem !important;
+  /* Rounded corners for active navigation links in dark theme */
+  box-shadow: 0 0 6px rgba(96, 165, 250, 0.2) !important;
+  /* Subtle glow for active navigation links in dark theme */
+}
+
+.theme-dark #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link:hover,
+.theme-dark .nav-link.router-link-active:hover,
+.theme-dark .nav-link.router-link-exact-active:hover {
+  border: 1px solid transparent !important;
+  /* Keep transparent border on hover for active links in dark theme */
+  background: rgba(96, 165, 250, 0.25) !important;
+  /* Enhanced background on hover for active links in dark theme */
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.3) !important;
+  /* Stronger glow on hover for active links in dark theme */
+  transform: scale(1.02) !important;
+  /* Slight scale increase on hover for active links in dark theme */
+}
+
+/* Light Theme Navigation Link Styling */
+.theme-light #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link,
+.theme-light .nav-link.router-link-active,
+.theme-light .nav-link.router-link-exact-active {
+  border: 1px solid transparent !important;
+  /* Transparent border for active navigation links in light theme */
+  background: rgba(59, 130, 246, 0.08) !important;
+  /* Subtle blue background for active links in light theme */
+  color: var(--nav-text) !important;
+  /* Navigation text color for active links in light theme */
+  border-radius: 0.4rem !important;
+  /* Rounded corners for active navigation links in light theme */
+  box-shadow: 0 0 4px rgba(59, 130, 246, 0.15) !important;
+  /* Subtle glow for active navigation links in light theme */
+}
+
+.theme-light #app > nav > div > div.flex.items-center.justify-between.h-16 > div.hidden.md\:flex.items-center.space-x-1 > a.router-link-active.router-link-exact-active.nav-link:hover,
+.theme-light .nav-link.router-link-active:hover,
+.theme-light .nav-link.router-link-exact-active:hover {
+  border: 1px solid transparent !important;
+  /* Keep transparent border on hover for active links in light theme */
+  background: rgba(59, 130, 246, 0.15) !important;
+  /* Enhanced background on hover for active links in light theme */
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.25) !important;
+  /* Stronger glow on hover for active links in light theme */
+  transform: scale(1.01) !important;
+  /* Slight scale increase on hover for active links in light theme */
+}
+
+/* ==========================================================================
    THEME-SPECIFIC VUE COMPONENT OVERRIDES
    ========================================================================== */
 
