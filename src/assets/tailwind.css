@@ -911,7 +911,7 @@ body {
   border-color: var(--theme-border-hover) !important;
 }
 
-/* Focus States */
+/* Focus States Super Dark Mode */
 .theme-super-dark input:focus,
 .theme-super-dark textarea:focus,
 .theme-super-dark select:focus,
@@ -921,6 +921,7 @@ body {
   box-shadow: 0 0 0 2px var(--accent-background) !important;
 }
 
+/* Focus States Dark Mode */
 .theme-dark input:focus,
 .theme-dark textarea:focus,
 .theme-dark select:focus,
@@ -940,12 +941,13 @@ body {
 }
 
 /* Special Super Dark Overrides Cooling Unit grid-custom*/
+  /*
 .theme-super-dark .custom-grid {
   background: #060511 !important;
   border-radius: 0.8rem;
   border: 1.1px solid #ffffff !important;
 }
-
+  */
 .theme-super-dark .text-red-500 {
   background: #ff6666 !important;
   border-radius: 0.8rem;
