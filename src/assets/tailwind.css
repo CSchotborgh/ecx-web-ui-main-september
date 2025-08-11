@@ -1438,9 +1438,93 @@ body {
   color: var(--text-primary) !important;
 }
 
-/* Light Theme Logo Color Inversion */
+/* ==========================================================================
+   LOGO CUSTOMIZATIONS - ALL THEMES
+   ========================================================================== */
+
+/* Super Dark Theme Logo Styling */
+.theme-super-dark img[alt="ECX Logo"] {
+  filter: brightness(1.2) contrast(1.1) hue-rotate(10deg) !important;
+  /* Enhanced brightness and slight blue tint for super dark theme */
+  border: 2px solid transparent !important;
+  /* Transparent border for super dark theme logo */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for super dark theme logo */
+  background: rgba(59, 130, 246, 0.05) !important;
+  /* Subtle blue glow background for super dark theme logo */
+  padding: 0.5rem !important;
+  /* Padding around super dark theme logo */
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2) !important;
+  /* Blue glow shadow for super dark theme logo */
+  transition: all 0.3s ease !important;
+  /* Smooth transition for super dark theme logo */
+}
+
+.theme-super-dark img[alt="ECX Logo"]:hover {
+  filter: brightness(1.4) contrast(1.2) hue-rotate(15deg) !important;
+  /* Enhanced hover effects for super dark theme logo */
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4) !important;
+  /* Stronger glow on hover for super dark theme logo */
+  transform: scale(1.05) !important;
+  /* Slight scale increase on hover for super dark theme logo */
+}
+
+/* Dark Theme Logo Styling */
+.theme-dark img[alt="ECX Logo"] {
+  filter: brightness(1.1) contrast(1.05) saturate(1.1) !important;
+  /* Enhanced brightness and saturation for dark theme */
+  border: 2px solid rgba(96, 165, 250, 0.3) !important;
+  /* Subtle blue border for dark theme logo */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for dark theme logo */
+  background: rgba(96, 165, 250, 0.08) !important;
+  /* Very subtle blue background for dark theme logo */
+  padding: 0.5rem !important;
+  /* Padding around dark theme logo */
+  box-shadow: 0 0 10px rgba(96, 165, 250, 0.15) !important;
+  /* Soft blue shadow for dark theme logo */
+  transition: all 0.3s ease !important;
+  /* Smooth transition for dark theme logo */
+}
+
+.theme-dark img[alt="ECX Logo"]:hover {
+  filter: brightness(1.3) contrast(1.1) saturate(1.2) !important;
+  /* Enhanced hover effects for dark theme logo */
+  border-color: rgba(96, 165, 250, 0.5) !important;
+  /* Stronger border on hover for dark theme logo */
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.3) !important;
+  /* Stronger glow on hover for dark theme logo */
+  transform: scale(1.03) !important;
+  /* Slight scale increase on hover for dark theme logo */
+}
+
+/* Light Theme Logo Styling */
 .theme-light img[alt="ECX Logo"] {
-  filter: invert(1) brightness(0.8) !important;
+  filter: invert(1) brightness(0.8) contrast(1.2) !important;
+  /* Inverted colors with enhanced contrast for light theme */
+  border: 2px solid rgba(59, 130, 246, 0.2) !important;
+  /* Subtle blue border for light theme logo */
+  border-radius: 0.8rem !important;
+  /* Rounded corners for light theme logo */
+  background: rgba(59, 130, 246, 0.05) !important;
+  /* Very subtle blue background for light theme logo */
+  padding: 0.5rem !important;
+  /* Padding around light theme logo */
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.1) !important;
+  /* Soft blue shadow for light theme logo */
+  transition: all 0.3s ease !important;
+  /* Smooth transition for light theme logo */
+}
+
+.theme-light img[alt="ECX Logo"]:hover {
+  filter: invert(1) brightness(0.6) contrast(1.3) !important;
+  /* Enhanced hover effects for light theme logo */
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  /* Stronger border on hover for light theme logo */
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2) !important;
+  /* Stronger shadow on hover for light theme logo */
+  transform: scale(1.02) !important;
+  /* Slight scale increase on hover for light theme logo */
 }
 
 /* ==========================================================================
