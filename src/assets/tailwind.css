@@ -52,7 +52,7 @@
   /* Hovered cards - lighter on hover */
 
   /* Border Colors - Subtle rounded borders like EdgeRack */
-  --card-border-user: var(--card-border-custom, rgba(75, 85, 99, 0.8));
+  --card-border-user: var(--card-border-custom, rgb(12, 8, 38, 0.8));
   /* User-customizable border - can be overridden with --card-border-custom */
   --card-border: var(--card-border-user);
   /* Main borders - uses user-customizable variable for .card, .form-input, .data-table selectors */
