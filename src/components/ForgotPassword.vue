@@ -163,7 +163,9 @@ defineExpose({ show });
 }
 
 .modal-content {
-  background-color: white;
+  background: linear-gradient(135deg, hsl(258, 28%, 17%) 0%, hsl(253, 25%, 15%) 100%);
+  border: 1px solid hsl(276, 25%, 25%);
+  color: white;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -181,32 +183,38 @@ defineExpose({ show });
   top: 15px;
   font-size: 24px;
   font-weight: bold;
-  color: #999;
+  color: #9ca3af;
 }
 
 .close:hover {
-  color: #333;
+  color: white;
 }
 
 .form-label {
   display: block;
   margin-bottom: 5px;
   font-weight: 500;
-  color: #333;
+  color: #d1d5db;
 }
 
 .form-input {
   width: 100%;
   padding: 8px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid #4b5563;
   border-radius: 4px;
   font-size: 14px;
+  background-color: hsl(256, 25%, 12%);
+  color: white;
 }
 
 .form-input:focus {
   outline: none;
   border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
 }
 
 .btn-primary {
