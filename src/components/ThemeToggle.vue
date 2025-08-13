@@ -14,7 +14,7 @@
 
     <div 
       v-show="showDropdown" 
-      class="absolute right-0 top-full z-50 mt-1 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95"
+      class="dropdown-content absolute right-0 top-full mt-1 animate-in fade-in zoom-in"
       role="menu"
       aria-orientation="vertical"
       aria-labelledby="theme-menu"
@@ -23,9 +23,9 @@
         v-for="theme in themes"
         :key="theme.name"
         @click="selectTheme(theme.name)"
-        class="relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground hover:bg-accent hover:text-accent-foreground"
+        class="dropdown-item"
         :class="{ 
-          'bg-accent text-accent-foreground': themeStore.theme === theme.name 
+          'bg-muted text-foreground': themeStore.theme === theme.name 
         }"
         role="menuitem"
         :aria-checked="themeStore.theme === theme.name"
@@ -62,31 +62,31 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useThemeStore } from '@/stores/theme.js'
-import { SunIcon, MoonIcon, DesktopIcon } from 'vue-tabler-icons'
+import { IconSun, IconMoon, IconDeviceDesktop } from 'vue-tabler-icons'
 
 const themeStore = useThemeStore()
 
 const showDropdown = ref(false)
 
 const themes = computed(() => [
-  { name: 'light', label: 'Light', icon: SunIcon },
-  { name: 'dark', label: 'Dark', icon: MoonIcon },
-  { name: 'super-dark', label: 'Super Dark', icon: MoonIcon }, // Assuming MoonIcon can represent super dark too
-  { name: 'system', label: 'System', icon: DesktopIcon }
+  { name: 'light', label: 'Light', icon: IconSun },
+  { name: 'dark', label: 'Dark', icon: IconMoon },
+  { name: 'super-dark', label: 'Super Dark', icon: IconMoon },
+  { name: 'system', label: 'System', icon: IconDeviceDesktop }
 ])
 
 const currentIcon = computed(() => {
   switch (themeStore.theme) {
     case 'light':
-      return SunIcon
+      return IconSun
     case 'dark':
-      return MoonIcon
+      return IconMoon
     case 'super-dark':
-      return MoonIcon // Or a more specific icon if available
+      return IconMoon
     case 'system':
-      return DesktopIcon
+      return IconDeviceDesktop
     default:
-      return SunIcon
+      return IconSun
   }
 })
 
@@ -110,13 +110,6 @@ const closeDropdown = () => {
 </script>
 
 <style scoped>
-/* Add any specific styles for the dropdown if needed,
-   but ControlVue styling should handle most of it. */
-.focus-ring {
-  outline: none;
-  box-shadow: 0 0 0 2px theme('colors.primary.DEFAULT'); /* Example using theme colors */
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -127,28 +120,5 @@ const closeDropdown = () => {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
-}
-
-.animate-in {
-  animation: animateIn 0.2s ease-out;
-}
-
-.fade-in-0 {
-  opacity: 0;
-}
-
-.zoom-in-95 {
-  transform: scale(0.95);
-}
-
-@keyframes animateIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 </style>
