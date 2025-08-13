@@ -1,3 +1,4 @@
+
 /**
  * EDGERACK Cooling Unit Control System - Global Styles
  * 
@@ -12,11 +13,8 @@
 
 /* Import Tailwind CSS framework layers */
 @tailwind base;
-/* Reset styles and base HTML element styles */
 @tailwind components;
-/* Reusable component classes */
 @tailwind utilities;
-/* Utility classes for rapid development */
 
 /**
  * Light Theme Color Variables
@@ -26,57 +24,32 @@
  */
 :root {
   --background: hsl(0, 0%, 100%);
-  /* Pure white background */
   --foreground: hsl(20, 14.3%, 4.1%);
-  /* Dark text color */
   --muted: hsl(245, 55%, 4%);
-  /* Muted background areas */
   --muted-foreground: hsl(245, 55%, 4%);
-  /* Muted text color */
   --popover: hsl(0, 0%, 100%);
-  /* Popover background */
   --popover-foreground: hsl(20, 14.3%, 4.1%);
-  /* Popover text */
   --card: hsl(0, 0%, 100%);
-  /* Card background */
   --card-foreground: hsl(20, 14.3%, 4.1%);
-  /* Card text */
   --border: hsl(20, 5.9%, 90%);
-  /* Border color */
   --input: hsl(20, 5.9%, 90%);
-  /* Input field background */
   --primary: hsl(217, 91%, 59%);
-  /* Primary brand color (Replit blue) */
   --primary-foreground: hsl(211, 100%, 99%);
-  /* Primary button text */
   --secondary: hsl(60, 4.8%, 95.9%);
-  /* Secondary button background */
   --secondary-foreground: hsl(24, 9.8%, 10%);
-  /* Secondary button text */
   --accent: hsl(60, 4.8%, 95.9%);
-  /* Accent color */
   --accent-foreground: hsl(24, 9.8%, 10%);
-  /* Accent text */
   --destructive: hsl(0, 84.2%, 60.2%);
-  /* Error/destructive actions */
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  /* Error text */
   --ring: hsl(20, 14.3%, 4.1%);
-  /* Focus ring color */
   --radius: 0.5rem;
-  /* Default border radius */
 
   /* EDGERACK Replit-Style Theme Variables */
   --edgerack-dark: hsl(222, 28%, 8%);
-  /* Primary dark background (Replit dark) */
   --edgerack-darker: hsl(275, 33%, 17%);
-  /* Card/surface background (Replit card) */
   --edgerack-replit-blue: hsl(217, 91%, 59%);
-  /* Brand Replit blue for highlights */
   --edgerack-green: hsl(142, 76%, 36%);
-  /* Success/operational green */
   --edgerack-slate: hsl(215, 20.2%, 65.1%);
-  /* Muted text color (Replit muted) */
 }
 
 .dark {
@@ -113,253 +86,251 @@
     font-weight: 400;
     background: var(--background);
     color: var(--foreground);
-    /* Normal weight for body text */
+  }
+}
+
+@layer components {
+  .nav-container {
+    @apply bg-gradient-to-r from-slate-900 to-slate-800 backdrop-blur-md border-b border-gray-800/50;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium;
+  }
+  
+  .nav-link.router-link-active {
+    @apply text-blue-400 bg-blue-400/10 rounded-lg;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-slate-800/90 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 shadow-lg;
+  }
+
+  .custom-grid {
+    @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full bg-slate-800 text-center items-center content-center justify-center text-white shadow-lg;
+    border-color: hsl(215, 25%, 25%);
+    background: linear-gradient(135deg, hsl(245, 55%, 4%) 0%, hsl(245, 55%, 4%) 60%);
+  }
+
+  .table-label {
+    @apply uppercase text-sm font-medium text-gray-300 tracking-wider;
+  }
+
+  .status-badge-on {
+    @apply bg-green-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+  }
+
+  .status-badge-off {
+    @apply bg-gray-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+  }
+
+  .status-badge-blue {
+    @apply bg-blue-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+  }
+
+  .status-badge-purple {
+    @apply bg-purple-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+  }
+
+  .status-badge-yellow {
+    @apply bg-yellow-600 text-yellow-100 px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+  }
+
+  .system-info-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6;
+  }
+
+  .network-status-item {
+    @apply flex justify-between items-center py-2 px-3 rounded-md;
+    background: rgba(51, 65, 85, 0.3);
+    border-left: 3px solid #475569;
+  }
+
+  .network-status-label {
+    @apply text-gray-300 font-medium text-sm;
+  }
+
+  .network-status-value {
+    @apply text-white font-mono bg-slate-700/50 px-2 py-1 rounded text-sm;
+    font-family: 'Courier New', monospace;
+  }
+
+  .system-uptime-display {
+    @apply text-center p-4 rounded-lg mt-6;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .system-uptime-text {
+    @apply text-lg font-semibold text-green-400;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    font-family: 'Courier New', monospace;
+  }
+
+  .system-version-text {
+    @apply text-center text-gray-300 mt-3;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+  }
+
+  .edgerack-table {
+    @apply w-full text-sm text-left text-gray-400;
+    background: hsl(268, 28%, 17%);
+    border: 1px solid hsl(255, 25%, 25%);
+  }
+
+  .edgerack-table thead {
+    @apply text-xs uppercase bg-gray-700 text-gray-400;
+    background: hsl(280, 25%, 12%);
+  }
+
+  .edgerack-table tbody tr {
+    @apply odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700;
+  }
+
+  .edgerack-table th {
+    @apply px-6 py-3 font-medium text-gray-400 uppercase;
+    color: hsl(252, 20%, 75%);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .edgerack-table td {
+    @apply px-6 py-4 text-white;
+    color: hsl(0, 0%, 90%);
+    border-color: hsl(261, 25%, 25%);
+  }
+
+  .edgerack-table tr:hover {
+    background: hsl(252, 25%, 20%);
+  }
+
+  .cooling-section {
+    @apply mb-6 rounded-lg border border-slate-600 bg-slate-800/60;
+    background: hsl(256, 55%, 4%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .cooling-header {
+    @apply flex items-center justify-between p-4 border-b border-slate-600/50;
+  }
+
+  .cooling-content {
+    @apply p-6 transition-all duration-500 ease-in-out rounded-b-lg;
+  }
+
+  .cooling-metrics-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+  }
+
+  .cooling-metric-item {
+    @apply flex flex-col items-center text-center space-y-2 p-4 rounded-lg;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .cooling-metric-label {
+    @apply text-sm text-gray-300 font-medium text-center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  }
+
+  .cooling-metric-value {
+    @apply text-2xl text-white font-bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   }
 }
 
 /* Lato Font Weight Rules */
-/* Normal weight for body text and general content */
-body,
-p,
-span,
-div,
-td,
-li,
-.text-gray-300,
-.text-gray-400,
-.text-white {
+body, p, span, div, td, li, .text-gray-300, .text-gray-400, .text-white {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-/* Semi-bold weight for titles and headers */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.font-semibold,
-.font-bold {
+h1, h2, h3, h4, h5, h6, .font-semibold, .font-bold {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-/* Specific weight overrides for different elements */
-.navbar-brand,
-.text-xl,
-.text-2xl {
+.navbar-brand, .text-xl, .text-2xl {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-/* Normal weight for labels and secondary text */
-.text-sm,
-.text-xs,
-label,
-.label {
+.text-sm, .text-xs, label, .label {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-/* Normal weight for buttons and interactive elements */
-button,
-.btn,
-.button {
+button, .btn, .button {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
-/* Keep monospace fonts for technical data */
-.edgerack-monospace,
-.font-mono,
-code,
-pre {
+.edgerack-monospace, .font-mono, code, pre {
   font-family: 'Courier New', monospace !important;
   font-weight: 400;
 }
 
-/* Status badges with normal weight */
-.status-badge,
-.status-badge-on,
-.status-badge-off,
-.status-badge-blue,
-.status-badge-replit,
-.status-badge-yellow {
+.status-badge, .status-badge-on, .status-badge-off, .status-badge-blue, .status-badge-replit, .status-badge-yellow {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
-/* Table headers with normal weight */
-th,
-.table-label {
+th, .table-label {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
-/* Card titles and content */
-.card-title,
-.CardTitle {
+.card-title, .CardTitle {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-.card-description,
-.CardDescription {
+.card-description, .CardDescription {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-/* Navigation elements */
-nav a,
-.nav-link {
+nav a, .nav-link {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-nav a:hover,
-.nav-link:hover,
-.router-link-active {
+nav a:hover, .nav-link:hover, .router-link-active {
   font-weight: 600 !important;
 }
 
-/* Form elements */
-input,
-textarea,
-select {
+input, textarea, select {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-/* Alert and notification text */
-.alert,
-.Alert {
+.alert, .Alert {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-.alert-title,
-.AlertTitle {
+.alert-title, .AlertTitle {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-/* EDGERACK Industrial Control System Styles */
-.custom-grid {
-  @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full bg-slate-800 text-center items-center content-center justify-center text-white shadow-lg;
-  border-color: hsl(215, 25%, 25%);
-  background: linear-gradient(135deg, hsl(245, 55%, 4%) 0%, hsl(245, 55%, 4%) 60%);
-}
-
-
-
-.table-label {
-  @apply uppercase text-sm font-medium text-gray-300 tracking-wider;
-}
-
-/* Status badge styles for industrial look */
-.status-badge-on {
-  @apply bg-green-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
-}
-
-.status-badge-off {
-  @apply bg-gray-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
-}
-
-.status-badge-blue {
-  @apply bg-blue-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
-}
-
-.status-badge-purple {
-  @apply bg-purple-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
-}
-
-.status-badge-yellow {
-  @apply bg-yellow-600 text-yellow-100 px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
-}
-
-/* Enhanced system information styling */
-.system-info-grid {
-  @apply grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6;
-}
-
-.network-status-item {
-  @apply flex justify-between items-center py-2 px-3 rounded-md;
-  background: rgba(51, 65, 85, 0.3);
-  border-left: 3px solid #475569;
-}
-
-.network-status-label {
-  @apply text-gray-300 font-medium text-sm;
-}
-
-.network-status-value {
-  @apply text-white font-mono bg-slate-700/50 px-2 py-1 rounded text-sm;
-  font-family: 'Courier New', monospace;
-}
-
-.system-uptime-display {
-  @apply text-center p-4 rounded-lg mt-6;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.system-uptime-text {
-  @apply text-lg font-semibold text-green-400;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-  font-family: 'Courier New', monospace;
-}
-
-.system-version-text {
-  @apply text-center text-gray-300 mt-3;
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-}
-
-/* Enhanced table styling for network view */
-.edgerack-table {
-  @apply w-full text-sm text-left text-gray-400;
-}
-
-.edgerack-table thead {
-  @apply text-xs uppercase bg-gray-700 text-gray-400;
-}
-
-.edgerack-table tbody tr {
-  @apply odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700;
-}
-
-.edgerack-table th {
-  @apply px-6 py-3 font-medium text-gray-400 uppercase;
-}
-
-.edgerack-table td {
-  @apply px-6 py-4 text-white;
-}
-
-/* Navigation active link styling */
-.router-link-active {
-  @apply font-bold text-blue-400 bg-gray-700;
-}
-
-.router-link-active::after {
-  content: '';
-  @apply absolute bottom-0 left-0 w-full h-0.5 bg-blue-400;
-}
-
+/* Additional utility classes */
 .table-value {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 600;
   color: hsl(0, 0%, 98%);
-}
-
-.table-label {
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: hsl(264, 20%, 75%);
-  letter-spacing: 0.05em;
 }
 
 .status-badge {
@@ -424,14 +395,12 @@ select {
   @apply translate-x-6;
 }
 
-/* Enhanced card styling */
 .edgerack-card {
   background: linear-gradient(135deg, hsl(258, 28%, 17%) 0%, hsl(253, 25%, 15%) 100%);
   border: 1px solid hsl(276, 25%, 25%);
   box-shadow: 0 8px 32px hsl(263, 27%, 6%, 0.3);
 }
 
-/* Status indicator animations */
 .status-indicator {
   position: relative;
 }
@@ -450,41 +419,14 @@ select {
 }
 
 @keyframes pulse {
-
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0.3;
   }
-
   50% {
     opacity: 0.6;
   }
 }
 
-/* Enhanced table styling */
-.edgerack-table {
-  background: hsl(268, 28%, 17%);
-  border: 1px solid hsl(255, 25%, 25%);
-}
-
-.edgerack-table th {
-  background: hsl(280, 25%, 12%);
-  color: hsl(252, 20%, 75%);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.edgerack-table td {
-  color: hsl(0, 0%, 90%);
-  border-color: hsl(261, 25%, 25%);
-}
-
-.edgerack-table tr:hover {
-  background: hsl(252, 25%, 20%);
-}
-
-/* Loading skeleton */
 .skeleton {
   background: linear-gradient(90deg, hsl(261, 25%, 20%) 25%, hsl(264, 25%, 25%) 50%, hsl(245, 25%, 20%) 75%);
   background-size: 200% 100%;
@@ -495,45 +437,7 @@ select {
   0% {
     background-position: 200% 0;
   }
-
   100% {
     background-position: -200% 0;
   }
-}
-
-/* Cooling Page Specific Styles */
-.cooling-section {
-  @apply mb-6 rounded-lg border border-slate-600 bg-slate-800/60;
-  background: hsl(256, 55%, 4%);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.cooling-header {
-  @apply flex items-center justify-between p-4 border-b border-slate-600/50;
-
-}
-
-.cooling-content {
-  @apply p-6 transition-all duration-500 ease-in-out rounded-b-lg;
-}
-
-.cooling-metrics-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
-}
-
-.cooling-metric-item {
-  @apply flex flex-col items-center text-center space-y-2 p-4 rounded-lg;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
-  border: 1px solid rgba(100, 116, 139, 0.3);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.cooling-metric-label {
-  @apply text-sm text-gray-300 font-medium text-center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
-}
-
-.cooling-metric-value {
-  @apply text-2xl text-white font-bold;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
