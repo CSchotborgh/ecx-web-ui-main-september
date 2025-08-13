@@ -1,0 +1,618 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ==========================================================================
+   THEME VARIABLE DEFINITIONS
+   ========================================================================== */
+
+/* Default/Super Dark Theme Variables - EdgeRack Inspired */
+:root {
+  /* Background Gradients - Main page backgrounds with deep navy/black theme */
+  --bg-gradient: linear-gradient(45deg, #0c0826 100%, #060511 25%, #060511 50%, #141028 100%);
+  /* Deep navy gradient with black accents */
+  --bg-secondary: linear-gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%);
+  /* Secondary navy gradient with black accents */
+  --bg-tertiary: rgb(15, 13, 24, 0.01);
+  /* Very light navy background for tertiary elements */
+
+  /* Background Colors - Solid colors for specific elements */
+  /* Text Colors - All text elements with high contrast white */
+  --text-primary: #dfe2e5;
+  /* Primary text, headings, and important text - slightly off-white for contrast */
+  /* Main headings, important text - pure white for maximum contrast */
+  --text-secondary: #e5e7eb;
+  /* Secondary text, descriptions - slightly off-white */
+  --text-tertiary: #9ca3af;
+  /* Tertiary text, captions - light gray */
+  --text-disabled: #6b7280;
+  /* Disabled text - medium gray */
+  --text-inverse: #060511;
+  /* Text on light backgrounds */
+  --text-link: #60a5fa;
+  /* Links and clickable text - blue accent */
+  --text-link-hover: #498c63;
+  /* Hovered links - darker blue */
+
+  /* Card and Panel Backgrounds - Dark navy containers */
+  --card-bg: rgb(15, 13, 24, 0.9);
+  /* Main cards and containers - dark navy */
+  --card-bg-secondary: rgba(26, 31, 46, 0.8);
+  /* Secondary cards - slightly lighter */
+  --card-bg-tertiary: rgba(31, 41, 55, 0.7);
+  /* Tertiary cards - even lighter */
+  --card-bg-hover: rgba(55, 65, 81, 0.8);
+  /* Hovered cards - lighter on hover */
+
+  /* Border Colors - Subtle rounded borders like EdgeRack */
+  --card-border-user: var(--card-border-custom, rgb(12, 8, 38, 0.8));
+  /* User-customizable border - can be overridden with --card-border-custom */
+  --card-border: var(--card-border-user);
+  /* Main borders - uses user-customizable variable for .card, .form-input, .data-table selectors */
+  --card-border-hover: rgba(156, 163, 175, 0.6);
+  /* Hovered borders - more visible gray with 60% opacity for :hover states on interactive elements */
+  --card-border-focus: rgba(96, 165, 250, 0.8);
+  /* Focused borders - blue accent with 80% opacity for :focus states on form inputs and buttons */
+  --card-border-subtle: rgba(55, 65, 81, 0.3);
+  /* Subtle borders - very light gray with 30% opacity for secondary elements and dividers */
+
+  /* Navigation Elements - Match header styling */
+  --nav-bg: rgba(10, 14, 26, 0.95);
+  /* Navigation background - same as main bg */
+  --nav-border: rgba(75, 85, 99, 0.3);
+  /* Navigation borders - subtle gray with 30% opacity for .nav-container border-bottom and .nav-dropdown borders */
+  --nav-text: #ffffff;
+  /* Navigation text - white */
+  --nav-text-hover: #238623;
+  /* Hovered navigation text - blue */
+  --nav-link-active: rgba(96, 165, 250, 0.2);
+  /* Active navigation background */
+
+  /* Accent Colors - Blue theme like EdgeRack interface */
+  --accent: #3b82f6;
+  /* Primary accent color - blue */
+  --accent-hover: #2563eb;
+  /* Hovered accent color - darker blue */
+  --accent-muted: rgba(59, 130, 246, 0.3);
+  /* Muted accent - translucent blue */
+  --accent-background: rgba(59, 130, 246, 0.1);
+  /* Accent backgrounds - very light blue */
+
+  /* Status Colors - Match interface indicators */
+  --status-success: #22c55e;
+  /* Success states - green like Power button */
+  --status-error: #ef4444;
+  /* Error states - red */
+  --status-warning: #f59e0b;
+  /* Warning states - amber */
+  --status-info: #3b82f6;
+  /* Info states - blue */
+  --status-neutral: #9ca3af;
+  /* Neutral states - gray */
+
+  /* Interactive Elements - Modern button styling */
+  --button-primary-bg: #3b82f6;
+  --button-primary-hover: #2563eb;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: rgba(75, 85, 99, 0.4);
+  /* Secondary button borders - subtle gray with 40% opacity for .btn-secondary default state */
+  --button-secondary-hover: rgba(55, 65, 81, 0.5);
+  /* Secondary button hover background - darker gray with 50% opacity for .btn-secondary:hover */
+  --button-danger-bg: #ef4444;
+  /* Danger button background - red */
+  --button-danger-hover: #dc2626;
+
+  /* Form Elements - Dark input fields */
+  --input-bg: rgba(31, 41, 55, 0.8);
+  --input-border: rgba(75, 85, 99, 0.4);
+  /* Input default borders - subtle gray with 40% opacity for .form-input, .form-textarea, .form-select default state */
+  --input-focus-bg: rgba(15, 20, 25, 0.9);
+  /* Input focus backgrounds - dark gray with 90% opacity for .form-input:focus, .form-textarea:focus, .form-select:focus states */
+  --input-focus-border: #3b82f6;
+  /* Input focus borders - solid blue color for .form-input:focus, .form-textarea:focus, .form-select:focus states */
+  --input-placeholder: rgba(156, 163, 175, 0.6);
+
+  /* Shadow Colors - Deep shadows for depth */
+  --shadow-color: rgba(0, 0, 0, 0.8);
+  /* Main shadows - dark gray with 80% opacity for .card, .panel, .data-table, .nav-container, .modal-content, .alert selectors */
+  --shadow-subtle: rgba(0, 0, 0, 0.4);
+  /* Subtle shadows - lighter gray with 40% opacity for .card-secondary, .card-tertiary, .card-compact, .btn-primary, .btn-secondary selectors */
+  --shadow-accent: rgba(59, 130, 246, 0.3);
+  /* Accent shadows - translucent blue with 30% opacity for .btn-primary:hover, .btn-primary:active, .btn-primary:disabled selectors */
+
+  /* Panel Specific - Card-like containers */
+  --section-bg: rgba(15, 20, 25, 0.9);
+  /* Section backgrounds - dark gray with 90% opacity for .section-container */
+  --section-border: rgba(75, 85, 99, 0.3);
+  --panel-bg: rgba(10, 14, 26, 0.95);
+  --panel-border: rgba(75, 85, 99, 0.4);
+
+  /* Grid and Table Elements - Data display styling */
+  --grid-bg: rgba(15, 20, 25, 0.9);
+  --grid-border: rgba(75, 85, 99, 0.4);
+  --grid-hover: rgba(55, 65, 81, 0.8);
+  --table-header-bg: rgba(31, 41, 55, 0.9);
+  --table-row-even: rgba(55, 65, 81, 0.3);
+  --table-row-odd: transparent;
+  --table-row-hover: rgba(75, 85, 99, 0.5);
+
+  /* Scrollbar Colors - Subtle scrollbars */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(75, 85, 99, 0.5);
+  --scrollbar-thumb-hover: #3b82f6;
+}
+
+/* Light Theme Variables */
+.theme-light {
+  /* Background Gradients */
+  --bg-gradient: linear-gradient(135deg, #f3f4f6 0%, #ffffff 25%, #e5e7eb 50%, #ffffff 75%, #f9fafb 100%);
+  --bg-secondary: linear-gradient(135deg, #e5e7eb 0%, #ffffff 50%, #f3f4f6 100%);
+  --bg-tertiary: rgba(243, 244, 246, 0.95);
+
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --text-disabled: #94a3b8;
+  --text-inverse: #ffffff;
+  --text-link: #3b82f6;
+  --text-link-hover: #2563eb;
+
+  /* Card and Panel Backgrounds */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-bg-secondary: rgba(248, 250, 252, 0.9);
+  --card-bg-tertiary: rgba(241, 245, 249, 0.8);
+  --card-bg-hover: rgba(255, 255, 255, 1);
+
+  /* Border Colors */
+  --card-border-user: var(--card-border-custom, rgba(226, 232, 240, 0.6));
+  /* User-customizable border - can be overridden with --card-border-custom */
+  --card-border: var(--card-border-user);
+  --card-border-hover: rgba(148, 163, 184, 0.4);
+  --card-border-focus: rgba(59, 130, 246, 0.6);
+  --card-border-subtle: rgba(241, 245, 249, 0.4);
+
+  /* Navigation Elements */
+  --nav-bg: rgba(255, 255, 255, 0.98);
+  --nav-border: rgba(226, 232, 240, 0.5);
+  --nav-text: #0f172a;
+  --nav-text-hover: #3b82f6;
+  --nav-link-active: rgba(59, 130, 246, 0.08);
+
+  /* Accent Colors */
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --accent-muted: rgba(59, 130, 246, 0.2);
+  --accent-background: rgba(59, 130, 246, 0.06);
+
+  /* Status Colors */
+  --status-success: #16a34a;
+  --status-error: #dc2626;
+  --status-warning: #ea580c;
+  --status-info: #0ea5e9;
+  --status-neutral: #64748b;
+
+  /* Interactive Elements */
+  --button-primary-bg: var(--accent);
+  --button-primary-hover: var(--accent-hover);
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: rgba(226, 232, 240, 0.6);
+  --button-secondary-hover: rgba(248, 250, 252, 0.8);
+  --button-danger-bg: #dc2626;
+  --button-danger-hover: #b91c1c;
+
+  /* Form Elements */
+  --input-bg: rgba(255, 255, 255, 1);
+  --input-border: rgba(226, 232, 240, 0.7);
+  --input-focus-bg: rgba(255, 255, 255, 1);
+  --input-focus-border: var(--accent);
+  --input-placeholder: rgba(100, 116, 139, 0.5);
+
+  /* Shadow Colors */
+  --shadow-color: rgba(15, 23, 42, 0.08);
+  --shadow-subtle: rgba(15, 23, 42, 0.04);
+  --shadow-accent: rgba(59, 130, 246, 0.15);
+
+  /* Panel Specific */
+  --section-bg: rgba(248, 250, 252, 0.8);
+  --section-border: rgba(226, 232, 240, 0.4);
+  --panel-bg: rgba(255, 255, 255, 0.98);
+  --panel-border: rgba(226, 232, 240, 0.5);
+
+  /* Grid and Table Elements */
+  --grid-bg: rgba(255, 255, 255, 0.95);
+  --grid-border: rgba(226, 232, 240, 0.6);
+  --grid-hover: rgba(248, 250, 252, 0.9);
+  --table-header-bg: rgba(248, 250, 252, 0.95);
+  --table-row-even: rgba(248, 250, 252, 0.3);
+  --table-row-odd: transparent;
+  --table-row-hover: rgba(241, 245, 249, 0.6);
+
+  /* Scrollbar Colors */
+  --scrollbar-track: rgba(241, 245, 249, 0.4);
+  --scrollbar-thumb: rgba(148, 163, 184, 0.4);
+  --scrollbar-thumb-hover: var(--accent);
+}
+
+/* Dark Theme Variables */
+.theme-dark {
+  /* Background Gradients */
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --bg-secondary: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  --bg-tertiary: rgba(15, 23, 42, 0.95);
+
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-disabled: #64748b;
+  --text-inverse: #0f172a;
+  --text-link: #60a5fa;
+  --text-link-hover: #3b82f6;
+
+  /* Card and Panel Backgrounds */
+  --card-bg: rgb(30, 37, 51, 0.9);
+  --card-bg-secondary: rgba(30, 41, 59, 0.85);
+  --card-bg-tertiary: rgba(51, 65, 85, 0.8);
+  --card-bg-hover: rgba(30, 41, 59, 0.95);
+
+  /* Border Colors */
+  --card-border-user: var(--card-border-custom, rgb(255, 255, 255, 0.1));
+  /* User-customizable border - can be overridden with --card-border-custom */
+  --card-border: var(--card-border-user);
+  --card-border-hover: rgba(148, 163, 184, 0.4);
+  --card-border-focus: rgba(96, 165, 250, 0.6);
+  --card-border-subtle: rgba(148, 163, 184, 0.1);
+
+  /* Navigation Elements */
+  --nav-bg: rgb(6, 5, 17, 0.95);
+  --nav-border: rgba(148, 163, 184, 0.2);
+  --nav-text: #f8fafc;
+  --nav-text-hover: #60a5fa;
+  --nav-link-active: rgba(96, 165, 250, 0.15);
+
+  /* Accent Colors */
+  --accent: #60a5fa;
+  --accent-hover: #3b82f6;
+  --accent-muted: rgba(96, 165, 250, 0.3);
+  --accent-background: rgba(96, 165, 250, 0.1);
+
+  /* Status Colors */
+  --status-success: #34d399;
+  --status-error: #f87171;
+  --status-warning: #fbbf24;
+  --status-info: #38bdf8;
+  --status-neutral: #9ca3af;
+
+  /* Interactive Elements */
+  --button-primary-bg: var(--accent);
+  --button-primary-hover: var(--accent-hover);
+  --button-primary-text: #0f172a;
+  --button-secondary-bg: transparent;
+  --button-secondary-border: var(--card-border);
+  --button-secondary-hover: rgba(51, 65, 85, 0.5);
+  --button-danger-bg: #f87171;
+  --button-danger-hover: #ef4444;
+
+  /* Form Elements */
+  --input-bg: rgba(30, 41, 59, 0.8);
+  --input-border: rgba(30, 41, 59, 0.8);
+  --input-focus-bg: rgba(15, 23, 42, 0.9);
+  --input-focus-border: var(--accent);
+  --input-placeholder: rgba(203, 213, 225, 0.6);
+
+  /* Shadow Colors */
+  --shadow-color: rgba(0, 0, 0, 0.7);
+  --shadow-subtle: rgba(0, 0, 0, 0.4);
+  --shadow-accent: rgb(255, 255, 255, 0.1);
+
+  /* Panel Specific */
+  --section-bg: rgba(30, 41, 59, 0.9);
+  --section-border: rgb(2, 102, 242, 0.15);
+  --panel-bg: rgba(15, 23, 42, 0.95);
+  --panel-border: rgba(148, 163, 184, 0.3);
+
+  /* Grid and Table Elements */
+  --grid-bg: var(--card-bg);
+  --grid-border: var(--card-border);
+  --grid-hover: var(--card-bg-hover);
+  --table-header-bg: rgba(51, 65, 85, 0.9);
+  --table-row-even: rgba(30, 41, 59, 0.5);
+  --table-row-odd: transparent;
+  --table-row-hover: rgba(51, 65, 85, 0.7);
+
+  /* Scrollbar Colors */
+  --scrollbar-track: rgba(30, 41, 59, 0.3);
+  --scrollbar-thumb: var(--card-border);
+  --scrollbar-thumb-hover: var(--accent);
+}
+
+/* ==========================================================================
+   BASE HTML ELEMENTS
+   ========================================================================== */
+
+/* Root HTML and Body Elements */
+html,
+body {
+  @apply font-sans min-h-screen;
+  color: var(--text-primary);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Font Family Override for Flowbite Components */
+.fwb-component {
+  font-family: 'Lato', sans-serif !important;
+}
+
+/* ==========================================================================
+   CARD AND CONTAINER ELEMENTS
+   ========================================================================== */
+
+/* Main Card Component - Primary containers for content */
+.card {
+  @apply border p-6 shadow-lg transition-all duration-300;
+  background: var(--card-bg);
+  border: 0.8px solid var(--card-border);
+  border-radius: 0.8rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+/* Card Hover State - Interactive feedback */
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0px 0px var(--shadow-color);
+  border: 1.8px solid var(--card-border-hover);
+  background: var(--card-bg-hover);
+}
+
+/* Secondary Card Variant - Less prominent containers */
+.card-secondary {
+  @apply border p-4 shadow-sm transition-all duration-300;
+  background: var(--card-bg-secondary);
+  border: 1.8px solid var(--card-border-subtle);
+  border-radius: 0.8rem;
+  backdrop-filter: blur(8px);
+}
+
+/* Tertiary Card Variant - Minimal containers */
+.card-tertiary {
+  @apply border p-3 transition-all duration-300;
+  background: var(--card-bg-tertiary);
+  border: 1.8px solid var(--card-border-subtle);
+  border-radius: 0.8rem;
+}
+
+/* Compact Card Variant - Space-efficient containers */
+.card-compact {
+  @apply border p-2 shadow-sm transition-all duration-300;
+  background: var(--card-bg);
+  border: 1.8px solid var(--card-border);
+  border-radius: 0.8rem;
+}
+
+/* ==========================================================================
+   NAVIGATION ELEMENTS
+   ========================================================================== */
+
+/* Main Navigation Container */
+.nav-container {
+  @apply border-b transition-all duration-300;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+/* Navigation Brand/Logo */
+.nav-brand {
+  @apply font-bold text-lg transition-colors duration-200;
+  color: var(--nav-text);
+}
+
+.nav-brand:hover {
+  color: var(--nav-text-hover);
+}
+
+/* Navigation Links */
+.nav-link {
+  @apply px-4 py-2 transition-all duration-200 font-medium;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+.nav-link:hover {
+  color: var(--nav-text-hover);
+  background: var(--accent-background);
+  border: 1px solid var(--accent-muted);
+  border-radius: 0.4rem;
+}
+
+/* Active Navigation Link */
+.nav-link.active,
+.router-link-exact-active {
+  color: var(--nav-text);
+  background: var(--nav-link-active);
+  border: 1px solid var(--accent-muted);
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   BUTTON ELEMENTS
+   ========================================================================== */
+
+/* Primary Action Buttons */
+.btn-primary {
+  @apply px-4 py-2 font-medium transition-all duration-200 shadow-sm;
+  background: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  border: none;
+  border-radius: 0.4rem;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: var(--button-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--shadow-accent);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Secondary Buttons */
+.btn-secondary {
+  @apply px-4 py-2 font-medium transition-all duration-200 border;
+  background: var(--button-secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--button-secondary-border);
+  border-radius: 0.4rem;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background: var(--button-secondary-hover);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   FORM ELEMENTS
+   ========================================================================== */
+
+/* Text Input Fields */
+.form-input {
+  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
+  background: var(--input-bg);
+  border: 1.8px solid var(--input-border);
+  border-radius: 0.8rem;
+  color: var(--text-primary);
+}
+
+.form-input::placeholder {
+  color: var(--input-placeholder);
+  opacity: 1;
+}
+
+.form-input:focus {
+  outline: none;
+  border: 1.8px solid var(--input-focus-border);
+  box-shadow: 0 0 0 2px var(--accent-background);
+  background: var(--input-focus-bg);
+}
+
+/* ==========================================================================
+   GRID AND TABLE ELEMENTS
+   ========================================================================== */
+
+/* Custom Grid Layout */
+.custom-grid {
+  @apply m-auto grid grid-cols-1 gap-6 border-none p-6 min-w-full min-h-full text-center items-center content-center justify-center;
+  background: var(--grid-bg);
+  box-shadow: 0 4px 12px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  border-radius: 0.8rem;
+  border: 1.8px solid var(--grid-border);
+}
+
+.custom-grid:hover {
+  background: var(--grid-hover);
+  border-color: var(--card-border-hover);
+}
+
+/* ==========================================================================
+   THEME OVERRIDES
+   ========================================================================== */
+
+/* Super Dark Theme Overrides */
+.theme-super-dark .custom-grid,
+.theme-super-dark .card,
+.theme-super-dark .nav-container,
+.theme-super-dark .form-input {
+  background: #060511 !important;
+  color: #ffffff !important;
+  border-color: rgba(75, 85, 99, 0.4) !important;
+  border-radius: 0.8rem !important;
+}
+
+.theme-super-dark .card {
+  border: 3px solid #ffffff !important;
+}
+
+.theme-super-dark .card:hover {
+  border: 1px solid var(--card-border-hover) !important;
+}
+
+/* Dark Theme Overrides */
+.theme-dark .custom-grid,
+.theme-dark .card,
+.theme-dark .nav-container,
+.theme-dark .form-input {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--card-border) !important;
+  border-radius: 0.8rem !important;
+}
+
+/* Light Theme Overrides */
+.theme-light .custom-grid,
+.theme-light .card,
+.theme-light .nav-container,
+.theme-light .form-input {
+  background: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--card-border) !important;
+  border-radius: 0.8rem !important;
+}
+
+/* ==========================================================================
+   SCROLLBAR CUSTOMIZATION
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
+}
