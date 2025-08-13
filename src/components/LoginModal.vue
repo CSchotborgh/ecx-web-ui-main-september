@@ -86,4 +86,5 @@ watch(show, (newVal) => {
 });
   
 defineExpose({ show });
+  
 </script>
