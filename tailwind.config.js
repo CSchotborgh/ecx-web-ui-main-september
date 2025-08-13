@@ -73,6 +73,16 @@ export default {
       backdropBlur: {
         xs: '2px',
       },
+      borderRadius: {
+        'sm': '0.125rem',
+        DEFAULT: '0.125rem',
+        'md': '0.125rem',
+        'lg': '0.125rem',
+        'xl': '0.125rem',
+        '2xl': '0.125rem',
+        '3xl': '0.125rem',
+        'full': '9999px',
+      },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-in-out',
         'slide-up': 'slideUp 0.3s ease-out',
