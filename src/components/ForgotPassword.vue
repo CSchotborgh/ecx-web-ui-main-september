@@ -1,9 +1,8 @@
 <!-- src/components/ForgotPassword.vue -->
 <template>
-  <div v-if="show" id="authentication-modal" tabindex="-1" aria-hidden="true" class="modal-overlay overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 flex justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-    <div class="relative p-4 w-full max-w-md max-h-full">
+  <div v-if="show" class="modal">
+    <div class="modal-content">
       <!-- Modal content -->
-      <div class="modal-content relative rounded-lg shadow">
         <!-- Modal header -->
         <div class="modal-header flex items-center justify-between p-4 md:p-5 border-b rounded-t">
           <h3 class="text-xl font-semibold text-primary">
@@ -237,3 +236,39 @@ watch(show, (newVal) => {
 
 defineExpose({ show });
 </script>
+
+<style scoped>
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.modal-content {
+  background-color: white; /* Ensure this is solid white */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+</style>
