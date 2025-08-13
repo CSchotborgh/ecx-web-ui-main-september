@@ -32,15 +32,15 @@
   --card-foreground: hsl(213, 31%, 91%);
   --border: hsl(250, 33%, 17%);
   --input: hsl(244, 33%, 17%);
-  --primary: hsl(217, 91%, 59%);
-  --primary-foreground: hsl(238, 45%, 12%);
+  --primary: hsl(256, 89%, 4%);
+  --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(242, 33%, 17%);
   --secondary-foreground: hsl(213, 31%, 91%);
   --accent: hsl(244, 33%, 17%);
   --accent-foreground: hsl(213, 31%, 91%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(213, 31%, 91%);
-  --ring: hsl(217, 91%, 59%);
+  --ring: hsl(256, 89%, 4%);
   --radius: 0.5rem;
 
   /* EDGERACK Replit-Style Theme Variables */
@@ -71,15 +71,15 @@
   }
   
   .nav-link {
-    @apply px-4 py-2 text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium;
+    @apply px-4 py-2 text-gray-300 hover:text-purple-400 transition-colors duration-200 font-medium;
   }
   
   .nav-link.router-link-active {
-    @apply text-blue-400 bg-blue-400/10 rounded-lg;
+    @apply text-purple-400 bg-purple-400/10 rounded-lg;
   }
   
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+    @apply bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
   }
   
   .btn-secondary {
