@@ -1077,11 +1077,12 @@ onMounted(async () => {
         suppress_toasts.value = false;
     }, 1000);
 
-    try {
-        await reportVersion();
-    } catch (error){
-        console.error('Failed to report version:', error);
-    }
+    // Version reporting disabled for development
+    // try {
+    //     await reportVersion();
+    // } catch (error){
+    //     console.error('Failed to report version:', error);
+    // }
 
     await retrieveSWRevision();
     await retrieveEventLogs();
