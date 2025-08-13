@@ -1,886 +1,537 @@
+/**
+ * EDGERACK Cooling Unit Control System - Global Styles
+ * 
+ * This file defines the complete visual design system for the EDGERACK cooling unit
+ * monitoring interface. It establishes the industrial aesthetic with the Lato font,
+ * dark theme color palette, and responsive design patterns optimized for data center
+ * environments and industrial monitoring displays.
+ */
 
+/* Import Lato font family for professional industrial interface */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;600;700;900&display=swap');
+
+/* Import Tailwind CSS framework layers */
 @tailwind base;
+/* Reset styles and base HTML element styles */
 @tailwind components;
+/* Reusable component classes */
 @tailwind utilities;
+/* Utility classes for rapid development */
 
-@font-face {
-  font-family: 'Lato';
-  src: url('/fonts/Lato-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* ==========================================================================
-   THEME VARIABLE DEFINITIONS
-   ========================================================================== */
-
-/* Default/Super Dark Theme Variables - EdgeRack Inspired */
+/**
+ * Light Theme Color Variables
+ * 
+ * Default color scheme for light mode (not used in EDGERACK, but required for shadcn/ui)
+ * These colors provide the foundation for the component system.
+ */
 :root {
-  /* Background Gradients - Main page backgrounds with deep navy/black theme */
-  --bg-gradient: linear-gradient(45deg, #0c0826 100%, #060511 25%, #060511 50%, #141028 100%);
-  /* Deep navy gradient with black accents */
-  --bg-secondary: linear-gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%);
-  /* Secondary navy gradient with black accents */
-  --bg-tertiary: rgb(15, 13, 24, 0.01);
-  /* Very light navy background for tertiary elements */
-
-  /* Background Colors - Solid colors for specific elements */
-  /* Text Colors - All text elements with high contrast white */
-  --text-primary: #dfe2e5;
-  /* Primary text, headings, and important text - slightly off-white for contrast */
-  /* Main headings, important text - pure white for maximum contrast */
-  --text-secondary: #e5e7eb;
-  /* Secondary text, descriptions - slightly off-white */
-  --text-tertiary: #9ca3af;
-  /* Tertiary text, captions - light gray */
-  --text-disabled: #6b7280;
-  /* Disabled text - medium gray */
-  --text-inverse: #060511;
-  /* Text on light backgrounds */
-  --text-link: #60a5fa;
-  /* Links and clickable text - blue accent */
-  --text-link-hover: #498c63;
-  /* Hovered links - darker blue */
-
-  /* Card and Panel Backgrounds - Dark navy containers */
-  --card-bg: rgb(15, 13, 24, 0.9);
-  /* Main cards and containers - dark navy */
-  --card-bg-secondary: rgba(26, 31, 46, 0.8);
-  /* Secondary cards - slightly lighter */
-  --card-bg-tertiary: rgba(31, 41, 55, 0.7);
-  /* Tertiary cards - even lighter */
-  --card-bg-hover: rgba(55, 65, 81, 0.8);
-  /* Hovered cards - lighter on hover */
-
-  /* Border Colors - Subtle rounded borders like EdgeRack */
-  --card-border-user: var(--card-border-custom, rgb(12, 8, 38, 0.8));
-  /* User-customizable border - can be overridden with --card-border-custom */
-  --card-border: var(--card-border-user);
-  /* Main borders - uses user-customizable variable for .card, .form-input, .data-table selectors */
-  --card-border-hover: rgba(156, 163, 175, 0.6);
-  /* Hovered borders - more visible gray with 60% opacity for :hover states on interactive elements */
-  --card-border-focus: rgba(96, 165, 250, 0.8);
-  /* Focused borders - blue accent with 80% opacity for :focus states on form inputs and buttons */
-  --card-border-subtle: rgba(55, 65, 81, 0.3);
-  /* Subtle borders - very light gray with 30% opacity for secondary elements and dividers */
-
-  /* Navigation Elements - Match header styling */
-  --nav-bg: rgba(10, 14, 26, 0.95);
-  /* Navigation background - same as main bg */
-  --nav-border: rgba(75, 85, 99, 0.3);
-  /* Navigation borders - subtle gray with 30% opacity for .nav-container border-bottom and .nav-dropdown borders */
-  --nav-text: #ffffff;
-  /* Navigation text - white */
-  --nav-text-hover: #238623;
-  /* Hovered navigation text - blue */
-  --nav-link-active: rgba(96, 165, 250, 0.2);
-  /* Active navigation background */
-
-  /* Accent Colors - Blue theme like EdgeRack interface */
-  --accent: #3b82f6;
-  /* Primary accent color - blue */
-  --accent-hover: #2563eb;
-  /* Hovered accent color - darker blue */
-  --accent-muted: rgba(59, 130, 246, 0.3);
-  /* Muted accent - translucent blue */
-  --accent-background: rgba(59, 130, 246, 0.1);
-  /* Accent backgrounds - very light blue */
-
-  /* Status Colors - Match interface indicators */
-  --status-success: #22c55e;
-  /* Success states - green like Power button */
-  --status-error: #ef4444;
-  /* Error states - red */
-  --status-warning: #f59e0b;
-  /* Warning states - amber */
-  --status-info: #3b82f6;
-  /* Info states - blue */
-  --status-neutral: #9ca3af;
-  /* Neutral states - gray */
-
-  /* Interactive Elements - Modern button styling */
-  --button-primary-bg: #3b82f6;
-  --button-primary-hover: #2563eb;
-  --button-primary-text: #ffffff;
-  --button-secondary-bg: transparent;
-  --button-secondary-border: rgba(75, 85, 99, 0.4);
-  /* Secondary button borders - subtle gray with 40% opacity for .btn-secondary default state */
-  --button-secondary-hover: rgba(55, 65, 81, 0.5);
-  /* Secondary button hover background - darker gray with 50% opacity for .btn-secondary:hover */
-  --button-danger-bg: #ef4444;
-  /* Danger button background - red */
-  --button-danger-hover: #dc2626;
-
-  /* Form Elements - Dark input fields */
-  --input-bg: rgba(31, 41, 55, 0.8);
-  --input-border: rgba(75, 85, 99, 0.4);
-  /* Input default borders - subtle gray with 40% opacity for .form-input, .form-textarea, .form-select default state */
-  --input-focus-bg: rgba(15, 20, 25, 0.9);
-  /* Input focus backgrounds - dark gray with 90% opacity for .form-input:focus, .form-textarea:focus, .form-select:focus states */
-  --input-focus-border: #3b82f6;
-  /* Input focus borders - solid blue color for .form-input:focus, .form-textarea:focus, .form-select:focus states */
-  --input-placeholder: rgba(156, 163, 175, 0.6);
-
-  /* Shadow Colors - Deep shadows for depth */
-  --shadow-color: rgba(0, 0, 0, 0.8);
-  /* Main shadows - dark gray with 80% opacity for .card, .panel, .data-table, .nav-container, .modal-content, .alert selectors */
-  --shadow-subtle: rgba(0, 0, 0, 0.4);
-  /* Subtle shadows - lighter gray with 40% opacity for .card-secondary, .card-tertiary, .card-compact, .btn-primary, .btn-secondary selectors */
-  --shadow-accent: rgba(59, 130, 246, 0.3);
-  /* Accent shadows - translucent blue with 30% opacity for .btn-primary:hover, .btn-primary:active, .btn-primary:disabled selectors */
-
-  /* Panel Specific - Card-like containers */
-  --section-bg: rgba(15, 20, 25, 0.9);
-  /* Section backgrounds - dark gray with 90% opacity for .section-container */
-  --section-border: rgba(75, 85, 99, 0.3);
-  --panel-bg: rgba(10, 14, 26, 0.95);
-  --panel-border: rgba(75, 85, 99, 0.4);
-
-  /* Grid and Table Elements - Data display styling */
-  --grid-bg: rgba(15, 20, 25, 0.9);
-  --grid-border: rgba(75, 85, 99, 0.4);
-  --grid-hover: rgba(55, 65, 81, 0.8);
-  --table-header-bg: rgba(31, 41, 55, 0.9);
-  --table-row-even: rgba(55, 65, 81, 0.3);
-  --table-row-odd: transparent;
-  --table-row-hover: rgba(75, 85, 99, 0.5);
-
-  /* Scrollbar Colors - Subtle scrollbars */
-  --scrollbar-track: transparent;
-  --scrollbar-thumb: rgba(75, 85, 99, 0.5);
-  --scrollbar-thumb-hover: #3b82f6;
-}
-
-/* Light Theme Variables */
-.theme-light {
-  /* Background Gradients */
-  --bg-gradient: linear-gradient(135deg, #f3f4f6 0%, #ffffff 25%, #e5e7eb 50%, #ffffff 75%, #f9fafb 100%);
-  --bg-secondary: linear-gradient(135deg, #e5e7eb 0%, #ffffff 50%, #f3f4f6 100%);
-  --bg-tertiary: rgba(243, 244, 246, 0.95);
-
-  /* Text Colors */
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-tertiary: #64748b;
-  --text-disabled: #94a3b8;
-  --text-inverse: #ffffff;
-  --text-link: #3b82f6;
-  --text-link-hover: #2563eb;
-
-  /* Card and Panel Backgrounds */
-  --card-bg: rgba(255, 255, 255, 0.95);
-  --card-bg-secondary: rgba(248, 250, 252, 0.9);
-  --card-bg-tertiary: rgba(241, 245, 249, 0.8);
-  --card-bg-hover: rgba(255, 255, 255, 1);
-
-  /* Border Colors */
-  --card-border-user: var(--card-border-custom, rgba(226, 232, 240, 0.6));
-  /* User-customizable border - can be overridden with --card-border-custom */
-  --card-border: var(--card-border-user);
-  --card-border-hover: rgba(148, 163, 184, 0.4);
-  --card-border-focus: rgba(59, 130, 246, 0.6);
-  --card-border-subtle: rgba(241, 245, 249, 0.4);
-
-  /* Navigation Elements */
-  --nav-bg: rgba(255, 255, 255, 0.98);
-  --nav-border: rgba(226, 232, 240, 0.5);
-  --nav-text: #0f172a;
-  --nav-text-hover: #3b82f6;
-  --nav-link-active: rgba(59, 130, 246, 0.08);
-
-  /* Accent Colors */
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --accent-muted: rgba(59, 130, 246, 0.2);
-  --accent-background: rgba(59, 130, 246, 0.06);
-
-  /* Status Colors */
-  --status-success: #16a34a;
-  --status-error: #dc2626;
-  --status-warning: #ea580c;
-  --status-info: #0ea5e9;
-  --status-neutral: #64748b;
-
-  /* Interactive Elements */
-  --button-primary-bg: var(--accent);
-  --button-primary-hover: var(--accent-hover);
-  --button-primary-text: #ffffff;
-  --button-secondary-bg: transparent;
-  --button-secondary-border: rgba(226, 232, 240, 0.6);
-  --button-secondary-hover: rgba(248, 250, 252, 0.8);
-  --button-danger-bg: #dc2626;
-  --button-danger-hover: #b91c1c;
-
-  /* Form Elements */
-  --input-bg: rgba(255, 255, 255, 1);
-  --input-border: rgba(226, 232, 240, 0.7);
-  --input-focus-bg: rgba(255, 255, 255, 1);
-  --input-focus-border: var(--accent);
-  --input-placeholder: rgba(100, 116, 139, 0.5);
-
-  /* Shadow Colors */
-  --shadow-color: rgba(15, 23, 42, 0.08);
-  --shadow-subtle: rgba(15, 23, 42, 0.04);
-  --shadow-accent: rgba(59, 130, 246, 0.15);
-
-  /* Panel Specific */
-  --section-bg: rgba(248, 250, 252, 0.8);
-  --section-border: rgba(226, 232, 240, 0.4);
-  --panel-bg: rgba(255, 255, 255, 0.98);
-  --panel-border: rgba(226, 232, 240, 0.5);
-
-  /* Grid and Table Elements */
-  --grid-bg: rgba(255, 255, 255, 0.95);
-  --grid-border: rgba(226, 232, 240, 0.6);
-  --grid-hover: rgba(248, 250, 252, 0.9);
-  --table-header-bg: rgba(248, 250, 252, 0.95);
-  --table-row-even: rgba(248, 250, 252, 0.3);
-  --table-row-odd: transparent;
-  --table-row-hover: rgba(241, 245, 249, 0.6);
-
-  /* Scrollbar Colors */
-  --scrollbar-track: rgba(241, 245, 249, 0.4);
-  --scrollbar-thumb: rgba(148, 163, 184, 0.4);
-  --scrollbar-thumb-hover: var(--accent);
-}
-
-/* Dark Theme Variables */
-.theme-dark {
-  /* Background Gradients */
-  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-  --bg-secondary: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
-  --bg-tertiary: rgba(15, 23, 42, 0.95);
-
-  /* Text Colors */
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-tertiary: #94a3b8;
-  --text-disabled: #64748b;
-  --text-inverse: #0f172a;
-  --text-link: #60a5fa;
-  --text-link-hover: #3b82f6;
-
-  /* Card and Panel Backgrounds */
-  --card-bg: rgb(30, 37, 51, 0.9);
-  --card-bg-secondary: rgba(30, 41, 59, 0.85);
-  --card-bg-tertiary: rgba(51, 65, 85, 0.8);
-  --card-bg-hover: rgba(30, 41, 59, 0.95);
-
-  /* Border Colors */
-  --card-border-user: var(--card-border-custom, rgb(255, 255, 255, 0.1));
-  /* User-customizable border - can be overridden with --card-border-custom */
-  --card-border: var(--card-border-user);
-  --card-border-hover: rgba(148, 163, 184, 0.4);
-  --card-border-focus: rgba(96, 165, 250, 0.6);
-  --card-border-subtle: rgba(148, 163, 184, 0.1);
-
-  /* Navigation Elements */
-  --nav-bg: rgb(6, 5, 17, 0.95);
-  --nav-border: rgba(148, 163, 184, 0.2);
-  --nav-text: #f8fafc;
-  --nav-text-hover: #60a5fa;
-  --nav-link-active: rgba(96, 165, 250, 0.15);
-
-  /* Accent Colors */
-  --accent: #60a5fa;
-  --accent-hover: #3b82f6;
-  --accent-muted: rgba(96, 165, 250, 0.3);
-  --accent-background: rgba(96, 165, 250, 0.1);
-
-  /* Status Colors */
-  --status-success: #34d399;
-  --status-error: #f87171;
-  --status-warning: #fbbf24;
-  --status-info: #38bdf8;
-  --status-neutral: #9ca3af;
-
-  /* Interactive Elements */
-  --button-primary-bg: var(--accent);
-  --button-primary-hover: var(--accent-hover);
-  --button-primary-text: #0f172a;
-  --button-secondary-bg: transparent;
-  --button-secondary-border: var(--card-border);
-  --button-secondary-hover: rgba(51, 65, 85, 0.5);
-  --button-danger-bg: #f87171;
-  --button-danger-hover: #ef4444;
-
-  /* Form Elements */
-  --input-bg: rgba(30, 41, 59, 0.8);
-  --input-border: rgba(30, 41, 59, 0.8);
-  --input-focus-bg: rgba(15, 23, 42, 0.9);
-  --input-focus-border: var(--accent);
-  --input-placeholder: rgba(203, 213, 225, 0.6);
-
-  /* Shadow Colors */
-  --shadow-color: rgba(0, 0, 0, 0.7);
-  --shadow-subtle: rgba(0, 0, 0, 0.4);
-  --shadow-accent: rgb(255, 255, 255, 0.1);
-
-  /* Panel Specific */
-  --section-bg: rgba(30, 41, 59, 0.9);
-  --section-border: rgb(2, 102, 242, 0.15);
-  --panel-bg: rgba(15, 23, 42, 0.95);
-  --panel-border: rgba(148, 163, 184, 0.3);
-
-  /* Grid and Table Elements */
-  --grid-bg: var(--card-bg);
-  --grid-border: var(--card-border);
-  --grid-hover: var(--card-bg-hover);
-  --table-header-bg: rgba(51, 65, 85, 0.9);
-  --table-row-even: rgba(30, 41, 59, 0.5);
-  --table-row-odd: transparent;
-  --table-row-hover: rgba(51, 65, 85, 0.7);
-
-  /* Scrollbar Colors */
-  --scrollbar-track: rgba(30, 41, 59, 0.3);
-  --scrollbar-thumb: var(--card-border);
-  --scrollbar-thumb-hover: var(--accent);
-}
-
-/* ==========================================================================
-   BASE HTML ELEMENTS
-   ========================================================================== */
-
-/* Root HTML and Body Elements */
-html,
-body {
-  @apply font-sans min-h-screen;
-  color: var(--text-primary);
-  background: var(--bg-gradient);
-  background-attachment: fixed;
-  transition: all 0.3s ease;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-/* Font Family Override for Flowbite Components */
-.fwb-component {
-  font-family: 'Lato', sans-serif !important;
-}
-
-/* ==========================================================================
-   CARD AND CONTAINER ELEMENTS
-   ========================================================================== */
-
-/* Main Card Component - Primary containers for content */
-.card {
-  @apply border p-6 shadow-lg transition-all duration-300;
-  background: var(--card-bg);
-  border: 0.8px solid var(--card-border);
-  border-radius: 0.8rem;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 5px var(--shadow-color);
-}
-
-/* Card Hover State - Interactive feedback */
-.card:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 0px 0px var(--shadow-color);
-  border: 1.8px solid var(--card-border-hover);
-  background: var(--card-bg-hover);
-}
-
-/* Secondary Card Variant - Less prominent containers */
-.card-secondary {
-  @apply border p-4 shadow-sm transition-all duration-300;
-  background: var(--card-bg-secondary);
-  border: 1.8px solid var(--card-border-subtle);
-  border-radius: 0.8rem;
-  backdrop-filter: blur(8px);
-}
-
-/* Tertiary Card Variant - Minimal containers */
-.card-tertiary {
-  @apply border p-3 transition-all duration-300;
-  background: var(--card-bg-tertiary);
-  border: 1.8px solid var(--card-border-subtle);
-  border-radius: 0.8rem;
-}
-
-/* Compact Card Variant - Space-efficient containers */
-.card-compact {
-  @apply border p-2 shadow-sm transition-all duration-300;
-  background: var(--card-bg);
-  border: 1.8px solid var(--card-border);
-  border-radius: 0.8rem;
-}
-
-/* ==========================================================================
-   NAVIGATION ELEMENTS
-   ========================================================================== */
-
-/* Main Navigation Container */
-.nav-container {
-  @apply border-b transition-all duration-300;
-  background: var(--nav-bg);
-  border-bottom: 1px solid var(--nav-border);
-  backdrop-filter: blur(15px);
-  box-shadow: 0 2px 8px var(--shadow-color);
-}
-
-/* Navigation Brand/Logo */
-.nav-brand {
-  @apply font-bold text-lg transition-colors duration-200;
-  color: var(--nav-text);
-}
-
-.nav-brand:hover {
-  color: var(--nav-text-hover);
-}
-
-/* Navigation Links */
-.nav-link {
-  @apply px-4 py-2 transition-all duration-200 font-medium;
-  color: var(--text-secondary);
-  border: 1px solid transparent;
-  border-radius: 0;
-}
-
-.nav-link:hover {
-  color: var(--nav-text-hover);
-  background: var(--accent-background);
-  border: 1px solid var(--accent-muted);
-  border-radius: 0.4rem;
-}
-
-/* Active Navigation Link */
-.nav-link.active,
-.router-link-exact-active {
-  color: var(--nav-text);
-  background: var(--nav-link-active);
-  border: 1px solid var(--accent-muted);
-  border-radius: 0.4rem;
-  font-weight: 600;
-}
-
-/* ==========================================================================
-   BUTTON ELEMENTS
-   ========================================================================== */
-
-/* Primary Action Buttons */
-.btn-primary {
-  @apply px-4 py-2 font-medium transition-all duration-200 shadow-sm;
-  background: var(--button-primary-bg);
-  color: var(--button-primary-text);
-  border: none;
-  border-radius: 0.4rem;
-  font-weight: 500;
-}
-
-.btn-primary:hover {
-  background: var(--button-primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px var(--shadow-accent);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-.btn-primary:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Secondary Buttons */
-.btn-secondary {
-  @apply px-4 py-2 font-medium transition-all duration-200 border;
-  background: var(--button-secondary-bg);
-  color: var(--text-primary);
-  border: 1px solid var(--button-secondary-border);
-  border-radius: 0.4rem;
-  font-weight: 500;
-}
-
-.btn-secondary:hover {
-  background: var(--button-secondary-hover);
-  border: 1px solid var(--accent);
-  color: var(--accent);
-}
-
-/* ==========================================================================
-   FORM ELEMENTS
-   ========================================================================== */
-
-/* Text Input Fields */
-.form-input {
-  @apply border px-4 py-3 transition-all duration-200 text-base w-full;
-  background: var(--input-bg);
-  border: 1.8px solid var(--input-border);
-  border-radius: 0.8rem;
-  color: var(--text-primary);
-}
-
-.form-input::placeholder {
-  color: var(--input-placeholder);
-  opacity: 1;
-}
-
-.form-input:focus {
-  outline: none;
-  border: 1.8px solid var(--input-focus-border);
-  box-shadow: 0 0 0 2px var(--accent-background);
-  background: var(--input-focus-bg);
-}
-
-/* ==========================================================================
-   GRID AND TABLE ELEMENTS
-   ========================================================================== */
-
-/* Custom Grid Layout */
-.custom-grid {
-  @apply m-auto grid grid-cols-1 gap-6 border-none p-6 min-w-full min-h-full text-center items-center content-center justify-center;
-  background: var(--grid-bg);
-  box-shadow: 0 4px 12px var(--shadow-color);
-  backdrop-filter: blur(10px);
-  border-radius: 0.8rem;
-  border: 1.8px solid var(--grid-border);
-}
-
-.custom-grid:hover {
-  background: var(--grid-hover);
-  border-color: var(--card-border-hover);
-}
-
-/* ==========================================================================
-   THEME OVERRIDES
-   ========================================================================== */
-
-/* Super Dark Theme Overrides */
-.theme-super-dark .custom-grid,
-.theme-super-dark .card,
-.theme-super-dark .nav-container,
-.theme-super-dark .form-input {
-  background: #060511 !important;
-  color: #ffffff !important;
-  border-color: rgba(75, 85, 99, 0.4) !important;
-  border-radius: 0.8rem !important;
-}
-
-.theme-super-dark .card {
-  border: 3px solid #ffffff !important;
-}
-
-.theme-super-dark .card:hover {
-  border: 1px solid var(--card-border-hover) !important;
-}
-
-/* Dark Theme Overrides */
-.theme-dark .custom-grid,
-.theme-dark .card,
-.theme-dark .nav-container,
-.theme-dark .form-input {
-  background: var(--card-bg) !important;
-  color: var(--text-primary) !important;
-  border-color: var(--card-border) !important;
-  border-radius: 0.8rem !important;
-}
-
-/* Light Theme Overrides */
-.theme-light .custom-grid,
-.theme-light .card,
-.theme-light .nav-container,
-.theme-light .form-input {
-  background: var(--card-bg) !important;
-  color: var(--text-primary) !important;
-  border-color: var(--card-border) !important;
-  border-radius: 0.8rem !important;
-}
-
-/* ==========================================================================
-   SCROLLBAR CUSTOMIZATION
-   ========================================================================== */
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--scrollbar-track);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover);
-}
-
-::-webkit-scrollbar-corner {
-  background: var(--scrollbar-track);
-}
-/* Basic CSS Reset and Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f5f5f5;
-}
-
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Navigation */
-.nav-container {
-  background-color: #1a1a2e;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.nav-link {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  color: #e5e7eb;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #60a5fa;
-}
-
-.nav-link.router-link-active {
-  color: #3b82f6;
-  font-weight: 600;
-}
-
-/* Buttons */
-.btn-primary {
-  background-color: #3b82f6;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #2563eb;
-}
-
-.btn-secondary {
-  background-color: #6b7280;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #4b5563;
-}
-
-/* Cards */
-.card {
-  background: white;
-  border-radius: 0.8rem;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
-}
-
-/* Utilities */
-.flex {
-  display: flex;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.space-x-3 > * + * {
-  margin-left: 0.75rem;
-}
-
-.space-x-1 > * + * {
-  margin-left: 0.25rem;
-}
-
-.space-y-2 > * + * {
-  margin-top: 0.5rem;
-}
-
-.hidden {
-  display: none;
-}
-
-.block {
-  display: block;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.pt-4 {
-  padding-top: 1rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-}
-
-.text-blue-400 {
-  color: #60a5fa;
-}
-
+  --background: hsl(0, 0%, 100%);
+  /* Pure white background */
+  --foreground: hsl(20, 14.3%, 4.1%);
+  /* Dark text color */
+  --muted: hsl(245, 55%, 4%);
+  /* Muted background areas */
+  --muted-foreground: hsl(245, 55%, 4%);
+  /* Muted text color */
+  --popover: hsl(0, 0%, 100%);
+  /* Popover background */
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  /* Popover text */
+  --card: hsl(0, 0%, 100%);
+  /* Card background */
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  /* Card text */
+  --border: hsl(20, 5.9%, 90%);
+  /* Border color */
+  --input: hsl(20, 5.9%, 90%);
+  /* Input field background */
+  --primary: hsl(217, 91%, 59%);
+  /* Primary brand color (Replit blue) */
+  --primary-foreground: hsl(211, 100%, 99%);
+  /* Primary button text */
+  --secondary: hsl(60, 4.8%, 95.9%);
+  /* Secondary button background */
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  /* Secondary button text */
+  --accent: hsl(60, 4.8%, 95.9%);
+  /* Accent color */
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  /* Accent text */
+  --destructive: hsl(0, 84.2%, 60.2%);
+  /* Error/destructive actions */
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  /* Error text */
+  --ring: hsl(20, 14.3%, 4.1%);
+  /* Focus ring color */
+  --radius: 0.5rem;
+  /* Default border radius */
+
+  /* EDGERACK Replit-Style Theme Variables */
+  --edgerack-dark: hsl(222, 28%, 8%);
+  /* Primary dark background (Replit dark) */
+  --edgerack-darker: hsl(275, 33%, 17%);
+  /* Card/surface background (Replit card) */
+  --edgerack-replit-blue: hsl(217, 91%, 59%);
+  /* Brand Replit blue for highlights */
+  --edgerack-green: hsl(142, 76%, 36%);
+  /* Success/operational green */
+  --edgerack-slate: hsl(215, 20.2%, 65.1%);
+  /* Muted text color (Replit muted) */
+}
+
+.dark {
+  --background: hsl(256, 29%, 10%);
+  --foreground: hsl(213, 31%, 91%);
+  --muted: hsl(261, 33%, 17%);
+  --muted-foreground: hsl(215, 20.2%, 65.1%);
+  --popover: hsl(273, 27%, 8%);
+  --popover-foreground: hsl(213, 31%, 91%);
+  --card: hsl(246, 33%, 17%);
+  --card-foreground: hsl(213, 31%, 91%);
+  --border: hsl(250, 33%, 17%);
+  --input: hsl(244, 33%, 17%);
+  --primary: hsl(217, 91%, 59%);
+  --primary-foreground: hsl(238, 45%, 12%);
+  --secondary: hsl(242, 33%, 17%);
+  --secondary-foreground: hsl(213, 31%, 91%);
+  --accent: hsl(244, 33%, 17%);
+  --accent-foreground: hsl(213, 31%, 91%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(213, 31%, 91%);
+  --ring: hsl(217, 91%, 59%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    /* Normal weight for body text */
+  }
+}
+
+/* Lato Font Weight Rules */
+/* Normal weight for body text and general content */
+body,
+p,
+span,
+div,
+td,
+li,
+.text-gray-300,
+.text-gray-400,
 .text-white {
-  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
 }
 
+/* Semi-bold weight for titles and headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-semibold,
 .font-bold {
-  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
 }
 
-.font-semibold {
+/* Specific weight overrides for different elements */
+.navbar-brand,
+.text-xl,
+.text-2xl {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
+}
+
+/* Normal weight for labels and secondary text */
+.text-sm,
+.text-xs,
+label,
+.label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+/* Normal weight for buttons and interactive elements */
+button,
+.btn,
+.button {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400 !important;
+}
+
+/* Keep monospace fonts for technical data */
+.edgerack-monospace,
+.font-mono,
+code,
+pre {
+  font-family: 'Courier New', monospace !important;
+  font-weight: 400;
+}
+
+/* Status badges with normal weight */
+.status-badge,
+.status-badge-on,
+.status-badge-off,
+.status-badge-blue,
+.status-badge-replit,
+.status-badge-yellow {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400 !important;
+}
+
+/* Table headers with normal weight */
+th,
+.table-label {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400 !important;
+}
+
+/* Card titles and content */
+.card-title,
+.CardTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
+}
+
+.card-description,
+.CardDescription {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+/* Navigation elements */
+nav a,
+.nav-link {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+nav a:hover,
+.nav-link:hover,
+.router-link-active {
+  font-weight: 600 !important;
+}
+
+/* Form elements */
+input,
+textarea,
+select {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+/* Alert and notification text */
+.alert,
+.Alert {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.alert-title,
+.AlertTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600 !important;
+}
+
+/* EDGERACK Industrial Control System Styles */
+.custom-grid {
+  @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full bg-slate-800 text-center items-center content-center justify-center text-white shadow-lg;
+  border-color: hsl(215, 25%, 25%);
+  background: linear-gradient(135deg, hsl(245, 55%, 4%) 0%, hsl(245, 55%, 4%) 60%);
+}
+
+
+
+.table-label {
+  @apply uppercase text-sm font-medium text-gray-300 tracking-wider;
+}
+
+/* Status badge styles for industrial look */
+.status-badge-on {
+  @apply bg-green-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+.status-badge-off {
+  @apply bg-gray-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+.status-badge-blue {
+  @apply bg-blue-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+.status-badge-purple {
+  @apply bg-purple-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+.status-badge-yellow {
+  @apply bg-yellow-600 text-yellow-100 px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
+}
+
+/* Enhanced system information styling */
+.system-info-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6;
+}
+
+.network-status-item {
+  @apply flex justify-between items-center py-2 px-3 rounded-md;
+  background: rgba(51, 65, 85, 0.3);
+  border-left: 3px solid #475569;
+}
+
+.network-status-label {
+  @apply text-gray-300 font-medium text-sm;
+}
+
+.network-status-value {
+  @apply text-white font-mono bg-slate-700/50 px-2 py-1 rounded text-sm;
+  font-family: 'Courier New', monospace;
+}
+
+.system-uptime-display {
+  @apply text-center p-4 rounded-lg mt-6;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.05) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.system-uptime-text {
+  @apply text-lg font-semibold text-green-400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  font-family: 'Courier New', monospace;
+}
+
+.system-version-text {
+  @apply text-center text-gray-300 mt-3;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+/* Enhanced table styling for network view */
+.edgerack-table {
+  @apply w-full text-sm text-left text-gray-400;
+}
+
+.edgerack-table thead {
+  @apply text-xs uppercase bg-gray-700 text-gray-400;
+}
+
+.edgerack-table tbody tr {
+  @apply odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700;
+}
+
+.edgerack-table th {
+  @apply px-6 py-3 font-medium text-gray-400 uppercase;
+}
+
+.edgerack-table td {
+  @apply px-6 py-4 text-white;
+}
+
+/* Navigation active link styling */
+.router-link-active {
+  @apply font-bold text-blue-400 bg-gray-700;
+}
+
+.router-link-active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-blue-400;
+}
+
+.table-value {
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 600;
+  color: hsl(0, 0%, 98%);
 }
 
-.border-t {
-  border-top: 1px solid #e5e7eb;
+.table-label {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(264, 20%, 75%);
+  letter-spacing: 0.05em;
 }
 
-.border-gray-700 {
-  border-color: #374151;
+.status-badge {
+  @apply px-3 py-1 rounded-full text-sm font-medium shadow-sm;
+  transition: all 0.2s ease;
 }
 
-.sticky {
-  position: sticky;
+.status-badge.on {
+  background: hsl(142, 76%, 36%);
+  color: hsl(0, 0%, 100%);
 }
 
-.top-0 {
-  top: 0;
+.status-badge.off {
+  background: hsl(249, 20%, 40%);
+  color: hsl(0, 0%, 90%);
 }
 
-.z-50 {
-  z-index: 50;
+.status-badge.blue {
+  background: hsl(217, 91%, 60%);
+  color: hsl(0, 0%, 100%);
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .md\\:flex {
-    display: flex;
+.status-badge.purple {
+  background: hsl(271, 91%, 65%);
+  color: hsl(0, 0%, 100%);
+}
+
+.navbar-brand {
+  @apply text-xl font-bold text-white;
+  letter-spacing: 0.1em;
+}
+
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collapsible-content.expanded {
+  max-height: 2000px;
+}
+
+.toggle-switch {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer;
+  background: hsl(215, 20%, 40%);
+}
+
+.toggle-switch.active {
+  background: hsl(142, 76%, 36%);
+}
+
+.toggle-slider {
+  @apply inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-md;
+  margin-left: 4px;
+}
+
+.toggle-slider.active {
+  @apply translate-x-6;
+}
+
+/* Enhanced card styling */
+.edgerack-card {
+  background: linear-gradient(135deg, hsl(258, 28%, 17%) 0%, hsl(253, 25%, 15%) 100%);
+  border: 1px solid hsl(276, 25%, 25%);
+  box-shadow: 0 8px 32px hsl(263, 27%, 6%, 0.3);
+}
+
+/* Status indicator animations */
+.status-indicator {
+  position: relative;
+}
+
+.status-indicator.on::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: hsl(142, 76%, 36%);
+  border-radius: inherit;
+  opacity: 0.3;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
   }
-  
-  .md\\:hidden {
-    display: none;
+
+  50% {
+    opacity: 0.6;
   }
 }
 
-/* Dark Theme Support */
-.theme-super-dark,
-.theme-dark {
-  background: #020617;
-  color: #e5e7eb;
+/* Enhanced table styling */
+.edgerack-table {
+  background: hsl(268, 28%, 17%);
+  border: 1px solid hsl(255, 25%, 25%);
 }
 
-.theme-super-dark body,
-.theme-dark body {
-  background: #020617;
-  color: #e5e7eb;
+.edgerack-table th {
+  background: hsl(280, 25%, 12%);
+  color: hsl(252, 20%, 75%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.theme-super-dark .card,
-.theme-dark .card {
-  background: #1e293b;
-  color: #e5e7eb;
+.edgerack-table td {
+  color: hsl(0, 0%, 90%);
+  border-color: hsl(261, 25%, 25%);
 }
 
-.theme-light {
-  background: white;
-  color: #1f2937;
+.edgerack-table tr:hover {
+  background: hsl(252, 25%, 20%);
 }
 
-.theme-light body {
-  background: white;
-  color: #1f2937;
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg, hsl(261, 25%, 20%) 25%, hsl(264, 25%, 25%) 50%, hsl(245, 25%, 20%) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* Custom component styles */
-@layer components {
-  .nav-container {
-    @apply bg-gradient-super-dark backdrop-blur-md border-b border-gray-800/50;
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
   }
-  
-  .nav-link {
-    @apply px-4 py-2 text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium;
+
+  100% {
+    background-position: -200% 0;
   }
-  
-  .nav-link.router-link-active {
-    @apply text-blue-400 bg-blue-400/10 rounded-lg;
-  }
-  
-  .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
-  }
-  
-  .btn-secondary {
-    @apply bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200;
-  }
-  
-  .card {
-    @apply bg-gradient-card backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 shadow-lg;
-  }
+}
+
+/* Cooling Page Specific Styles */
+.cooling-section {
+  @apply mb-6 rounded-lg border border-slate-600 bg-slate-800/60;
+  background: hsl(256, 55%, 4%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cooling-header {
+  @apply flex items-center justify-between p-4 border-b border-slate-600/50;
+
+}
+
+.cooling-content {
+  @apply p-6 transition-all duration-500 ease-in-out rounded-b-lg;
+}
+
+.cooling-metrics-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+.cooling-metric-item {
+  @apply flex flex-col items-center text-center space-y-2 p-4 rounded-lg;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cooling-metric-label {
+  @apply text-sm text-gray-300 font-medium text-center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.cooling-metric-value {
+  @apply text-2xl text-white font-bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
