@@ -16,7 +16,7 @@
 /* Default/Super Dark Theme Variables - EdgeRack Inspired */
 :root {
   /* Background Gradients - Main page backgrounds with deep navy/black theme */
-  --bg-gradient: linear-gradient(45deg, #0c0826 100%, #060511 25%, #060511 50%, #141028 100%);
+  --bg-gradient: linear-gradient(45deg, #0c0826 100%, #060511 25%, #060511 50%, #141028 25%);
   /* Deep navy gradient with black accents */
   --bg-secondary: linear-gradient(135deg, #060511 0%, #0b0822 50%, #0b0823 100%);
   /* Secondary navy gradient with black accents */
