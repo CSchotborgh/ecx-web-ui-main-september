@@ -371,13 +371,13 @@
                                 </fwb-table-head>
                                 <fwb-table-body>
                                     <fwb-table-row v-for="log in logs" :key="log.timestamp">
-                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg">
+                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                             {{ log.start_timestamp }}
                                         </fwb-table-cell>
-                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg">
+                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                             {{ log.description }}
                                         </fwb-table-cell>
-                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg">
+                                        <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                             {{ convertSecondsToTime(log.difference) }}
                                         </fwb-table-cell>
                                     </fwb-table-row>

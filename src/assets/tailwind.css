@@ -197,6 +197,10 @@
     background: hsl(252, 25%, 20%);
   }
 
+  .log-entry {
+    color: #939393 !important;
+  }
+
   .cooling-section {
     @apply mb-6 border border-slate-600 bg-slate-800;
     background: hsl(256, 55%, 4%);
@@ -319,7 +323,7 @@ input, textarea, select {
   color: hsl(0, 0%, 98%);
 }
 
-.status-badge {
+.status-badge, .status-badge.on, .status-badge.off, .status-badge.blue, .status-badge.purple, .status-badge.yellow {
   @apply px-3 py-1 rounded-full text-sm font-medium shadow-sm;
   transition: all 0.2s ease;
   border: 1px solid white !important;

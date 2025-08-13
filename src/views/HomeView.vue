@@ -104,19 +104,19 @@
                             </fwb-table-head>
                             <fwb-table-body>
                                 <fwb-table-row v-for="(eventRow, index) in eventRows" :key="index">
-                                    <fwb-table-cell class="!px-1 !py-2 !whitespace-normal max-w-[120px] md:max-w-none text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 !whitespace-normal max-w-[120px] md:max-w-none text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.timestamp }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.origin }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.target }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.type }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-normal text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-normal text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.event }}
                                     </fwb-table-cell>
                                 </fwb-table-row>
