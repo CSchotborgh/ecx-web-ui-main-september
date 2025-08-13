@@ -17,42 +17,11 @@
 @tailwind utilities;
 
 /**
- * Light Theme Color Variables
+ * EDGERACK Dark Theme Color Variables
  * 
- * Default color scheme for light mode (not used in EDGERACK, but required for shadcn/ui)
- * These colors provide the foundation for the component system.
+ * Single dark theme optimized for industrial monitoring displays
  */
 :root {
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(245, 55%, 4%);
-  --muted-foreground: hsl(245, 55%, 4%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(217, 91%, 59%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
-  --radius: 0.5rem;
-
-  /* EDGERACK Replit-Style Theme Variables */
-  --edgerack-dark: hsl(222, 28%, 8%);
-  --edgerack-darker: hsl(275, 33%, 17%);
-  --edgerack-replit-blue: hsl(217, 91%, 59%);
-  --edgerack-green: hsl(142, 76%, 36%);
-  --edgerack-slate: hsl(215, 20.2%, 65.1%);
-}
-
-.dark {
   --background: hsl(256, 29%, 10%);
   --foreground: hsl(213, 31%, 91%);
   --muted: hsl(261, 33%, 17%);
@@ -73,6 +42,13 @@
   --destructive-foreground: hsl(213, 31%, 91%);
   --ring: hsl(217, 91%, 59%);
   --radius: 0.5rem;
+
+  /* EDGERACK Replit-Style Theme Variables */
+  --edgerack-dark: hsl(222, 28%, 8%);
+  --edgerack-darker: hsl(275, 33%, 17%);
+  --edgerack-replit-blue: hsl(217, 91%, 59%);
+  --edgerack-green: hsl(142, 76%, 36%);
+  --edgerack-slate: hsl(215, 20.2%, 65.1%);
 }
 
 @layer base {
