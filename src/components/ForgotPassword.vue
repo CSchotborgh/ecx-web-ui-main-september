@@ -155,11 +155,14 @@ defineExpose({ show });
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99999;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-content {
@@ -168,12 +171,13 @@ defineExpose({ show });
   color: white;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   max-width: 400px;
   width: 90%;
   position: relative;
   max-height: 90vh;
   overflow-y: auto;
+  animation: slideUp 0.3s ease-out;
 }
 
 .close {
@@ -230,5 +234,25 @@ defineExpose({ show });
 
 .btn-primary:hover {
   background-color: #2563eb;
+}
+
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideUp {
+  0% { 
+    transform: translateY(20px) scale(0.95); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0) scale(1); 
+    opacity: 1; 
+  }
 }
 </style>
