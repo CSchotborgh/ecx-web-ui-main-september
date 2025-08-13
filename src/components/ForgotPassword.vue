@@ -2,86 +2,52 @@
 <template>
   <div v-if="show" class="modal">
     <div class="modal-content">
-      <!-- Modal content -->
-        <!-- Modal header -->
-        <div class="modal-header flex items-center justify-between p-4 md:p-5 border-b rounded-t">
-          <h3 class="text-xl font-semibold text-primary">
-            Forgot Password Form
-          </h3>
-          <button type="button" class="btn-icon text-secondary bg-transparent hover:bg-surface hover:text-primary rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" @click="closeModal">
-            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-            </svg>
-            <span class="sr-only">Close modal</span>
-          </button>
+      <!-- Modal header -->
+      <div class="modal-header flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+        <h3 class="text-xl font-semibold text-primary">
+          Forgot Password Form
+        </h3>
+        <button type="button" class="btn-icon text-secondary bg-transparent hover:bg-surface hover:text-primary rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" @click="closeModal">
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body p-4 md:p-5">
+        <div class="flex mx-auto text-sm justify-center text-primary">
+          To reset password for a user, input the username and either of the MAC addresses for the ethernet interfaces.
         </div>
-        <!-- Modal body -->
-        <div class="modal-body p-4 md:p-5">
-          <div class="flex mx-auto text-sm justify-center text-primary">
-            To reset password for a user, input the username and either of the MAC addresses for the ethernet interfaces.
+        <div class="flex mx-auto text-sm justify-center text-primary mt-2">
+          Example: if your MAC address is 01:63:42:AD:45:00, type in "016342ad4500"
+        </div>
+      </div>
+
+      <div class="modal-body p-4 md:p-5">
+        <form class="space-y-4" @submit.prevent="forgotpass">
+          <div>
+            <fwb-input v-model="username" :disabled="readyForNewPassword" type="text" label="Username" placeholder="Username" required  :class="readyForNewPassword ? '!text-tertiary' : 'text-primary'"/>
           </div>
-          <div class="flex mx-auto text-sm justify-center text-primary mt-2">
-            Example: if your MAC address is 01:63:42:AD:45:00, type in "016342ad4500"
+          <div>
+            <fwb-input v-model="mac_address" :disabled="readyForNewPassword" type="text" label="MAC Address (ETH1 or ETH2)" placeholder="00aabbccddee" required  :class="readyForNewPassword ? '!text-tertiary' : 'text-primary'"/>
           </div>
-        </div>
-
-        <div class="modal-body p-4 md:p-5">
-          <form class="space-y-4" @submit.prevent="forgotpass">
-            <div>
-              <fwb-input v-model="username" :disabled="readyForNewPassword" type="text" label="Username" placeholder="Username" required  :class="readyForNewPassword ? '!text-tertiary' : 'text-primary'"/>
-            </div>
-            <div>
-              <fwb-input v-model="mac_address" :disabled="readyForNewPassword" type="text" label="MAC Address (ETH1 or ETH2)" placeholder="00aabbccddee" required  :class="readyForNewPassword ? '!text-tertiary' : 'text-primary'"/>
-            </div>
-            <div class="flex mx-auto text-sm justify-center text-error" v-show="errorForgotPassMessage">
-              {{ errorForgotPassMessage }}
-            </div>
-            <fwb-button gradient="blue" :disabled="readyForNewPassword" class="btn-primary w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center">Verify MAC</fwb-button>
-            <div class="flex mx-auto text-sm justify-center text-success" v-show="resultForgotPassMessage">
-              {{ resultForgotPassMessage }}
-            </div>
-         </form>
-        </div>
-        
-        <!-- Second Modal Section: Adjust password -->
-        <div v-show="readyForNewPassword" class="modal-body p-4 md:p-5">
-
-          <div class="mx-auto text-sm justify-center text-center text-primary">
-              Password for <span class="italic font-bold">{{ username }}</span> has been successfully reset to <span class="italic font-bold">enconnex</span>! You may now close this popup. To change your password, refresh homepage and log in again, click the "Hi {{ username }}!" link at the nav-bar to modify user settings.
+          <div class="flex mx-auto text-sm justify-center text-error" v-show="errorForgotPassMessage">
+            {{ errorForgotPassMessage }}
           </div>
-
-          <!-- <form class="space-y-4" @submit.prevent="changepass">
-            <div class="mx-auto text-sm justify-center text-center text-white">
-              Password for <span class="italic font-bold">{{ username }}</span> has been successfully reset to <span class="italic font-bold">enconnex</span>! You may close this popup to accept this password or enter a different password below. Minimum of 8 characters required.
-            </div>
-
-            <div>
-              <fwb-input v-model="newPassword" type="password" label="New Password" placeholder="Enter new password" minlength="8" required />
-            </div>
-            <div>
-              <fwb-input v-model="confirmNewPassword" type="password" label="Confirm New Password" placeholder="Confirm new password" minlength="8" required />
-            </div>
-            <div class="flex mx-auto text-sm justify-center text-red-500">
-              <p v-if="!passwordLength && newPassword" class="text-red-500 text-sm mt-1">
-                  Password must be at least 8 characters!
-              </p>
-              <p v-if="!passwordsMatch && confirmNewPassword" class="text-red-500 text-sm mt-1">
-                  Passwords do not match!
-              </p>
-            </div>
-            <div class="flex mx-auto text-sm justify-center text-red-500" v-show="errorChangePassMessage">
-              {{ errorChangePassMessage }}
-            </div>
-            <fwb-button :disabled="!readyForUpdatePassword" gradient="blue" class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Update Password</fwb-button>
-            <div class="flex mx-auto text-sm justify-center text-red-500" v-show="resultChangePassMessage">
-              {{ resultChangePassMessage }}
-            </div>
-            <div class="flex mx-auto text-sm justify-center text-white" v-show="passwordChangeComplete">
-              Closing pop-up in {{ countdown }} seconds...
-            </div>
-          </form> -->
+          <fwb-button gradient="blue" :disabled="readyForNewPassword" class="btn-primary w-full font-medium rounded-lg text-sm px-5 py-2.5 text-center">Verify MAC</fwb-button>
+          <div class="flex mx-auto text-sm justify-center text-success" v-show="resultForgotPassMessage">
+            {{ resultForgotPassMessage }}
+          </div>
+        </form>
+      </div>
+      
+      <!-- Second Modal Section: Adjust password -->
+      <div v-show="readyForNewPassword" class="modal-body p-4 md:p-5">
+        <div class="mx-auto text-sm justify-center text-center text-primary">
+          Password for <span class="italic font-bold">{{ username }}</span> has been successfully reset to <span class="italic font-bold">enconnex</span>! You may now close this popup. To change your password, refresh homepage and log in again, click the "Hi {{ username }}!" link at the nav-bar to modify user settings.
         </div>
-
       </div>
     </div>
   </div>
