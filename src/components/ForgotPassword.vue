@@ -214,7 +214,7 @@ defineExpose({ show });
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000;
+  z-index: 99999;
 }
 
 .modal-content {
