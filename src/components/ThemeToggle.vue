@@ -62,7 +62,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useThemeStore } from '@/stores/theme.js'
-import { IconSun, IconMoon, IconDeviceDesktop } from 'vue-tabler-icons'
+import { IconSun, IconMoon, IconDevice } from 'vue-tabler-icons'
 
 const themeStore = useThemeStore()
 
@@ -72,11 +72,11 @@ const themes = computed(() => [
   { name: 'light', label: 'Light', icon: IconSun },
   { name: 'dark', label: 'Dark', icon: IconMoon },
   { name: 'super-dark', label: 'Super Dark', icon: IconMoon },
-  { name: 'system', label: 'System', icon: IconDeviceDesktop }
+  { name: 'system', label: 'System', icon: IconDevice }
 ])
 
 const currentIcon = computed(() => {
-  switch (themeStore.theme) {
+  switch (themeStore.currentTheme) {
     case 'light':
       return IconSun
     case 'dark':
@@ -84,7 +84,7 @@ const currentIcon = computed(() => {
     case 'super-dark':
       return IconMoon
     case 'system':
-      return IconDeviceDesktop
+      return IconDevice
     default:
       return IconSun
   }

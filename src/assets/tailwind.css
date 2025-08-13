@@ -90,7 +90,7 @@
   --ring: var(--primary-500);
 
   /* Component Tokens */
-  --radius: 0.5rem;
+  --radius: 0.8rem;
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -169,55 +169,79 @@
 @layer components {
   /* Button Components */
   .btn {
-    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
-    border-radius: var(--radius);
+    @apply inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    border-radius: 0.4rem;
   }
 
-  .btn-default {
+  .btn-primary {
     @apply btn bg-primary-500 text-white hover:bg-primary-600 h-10 px-4 py-2;
-  }
-
-  .btn-destructive {
-    @apply btn bg-error-500 text-white hover:bg-error-600 h-10 px-4 py-2;
-  }
-
-  .btn-outline {
-    @apply btn border border-input bg-background hover:bg-muted hover:text-foreground h-10 px-4 py-2;
+    border-radius: 0.4rem;
   }
 
   .btn-secondary {
     @apply btn bg-muted text-muted-foreground hover:bg-muted/80 h-10 px-4 py-2;
+    border-radius: 0.4rem;
+  }
+
+  .btn-tertiary {
+    @apply btn border border-input bg-background hover:bg-muted hover:text-foreground h-10 px-4 py-2;
+    border-radius: 0.4rem;
+  }
+
+  .btn-danger {
+    @apply btn bg-error-500 text-white hover:bg-error-600 h-10 px-4 py-2;
+    border-radius: 0.4rem;
   }
 
   .btn-ghost {
     @apply btn hover:bg-muted hover:text-foreground h-10 px-4 py-2;
+    border-radius: 0.4rem;
   }
 
   .btn-link {
     @apply btn text-primary-500 underline-offset-4 hover:underline h-10 px-4 py-2;
+    border-radius: 0.4rem;
   }
 
   .btn-sm {
-    @apply h-9 rounded-md px-3;
+    @apply h-9 px-3;
   }
 
   .btn-lg {
-    @apply h-11 rounded-md px-8;
+    @apply h-11 px-8;
   }
 
   .btn-icon {
     @apply h-10 w-10;
+    border-radius: 0.5rem;
   }
 
   /* Card Components */
   .card {
-    @apply rounded-lg border bg-card text-card-foreground;
-    border-radius: var(--radius);
+    @apply bg-card text-card-foreground border border-border;
+    border-radius: 0.8rem;
     box-shadow: var(--shadow);
+  }
+
+  .card-secondary {
+    @apply bg-muted text-muted-foreground border border-border;
+    border-radius: 0.8rem;
+    box-shadow: var(--shadow);
+  }
+
+  .card-tertiary {
+    @apply bg-background text-foreground border border-border;
+    border-radius: 0.8rem;
+    box-shadow: var(--shadow);
+  }
+
+  .card-compact {
+    @apply card p-4;
   }
 
   .card-header {
     @apply flex flex-col space-y-1.5 p-6;
+    border-radius: 0.8rem 0.8rem 0 0;
   }
 
   .card-title {
@@ -234,57 +258,134 @@
 
   .card-footer {
     @apply flex items-center p-6 pt-0;
+    border-radius: 0 0 0.8rem 0.8rem;
   }
 
-  /* Input Components */
-  .input {
-    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
-    border-radius: var(--radius);
+  /* Form Components */
+  .form-input {
+    @apply flex h-10 w-full bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 border border-input;
+    border-radius: 0.8rem;
   }
 
-  .textarea {
-    @apply input min-h-[80px] resize-none;
+  .form-textarea {
+    @apply form-input min-h-[80px] resize-none;
   }
 
-  .select {
-    @apply input;
+  .form-select {
+    @apply form-input;
   }
 
-  /* Label Component */
-  .label {
+  .form-label {
     @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
   }
 
-  /* Badge Components */
-  .badge {
-    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
-    border-radius: var(--radius);
+  /* Panel Components */
+  .panel {
+    @apply bg-card text-card-foreground border border-border p-6;
+    border-radius: 0.8rem;
+    box-shadow: var(--shadow-md);
   }
 
-  .badge-default {
-    @apply badge bg-primary-500 text-white hover:bg-primary-600;
+  .panel-compact {
+    @apply panel p-4;
+  }
+
+  .panel-header {
+    @apply border-b border-border pb-4 mb-4;
+    border-radius: 0.8rem 0.8rem 0 0;
+  }
+
+  .panel-footer {
+    @apply border-t border-border pt-4 mt-4;
+    border-radius: 0 0 0.8rem 0.8rem;
+  }
+
+  /* Navigation Components */
+  .nav {
+    @apply flex items-center space-x-4 lg:space-x-6;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60 px-3 py-2;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    @apply text-foreground bg-muted;
+    border-radius: 0.4rem;
+  }
+
+  .nav-dropdown {
+    @apply absolute top-full left-0 mt-1 min-w-[160px] bg-card border border-border shadow-lg z-50;
+    border-radius: 0;
+  }
+
+  /* Data Display Components */
+  .data-table {
+    @apply w-full border-collapse bg-card text-card-foreground;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .data-table th {
+    @apply bg-muted text-muted-foreground font-medium text-left px-4 py-3 border-b border-border;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+
+  .data-table tr:last-child td {
+    @apply border-b-0;
+  }
+
+  /* Status Components */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    border-radius: 0.8rem;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-500 text-white;
   }
 
   .badge-secondary {
-    @apply badge bg-muted text-muted-foreground hover:bg-muted/80;
+    @apply badge bg-muted text-muted-foreground;
   }
 
-  .badge-destructive {
-    @apply badge bg-error-500 text-white hover:bg-error-600;
+  .badge-success {
+    @apply badge bg-success-500 text-white;
   }
 
-  .badge-outline {
-    @apply badge border border-input text-foreground;
+  .badge-warning {
+    @apply badge bg-warning-500 text-white;
+  }
+
+  .badge-danger {
+    @apply badge bg-error-500 text-white;
   }
 
   /* Alert Components */
   .alert {
-    @apply relative w-full rounded-lg border p-4;
-    border-radius: var(--radius);
+    @apply relative w-full p-4 border;
+    border-radius: 0.8rem;
   }
 
-  .alert-destructive {
-    @apply alert border-error-500/50 text-error-600;
+  .alert-info {
+    @apply alert border-primary-500/50 bg-primary-50 text-primary-600;
+  }
+
+  .alert-success {
+    @apply alert border-success-500/50 bg-success-50 text-success-600;
+  }
+
+  .alert-warning {
+    @apply alert border-warning-500/50 bg-warning-50 text-warning-600;
+  }
+
+  .alert-danger {
+    @apply alert border-error-500/50 bg-error-50 text-error-600;
   }
 
   .alert-title {
@@ -295,154 +396,92 @@
     @apply text-sm opacity-90;
   }
 
-  /* Navigation Components */
-  .nav {
-    @apply flex items-center space-x-4 lg:space-x-6;
-  }
-
-  .nav-link {
-    @apply text-sm font-medium transition-colors hover:text-foreground/80 text-foreground/60;
-  }
-
-  .nav-link-active {
-    @apply nav-link text-foreground;
-  }
-
-  /* Avatar Component */
-  .avatar {
-    @apply relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full;
-    border-radius: var(--radius);
-  }
-
-  /* Switch Component */
-  .switch {
-    @apply inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50;
-  }
-
-  /* Dialog Components */
-  .dialog-overlay {
+  /* Modal Components */
+  .modal-overlay {
     @apply fixed inset-0 z-50 bg-background/80 backdrop-blur-sm;
   }
 
-  .dialog-content {
-    @apply fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200;
-    border-radius: var(--radius);
+  .modal-content {
+    @apply fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 bg-card p-6 shadow-lg duration-200 border border-border;
+    border-radius: 0.8rem;
     box-shadow: var(--shadow-lg);
   }
 
-  .dialog-header {
-    @apply flex flex-col space-y-1.5 text-center sm:text-left;
+  .modal-header {
+    @apply flex flex-col space-y-1.5 text-center sm:text-left pb-4 border-b border-border;
+    border-radius: 0.8rem 0.8rem 0 0;
   }
 
-  .dialog-footer {
-    @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2;
+  .modal-body {
+    @apply py-4;
+    border-radius: 0.8rem;
   }
 
-  .dialog-title {
+  .modal-footer {
+    @apply flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 pt-4 border-t border-border;
+    border-radius: 0 0 0.8rem 0.8rem;
+  }
+
+  .modal-title {
     @apply text-lg font-semibold leading-none tracking-tight;
   }
 
-  .dialog-description {
+  .modal-description {
     @apply text-sm text-muted-foreground;
   }
 
-  /* Dropdown Menu Components */
-  .dropdown-content {
-    @apply z-50 min-w-[8rem] overflow-hidden rounded-md border bg-background p-1 text-foreground shadow-md;
-    border-radius: var(--radius);
+  /* Dropdown Components */
+  .dropdown-menu {
+    @apply z-50 min-w-[8rem] overflow-hidden bg-card p-1 text-foreground shadow-md border border-border;
+    border-radius: 0;
     box-shadow: var(--shadow-md);
   }
 
   .dropdown-item {
-    @apply relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-muted focus:text-foreground;
-    border-radius: calc(var(--radius) - 2px);
+    @apply relative flex cursor-default select-none items-center px-2 py-1.5 text-sm outline-none transition-colors focus:bg-muted focus:text-foreground hover:bg-muted;
+    border-radius: 0;
   }
 
-  /* Table Components */
-  .table {
-    @apply w-full caption-bottom text-sm;
+  /* Utility Components */
+  .glass-effect {
+    @apply backdrop-blur-sm bg-background/80 border border-border;
+    border-radius: 0.8rem;
   }
 
-  .table-header {
-    @apply border-b;
+  .tooltip {
+    @apply absolute z-50 bg-card text-card-foreground px-2 py-1 text-xs border border-border shadow-md;
+    border-radius: 0.8rem;
   }
 
-  .table-body {
-    @apply [&_tr:last-child]:border-0;
+  .progress-bar {
+    @apply relative h-4 w-full overflow-hidden bg-muted;
+    border-radius: 0.8rem;
   }
 
-  .table-row {
-    @apply border-b transition-colors hover:bg-muted/50;
-  }
-
-  .table-head {
-    @apply h-12 px-4 text-left align-middle font-medium text-muted-foreground;
-  }
-
-  .table-cell {
-    @apply p-4 align-middle;
-  }
-
-  /* Progress Component */
-  .progress {
-    @apply relative h-4 w-full overflow-hidden rounded-full bg-muted;
-    border-radius: var(--radius);
-  }
-
-  .progress-indicator {
-    @apply h-full w-full flex-1 bg-primary-500 transition-all;
-  }
-
-  /* Skeleton Component */
-  .skeleton {
-    @apply animate-pulse rounded-md bg-muted;
-    border-radius: var(--radius);
-  }
-
-  /* Separator Component */
-  .separator {
-    @apply shrink-0 bg-border;
-  }
-
-  .separator-horizontal {
-    @apply separator h-[1px] w-full;
-  }
-
-  .separator-vertical {
-    @apply separator h-full w-[1px];
+  .progress-fill {
+    @apply h-full bg-primary-500 transition-all duration-300;
   }
 
   /* Custom Grid Component */
   .custom-grid {
-    @apply card p-6 grid grid-cols-1 gap-6 min-w-full min-h-full text-center items-center content-center justify-center;
+    @apply p-6 grid grid-cols-1 gap-6 min-w-full min-h-full text-center items-center content-center justify-center bg-card text-card-foreground border border-border;
+    border-radius: 0.8rem;
+    box-shadow: var(--shadow);
   }
 
   .custom-grid:hover {
-    @apply shadow-md;
     box-shadow: var(--shadow-md);
+  }
+
+  /* Text Utilities */
+  .text-code {
+    @apply font-mono text-sm bg-muted px-2 py-1 text-foreground border border-border;
+    border-radius: 0;
   }
 
   /* Theme Toggle Component */
   .theme-toggle {
     @apply btn-ghost btn-icon;
-  }
-
-  /* Status Indicators */
-  .status-indicator {
-    @apply inline-flex items-center rounded-full px-2 py-1 text-xs font-medium;
-    border-radius: var(--radius);
-  }
-
-  .status-online {
-    @apply status-indicator bg-success-100 text-success-800;
-  }
-
-  .status-offline {
-    @apply status-indicator bg-error-100 text-error-800;
-  }
-
-  .status-warning {
-    @apply status-indicator bg-warning-100 text-warning-800;
   }
 }
 
@@ -615,7 +654,7 @@
 
 /* Mobile First Approach */
 @media (max-width: 640px) {
-  .card {
+  .card, .panel {
     @apply p-4;
   }
   
@@ -629,7 +668,7 @@
     @apply text-sm px-3 py-2;
   }
   
-  .dialog-content {
+  .modal-content {
     @apply max-w-[90vw];
   }
 }
@@ -646,17 +685,16 @@
 
 @media print {
   .btn,
-  .badge,
-  .switch {
+  .badge {
     print-color-adjust: exact;
   }
   
-  .card {
+  .card, .panel {
     @apply shadow-none border;
   }
   
-  .dialog-overlay,
-  .dropdown-content {
+  .modal-overlay,
+  .dropdown-menu {
     @apply hidden;
   }
 }
@@ -678,7 +716,7 @@
 
 /* High contrast mode */
 @media (prefers-contrast: high) {
-  .card {
+  .card, .panel {
     @apply border-2;
   }
   
@@ -686,9 +724,9 @@
     @apply border-2;
   }
   
-  .input,
-  .select,
-  .textarea {
+  .form-input,
+  .form-select,
+  .form-textarea {
     @apply border-2;
   }
 }
