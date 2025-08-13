@@ -22,21 +22,21 @@
  * Single dark theme optimized for industrial monitoring displays
  */
 :root {
-  --background: hsl(256, 29%, 10%);
+  --background: hsl(256, 89%, 4%);
   --foreground: hsl(213, 31%, 91%);
-  --muted: hsl(261, 33%, 17%);
+  --muted: hsl(256, 89%, 4%);
   --muted-foreground: hsl(215, 20.2%, 65.1%);
-  --popover: hsl(273, 27%, 8%);
+  --popover: hsl(256, 89%, 4%);
   --popover-foreground: hsl(213, 31%, 91%);
-  --card: hsl(246, 33%, 17%);
+  --card: hsl(256, 89%, 4%);
   --card-foreground: hsl(213, 31%, 91%);
-  --border: hsl(250, 33%, 17%);
-  --input: hsl(244, 33%, 17%);
+  --border: hsl(256, 89%, 4%);
+  --input: hsl(256, 89%, 4%);
   --primary: hsl(217, 91%, 59%);
   --primary-foreground: hsl(238, 45%, 12%);
-  --secondary: hsl(242, 33%, 17%);
+  --secondary: hsl(256, 89%, 4%);
   --secondary-foreground: hsl(213, 31%, 91%);
-  --accent: hsl(244, 33%, 17%);
+  --accent: hsl(256, 89%, 4%);
   --accent-foreground: hsl(213, 31%, 91%);
   --destructive: hsl(0, 62.8%, 30.6%);
   --destructive-foreground: hsl(213, 31%, 91%);
@@ -44,8 +44,8 @@
   --radius: 0.5rem;
 
   /* EDGERACK Replit-Style Theme Variables */
-  --edgerack-dark: hsl(222, 28%, 8%);
-  --edgerack-darker: hsl(275, 33%, 17%);
+  --edgerack-dark: hsl(256, 89%, 4%);
+  --edgerack-darker: hsl(256, 89%, 4%);
   --edgerack-replit-blue: hsl(217, 91%, 59%);
   --edgerack-green: hsl(142, 76%, 36%);
   --edgerack-slate: hsl(215, 20.2%, 65.1%);
@@ -93,7 +93,7 @@
   .custom-grid {
     @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full bg-slate-800 text-center items-center content-center justify-center text-white shadow-lg;
     border-color: hsl(215, 25%, 25%);
-    background: linear-gradient(135deg, hsl(245, 55%, 4%) 0%, hsl(245, 55%, 4%) 60%);
+    background: linear-gradient(135deg, hsl(256, 89%, 4%) 0%, hsl(256, 89%, 4%) 60%);
   }
 
   .table-label {
