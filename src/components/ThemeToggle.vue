@@ -1,26 +1,154 @@
-
 <template>
-  <button @click="toggleTheme" class="theme-toggle-btn">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path v-if="themeStore.isSuperDark" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-      <path v-else-if="themeStore.isDark" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-      <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-    </svg>
-    <span class="text-sm font-medium">
-      {{ themeStore.isSuperDark ? 'Super Dark' : themeStore.isDark ? 'Dark' : 'Light' }}
-    </span>
-  </button>
+  <div class="relative">
+    <button
+      @click="toggleDropdown"
+      class="btn-ghost btn-sm px-2 py-2 h-8 w-8 focus-ring"
+      :title="currentTheme"
+      aria-label="Toggle theme"
+      aria-expanded="showDropdown"
+      aria-haspopup="true"
+    >
+      <component :is="currentIcon" class="h-4 w-4" />
+      <span class="sr-only">Toggle theme</span>
+    </button>
+
+    <div 
+      v-show="showDropdown" 
+      class="absolute right-0 top-full z-50 mt-1 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95"
+      role="menu"
+      aria-orientation="vertical"
+      aria-labelledby="theme-menu"
+    >
+      <button
+        v-for="theme in themes"
+        :key="theme.name"
+        @click="selectTheme(theme.name)"
+        class="relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground hover:bg-accent hover:text-accent-foreground"
+        :class="{ 
+          'bg-accent text-accent-foreground': themeStore.theme === theme.name 
+        }"
+        role="menuitem"
+        :aria-checked="themeStore.theme === theme.name"
+      >
+        <component :is="theme.icon" class="mr-2 h-4 w-4" />
+        <span class="flex-1">{{ theme.label }}</span>
+        <svg 
+          v-if="themeStore.theme === theme.name" 
+          class="ml-2 h-4 w-4" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Backdrop -->
+    <div 
+      v-if="showDropdown"
+      @click="closeDropdown"
+      class="fixed inset-0 z-40"
+      aria-hidden="true"
+    ></div>
+  </div>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
 import { useThemeStore } from '@/stores/theme.js'
+import { SunIcon, MoonIcon, DesktopIcon } from 'vue-tabler-icons'
 
 const themeStore = useThemeStore()
 
-const toggleTheme = () => {
-  themeStore.toggleTheme()
+const showDropdown = ref(false)
+
+const themes = computed(() => [
+  { name: 'light', label: 'Light', icon: SunIcon },
+  { name: 'dark', label: 'Dark', icon: MoonIcon },
+  { name: 'super-dark', label: 'Super Dark', icon: MoonIcon }, // Assuming MoonIcon can represent super dark too
+  { name: 'system', label: 'System', icon: DesktopIcon }
+])
+
+const currentIcon = computed(() => {
+  switch (themeStore.theme) {
+    case 'light':
+      return SunIcon
+    case 'dark':
+      return MoonIcon
+    case 'super-dark':
+      return MoonIcon // Or a more specific icon if available
+    case 'system':
+      return DesktopIcon
+    default:
+      return SunIcon
+  }
+})
+
+const currentTheme = computed(() => {
+  const theme = themes.value.find(t => t.name === themeStore.theme)
+  return theme ? theme.label : 'System'
+})
+
+const toggleDropdown = () => {
+  showDropdown.value = !showDropdown.value
 }
+
+const selectTheme = (themeName) => {
+  themeStore.setTheme(themeName);
+  showDropdown.value = false;
+};
+
+const closeDropdown = () => {
+  showDropdown.value = false;
+};
 </script>
+
+<style scoped>
+/* Add any specific styles for the dropdown if needed,
+   but ControlVue styling should handle most of it. */
+.focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 2px theme('colors.primary.DEFAULT'); /* Example using theme colors */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.animate-in {
+  animation: animateIn 0.2s ease-out;
+}
+
+.fade-in-0 {
+  opacity: 0;
+}
+
+.zoom-in-95 {
+  transform: scale(0.95);
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+</style>

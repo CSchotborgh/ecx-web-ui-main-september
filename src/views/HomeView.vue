@@ -716,7 +716,7 @@ let flash_wear_text = ref('');
 let led_flash_wear = ref('');
 
 const handleToggleMachineActive = async (event) => {
-    
+
     machineActiveProcessing.value = true
     machineActiveTarget.value = (event.target.value === 'true' ? true : false);
     const convertedValue = (machineActiveTarget.value === true) ? 'on' : 'off';
@@ -1071,6 +1071,42 @@ const retrieveSWRevision = async() => {
   }
 };
 
+// Helper functions for temperature icons and formatting
+const getTemperatureIcon = (temp) => {
+  if (temp < 18) return 'ColdIcon'; 
+  if (temp > 25) return 'HeatIcon';
+  return 'FanIcon'; 
+};
+
+const formatTime = (timestamp) => {
+  if (!timestamp) return 'N/A';
+  const date = new Date(timestamp);
+  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+};
+
+const openSetpointModal = () => {
+    // Logic to open modal for setpoints
+    // For now, just logging
+    console.log("Opening setpoint modal...");
+};
+
+// Placeholder for systemData if it's not directly available or needs computation
+// In a real scenario, this would be populated by fetchData or another computed property
+const systemData = computed(() => ({
+    ambient_temp: supplyAirTempReal.value, // Using supply air temp as a placeholder
+    supply_air_temp: supplyAirTempReal.value,
+    return_air_temp: returnAirTempReal.value,
+    compressor_1: machineActiveReal.value ? '1' : '0', // Example mapping
+    compressor_2: machineActiveReal.value ? '1' : '0', // Example mapping
+    fan_speed: internalFanReal.value, // Using internal fan speed as example
+    control_mode: controlModeReal.value ? 'Return Air' : 'Supply Air'
+}));
+
+const tempUnit = computed(() => usingFahrenheit.value ? 'F' : 'C');
+
+const lastUpdate = computed(() => timestamp.value);
+
+
 onMounted(async () => {
 
     setTimeout(() => {
@@ -1107,5 +1143,157 @@ onUnmounted(() => {
   top: 0;
   background-color: inherit;
   z-index: 10;
+}
+
+/* ControlVue specific styles (these would typically be in a global CSS file or imported) */
+.card {
+  background-color: theme('colors.slate.800'); /* Example: Using Tailwind's dark background */
+  border-radius: theme('borderRadius.3xl'); /* Rounded corners */
+  padding: theme('spacing.6');
+  box-shadow: theme('boxShadow.lg'); /* Subtle shadow */
+  border: 1px solid theme('colors.gray.700'); /* Border for definition */
+}
+
+.card-header {
+  margin-bottom: theme('spacing.4');
+  border-bottom: 1px solid theme('colors.gray.700'); /* Separator */
+  padding-bottom: theme('spacing.4');
+}
+
+.card-title {
+  font-size: theme('fontSize.xl');
+  font-weight: theme('fontWeight.bold');
+  color: theme('colors.white');
+}
+
+.card-description {
+  font-size: theme('fontSize.sm');
+  color: theme('colors.gray.400'); /* Muted foreground */
+}
+
+.card-content {
+  /* Styles for the card body content */
+}
+
+.card-footer {
+  margin-top: theme('spacing.6');
+  padding-top: theme('spacing.6');
+  border-top: 1px solid theme('colors.gray.700'); /* Separator */
+}
+
+.btn-default {
+  background-color: theme('colors.blue.600');
+  color: theme('colors.white');
+  padding: theme('spacing.2') theme('spacing.4');
+  border-radius: theme('borderRadius.full');
+  font-weight: theme('fontWeight.semibold');
+  transition: background-color 0.3s ease;
+}
+
+.btn-default:hover {
+  background-color: theme('colors.blue.700');
+}
+
+.btn-primary {
+  background-color: theme('colors.blue.500');
+  color: theme('colors.white');
+  padding: theme('spacing.2') theme('spacing.4');
+  border-radius: theme('borderRadius.full');
+  font-weight: theme('fontWeight.semibold');
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: theme('colors.blue.600');
+}
+
+.status-online {
+  color: theme('colors.green.500');
+  font-weight: theme('fontWeight.semibold');
+}
+
+.status-offline {
+  color: theme('colors.red.500');
+  font-weight: theme('fontWeight.semibold');
+}
+
+.text-muted-foreground {
+  color: theme('colors.gray.400');
+}
+
+.text-sm {
+  font-size: theme('fontSize.sm');
+}
+
+.text-lg {
+  font-size: theme('fontSize.lg');
+}
+
+.text-xl {
+  font-size: theme('fontSize.xl');
+}
+
+.font-bold {
+  font-weight: theme('fontWeight.bold');
+}
+
+.font-semibold {
+  font-weight: theme('fontWeight.semibold');
+}
+
+.tracking-tight {
+  letter-spacing: theme('letterSpacing.tight');
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px; /* full rounded */
+  font-size: theme('fontSize.xs');
+  font-weight: theme('fontWeight.bold');
+  display: inline-block;
+}
+
+.badge-secondary {
+  background-color: theme('colors.blue.700');
+  color: theme('colors.white');
+}
+
+.bg-success-500 {
+  background-color: theme('colors.green.500');
+}
+
+.bg-error-500 {
+  background-color: theme('colors.red.500');
+}
+
+.system-grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: theme('spacing.4');
+  border: 1px solid theme('colors.gray.700');
+  border-radius: theme('borderRadius.xl');
+  background-color: theme('colors.slate.700'); /* Slightly darker background for contrast */
+}
+
+.custom-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid theme('colors.gray.700'); /* Example border */
+  border-radius: theme('borderRadius.xl');
+  padding: theme('spacing.4');
+  background-color: theme('colors.slate.800'); /* Card-like background */
+}
+
+.table-label {
+  color: theme('colors.gray.400'); /* Muted text for labels */
+}
+
+.table-value {
+  color: theme('colors.white');
+  font-weight: theme('fontWeight.semibold');
 }
 </style>
