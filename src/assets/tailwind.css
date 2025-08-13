@@ -322,30 +322,37 @@ input, textarea, select {
 .status-badge {
   @apply px-3 py-1 rounded-full text-sm font-medium shadow-sm;
   transition: all 0.2s ease;
+  border: 1px solid white !important;
 }
 
 .status-badge.on {
-  background: hsl(142, 76%, 36%);
-  color: hsl(0, 0%, 100%);
-  border: 1px solid white;
+  background: hsl(142, 76%, 36%) !important;
+  color: hsl(0, 0%, 100%) !important;
+  border: 1px solid white !important;
 }
 
 .status-badge.off {
-  background: hsl(249, 20%, 40%);
-  color: hsl(0, 0%, 90%);
-  border: 1px solid white;
+  background: hsl(249, 20%, 40%) !important;
+  color: hsl(0, 0%, 90%) !important;
+  border: 1px solid white !important;
 }
 
 .status-badge.blue {
-  background: hsl(217, 91%, 60%);
-  color: hsl(0, 0%, 100%);
-  border: 1px solid white;
+  background: hsl(217, 91%, 60%) !important;
+  color: hsl(0, 0%, 100%) !important;
+  border: 1px solid white !important;
 }
 
 .status-badge.purple {
-  background: hsl(271, 91%, 65%);
-  color: hsl(0, 0%, 100%);
-  border: 1px solid white;
+  background: hsl(271, 91%, 65%) !important;
+  color: hsl(0, 0%, 100%) !important;
+  border: 1px solid white !important;
+}
+
+.status-badge.yellow {
+  background: hsl(45, 93%, 47%) !important;
+  color: hsl(0, 0%, 100%) !important;
+  border: 1px solid white !important;
 }
 
 .navbar-brand {
