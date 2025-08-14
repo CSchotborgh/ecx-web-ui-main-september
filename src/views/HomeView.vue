@@ -716,7 +716,7 @@ let flash_wear_text = ref('');
 let led_flash_wear = ref('');
 
 const handleToggleMachineActive = async (event) => {
-    
+
     machineActiveProcessing.value = true
     machineActiveTarget.value = (event.target.value === 'true' ? true : false);
     const convertedValue = (machineActiveTarget.value === true) ? 'on' : 'off';
@@ -928,7 +928,10 @@ const fetchData = async () => {
             console.error('Error fetching data:', response.status);
         }
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.warn('API not available (development mode):', error.message);
+        // Set default values for development
+        modbus_connected.value = false;
+        modbus_error.value = 'Development Mode - No API Connection';
     }
 
     // Pull most recent timestamp among data sets
