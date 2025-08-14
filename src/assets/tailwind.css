@@ -204,7 +204,11 @@
   }
 
   .log-entry {
-    color: #939393 !important;
+    background-color: hsl(258, 20%, 25%) !important;
+    color: #ffffff !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    margin: 2px 0 !important;
   }
 
   .cooling-section {
