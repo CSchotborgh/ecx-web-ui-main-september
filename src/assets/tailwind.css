@@ -204,7 +204,7 @@
   }
 
   .log-entry {
-    background-color: hsl(258, 20%, 25%) !important;
+    background-color: hsl(258, 25%, 15%) !important;
     color: #ffffff !important;
     padding: 8px 12px !important;
     border-radius: 4px !important;
