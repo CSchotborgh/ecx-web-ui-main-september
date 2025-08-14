@@ -178,7 +178,7 @@
 
   .edgerack-table thead {
     @apply text-xs uppercase bg-gray-700 text-gray-400;
-    background: hsl(280, 25%, 12%);
+    background: #060511;
   }
 
   .edgerack-table tbody tr {
