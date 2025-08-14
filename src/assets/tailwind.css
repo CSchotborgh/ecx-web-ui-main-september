@@ -90,9 +90,10 @@
   }
 
   .custom-grid {
-    @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full text-center items-center content-center justify-center text-white shadow-lg;
+    @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full text-center items-center content-center justify-center text-white;
     border-color: hsl(215, 25%, 25%);
     background: linear-gradient(135deg, hsl(256, 89%, 4%) 0%, hsl(256, 89%, 4%) 60%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .table-label {
@@ -102,26 +103,31 @@
   .status-badge-on {
     @apply bg-green-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
     border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(16, 185, 129, 0.4);
   }
 
   .status-badge-off {
     @apply bg-gray-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
     border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
   .status-badge-blue {
     @apply bg-blue-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
     border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(59, 130, 246, 0.4);
   }
 
   .status-badge-purple {
     @apply bg-purple-500 text-white px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
     border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(168, 85, 247, 0.4);
   }
 
   .status-badge-yellow {
     @apply bg-yellow-600 text-yellow-100 px-2.5 py-0.5 rounded flex items-center justify-center font-semibold;
     border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(245, 158, 11, 0.4);
   }
 
   .system-info-grid {
@@ -324,39 +330,45 @@ input, textarea, select {
 }
 
 .status-badge, .status-badge.on, .status-badge.off, .status-badge.blue, .status-badge.purple, .status-badge.yellow {
-  @apply px-3 py-1 rounded-full text-sm font-medium shadow-sm;
+  @apply px-3 py-1 rounded-full text-sm font-medium;
   transition: all 0.2s ease;
   border: 1px solid white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .status-badge.on {
   background: hsl(142, 76%, 36%) !important;
   color: hsl(0, 0%, 100%) !important;
   border: 1px solid white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(16, 185, 129, 0.4);
 }
 
 .status-badge.off {
   background: hsl(249, 20%, 40%) !important;
   color: hsl(0, 0%, 90%) !important;
   border: 1px solid white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .status-badge.blue {
   background: hsl(217, 91%, 60%) !important;
   color: hsl(0, 0%, 100%) !important;
   border: 1px solid white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(59, 130, 246, 0.4);
 }
 
 .status-badge.purple {
   background: hsl(271, 91%, 65%) !important;
   color: hsl(0, 0%, 100%) !important;
   border: 1px solid white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(168, 85, 247, 0.4);
 }
 
 .status-badge.yellow {
   background: hsl(45, 93%, 47%) !important;
   color: hsl(0, 0%, 100%) !important;
   border: 1px solid white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(245, 158, 11, 0.4);
 }
 
 .navbar-brand {
