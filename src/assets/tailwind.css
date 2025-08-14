@@ -90,8 +90,8 @@
   }
 
   .custom-grid {
-    @apply m-auto grid grid-cols-1 gap-2 border rounded-3xl p-4 min-w-full min-h-full text-center items-center content-center justify-center text-white;
-    border-color: hsl(215, 25%, 25%);
+    @apply m-auto grid grid-cols-1 gap-2 rounded-3xl p-4 min-w-full min-h-full text-center items-center content-center justify-center text-white;
+    border: 1.8px solid white;
     background: linear-gradient(135deg, hsl(256, 89%, 4%) 0%, hsl(256, 89%, 4%) 60%);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }

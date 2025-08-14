@@ -81,49 +81,49 @@
                 </div>
                 <Transition>    
                     <div v-show="showInternalGridStates" class="grid grid-cols-2 m-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 mx-auto p-2 gap-8 text-white w-full">
-                        <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-green-600' : machineActiveReal }">
+                        <div class="custom-grid border-white dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-green-600' : machineActiveReal }">
                             <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Machine:</div>
                             <div class="flex justify-center">
                                 <div v-if="machineActiveReal"><fwb-badge type="green" size="md">ON</fwb-badge></div>
                                 <div v-else><fwb-badge type="default" size="md">OFF</fwb-badge></div>
                             </div>                        
                         </div>
-                        <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-yellow-500' : selfCheckActiveReal }" >
+                        <div class="custom-grid border-white dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-yellow-500' : selfCheckActiveReal }" >
                             <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Self-Check:</div>
                             <div class="flex justify-center">
                                 <div v-if="selfCheckActiveReal"><fwb-badge type="yellow" size="md">ON</fwb-badge></div>
                                 <div v-else><fwb-badge type="default" size="md">OFF</fwb-badge></div>
                             </div>
                         </div>
-                        <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-green-600' : coolingActiveReal }">
+                        <div class="custom-grid border-white dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-green-600' : coolingActiveReal }">
                             <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Cooling:</div>
                             <div class="flex justify-center">
                                 <div v-if="coolingActiveReal"><fwb-badge type="green" size="md">ON</fwb-badge></div>
                                 <div v-else><fwb-badge type="default" size="md">OFF</fwb-badge></div>
                             </div>
                         </div>
-                        <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-red-500' : heatingActiveReal }">
+                        <div class="custom-grid border-white dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-red-500' : heatingActiveReal }">
                             <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Heating:</div>
                             <div class="flex justify-center">
                                 <div v-if="heatingActiveReal"><fwb-badge type="red" size="md">ON</fwb-badge></div>
                                 <div v-else><fwb-badge type="default" size="md">OFF</fwb-badge></div>
                             </div>
                         </div>
-                        <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-green-500' : dehumidifierActiveReal }">
+                        <div class="custom-grid border-white dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-green-500' : dehumidifierActiveReal }">
                             <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Dehumidifier:</div>
                             <div class="flex justify-center">
                                 <div v-if="dehumidifierActiveReal"><fwb-badge type="green" size="md">ON</fwb-badge></div>
                                 <div v-else><fwb-badge type="default" size="md">OFF</fwb-badge></div>
                             </div>
                         </div>
-                        <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-sky-600' : humidifierActiveReal }">
+                        <div class="custom-grid border-white dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-sky-600' : humidifierActiveReal }">
                             <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Humidifier:</div>
                             <div class="flex justify-center">
                                 <div v-if="humidifierActiveReal"><fwb-badge type="default" size="md">ON</fwb-badge></div>
                                 <div v-else><fwb-badge type="default" size="md">OFF</fwb-badge></div>
                             </div>
                         </div>
-                        <div class="custom-grid border-none dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-red-500' : dryContactAlarmingActiveReal }">
+                        <div class="custom-grid border-white dark:rounded-full dark:bg-gray-600" :class="{ 'dark:bg-red-500' : dryContactAlarmingActiveReal }">
                             <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Alarm Active:</div>
                             <div class="flex justify-center">
                                 <div v-if="dryContactAlarmingActiveReal"><fwb-badge type="red" size="md">YES</fwb-badge></div>
@@ -151,7 +151,7 @@
                     <div>
                         <div v-show="!loggedIn" class="flex justify-center text-sm italic m-2">Log in to modify controls</div>
                         <div v-show="showInternalGridControl" class="grid grid-cols-1 m-2 sm:grid-cols-3 mx-auto gap-8 w-full justify-around" :class="modbus_connected ? 'text-white' : '!text-gray-500'">
-                            <div class="custom-grid border-none"  :class="{ 'grid-rows-2' : loggedIn }">
+                            <div class="custom-grid border-white"  :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Machine:</div>
                                 <div class="flex justify-center">
                                     <div v-if="machineActiveReal"><fwb-badge type="green" size="md">ON</fwb-badge></div>
@@ -168,7 +168,7 @@
                                     />
                                 </div>
                             </div>
-                            <div class="custom-grid border-none" :class="{ 'grid-rows-2' : loggedIn }">
+                            <div class="custom-grid border-white" :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Control Mode:</div>
                                 <div class="flex justify-center">
                                     <div v-if="controlModeReal"><fwb-badge type="green" size="md">Return Air</fwb-badge></div>
@@ -185,14 +185,14 @@
                                     />
                                 </div>
                             </div>
-                            <div v-if="!controlModeReal" class="custom-grid border-none" :class="{ 'grid-rows-2' : loggedIn }">
+                            <div v-if="!controlModeReal" class="custom-grid border-white" :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Supply Air Target ({{ degreeSymbol }}):</div>
                                 <div class="text-4xl">{{ supplyAirTargetReal }}</div>
                                 <div v-show="loggedIn" class="m-auto w-1/2 justify-center">
                                     <fwb-button @click.prevent="openSupplyModal" color="default" pill>Modify</fwb-button>
                                 </div>
                             </div>
-                            <div v-else class="custom-grid border-none" :class="{ 'grid-rows-2' : loggedIn }">
+                            <div v-else class="custom-grid border-white" :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Return Air Target ({{ degreeSymbol }}):</div>
                                 <div class="text-4xl">{{ returnAirTargetReal }}</div>
                                 <div v-show="loggedIn" class="m-auto w-1/2 justify-center">
