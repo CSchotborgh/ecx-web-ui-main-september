@@ -172,8 +172,8 @@
 
   .edgerack-table {
     @apply w-full text-sm text-left text-gray-400;
-    background: hsl(268, 28%, 17%);
-    border: 1px solid hsl(255, 25%, 25%);
+    background: #060113 !important;
+    border: 1px  #23252f  !important;
   }
 
   .edgerack-table thead {
@@ -182,12 +182,12 @@
   }
 
   .edgerack-table tbody tr {
-    @apply odd:bg-gray-900 even:bg-gray-800 border-b border-gray-700;
+    @apply odd:bg-gray-300 even:bg-gray-400 border-b border-gray-200;
   }
 
   .edgerack-table th {
     @apply px-6 py-3 font-medium text-gray-400 uppercase;
-    color: hsl(252, 20%, 75%);
+    color: #060113 !important;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -195,17 +195,17 @@
 
   .edgerack-table td {
     @apply px-6 py-4 text-white;
-    color: hsl(0, 0%, 90%);
-    border-color: hsl(261, 25%, 25%);
+    color: #a8a8a8 !important;
+    border-color: #060113 !important;
   }
 
   .edgerack-table tr:hover {
-    background: hsl(252, 25%, 20%);
+    background:  #060113 !important;
   }
 
   .log-entry {
     background-color: #060511 !important;
-    color: #ffffff !important;
+    color: #23252f !important;
     padding: 8px 12px !important;
     border-radius: 0 !important;
     margin: 2px 0 !important;
@@ -213,18 +213,20 @@
 
   .cooling-section {
     @apply mb-6 border border-slate-600 bg-slate-800;
-    background: hsl(256, 55%, 4%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    background: #23252f !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), inset #23252f !important;
     border-radius: 0.75rem;
   }
 
   .cooling-header {
     @apply flex items-center justify-between p-4 border-b border-slate-600/50;
+    background: #a8a8a8 !important;
   }
 
   .cooling-content {
     @apply p-6 transition-all duration-500 ease-in-out;
     border-radius: 0 0 0.75rem 0.75rem;
+    color: #a8a8a8 !important;
   }
 
   .cooling-metrics-grid {
@@ -251,76 +253,116 @@
 }
 
 /* Lato Font Weight Rules */
-body, p, span, div, td, li, .text-gray-300, .text-gray-400, .text-white {
+body,
+p,
+span,
+div,
+td,
+li,
+.text-gray-300,
+.text-gray-400,
+.text-white {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6, .font-semibold, .font-bold {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-semibold,
+.font-bold {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-.navbar-brand, .text-xl, .text-2xl {
+.navbar-brand,
+.text-xl,
+.text-2xl {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-.text-sm, .text-xs, label, .label {
+.text-sm,
+.text-xs,
+label,
+.label {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-button, .btn, .button {
+button,
+.btn,
+.button {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
-.edgerack-monospace, .font-mono, code, pre {
+.edgerack-monospace,
+.font-mono,
+code,
+pre {
   font-family: 'Courier New', monospace !important;
   font-weight: 400;
 }
 
-.status-badge, .status-badge-on, .status-badge-off, .status-badge-blue, .status-badge-replit, .status-badge-yellow {
+.status-badge,
+.status-badge-on,
+.status-badge-off,
+.status-badge-blue,
+.status-badge-replit,
+.status-badge-yellow {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
-th, .table-label {
+th,
+.table-label {
   font-family: 'Lato', sans-serif;
   font-weight: 400 !important;
 }
 
-.card-title, .CardTitle {
+.card-title,
+.CardTitle {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
 
-.card-description, .CardDescription {
+.card-description,
+.CardDescription {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-nav a, .nav-link {
+nav a,
+.nav-link {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-nav a:hover, .nav-link:hover, .router-link-active {
+nav a:hover,
+.nav-link:hover,
+.router-link-active {
   font-weight: 600 !important;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-.alert, .Alert {
+.alert,
+.Alert {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
 }
 
-.alert-title, .AlertTitle {
+.alert-title,
+.AlertTitle {
   font-family: 'Lato', sans-serif;
   font-weight: 600 !important;
 }
@@ -333,7 +375,12 @@ input, textarea, select {
   color: hsl(0, 0%, 98%);
 }
 
-.status-badge, .status-badge.on, .status-badge.off, .status-badge.blue, .status-badge.purple, .status-badge.yellow {
+.status-badge,
+.status-badge.on,
+.status-badge.off,
+.status-badge.blue,
+.status-badge.purple,
+.status-badge.yellow {
   @apply px-3 py-1 rounded-full text-sm font-medium;
   transition: all 0.2s ease;
   border: 1px solid white !important;
@@ -431,9 +478,12 @@ input, textarea, select {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 0.6;
   }
@@ -449,6 +499,7 @@ input, textarea, select {
   0% {
     background-position: 200% 0;
   }
+
   100% {
     background-position: -200% 0;
   }
