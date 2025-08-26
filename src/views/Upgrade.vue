@@ -22,7 +22,7 @@
 
     <main class="container text-white">
         <!-- Top level container for file updates -->
-        <div class="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
+        <div class="max-h-fit my-6 grid grid-rows-1" style="background-color: #060511; border: 3.6px solid white; border-radius: 0.75rem;">
             <div class="my-6 mx-2">
                 <div class="container flex flex-row">
                     <div class="flex items-start text-2xl">Software Package Upgrading:</div>

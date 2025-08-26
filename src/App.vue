@@ -12,7 +12,6 @@
 import { ref, computed, watch, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useUserStore } from './stores/user.js';
-import { useThemeStore } from './stores/theme.js';
 import SiteNavigation from './components/SiteNavigation.vue';
 import LoginModal from './components/LoginModal.vue';
 import LogoutModal from './components/LogoutModal.vue';
@@ -26,7 +25,6 @@ axios.defaults.headers.common['X-Requested-With'] = 'Vue.js';
 
 
 const userStore = useUserStore();
-const themeStore = useThemeStore();
 const route = useRoute();
 const router = useRouter();
 const loginModal = ref(null);
@@ -43,9 +41,6 @@ onMounted( async () => {
   if (requiresAuth.value && !userStore.isLoggedIn) {
     loginModal.value.show = true;
   };
-  
-  // Initialize theme
-  themeStore.applyThemeToDocument();
   
   await userStore.retrieveCsrfToken();
 });
