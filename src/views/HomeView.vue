@@ -104,19 +104,19 @@
                             </fwb-table-head>
                             <fwb-table-body>
                                 <fwb-table-row v-for="(eventRow, index) in eventRows" :key="index">
-                                    <fwb-table-cell class="!px-1 !py-2 !whitespace-normal max-w-[120px] md:max-w-none text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 !whitespace-normal max-w-[120px] md:max-w-none text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.timestamp }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.origin }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.target }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-nowrap text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.type }}
                                     </fwb-table-cell>
-                                    <fwb-table-cell class="!px-1 !py-2 whitespace-normal text-center text-xs md:text-sm lg:text-lg text-gray-500">
+                                    <fwb-table-cell class="!px-1 !py-2 whitespace-normal text-center text-xs md:text-sm lg:text-lg log-entry">
                                     {{ eventRow.event }}
                                     </fwb-table-cell>
                                 </fwb-table-row>
@@ -165,7 +165,7 @@
                         <!-- Control grids -->
                         <div v-show="loggedIn == false" class="flex justify-center text-sm italic m-2">Log in to modify controls</div>
                         <div class="grid grid-cols-1 m-2 sm:grid-cols-3 mx-auto gap-8 w-full justify-around" :class="modbus_connected ? 'text-white' : '!text-gray-500'">
-                            <div class="custom-grid border-none"  :class="{ 'grid-rows-2' : loggedIn }">
+                            <div class="custom-grid border-white"  :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Power:</div>
                                 <div class="flex justify-center">
                                     <div v-if="machineActiveReal"><fwb-badge type="green" size="md">ON</fwb-badge></div>
@@ -182,11 +182,11 @@
                                     />
                                 </div>
                             </div>
-                            <div class="custom-grid border-none" :class="{ 'grid-rows-2' : loggedIn }">
+                            <div class="custom-grid border-white" :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Control Mode:</div>
                                 <div class="flex justify-center">
                                     <div v-if="controlModeReal"><fwb-badge type="green" size="md">Return Air</fwb-badge></div>
-                                    <div v-else><fwb-badge type="purple" size="md">Supply Air</fwb-badge></div>
+                                    <div v-else"><fwb-badge type="purple" size="md">Supply Air</fwb-badge></div>
                                 </div>
                                 <div v-show="loggedIn" class="mx-auto">
                                     <fwb-select
@@ -199,14 +199,14 @@
                                     />
                                 </div>
                             </div>
-                            <div v-if="!controlModeReal" class="custom-grid border-none" :class="{ 'grid-rows-2' : loggedIn }">
+                            <div v-if="!controlModeReal" class="custom-grid border-white" :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Supply Air Target ({{ degreeSymbol }}):</div>
                                 <div class="text-4xl">{{ supplyAirTargetReal }}</div>
                                 <div v-show="loggedIn" class="m-auto w-1/2 justify-center">
                                     <fwb-button @click.prevent="openSupplyModal" color="blue" pill>Modify</fwb-button>
                                 </div>
                             </div>
-                            <div v-else class="custom-grid border-none" :class="{ 'grid-rows-2' : loggedIn }">
+                            <div v-else class="custom-grid border-white" :class="{ 'grid-rows-2' : loggedIn }">
                                 <div class="m-auto grid grid-rows-1 gap-4 text-center text-sm table-label">Return Air Target ({{ degreeSymbol }}):</div>
                                 <div class="text-4xl">{{ returnAirTargetReal }}</div>
                                 <div v-show="loggedIn" class="m-auto w-1/2 justify-center">
@@ -716,7 +716,7 @@ let flash_wear_text = ref('');
 let led_flash_wear = ref('');
 
 const handleToggleMachineActive = async (event) => {
-    
+
     machineActiveProcessing.value = true
     machineActiveTarget.value = (event.target.value === 'true' ? true : false);
     const convertedValue = (machineActiveTarget.value === true) ? 'on' : 'off';
@@ -928,7 +928,10 @@ const fetchData = async () => {
             console.error('Error fetching data:', response.status);
         }
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.warn('API not available (development mode):', error.message);
+        // Set default values for development
+        modbus_connected.value = false;
+        modbus_error.value = 'Development Mode - No API Connection';
     }
 
     // Pull most recent timestamp among data sets
@@ -1077,11 +1080,12 @@ onMounted(async () => {
         suppress_toasts.value = false;
     }, 1000);
 
-    try {
-        await reportVersion();
-    } catch (error){
-        console.error('Failed to report version:', error);
-    }
+    // Version reporting disabled for development
+    // try {
+    //     await reportVersion();
+    // } catch (error){
+    //     console.error('Failed to report version:', error);
+    // }
 
     await retrieveSWRevision();
     await retrieveEventLogs();

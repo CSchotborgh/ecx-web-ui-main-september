@@ -11,6 +11,8 @@ export const reportVersion = async () => {
         });
         return response.data;
     } catch (error) {
-        throw error;
+        // Silently handle version reporting errors (e.g., when API is not available)
+        console.debug('Version reporting unavailable:', error.message);
+        return null;
     }
 };
