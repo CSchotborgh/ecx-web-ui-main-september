@@ -40,6 +40,11 @@
                     <button v-show="loggedIn" @click.prevent="showLogoutModal" class="btn-secondary ml-4">
                         Log Out
                     </button>
+                    
+                    <!-- Theme Toggle -->
+                    <div class="ml-4">
+                        <ThemeToggle />
+                    </div>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -83,6 +88,8 @@
                         <button v-show="loggedIn" @click.prevent="showLogoutModal" class="btn-secondary w-full mb-2">
                             Log Out
                         </button>
+                        
+                        <ThemeToggle />
                     </div>
                 </div>
             </div>
@@ -93,6 +100,8 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 import { useUserStore } from '@/stores/user.js'
+import { useThemeStore } from '@/stores/theme.js'
+import ThemeToggle from './ThemeToggle.vue'
 import bus from '@/bus.js'
 
 const userStore = useUserStore();

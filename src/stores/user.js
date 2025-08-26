@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
-import { useStateMachineStore } from './stateMachine'
+import axios from 'axios';
 
 export const useUserStore = defineStore('user', {
     state: () => ({
@@ -24,11 +23,8 @@ export const useUserStore = defineStore('user', {
                 axios.defaults.headers.common['x-csrf-token'] = this.csrfToken;
                 this.errorMessage = '';
             } catch (error) {
-                console.warn('Failed to retrieve CSRF token (development mode):', error.message);
-                // In development mode, use a mock token
-                this.csrfToken = 'dev-mock-token';
-                axios.defaults.headers.common['x-csrf-token'] = this.csrfToken;
-                this.errorMessage = '';
+                console.error('Failed to retrieve CSRF token:', error);
+                this.errorMessage = error.response?.data?.error || 'Failed to retrieve CSRF token';
             }
         },
         async validateTokens() {
@@ -48,11 +44,7 @@ export const useUserStore = defineStore('user', {
             }
         },
         async loginProcess(username, password) {
-            const stateMachine = useStateMachineStore()
-            
             try {
-                stateMachine.startLogin({ username })
-                
                 if (!this.csrfToken) {
                     await this.retrieveCsrfToken();
                 }
@@ -72,17 +64,10 @@ export const useUserStore = defineStore('user', {
                     this.errorMessage = '';
                     axios.defaults.headers.common['x-access-token'] = this.accessToken;
                     await this.retrieveGreeting();
-                    
-                    stateMachine.loginSuccess({ 
-                        username, 
-                        token: this.accessToken,
-                        user: this.loggedInUser 
-                    })
                 }
             } catch (error) {
                 console.error('Login failed:', error.response?.data?.error);
                 this.errorMessage = error.response?.data?.error || 'Failed login process';
-                stateMachine.loginFailure({ error: this.errorMessage })
             }
         },
         async retrieveUserStats() {
@@ -121,8 +106,6 @@ export const useUserStore = defineStore('user', {
             }
         },
         async logOut() {
-            const stateMachine = useStateMachineStore()
-            
             try {
                 const response = await axios.delete('/v1/api/auth/sessions', {
                     headers: {
@@ -140,7 +123,6 @@ export const useUserStore = defineStore('user', {
             delete axios.defaults.headers.common['x-csrf-token'];
             delete axios.defaults.headers.common['x-access-token'];
 
-            stateMachine.logout()
             this.$reset();
         }
     }   

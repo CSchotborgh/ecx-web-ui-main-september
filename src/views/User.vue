@@ -9,7 +9,7 @@
         @update:show="showAlertModal = $event"
         />
     <main class="container text-white">
-        <div class="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-900">
+        <div class="max-h-fit my-6 grid grid-rows-1 border rounded-3xl bg-slate-800">
             <div class="my-6 mx-2">
                 <div class="container flex flex-row">
                     <div class="flex items-start text-2xl">User Settings for "{{ user }}":</div>

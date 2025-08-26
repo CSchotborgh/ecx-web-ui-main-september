@@ -1,133 +1,67 @@
 
-# EDGERACK Access - Industrial Cooling Unit Management System
+# EDGERACK Access - Enconnex
 
-A modern Vue.js 3 web application for monitoring and controlling Enconnex EDGERACK cooling units in data center environments. Built with a focus on industrial reliability, real-time monitoring, and responsive design.
-
-## 🏗️ Architecture Overview
-
-EDGERACK Access follows a client-server architecture with clear separation of concerns:
-
-```
-┌─────────────────────────┐     ┌──────────────────────────┐
-│     Client (Vue.js)     │────▶│    Server (Backend)      │
-│                         │     │                          │
-│ ┌─────────────────────┐ │     │ ┌──────────────────────┐ │
-│ │   User Interface    │ │     │ │      REST API        │ │
-│ │   Components        │ │     │ │    /v1/api/*         │ │
-│ └─────────────────────┘ │     │ └──────────────────────┘ │
-│                         │     │                          │
-│ ┌─────────────────────┐ │     │ ┌──────────────────────┐ │
-│ │  State Management   │ │     │ │   Authentication     │ │
-│ │   (Pinia Stores)    │ │     │ │   & Authorization    │ │
-│ └─────────────────────┘ │     │ └──────────────────────┘ │
-│                         │     │                          │
-│ ┌─────────────────────┐ │     │ ┌──────────────────────┐ │
-│ │   HTTP Client       │ │     │ │   MODBUS Interface   │ │
-│ │    (Axios)          │ │     │ │   Cooling Units      │ │
-│ └─────────────────────┘ │     │ └──────────────────────┘ │
-└─────────────────────────┘     └──────────────────────────┘
-```
+A Vue.js 3 web application for managing Enconnex EDGERACK cooling units with a modern, responsive interface supporting multiple themes.
 
 ## 🚀 Features
 
-### 🎨 Modern UI/UX
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Dark Theme**: Industrial-grade dark interface optimized for data center environments
-- **Real-time Updates**: Live data refresh every second for critical monitoring
-- **Interactive Controls**: Intuitive sliders, toggles, and modal interfaces
+- **Multi-theme Support**: Super Dark, Dark, and Light themes with persistent state
+- **Authentication System**: Secure login with CSRF protection and token validation
+- **Responsive Design**: Built with TailwindCSS and Flowbite components
+- **Hot Module Replacement**: Vite-powered development with instant updates
+- **State Management**: Pinia stores for user authentication and theme management
+- **Route Protection**: Authentication-required routes with automatic redirects
 
-### 🔐 Security & Authentication
-- **JWT Token Authentication**: Secure API access with automatic token refresh
-- **CSRF Protection**: Cross-site request forgery protection
-- **Route Guards**: Protected routes with automatic login redirection
-- **Session Persistence**: Secure session management with automatic logout
+## 🛠 Tech Stack
 
-### 📊 Monitoring & Control
-- **Real-time Metrics**: Temperature, humidity, fan speeds, and system status
-- **Alarm Management**: Visual and audible alarm notifications
-- **Event Logging**: Comprehensive system event tracking with filtering
-- **System Diagnostics**: CPU, memory, storage, and network monitoring
-
-### 🌐 Network Management
-- **Dual Network Interfaces**: Primary and secondary network monitoring
-- **IPv4/IPv6 Support**: Complete network stack monitoring
-- **NTP Synchronization**: Network time protocol status and configuration
+- **Frontend Framework**: Vue.js 3 (Composition API)
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS + Flowbite
+- **State Management**: Pinia
+- **Routing**: Vue Router 4
+- **HTTP Client**: Axios
+- **Authentication**: JWT tokens with CSRF protection
 
 ## 📁 Project Structure
 
 ```
 src/
-├── assets/                     # Static assets and global styles
-│   ├── tailwind.css           # Custom styles and theme definitions
-│   ├── persistState.js        # State persistence utility
-│   ├── sha256Worker.js        # Crypto worker for password hashing
-│   └── version.js             # Version reporting utility
-├── components/                 # Reusable UI components
-│   ├── SiteNavigation.vue     # Main navigation bar
-│   ├── LoginModal.vue         # Authentication modal
-│   ├── LogoutModal.vue        # Logout confirmation modal
-│   ├── ForgotPassword.vue     # Password recovery modal
-│   ├── SliderTempsModal.vue   # Temperature adjustment modal
-│   ├── ToastComponent.vue     # Toast notification system
-│   ├── AlertModal.vue         # Alert dialog component
-│   └── UpdateDateTimeModal.vue # Date/time configuration modal
-├── composables/               # Vue composition functions
-│   └── useStateMachine.js     # State machine composable
-├── stores/                    # Pinia state management
-│   ├── user.js               # User authentication store
-│   ├── stateMachine.js       # Application state machine
-│   ├── toastManager.js       # Toast notification manager
-│   └── index.js              # Store configuration
-├── views/                     # Page-level components
-│   ├── HomeView.vue          # Main dashboard
-│   ├── RCU.vue               # Cooling unit management
-│   ├── Config.vue            # System configuration
-│   ├── User.vue              # User management
-│   └── Upgrade.vue           # System upgrade interface
-├── router/                    # Vue Router configuration
-│   └── index.js              # Route definitions and guards
-├── icons/                     # SVG icon components
-│   ├── alert.svg             # Alert/warning icons
-│   ├── fan.svg               # Fan status icons
-│   ├── cool.svg              # Cooling indicators
-│   └── fire.svg              # Heating indicators
-├── App.vue                    # Root application component
-├── main.js                    # Application entry point
-└── bus.js                     # Event bus for component communication
+├── assets/
+│   ├── tailwind.css          # Custom styles and theme overrides
+│   ├── persistState.js       # State persistence utility
+│   └── sha256Worker.js       # Crypto worker for hashing
+├── components/
+│   ├── SiteNavigation.vue    # Main navigation component
+│   ├── LoginModal.vue        # Authentication modal
+│   ├── ThemeToggle.vue       # Theme switching component
+│   └── ...                   # Other UI components
+├── stores/
+│   ├── user.js              # User authentication store
+│   ├── theme.js             # Theme management store
+│   └── index.js             # Pinia configuration
+├── views/
+│   ├── HomeView.vue         # Dashboard/landing page
+│   ├── RCU.vue              # Cooling unit management
+│   ├── Config.vue           # System configuration
+│   ├── User.vue             # User management
+│   └── Upgrade.vue          # System upgrades
+├── router/
+│   └── index.js             # Route definitions
+├── App.vue                  # Root component
+└── main.js                  # Application entry point
 ```
 
-## 🔧 Technical Stack
-
-### Frontend Framework
-- **Vue.js 3**: Progressive JavaScript framework with Composition API
-- **Vite**: Fast build tool with hot module replacement
-- **Vue Router 4**: Official router for Vue.js with navigation guards
-
-### State Management
-- **Pinia**: Modern state management library for Vue
-- **Persistent State**: Automatic state persistence across sessions
-
-### Styling & UI Components
-- **TailwindCSS**: Utility-first CSS framework
-- **Flowbite Vue**: Component library built on TailwindCSS
-- **Lato Font**: Professional typography for industrial interfaces
-
-### HTTP & API Communication
-- **Axios**: Promise-based HTTP client with interceptors
-- **Automatic Base URL**: Dynamic API endpoint configuration
-- **Request/Response Interceptors**: Automatic token handling
-
-## 🏃‍♂️ Getting Started
+## 🔧 Installation & Setup
 
 ### Prerequisites
-- Node.js 20+
-- npm or yarn package manager
+- Node.js 20+ 
+- npm or yarn
 
-### Installation
+### Local Development
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
+   git clone <repository-url>
    cd edgerack-access
    ```
 
@@ -147,331 +81,404 @@ src/
    npm run build
    ```
 
-## 🎯 Application Workflow
+## 🔄 Application Workflow & UI/UX Flow Diagrams
 
-### 1. Application Bootstrap
+### 1. Application Bootstrap & Architecture
 ```mermaid
 graph TD
     A[main.js] --> B[Create Vue App]
-    B --> C[Register Pinia Stores]
+    B --> C[Register Pinia Store]
     C --> D[Register Vue Router]
-    D --> E[Mount to DOM]
+    D --> E[Mount to #app]
     E --> F[App.vue Initialization]
-    F --> G[Route Guards Setup]
-    G --> H[CSRF Token Retrieval]
+    F --> G[SiteNavigation Component]
+    F --> H[Modal Components<br/>Login/Logout/ForgotPassword]
+    F --> I[RouterView<br/>Dynamic Page Content]
+    G --> J[Theme Toggle]
+    G --> K[Authentication Controls]
+    I --> L[HomeView - Dashboard]
+    I --> M[RCU - Cooling Details]
+    I --> N[Config - Settings]
+    I --> O[User Management]
+    I --> P[Upgrade]
 ```
 
-### 2. Authentication Flow
+### 2. Authentication & Route Protection Flow
 ```mermaid
 graph TD
     A[User Access] --> B{Route Requires Auth?}
     B -->|No| C[Allow Access]
     B -->|Yes| D{User Logged In?}
-    D -->|Yes| E[Validate Tokens]
+    D -->|Yes| E[Validate JWT Tokens]
     D -->|No| F[Show Login Modal]
     E -->|Valid| C
     E -->|Invalid| F
-    F --> G[User Login]
+    F --> G[User Enters Credentials]
     G --> H[Retrieve CSRF Token]
-    H --> I[Submit Credentials]
-    I --> J{Login Success?}
-    J -->|Yes| K[Store Tokens & Redirect]
-    J -->|No| L[Show Error Message]
-    K --> C
-    L --> F
+    H --> I[Submit to /v1/api/auth/login]
+    I --> J{Authentication Success?}
+    J -->|Yes| K[Store Tokens & Close Modal]
+    J -->|No| L[Display Error Message]
+    L --> G
+    K --> M[Enable Protected Controls]
+    M --> N[Show Temperature Controls]
+    M --> O[Show Machine State Controls]
+    C --> P[HomeView Dashboard Access]
 ```
 
-### 3. Real-time Data Flow
+### 3. Real-Time Data Flow & Dashboard Updates
 ```mermaid
 graph TD
-    A[Component Mount] --> B[Start Data Polling]
-    B --> C[Fetch All Data (/v1/api/all)]
-    C --> D[Update Component State]
-    D --> E[Render UI Updates]
-    E --> F[Wait 1 Second]
-    F --> C
-    G[Component Unmount] --> H[Clear Intervals]
+    A[HomeView Mounted] --> B[Start 1-Second Interval]
+    B --> C[Fetch /v1/api/all]
+    C --> D[Parse Cooling Unit Data]
+    D --> E[Update Temperature Readings]
+    D --> F[Update System Status]
+    D --> G[Update Network Info]
+    D --> H[Update Alarms/Alerts]
+    E --> I[Convert °F/°C Based on Settings]
+    F --> J[Update Status Badges<br/>ON/OFF, Supply/Return Air]
+    G --> K[Update Network Link Status LEDs]
+    H --> L[Show/Hide Alarm Banners]
+    I --> M[Display in Custom Grid Components]
+    J --> M
+    K --> M
+    L --> M
+    M --> N[Update Status Icons<br/>Fan/Cooling/Heating/Alert]
+    N --> O[Wait 1 Second]
+    O --> B
+    B --> P[Also Fetch Event Logs Count]
+    P --> Q[Show Background Difference Badge]
 ```
 
-## 🎨 UI/UX Design Philosophy
-
-### Industrial Aesthetic
-- **Dark Theme**: Reduces eye strain in data center environments
-- **High Contrast**: Ensures readability in various lighting conditions
-- **Consistent Spacing**: 8px grid system for visual harmony
-- **Professional Typography**: Lato font family for clarity
-
-### Responsive Design Principles
-- **Mobile-First**: Progressive enhancement from mobile to desktop
-- **Breakpoint Strategy**:
-  - `sm`: 640px+ (tablets)
-  - `md`: 768px+ (small laptops)
-  - `lg`: 1024px+ (desktops)
-  - `xl`: 1280px+ (large displays)
-
-### Component Hierarchy
-```
-App.vue
-├── SiteNavigation.vue (Global)
-├── LoginModal.vue (Authentication)
-├── LogoutModal.vue (Authentication)
-├── ForgotPassword.vue (Authentication)
-└── RouterView
-    ├── HomeView.vue (Dashboard)
-    │   ├── ToastComponent.vue
-    │   ├── SliderTempsModal.vue
-    │   └── Cabinet Status Grids
-    ├── RCU.vue (Cooling Management)
-    ├── Config.vue (System Settings)
-    ├── User.vue (User Management)
-    └── Upgrade.vue (System Updates)
-```
-
-## 🔄 Client-Server Communication
-
-### API Endpoints Structure
-```
-/v1/api/
-├── all                        # Complete system status
-├── timestamp                  # Server timestamp
-├── server/time               # Current server time
-├── edgerack/0/
-│   ├── rcu/0                 # Cooling unit control
-│   ├── realtime/
-│   │   ├── uptime           # System uptime
-│   │   └── sw-revision      # Software version
-│   └── config/
-│       └── general          # General configuration
-├── events/
-│   ├── all                  # Event log entries
-│   └── count               # Event count
-└── alarms/
-    └── active/count         # Active alarm count
+### 4. User Control Interaction Flow
+```mermaid
+graph TD
+    A[User Clicks Control] --> B{User Authenticated?}
+    B -->|No| C[Show Login Required Message]
+    B -->|Yes| D[Identify Control Type]
+    D --> E[Machine Power Control]
+    D --> F[Control Mode Toggle]
+    D --> G[Temperature Target Control]
+    
+    E --> H[Toggle ON/OFF State]
+    H --> I[PUT /v1/api/edgerack/0/rcu/0<br/>machine: on/off]
+    
+    F --> J[Toggle Supply/Return Air]
+    J --> K[PUT /v1/api/edgerack/0/rcu/0<br/>control-mode: supply/return]
+    
+    G --> L[Open Temperature Modal]
+    L --> M[SliderTempsModal Component]
+    M --> N[User Adjusts Temperature]
+    N --> O[Submit New Temperature]
+    O --> P[Convert to Fahrenheit if needed]
+    P --> Q[PUT /v1/api/edgerack/0/rcu/0<br/>supply-air-target or return-air-target]
+    
+    I --> R[API Response]
+    K --> R
+    Q --> R
+    R --> S{Success?}
+    S -->|Yes| T[Show Success Toast]
+    S -->|No| U[Show Error Toast]
+    T --> V[Real-time Data Updates State]
+    U --> V
 ```
 
-### Request/Response Flow
-1. **Authentication**: JWT tokens in Authorization header
-2. **CSRF Protection**: X-CSRF-TOKEN header on state-changing requests
-3. **Content Type**: application/json for API requests
-4. **Error Handling**: Axios interceptors for global error management
-
-### Real-time Updates
-- **Polling Interval**: 1000ms for critical data
-- **Background Updates**: Event log count checks
-- **State Synchronization**: Server state takes precedence over local state
-
-## 🔐 Security Implementation
-
-### Authentication Strategy
-```javascript
-// Token-based authentication with automatic refresh
-const authFlow = {
-  login: 'POST /v1/api/auth/login',
-  refresh: 'POST /v1/api/auth/refresh',
-  logout: 'POST /v1/api/auth/logout',
-  validate: 'GET /v1/api/auth/validate'
-}
+### 5. Theme Management & UI State Flow
+```mermaid
+graph TD
+    A[App Initialization] --> B[Load Theme from localStorage]
+    B --> C[Apply Theme Classes to Document]
+    C --> D[Initialize Theme Store]
+    D --> E[User Clicks Theme Toggle]
+    E --> F[Cycle Through Themes<br/>Super Dark → Dark → Light]
+    F --> G[Update Store State]
+    G --> H[Apply CSS Classes to <body>]
+    H --> I[Update All Component Styles]
+    I --> J[Save to localStorage]
+    J --> K[Apply CSS Custom Properties]
+    K --> L[Update Flowbite Components]
+    L --> M[Update Custom Grid Components]
+    M --> N[Update Card Components]
+    N --> O[Theme Applied Successfully]
 ```
 
-### Route Protection
+### 6. Modal System & User Interactions
+```mermaid
+graph TD
+    A[User Action Triggers Modal] --> B[Event Bus System]
+    B --> C[Login Required]
+    B --> D[Logout Confirmation]
+    B --> E[Forgot Password]
+    B --> F[Temperature Adjustment]
+    
+    C --> G[LoginModal.vue]
+    G --> H[Username/Password Form]
+    H --> I[Submit Credentials]
+    I --> J[Authentication API Call]
+    J --> K{Success?}
+    K -->|Yes| L[Close Modal & Enable Controls]
+    K -->|No| M[Show Error Message]
+    
+    D --> N[LogoutModal.vue]
+    N --> O[Confirmation Buttons]
+    O --> P[Logout API Call]
+    P --> Q[Clear Tokens & Redirect]
+    
+    E --> R[ForgotPassword.vue]
+    R --> S[Email Input Form]
+    S --> T[Password Reset Request]
+    
+    F --> U[SliderTempsModal.vue]
+    U --> V[Temperature Slider Input]
+    V --> W[Min/Max Validation]
+    W --> X[Convert °C to °F if needed]
+    X --> Y[Submit to API]
+    Y --> Z[Update Real-time Display]
+```
+
+### 7. Event Log & System Monitoring Flow
+```mermaid
+graph TD
+    A[HomeView Loads] --> B[Fetch Event Logs]
+    B --> C[GET /v1/api/events/count]
+    C --> D[GET /v1/api/events/all]
+    D --> E[Display in Responsive Table]
+    E --> F[User Clicks Refresh Log]
+    F --> G[Disable Button for 2 seconds]
+    G --> H[Fetch Updated Events]
+    H --> I[Compare Background Count]
+    I --> J[Show Difference Badge]
+    J --> K[Update Table Data]
+    K --> L[Re-enable Refresh Button]
+    
+    A --> M[System Status Updates]
+    M --> N[Cabinet Sensor Status]
+    M --> O[Network Link Status LEDs]
+    M --> P[System Resource Usage]
+    N --> Q[Door/Water/Smoke Sensors]
+    O --> R[Primary/Secondary Ethernet]
+    P --> S[CPU/Memory/Storage/Flash Wear]
+    Q --> T[Red/Green Status Display]
+    R --> T
+    S --> T
+```
+
+### 8. Responsive Design & Mobile Experience
+```mermaid
+graph TD
+    A[User Accesses App] --> B{Screen Size Detection}
+    B -->|Mobile| C[Hide Complex Tables]
+    B -->|Tablet| D[Responsive Grid Layout]
+    B -->|Desktop| E[Full Feature Display]
+    
+    C --> F[Show 'Use wider resolution' Message]
+    C --> G[Simplified Status Cards]
+    C --> H[Collapsible Sections]
+    
+    D --> I[2-Column Grid Layout]
+    D --> J[Condensed Navigation]
+    D --> K[Readable Table Headers]
+    
+    E --> L[Multi-Column Layouts]
+    E --> M[Full Event Log Table]
+    E --> N[Extended System Information]
+    
+    F --> O[Maintain Core Functionality]
+    G --> O
+    H --> O
+    I --> O
+    J --> O
+    K --> O
+    L --> O
+    M --> O
+    N --> O
+    O --> P[Responsive User Experience]
+```
+
+### 9. Error Handling & Toast Notification System
+```mermaid
+graph TD
+    A[API Call or User Action] --> B{Operation Result}
+    B -->|Success| C[Success Toast]
+    B -->|Error| D[Error Toast]
+    B -->|Info| E[Info Toast]
+    B -->|Warning| F[Warning Toast]
+    
+    C --> G[Green Success Badge]
+    D --> H[Red Error Badge]
+    E --> I[Blue Info Badge]
+    F --> J[Yellow Warning Badge]
+    
+    G --> K[addToast Success Handler]
+    H --> L[addToast Error Handler]
+    I --> M[addToast Info Handler]
+    J --> N[addToast Warning Handler]
+    
+    K --> O[ToastComponent Display]
+    L --> O
+    M --> O
+    N --> O
+    O --> P[Auto-dismiss After Timeout]
+    P --> Q[Fade Out Animation]
+    Q --> R[Remove from Toast Queue]
+```
+
+### 10. Component Hierarchy & Data Flow
+```mermaid
+graph TD
+    A[App.vue - Root Component] --> B[SiteNavigation.vue]
+    A --> C[Modal Components]
+    A --> D[RouterView]
+    
+    B --> E[Theme Toggle]
+    B --> F[User Authentication Controls]
+    
+    C --> G[LoginModal.vue]
+    C --> H[LogoutModal.vue]
+    C --> I[ForgotPassword.vue]
+    
+    D --> J[HomeView.vue - Main Dashboard]
+    D --> K[RCU.vue - Cooling Details]
+    D --> L[Config.vue - Settings]
+    D --> M[User.vue - User Management]
+    D --> N[Upgrade.vue]
+    
+    J --> O[ToastComponent.vue]
+    J --> P[SliderTempsModal.vue]
+    J --> Q[Custom Grid Components]
+    J --> R[Flowbite Table Components]
+    
+    Q --> S[Cabinet Status Grids]
+    Q --> T[Real-time Data Grids]
+    Q --> U[Control Grids]
+    Q --> V[Network Status Grids]
+    Q --> W[System Diagnostics Grids]
+    
+    O --> X[Toast Manager Store]
+    P --> Y[Temperature Control APIs]
+    R --> Z[Event Log Data]
+```
+
+## 🎨 Theme System
+
+The application supports three themes:
+
+- **Super Dark**: Deep dark theme with `#060511` backgrounds
+- **Dark**: Standard dark theme with CSS variables
+- **Light**: Light theme with high contrast
+
+Theme switching is handled by the `ThemeStore` and persisted across sessions.
+
+### Border Radius Standards
+
+The application uses consistent border radius values across all components:
+
+**Primary Radius (`0.8rem`)** - Used for most containers:
+- Cards (`.card`, `.card-secondary`, `.card-tertiary`, `.card-compact`)
+- Form elements (`.form-input`, `.form-textarea`, `.form-select`)
+- Panels (`.panel`, `.panel-compact`)
+- Grids and tables (`.custom-grid`, `.data-table`)
+- Modal components (`.modal-content`, `.modal-body`)
+- Utility classes (`.glass-effect`, `.tooltip`, `.progress-bar`, `.alert`)
+
+**Secondary Radius (`0.4rem`)** - Used for interactive elements:
+- Buttons (`.btn-primary`, `.btn-secondary`, `.btn-tertiary`, `.btn-danger`)
+- Navigation links (`.nav-link` on hover/active states)
+
+**Icon Button Radius (`0.5rem`)** - Used for:
+- Icon-only buttons (`.btn-icon`)
+
+**Sharp Corners (`0`)** - Used for:
+- Dropdown menus (`.nav-dropdown`, `.dropdown-menu`)
+- Code text elements (`.text-code`)
+
+**Partial Rounding** - Used for connected elements:
+- Panel/Modal headers: `0.8rem 0.8rem 0 0` (top corners only)
+- Panel/Modal footers: `0 0 0.8rem 0.8rem` (bottom corners only)
+
+This consistent approach ensures a cohesive visual design across all three themes.
+
+## 🔐 Security Features
+
+- **CSRF Protection**: Tokens retrieved and validated on each request
+- **JWT Authentication**: Access tokens for API authorization
+- **Route Guards**: Protected routes require authentication
+- **Token Validation**: Automatic token refresh and validation
+
+## 🚀 Deployment
+
+### Replit Deployment (Recommended)
+
+1. **Push to Replit**
+   - Import your GitHub repository to Replit
+   - Replit will automatically detect the Vue.js project
+
+2. **Configure Run Command**
+   ```bash
+   npm run dev
+   ```
+
+3. **Deploy to Production**
+   - Use Replit's deployment feature
+   - The app will be accessible via your Replit domain
+
+### Manual Deployment
+
+1. **Build the application**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy the `dist` folder** to your hosting provider
+
+## 📋 Available Scripts
+
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+
+## 🔧 Configuration
+
+### Environment Variables
+Set up the following in your environment:
+- API base URL is automatically set to current hostname
+- CSRF tokens are retrieved dynamically
+
+### Route Configuration
+Protected routes are defined in `App.vue`:
 ```javascript
 const authRequiredRoutes = ['config', 'user', 'upgrade'];
-// Automatic redirection to login for protected routes
-```
-
-### CSRF Protection
-- Token retrieved on application initialization
-- Included in all state-changing requests
-- Automatic token refresh on expiration
-
-## 📊 State Management Architecture
-
-### User Store (`stores/user.js`)
-- Authentication state and tokens
-- User profile information
-- Login/logout actions
-- Token validation and refresh
-
-### State Machine Store (`stores/stateMachine.js`)
-- Application state transitions
-- Loading states and error handling
-- Navigation state management
-- Retry logic for failed operations
-
-### Toast Manager Store (`stores/toastManager.js`)
-- Notification system
-- Success, error, and info messages
-- Auto-dismiss functionality
-- Queue management for multiple toasts
-
-## 🎛️ Component Communication
-
-### Event Bus Pattern
-```javascript
-// Global event bus for cross-component communication
-bus.emit('show-login-modal');
-bus.on('hide-login-modal', callback);
-```
-
-### Props & Emit Pattern
-```javascript
-// Parent-child component communication
-<SliderTempsModal
-  :temperatureValue="targetTemperatureValue"
-  @submit="handleUpdateSupplyAirTarget"
-/>
-```
-
-### Store-based Communication
-```javascript
-// Shared state across components
-const userStore = useUserStore();
-const isLoggedIn = computed(() => userStore.isLoggedIn);
-```
-
-## 🚀 Deployment on Replit
-
-### Development Deployment
-1. **Import Repository**: Connect your GitHub repository to Replit
-2. **Automatic Detection**: Replit automatically detects the Vue.js project
-3. **Dependencies**: Automatic npm install on first run
-4. **Development Server**: `npm run dev` serves on port 5173
-
-### Production Deployment
-1. **Build Process**: `npm run build` creates optimized distribution
-2. **Static Hosting**: Deploy the `dist` folder to Replit hosting
-3. **Environment Variables**: Configure through Replit secrets
-4. **Custom Domain**: Optional custom domain configuration
-
-### Replit Configuration
-```toml
-# .replit file configuration
-modules = ["vue-node-20", "nodejs-20", "web"]
-run = "npm run dev"
-
-[deployment]
-run = ["sh", "-c", "npm run dev"]
-
-[[ports]]
-localPort = 5173
-externalPort = 80
-```
-
-## 🧪 Testing & Development
-
-### Development Workflow
-1. **Hot Reload**: Instant updates during development
-2. **Error Overlay**: Vite's built-in error handling
-3. **Console Integration**: Browser dev tools integration
-4. **API Mocking**: Graceful degradation when API unavailable
-
-### Browser Compatibility
-- **Modern Browsers**: Chrome 90+, Firefox 88+, Safari 14+
-- **Mobile Browsers**: iOS Safari 14+, Chrome Mobile 90+
-- **Progressive Enhancement**: Graceful fallbacks for older browsers
-
-## 📈 Performance Optimization
-
-### Bundle Optimization
-- **Tree Shaking**: Automatic unused code elimination
-- **Code Splitting**: Route-based code splitting
-- **Asset Optimization**: Automatic image and font optimization
-- **Minification**: Production build minification
-
-### Runtime Performance
-- **Virtual Scrolling**: Efficient large list rendering
-- **Lazy Loading**: Component lazy loading for routes
-- **Debounced Updates**: Optimized real-time data handling
-- **Memory Management**: Proper cleanup of intervals and listeners
-
-## 🛠️ Configuration Options
-
-### Environment Configuration
-```javascript
-// Automatic environment detection
-const baseURL = `https://${window.location.hostname}`;
-axios.defaults.baseURL = baseURL;
-```
-
-### Theme Customization
-```css
-/* Custom CSS variables in tailwind.css */
-:root {
-  --background: hsl(256, 89%, 4%);
-  --foreground: hsl(213, 31%, 91%);
-  /* Additional theme variables */
-}
-```
-
-### Build Configuration
-```javascript
-// vite.config.js
-export default defineConfig({
-  plugins: [vue(), svgLoader()],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
-});
 ```
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
-1. **Build Errors**
-   - Check `tailwind.css` syntax
-   - Verify all imports are correct
-   - Clear node_modules and reinstall
+1. **CSS Build Errors**
+   - Check `tailwind.css` for syntax errors
+   - Ensure proper CSS property formatting
 
 2. **Authentication Issues**
-   - Verify CSRF token retrieval
-   - Check token expiration
-   - Validate API endpoints
+   - Verify CSRF token endpoint is accessible
+   - Check network requests in browser dev tools
 
-3. **Real-time Data Issues**
-   - Check network connectivity
-   - Verify API endpoint availability
-   - Monitor browser console for errors
-
-### Debug Mode
-```javascript
-// Enable debug logging
-localStorage.setItem('debug', 'true');
-```
-
-## 📋 Available Scripts
-
-- `npm run dev` - Start development server with hot reload
-- `npm run build` - Build for production deployment
-- `npm run preview` - Preview production build locally
+3. **Theme Not Persisting**
+   - Ensure localStorage is available
+   - Check `persistState.js` configuration
 
 ## 🤝 Contributing
 
-### Development Setup
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-### Code Style
-- ESLint configuration for consistent code style
-- Prettier for automatic code formatting
-- Vue.js style guide compliance
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -am 'Add feature'`
+4. Push to branch: `git push origin feature-name`
+5. Submit a Pull Request
 
 ## 📄 License
 
-This project is proprietary software owned by Enconnex. All rights reserved.
-
-## 🆘 Support
-
-For technical support or questions:
-- Create an issue in the repository
-- Contact the development team
-- Check the troubleshooting section above
+This project is proprietary software for Enconnex EDGERACK systems.
 
 ---
 
-**EDGERACK Access** - Industrial cooling management made simple, reliable, and efficient.
+For support or questions, please contact the development team.
